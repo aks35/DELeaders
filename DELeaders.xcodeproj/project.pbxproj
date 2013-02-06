@@ -1,0 +1,458 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		317D102916C1ECF2007EBF76 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 317D102816C1ECF2007EBF76 /* UIKit.framework */; };
+		317D102B16C1ECF2007EBF76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 317D102A16C1ECF2007EBF76 /* Foundation.framework */; };
+		317D102D16C1ECF2007EBF76 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 317D102C16C1ECF2007EBF76 /* CoreGraphics.framework */; };
+		317D103316C1ECF2007EBF76 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 317D103116C1ECF2007EBF76 /* InfoPlist.strings */; };
+		317D103516C1ECF2007EBF76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 317D103416C1ECF2007EBF76 /* main.m */; };
+		317D103916C1ECF2007EBF76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 317D103816C1ECF2007EBF76 /* AppDelegate.m */; };
+		317D103C16C1ECF2007EBF76 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317D103A16C1ECF2007EBF76 /* MainStoryboard_iPhone.storyboard */; };
+		317D103F16C1ECF2007EBF76 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317D103D16C1ECF2007EBF76 /* MainStoryboard_iPad.storyboard */; };
+		317D104216C1ECF2007EBF76 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 317D104116C1ECF2007EBF76 /* ViewController.m */; };
+		317D104A16C1ECF2007EBF76 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 317D104916C1ECF2007EBF76 /* SenTestingKit.framework */; };
+		317D104B16C1ECF2007EBF76 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 317D102816C1ECF2007EBF76 /* UIKit.framework */; };
+		317D104C16C1ECF2007EBF76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 317D102A16C1ECF2007EBF76 /* Foundation.framework */; };
+		317D105416C1ECF2007EBF76 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 317D105216C1ECF2007EBF76 /* InfoPlist.strings */; };
+		317D105716C1ECF2007EBF76 /* DELeadersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 317D105616C1ECF2007EBF76 /* DELeadersTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		317D104D16C1ECF2007EBF76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 317D101B16C1ECF2007EBF76 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 317D102316C1ECF2007EBF76;
+			remoteInfo = DELeaders;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		317D102416C1ECF2007EBF76 /* DELeaders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DELeaders.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		317D102816C1ECF2007EBF76 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		317D102A16C1ECF2007EBF76 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		317D102C16C1ECF2007EBF76 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		317D103016C1ECF2007EBF76 /* DELeaders-Info.plist */ = {isa = PBXFileReference; path = "DELeaders-Info.plist"; sourceTree = "<group>"; };
+		317D103216C1ECF2007EBF76 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		317D103416C1ECF2007EBF76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		317D103616C1ECF2007EBF76 /* DELeaders-Prefix.pch */ = {isa = PBXFileReference; path = "DELeaders-Prefix.pch"; sourceTree = "<group>"; };
+		317D103716C1ECF2007EBF76 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		317D103816C1ECF2007EBF76 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		317D103B16C1ECF2007EBF76 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		317D103E16C1ECF2007EBF76 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		317D104016C1ECF2007EBF76 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		317D104116C1ECF2007EBF76 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		317D104816C1ECF2007EBF76 /* DELeadersTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DELeadersTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		317D104916C1ECF2007EBF76 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		317D105116C1ECF2007EBF76 /* DELeadersTests-Info.plist */ = {isa = PBXFileReference; path = "DELeadersTests-Info.plist"; sourceTree = "<group>"; };
+		317D105316C1ECF2007EBF76 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		317D105516C1ECF2007EBF76 /* DELeadersTests.h */ = {isa = PBXFileReference; path = DELeadersTests.h; sourceTree = "<group>"; };
+		317D105616C1ECF2007EBF76 /* DELeadersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DELeadersTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		317D102116C1ECF2007EBF76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				317D102916C1ECF2007EBF76 /* UIKit.framework in Frameworks */,
+				317D102B16C1ECF2007EBF76 /* Foundation.framework in Frameworks */,
+				317D102D16C1ECF2007EBF76 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		317D104416C1ECF2007EBF76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				317D104A16C1ECF2007EBF76 /* SenTestingKit.framework in Frameworks */,
+				317D104B16C1ECF2007EBF76 /* UIKit.framework in Frameworks */,
+				317D104C16C1ECF2007EBF76 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		317D101916C1ECF2007EBF76 = {
+			isa = PBXGroup;
+			children = (
+				317D102E16C1ECF2007EBF76 /* DELeaders */,
+				317D104F16C1ECF2007EBF76 /* DELeadersTests */,
+				317D102716C1ECF2007EBF76 /* Frameworks */,
+				317D102516C1ECF2007EBF76 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		317D102516C1ECF2007EBF76 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				317D102416C1ECF2007EBF76 /* DELeaders.app */,
+				317D104816C1ECF2007EBF76 /* DELeadersTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		317D102716C1ECF2007EBF76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				317D102816C1ECF2007EBF76 /* UIKit.framework */,
+				317D102A16C1ECF2007EBF76 /* Foundation.framework */,
+				317D102C16C1ECF2007EBF76 /* CoreGraphics.framework */,
+				317D104916C1ECF2007EBF76 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		317D102E16C1ECF2007EBF76 /* DELeaders */ = {
+			isa = PBXGroup;
+			children = (
+				317D103716C1ECF2007EBF76 /* AppDelegate.h */,
+				317D103816C1ECF2007EBF76 /* AppDelegate.m */,
+				317D103A16C1ECF2007EBF76 /* MainStoryboard_iPhone.storyboard */,
+				317D103D16C1ECF2007EBF76 /* MainStoryboard_iPad.storyboard */,
+				317D104016C1ECF2007EBF76 /* ViewController.h */,
+				317D104116C1ECF2007EBF76 /* ViewController.m */,
+				317D102F16C1ECF2007EBF76 /* Supporting Files */,
+			);
+			path = DELeaders;
+			sourceTree = "<group>";
+		};
+		317D102F16C1ECF2007EBF76 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				317D103016C1ECF2007EBF76 /* DELeaders-Info.plist */,
+				317D103116C1ECF2007EBF76 /* InfoPlist.strings */,
+				317D103416C1ECF2007EBF76 /* main.m */,
+				317D103616C1ECF2007EBF76 /* DELeaders-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		317D104F16C1ECF2007EBF76 /* DELeadersTests */ = {
+			isa = PBXGroup;
+			children = (
+				317D105516C1ECF2007EBF76 /* DELeadersTests.h */,
+				317D105616C1ECF2007EBF76 /* DELeadersTests.m */,
+				317D105016C1ECF2007EBF76 /* Supporting Files */,
+			);
+			path = DELeadersTests;
+			sourceTree = "<group>";
+		};
+		317D105016C1ECF2007EBF76 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				317D105116C1ECF2007EBF76 /* DELeadersTests-Info.plist */,
+				317D105216C1ECF2007EBF76 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		317D102316C1ECF2007EBF76 /* DELeaders */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 317D105A16C1ECF2007EBF76 /* Build configuration list for PBXNativeTarget "DELeaders" */;
+			buildPhases = (
+				317D102016C1ECF2007EBF76 /* Sources */,
+				317D102116C1ECF2007EBF76 /* Frameworks */,
+				317D102216C1ECF2007EBF76 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DELeaders;
+			productName = DELeaders;
+			productReference = 317D102416C1ECF2007EBF76 /* DELeaders.app */;
+			productType = "com.apple.product-type.application";
+		};
+		317D104716C1ECF2007EBF76 /* DELeadersTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 317D105D16C1ECF2007EBF76 /* Build configuration list for PBXNativeTarget "DELeadersTests" */;
+			buildPhases = (
+				317D104316C1ECF2007EBF76 /* Sources */,
+				317D104416C1ECF2007EBF76 /* Frameworks */,
+				317D104516C1ECF2007EBF76 /* Resources */,
+				317D104616C1ECF2007EBF76 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				317D104E16C1ECF2007EBF76 /* PBXTargetDependency */,
+			);
+			name = DELeadersTests;
+			productName = DELeadersTests;
+			productReference = 317D104816C1ECF2007EBF76 /* DELeadersTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		317D101B16C1ECF2007EBF76 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 317D101E16C1ECF2007EBF76 /* Build configuration list for PBXProject "DELeaders" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 317D101916C1ECF2007EBF76;
+			productRefGroup = 317D102516C1ECF2007EBF76 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				317D102316C1ECF2007EBF76 /* DELeaders */,
+				317D104716C1ECF2007EBF76 /* DELeadersTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		317D102216C1ECF2007EBF76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				317D103316C1ECF2007EBF76 /* InfoPlist.strings in Resources */,
+				317D103C16C1ECF2007EBF76 /* MainStoryboard_iPhone.storyboard in Resources */,
+				317D103F16C1ECF2007EBF76 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		317D104516C1ECF2007EBF76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				317D105416C1ECF2007EBF76 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		317D104616C1ECF2007EBF76 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		317D102016C1ECF2007EBF76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				317D103516C1ECF2007EBF76 /* main.m in Sources */,
+				317D103916C1ECF2007EBF76 /* AppDelegate.m in Sources */,
+				317D104216C1ECF2007EBF76 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		317D104316C1ECF2007EBF76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				317D105716C1ECF2007EBF76 /* DELeadersTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		317D104E16C1ECF2007EBF76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 317D102316C1ECF2007EBF76 /* DELeaders */;
+			targetProxy = 317D104D16C1ECF2007EBF76 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		317D103116C1ECF2007EBF76 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				317D103216C1ECF2007EBF76 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		317D103A16C1ECF2007EBF76 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				317D103B16C1ECF2007EBF76 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		317D103D16C1ECF2007EBF76 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				317D103E16C1ECF2007EBF76 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		317D105216C1ECF2007EBF76 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				317D105316C1ECF2007EBF76 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		317D105816C1ECF2007EBF76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		317D105916C1ECF2007EBF76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		317D105B16C1ECF2007EBF76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DELeaders/DELeaders-Prefix.pch";
+				INFOPLIST_FILE = "DELeaders/DELeaders-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		317D105C16C1ECF2007EBF76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DELeaders/DELeaders-Prefix.pch";
+				INFOPLIST_FILE = "DELeaders/DELeaders-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		317D105E16C1ECF2007EBF76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DELeaders.app/DELeaders";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DELeaders/DELeaders-Prefix.pch";
+				INFOPLIST_FILE = "DELeadersTests/DELeadersTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		317D105F16C1ECF2007EBF76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DELeaders.app/DELeaders";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DELeaders/DELeaders-Prefix.pch";
+				INFOPLIST_FILE = "DELeadersTests/DELeadersTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		317D101E16C1ECF2007EBF76 /* Build configuration list for PBXProject "DELeaders" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				317D105816C1ECF2007EBF76 /* Debug */,
+				317D105916C1ECF2007EBF76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		317D105A16C1ECF2007EBF76 /* Build configuration list for PBXNativeTarget "DELeaders" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				317D105B16C1ECF2007EBF76 /* Debug */,
+				317D105C16C1ECF2007EBF76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		317D105D16C1ECF2007EBF76 /* Build configuration list for PBXNativeTarget "DELeadersTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				317D105E16C1ECF2007EBF76 /* Debug */,
+				317D105F16C1ECF2007EBF76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 317D101B16C1ECF2007EBF76 /* Project object */;
+}
