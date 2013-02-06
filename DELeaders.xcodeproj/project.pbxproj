@@ -38,21 +38,21 @@
 		317D102816C1ECF2007EBF76 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		317D102A16C1ECF2007EBF76 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		317D102C16C1ECF2007EBF76 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		317D103016C1ECF2007EBF76 /* DELeaders-Info.plist */ = {isa = PBXFileReference; path = "DELeaders-Info.plist"; sourceTree = "<group>"; };
+		317D103016C1ECF2007EBF76 /* DELeaders-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DELeaders-Info.plist"; sourceTree = "<group>"; };
 		317D103216C1ECF2007EBF76 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		317D103416C1ECF2007EBF76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		317D103616C1ECF2007EBF76 /* DELeaders-Prefix.pch */ = {isa = PBXFileReference; path = "DELeaders-Prefix.pch"; sourceTree = "<group>"; };
-		317D103716C1ECF2007EBF76 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		317D103616C1ECF2007EBF76 /* DELeaders-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DELeaders-Prefix.pch"; sourceTree = "<group>"; };
+		317D103716C1ECF2007EBF76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		317D103816C1ECF2007EBF76 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		317D103B16C1ECF2007EBF76 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		317D103E16C1ECF2007EBF76 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		317D104016C1ECF2007EBF76 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		317D104016C1ECF2007EBF76 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		317D104116C1ECF2007EBF76 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		317D104816C1ECF2007EBF76 /* DELeadersTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DELeadersTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		317D104916C1ECF2007EBF76 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		317D105116C1ECF2007EBF76 /* DELeadersTests-Info.plist */ = {isa = PBXFileReference; path = "DELeadersTests-Info.plist"; sourceTree = "<group>"; };
+		317D105116C1ECF2007EBF76 /* DELeadersTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DELeadersTests-Info.plist"; sourceTree = "<group>"; };
 		317D105316C1ECF2007EBF76 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		317D105516C1ECF2007EBF76 /* DELeadersTests.h */ = {isa = PBXFileReference; path = DELeadersTests.h; sourceTree = "<group>"; };
+		317D105516C1ECF2007EBF76 /* DELeadersTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DELeadersTests.h; sourceTree = "<group>"; };
 		317D105616C1ECF2007EBF76 /* DELeadersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DELeadersTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
