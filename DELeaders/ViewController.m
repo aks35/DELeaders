@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @implementation ViewController
+@synthesize sakaiCal;
 
 - (void)didReceiveMemoryWarning
 {
@@ -20,12 +21,18 @@
 
 - (void)viewDidLoad
 {
+    NSString *website = @"https://sakai.duke.edu/portal/tool/b35dc602-2461-4429-8cbf-863b48798f02?panel=Main";
+    NSURL *url = [NSURL URLWithString:website];
+    NSURLRequest *requestUrl = [NSURLRequest requestWithURL:url];
+    [sakaiCal loadRequest:requestUrl];
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewDidUnload
 {
+    [self setSakaiCal:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -61,4 +68,34 @@
     }
 }
 
+- (IBAction)openDEL:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.nicholas.duke.edu/del/" ]];
+}
+
+- (IBAction)openNSE:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.nicholas.duke.edu/" ]];
+}
+
+- (IBAction)openWP:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://sites.nicholas.duke.edu/delmeminfo/" ]];
+}
+
+- (IBAction)openSakai:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://sakai.duke.edu/" ]];
+}
+
+- (IBAction)openLibrary:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://library.duke.edu/" ]];
+}
+
+- (IBAction)openACES:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://aces.duke.edu/" ]];
+}
+
+- (IBAction)openExecEd:(id)sender {
+    // Put link for Exec Ed here
+}
+
+- (IBAction)openCal:(id)sender {
+}
 @end
