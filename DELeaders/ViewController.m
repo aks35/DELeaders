@@ -19,6 +19,9 @@
 @synthesize sakaiCal;
 @synthesize activeField;
 
+@synthesize netId;
+@synthesize password;
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -29,10 +32,11 @@
 
 - (void)viewDidLoad
 {
-    NSString *website = @"https://sakai.duke.edu/portal/tool/b35dc602-2461-4429-8cbf-863b48798f02?panel=Main";
+    NSString *website = @"https://sakai.duke.edu/portal/pda/~aks35@duke.edu/tool/b35dc602-2461-4429-8cbf-863b48798f02/calendar";
     NSURL *url = [NSURL URLWithString:website];
     NSURLRequest *requestUrl = [NSURLRequest requestWithURL:url];
     [sakaiCal loadRequest:requestUrl];
+    [sakaiCal setDelegate:self];
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -108,7 +112,7 @@
 }
 
 - (IBAction)openSakai:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://sakai.duke.edu/" ]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://sakai.duke.edu/portal/pda/?force.login=yes" ]];
 }
 
 - (IBAction)openLibrary:(id)sender {
@@ -138,6 +142,10 @@
 
 - (IBAction)pressEnterButton:(id)sender {
     [self testAlert:netIdField.text];
+    netId = netIdField.text;
+    password = passwordField.text;
+    NSLog(@"netId: %@",netId);
+    NSLog(@"password: %@", password);
 }
 
 - (void)registerForKeyboardNotifications {
@@ -165,11 +173,10 @@
     if (!CGRectContainsPoint(aRect, origin)) {
         CGPoint scrollPoint = CGPointMake(0.0, activeField.frame.origin.y-aRect.size.height);
         [scrollView setContentOffset:scrollPoint animated:YES];
-        NSLog(@"MOVING");
     }
-    NSLog(@"origin y: %f", origin.y-scrollView.contentOffset.y);
-    NSLog(@"origin x: %f", origin.x);
-    NSLog(@"COmpleted keboardWasShown");
+//    NSLog(@"origin y: %f", origin.y-scrollView.contentOffset.y);
+//    NSLog(@"origin x: %f", origin.x);
+//    NSLog(@"COmpleted keboardWasShown");
 }
 
 - (void)keyboardWillBeHidden:(NSNotification *)aNotification {
@@ -180,11 +187,17 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     activeField = textField;
-    NSLog(@"Active field set");
+//    NSLog(@"Active field set");
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     activeField = nil;
 }
 
-@end
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    NSString *javasriptString = @"document.getElementById('loginLink1').click();";
+    [sakaiCal stringByEvaluatingJavaScriptFromString:javasriptString];
+}
+
+
+@end 

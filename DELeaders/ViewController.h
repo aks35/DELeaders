@@ -31,5 +31,7 @@
 
 
 @property (weak, nonatomic) UIView *activeField;
+@property (weak, nonatomic) NSString *netId;
+@property (weak, nonatomic) NSString *password;
 
 @end
