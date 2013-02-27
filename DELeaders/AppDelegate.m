@@ -11,6 +11,8 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize netID = _netID;
+@synthesize password = _password;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

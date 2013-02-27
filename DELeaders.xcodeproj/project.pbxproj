@@ -31,8 +31,6 @@
 		3194987916C4F299000CDA09 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3194987816C4F299000CDA09 /* background.png */; };
 		3194987C16C4F492000CDA09 /* bottom2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3194987B16C4F492000CDA09 /* bottom2.png */; };
 		3194987E16C4F526000CDA09 /* LOGO2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3194987D16C4F526000CDA09 /* LOGO2.png */; };
-		31979AE916C9C84D006D0F04 /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31979AE716C9C84D006D0F04 /* CalendarView.m */; };
-		31979AEA16C9C84D006D0F04 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31979AE816C9C84D006D0F04 /* CalendarView.xib */; };
 		31BF5C5D16C310D200B1CC64 /* del-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 31BF5C5C16C310D200B1CC64 /* del-icon.png */; };
 /* End PBXBuildFile section */
 
@@ -77,9 +75,6 @@
 		3194987816C4F299000CDA09 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		3194987B16C4F492000CDA09 /* bottom2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom2.png; sourceTree = "<group>"; };
 		3194987D16C4F526000CDA09 /* LOGO2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGO2.png; sourceTree = "<group>"; };
-		31979AE616C9C84D006D0F04 /* CalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarView.h; sourceTree = "<group>"; };
-		31979AE716C9C84D006D0F04 /* CalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarView.m; sourceTree = "<group>"; };
-		31979AE816C9C84D006D0F04 /* CalendarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
 		31BF5C5C16C310D200B1CC64 /* del-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "del-icon.png"; path = "../../../Dropbox/DELeaders/del-icon.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,9 +142,6 @@
 				317D104016C1ECF2007EBF76 /* ViewController.h */,
 				317D104116C1ECF2007EBF76 /* ViewController.m */,
 				317D102F16C1ECF2007EBF76 /* Supporting Files */,
-				31979AE616C9C84D006D0F04 /* CalendarView.h */,
-				31979AE716C9C84D006D0F04 /* CalendarView.m */,
-				31979AE816C9C84D006D0F04 /* CalendarView.xib */,
 			);
 			path = DELeaders;
 			sourceTree = "<group>";
@@ -279,7 +271,6 @@
 				3194987916C4F299000CDA09 /* background.png in Resources */,
 				3194987C16C4F492000CDA09 /* bottom2.png in Resources */,
 				3194987E16C4F526000CDA09 /* LOGO2.png in Resources */,
-				31979AEA16C9C84D006D0F04 /* CalendarView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +308,6 @@
 				317D103516C1ECF2007EBF76 /* main.m in Sources */,
 				317D103916C1ECF2007EBF76 /* AppDelegate.m in Sources */,
 				317D104216C1ECF2007EBF76 /* ViewController.m in Sources */,
-				31979AE916C9C84D006D0F04 /* CalendarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,5 +11,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (weak, nonatomic) NSString *netID;
+@property (weak, nonatomic) NSString *password;
 
 @end
