@@ -148,6 +148,18 @@
     NSLog(@"password: %@", password);
 }
 
+- (IBAction)openFacebook:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.facebook.com/" ]];
+}
+
+- (IBAction)openTwitter:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.twitter.com/" ]];
+}
+
+- (IBAction)openLinkedIn:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.linkedin.com/" ]];
+}
+
 - (void)registerForKeyboardNotifications {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];

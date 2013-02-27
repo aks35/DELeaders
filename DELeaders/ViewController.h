@@ -18,6 +18,9 @@
 - (IBAction)openExecEd:(id)sender;
 - (IBAction)openCal:(id)sender;
 - (IBAction)pressEnterButton:(id)sender;
+- (IBAction)openFacebook:(id)sender;
+- (IBAction)openTwitter:(id)sender;
+- (IBAction)openLinkedIn:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIButton *enterButton;
