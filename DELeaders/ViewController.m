@@ -34,9 +34,14 @@
 
 - (void)viewDidLoad
 {
+    // Too many of these set hiddens?
+    if (self.view.backgroundColor == ([UIColor greenColor])) {
+        [self.view setHidden:YES];
+    }
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     tap.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tap];
@@ -57,9 +62,12 @@
     [self loadWebView:@"https://sakai.duke.edu/portal/pda/?force.login=yes" :sakaiView];
     pageVisited = NO;
     [sakaiView setDelegate:self];
-    
-    
-    
+}
+
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    if (webView.backgroundColor == ([UIColor greenColor])) {
+        [self.view setHidden:YES];
+    }
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
@@ -71,9 +79,9 @@
             [self initSakaiSubView:href];            
         }
     } else if (webView.backgroundColor == ([UIColor greenColor])) {
+        [self.view setHidden:YES];
         [self fillSakaiSubViewForm:webView];
     }
-        
 }
 
 - (void)loadWebView:(NSString *)fullURL:(UIWebView *)webView {
@@ -170,6 +178,9 @@
 //    [self testAlert:netIdField.text];
     netId = netIdField.text;
     password = passwordField.text;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:netId forKey:@"netId"];
+    [defaults setObject:password forKey:@"password"];
     NSLog(@"netId: %@",netId);
     NSLog(@"password: %@", password);
 
@@ -251,18 +262,25 @@
 
 - (void)fillSakaiSubViewForm:(UIWebView *)webView {
 //    NSString* javaScriptString = @"document.getElementById('j_username').value='aks35'; alert(document.getElementById('j_username').value);";
-    NSString* javaScriptString = @"document.getElementById('j_username').value='aks35';document.getElementById('j_password').value='6EF81ba8c2';var d = document.getElementById('portlet-content'); var k = d.getElementsByTagName('form')[0]; k.submit();";
-    
-    NSLog(@"SAKAI SUB VIEW: %@", netId);
-    NSLog(@"SAKAI SUB VIEW: %@", password);
-    
-    //    javaScriptString = [NSString stringWithFormat: javaScriptString, netId, password];
-    
-    NSLog(@"JS STRING: %@", javaScriptString);
-    
+    NSString* javaScriptString = @"document.getElementById('j_username')==null;";
     NSString *result = [webView stringByEvaluatingJavaScriptFromString: javaScriptString];
-    NSLog(@"RESULT: %@", result);
-    pageVisited = YES;
+    if ([result isEqualToString:@"true"]) {
+        [self.view setHidden:NO];
+    } else {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        netId = [defaults objectForKey:@"netId"];
+        password = [defaults objectForKey:@"password"];
+        javaScriptString = @"document.getElementById('j_username').value='%@';document.getElementById('j_password').value='%@';var d = document.getElementById('portlet-content'); var k = d.getElementsByTagName('form')[0]; k.submit();";
+        
+        NSLog(@"SAKAI SUB VIEW: %@", netId);
+        NSLog(@"SAKAI SUB VIEW: %@", password);
+        
+        javaScriptString = [NSString stringWithFormat: javaScriptString, netId, password];
+        
+        NSString *result = [webView stringByEvaluatingJavaScriptFromString: javaScriptString];
+        NSLog(@"RESULT: %@", result);
+        pageVisited = YES;
+    }    
 }
 
 @end 
