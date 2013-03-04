@@ -8,11 +8,10 @@
 
 #import "ViewController.h"
 #import "AppDelegate.h"
+#import "Utility.h"
 
 @implementation ViewController
 
-@synthesize calendarView;
-@synthesize sakaiView;
 @synthesize scrollView;
 @synthesize enterButton;
 @synthesize netIdField;
@@ -22,7 +21,6 @@
 
 @synthesize netId;
 @synthesize password;
-@synthesize pageVisited;
 
 - (void)didReceiveMemoryWarning
 {
@@ -34,10 +32,6 @@
 
 - (void)viewDidLoad
 {
-    // Too many of these set hiddens?
-    if (self.view.backgroundColor == ([UIColor greenColor])) {
-        [self.view setHidden:YES];
-    }
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -46,48 +40,16 @@
     tap.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tap];
     
-    [self.view addSubview:scrollView];
-    [scrollView addSubview:enterButton];
-    [scrollView addSubview:continueButton];
-    [scrollView addSubview:netIdField];
-    [scrollView addSubview:passwordField];
-    
-    NSString *fullURL = @"https://sakai.duke.edu/portal/pda/~aks35@duke.edu/tool/b35dc602-2461-4429-8cbf-863b48798f02/calenda";
-    NSURL *url = [NSURL URLWithString:fullURL];
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    [calendarView loadRequest:requestObj];
-    NSString *myParameter = @"WORKING!!";
-   
-    [self loadWebView:@"https://sakai.duke.edu/portal/pda/~aks35@duke.edu/tool/b35dc602-2461-4429-8cbf-863b48798f02/calenda" :calendarView];
-    [self loadWebView:@"https://sakai.duke.edu/portal/pda/?force.login=yes" :sakaiView];
-    pageVisited = NO;
-    [sakaiView setDelegate:self];
-}
+//    [self.view addSubview:scrollView];
+//    [scrollView addSubview:enterButton];
+//    [scrollView addSubview:continueButton];
+//    [scrollView addSubview:netIdField];
+//    [scrollView addSubview:passwordField];
 
-- (void)webViewDidStartLoad:(UIWebView *)webView {
-    if (webView.backgroundColor == ([UIColor greenColor])) {
-        [self.view setHidden:YES];
-    }
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    if (webView == sakaiView && !pageVisited) {
-        NSString *linkExists = [sakaiView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.getElementById('loginLink1')==null"]]; 
-        if ([linkExists isEqualToString:@"false"]) {
-            NSString *href = [sakaiView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.getElementById('loginLink1').href;"]];
-//            NSLog(@"FINISHED: %@", href);
-            [self initSakaiSubView:href];            
-        }
-    } else if (webView.backgroundColor == ([UIColor greenColor])) {
-        [self.view setHidden:YES];
-        [self fillSakaiSubViewForm:webView];
-    }
-}
-
-- (void)loadWebView:(NSString *)fullURL:(UIWebView *)webView {
-    NSURL *url = [NSURL URLWithString:fullURL];
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    [webView loadRequest:requestObj];
+    NSLog(@"HELLO THIS IS WORKING NOW");
 }
 
 - (void)viewDidUnload
@@ -97,8 +59,6 @@
     [self setContinueButton:nil];
     [self setEnterButton:nil];
     [self setScrollView:nil];
-    [self setCalendarView:nil];
-    [self setSakaiView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -157,11 +117,6 @@
 
 - (IBAction)openACES:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://aces.duke.edu/" ]];
-}
-
-- (IBAction)openExecEd:(id)sender {
-    // Put link for Exec Ed here
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.nicholas.duke.edu/del/executiveed" ]];
 }
 
 -(void)testAlert:(NSString *)text {
@@ -224,9 +179,6 @@
         CGPoint scrollPoint = CGPointMake(0.0, activeField.frame.origin.y-aRect.size.height);
         [scrollView setContentOffset:scrollPoint animated:YES];
     }
-//    NSLog(@"origin y: %f", origin.y-scrollView.contentOffset.y);
-//    NSLog(@"origin x: %f", origin.x);
-//    NSLog(@"COmpleted keboardWasShown");
 }
 
 - (void)keyboardWillBeHidden:(NSNotification *)aNotification {
@@ -242,45 +194,6 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     activeField = nil;
-}
-
-
-- (void) initSakaiSubView:(NSString *)urlString
-{
-    CGRect webFrame = CGRectMake(0.0, 0.0, 320.0, 460.0);
-    UIWebView *webView = [[UIWebView alloc] initWithFrame:webFrame];
-    [webView setBackgroundColor:[UIColor greenColor]];
-    if (webView.backgroundColor == ([UIColor greenColor])) {
-        NSLog(@"IS ITS LKJASDLKAS ");
-    }
-    [webView setDelegate:self];
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    [webView loadRequest:requestObj];
-    [self.view addSubview:webView]; 
-} 
-
-- (void)fillSakaiSubViewForm:(UIWebView *)webView {
-//    NSString* javaScriptString = @"document.getElementById('j_username').value='aks35'; alert(document.getElementById('j_username').value);";
-    NSString* javaScriptString = @"document.getElementById('j_username')==null;";
-    NSString *result = [webView stringByEvaluatingJavaScriptFromString: javaScriptString];
-    if ([result isEqualToString:@"true"]) {
-        [self.view setHidden:NO];
-    } else {
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        netId = [defaults objectForKey:@"netId"];
-        password = [defaults objectForKey:@"password"];
-        javaScriptString = @"document.getElementById('j_username').value='%@';document.getElementById('j_password').value='%@';var d = document.getElementById('portlet-content'); var k = d.getElementsByTagName('form')[0]; k.submit();";
-        
-        NSLog(@"SAKAI SUB VIEW: %@", netId);
-        NSLog(@"SAKAI SUB VIEW: %@", password);
-        
-        javaScriptString = [NSString stringWithFormat: javaScriptString, netId, password];
-        
-        NSString *result = [webView stringByEvaluatingJavaScriptFromString: javaScriptString];
-        NSLog(@"RESULT: %@", result);
-        pageVisited = YES;
-    }    
 }
 
 @end 

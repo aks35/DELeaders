@@ -204,7 +204,7 @@
         <scene sceneID="htl-tp-80M">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H0T-il-0TD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="aPS-nI-A4U" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="aPS-nI-A4U" customClass="SakaiViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ccj-wu-B0U">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -214,7 +214,23 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <outlet property="delegate" destination="Ccj-wu-B0U" id="Swj-Vk-viK"/>
+                                    <outlet property="delegate" destination="aPS-nI-A4U" id="zR0-lC-Q3T"/>
+                                </connections>
+                            </webView>
+                            <webView contentMode="scaleToFill" id="PXw-hY-GEZ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="aPS-nI-A4U" id="TPl-Dv-bAK"/>
+                                </connections>
+                            </webView>
+                            <webView contentMode="scaleToFill" id="Jab-cv-nVE">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="aPS-nI-A4U" id="zcr-Qc-DUV"/>
                                 </connections>
                             </webView>
                         </subviews>
@@ -222,11 +238,37 @@
                     </view>
                     <navigationItem key="navigationItem" title="Sakai" id="KIa-6A-Ly0"/>
                     <connections>
-                        <outlet property="sakaiView" destination="RuY-Md-fmM" id="Ehz-im-u3I"/>
+                        <outlet property="sakaiWebView" destination="RuY-Md-fmM" id="JCI-0L-GNX"/>
+                        <outlet property="sakaiWebViewLoad" destination="Jab-cv-nVE" id="7cn-2C-h4s"/>
+                        <outlet property="sakaiWebViewTemp" destination="PXw-hY-GEZ" id="wkv-Ru-hlz"/>
                     </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="-117" y="1167"/>
+        </scene>
+        <scene sceneID="9UO-mL-suQ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nL8-Zw-63V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="yGS-SN-yWj" customClass="ContactsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1ac-Jf-Wf3">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="CoW-8e-ZN2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Faculty" id="hib-6l-xis"/>
+                    <connections>
+                        <outlet property="facultyView" destination="CoW-8e-ZN2" id="F3q-zc-J75"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="793" y="879"/>
         </scene>
         <scene sceneID="5">
             <objects>
@@ -361,20 +403,8 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dpg-LQ-lNQ">
-                                <rect key="frame" x="246" y="254" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="EE">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                                 <connections>
-                                    <action selector="openExecEd:" destination="2" eventType="touchUpInside" id="Sz2-66-ja5"/>
+                                    <segue destination="Axt-Zd-tyV" kind="push" id="adA-Ru-u24"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZIq-8U-H3c">
@@ -443,13 +473,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Exex Ed" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="stb-dP-lgr">
-                                <rect key="frame" x="246" y="304" width="50" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Images" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="N3j-hK-dap">
                                 <rect key="frame" x="246" y="223" width="50" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -492,7 +515,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="NSE" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="CbP-Tm-2tm">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="NSOE" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="CbP-Tm-2tm">
                                 <rect key="frame" x="98" y="142" width="50" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -510,7 +533,7 @@
         <scene sceneID="iDl-YR-D3y">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7pl-hz-amx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="bZN-vQ-nMg" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="bZN-vQ-nMg" customClass="SakaiCalendarViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8HH-2e-Kq8">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -520,19 +543,101 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <outlet property="delegate" destination="8HH-2e-Kq8" id="mf1-fk-zFu"/>
+                                    <outlet property="delegate" destination="bZN-vQ-nMg" id="SDu-2e-Vzp"/>
                                 </connections>
+                            </webView>
+                            <webView contentMode="scaleToFill" id="8R7-0p-tZa">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="bZN-vQ-nMg" id="OqK-o9-J3o"/>
+                                </connections>
+                            </webView>
+                            <webView contentMode="scaleToFill" id="N3Q-Ir-aEq">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Calendar" id="Umz-Rc-QQ6"/>
                     <connections>
-                        <outlet property="calendarView" destination="DxU-zJ-srr" id="JZh-VK-G1H"/>
+                        <outlet property="sakaiCalView" destination="DxU-zJ-srr" id="UEg-al-YSz"/>
+                        <outlet property="sakaiCalViewLoad" destination="N3Q-Ir-aEq" id="D49-pj-qXc"/>
+                        <outlet property="sakaiCalViewTemp" destination="8R7-0p-tZa" id="4Od-ey-rlk"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="339" y="553"/>
+            <point key="canvasLocation" x="355" y="553"/>
+        </scene>
+        <scene sceneID="GBS-Pw-rhF">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zo1-Yj-Mh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController id="Axt-Zd-tyV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="eV5-aO-wYa"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="1F0-40-c80">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="yGS-SN-yWj" kind="relationship" relationship="viewControllers" id="MMe-vW-J9G"/>
+                        <segue destination="xKf-O1-wk9" kind="relationship" relationship="viewControllers" id="1ww-7A-6pM"/>
+                        <segue destination="fff-DF-Oyx" kind="relationship" relationship="viewControllers" id="Bc6-yb-WWq"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="339" y="1163"/>
+        </scene>
+        <scene sceneID="m5l-c1-PXW">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="COV-sk-fbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="fff-DF-Oyx" customClass="ContactsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rPD-eY-mgP">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="wPq-7T-tXV">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Others" id="iY4-T1-7s4"/>
+                    <connections>
+                        <outlet property="othersView" destination="wPq-7T-tXV" id="eLU-4f-cAw"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="339" y="1750"/>
+        </scene>
+        <scene sceneID="jOr-rT-RUj">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O9G-lV-wsO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="xKf-O1-wk9" customClass="ContactsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FsO-jV-1u8">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="2zq-r0-6Lt">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Students" id="omg-oN-i3e"/>
+                    <connections>
+                        <outlet property="studentsView" destination="2zq-r0-6Lt" id="guH-F7-jnf"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="793" y="1453"/>
         </scene>
     </scenes>
     <resources>

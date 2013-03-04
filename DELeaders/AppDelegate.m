@@ -14,12 +14,18 @@
 @synthesize netID = _netID;
 @synthesize password = _password;
 
+- (void)loadWebView:(NSString *)fullURL:(UIWebView *)webView {
+    NSURL *url = [NSURL URLWithString:fullURL];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    [webView loadRequest:requestObj];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     /*

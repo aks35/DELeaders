@@ -14,4 +14,6 @@
 @property (weak, nonatomic) NSString *netID;
 @property (weak, nonatomic) NSString *password;
 
+- (void)loadWebView:(NSString *)fullURL:(UIWebView *)webView;
+
 @end
