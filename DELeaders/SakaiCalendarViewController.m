@@ -9,6 +9,9 @@
 #import "SakaiCalendarViewController.h"
 #import "Utility.h"
 #import "SakaiViewControllerHelper.h"
+#import "MBProgressHUD.h"
+
+MBProgressHUD *hud;
 
 @implementation SakaiCalendarViewController
 
@@ -18,6 +21,8 @@
 @synthesize helperController;
 
 Utility *util;
+bool goingIntoCalView = NO;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,10 +50,13 @@ Utility *util;
     [self setSelfAsWebViewsDelegate];
     helperController = [[SakaiViewControllerHelper alloc]init];
     util = [[Utility alloc]init];
-    [util loadWebView:@"https://sakai.duke.edu/portal/pda/~aks35@duke.edu/tool/b35dc602-2461-4429-8cbf-863b48798f02/calendar":sakaiCalView];
+    [util loadWebView:@"https://sakai.duke.edu/portal/pda/~aks35@duke.edu/tool/b35dc602-2461-4429-8cbf-863b48798f02/calendar":sakaiCalView];    
     [sakaiCalViewLoad setHidden:YES];
     [sakaiCalViewTemp setHidden:YES];
     [sakaiCalView setHidden:YES];
+    
+    hud = [[MBProgressHUD alloc]init];
+    [hud hide:YES];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
@@ -61,7 +69,6 @@ Utility *util;
         if ([helperController loggedIntoSakai]) {
             [util loadWebView:@"https://sakai.duke.edu/portal/pda/~aks35@duke.edu/tool/b35dc602-2461-4429-8cbf-863b48798f02/calendar":sakaiCalView];
         } else {
-            [sakaiCalViewLoad setHidden:NO];
             NSString *href = [helperController clickLoginLink:sakaiCalViewTemp :sakaiCalViewTemp];
             if (![href isEqualToString:helperController.NO_LINK_TAG]) {
                 [helperController initSakaiSubView:href :sakaiCalViewTemp];
@@ -71,6 +78,9 @@ Utility *util;
     } else if (![helperController loggedIntoSakai]) {
         NSLog(@"Page not visited");
         if ([webView isEqual:sakaiCalView]) {
+            [sakaiCalViewLoad setHidden:NO];
+            hud = [MBProgressHUD showHUDAddedTo:sakaiCalViewLoad animated:YES];
+            hud.labelText = @"Logging into Sakai";
             NSLog(@"CALENDAR VIEW");
             NSLog(@"STARTING Cal view change");
             NSString *linkExists = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('loginLink')[0]==null;"];
@@ -83,10 +93,17 @@ Utility *util;
             NSLog(@"END cal view change");
         } 
     } else if ([helperController loggedIntoSakai]) {
+        if (!goingIntoCalView) {
+            goingIntoCalView = YES;
+        } else {
+            if ([hud.labelText length] != 0) {
+                [MBProgressHUD hideHUDForView:sakaiCalViewLoad animated:YES];
+            }
+            [sakaiCalViewLoad setHidden:YES];
+            NSLog(@"ONE DAY");            
+        }
         [sakaiCalView setHidden:NO];
-        [sakaiCalViewLoad setHidden:YES];
-        NSLog(@"ONE DAY");
-    }else {
+    } else {
         NSString *href = [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.documentURI;"]];
         NSLog(@"NOTHING FINISHED: %@", href);
     }

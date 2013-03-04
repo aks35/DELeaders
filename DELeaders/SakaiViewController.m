@@ -72,8 +72,8 @@ MBProgressHUD *hud;
     NSLog([hud isHidden] ? @"IS HIDDEN": @"NOT HIDDEN");
     if ([helperController loggedIntoSakai]) {
         if ([hud.labelText length] != 0) {
-            [MBProgressHUD hideHUDForView:sakaiWebViewLoad animated:YES];
             [sakaiWebViewTemp setHidden:NO];
+            [MBProgressHUD hideHUDForView:sakaiWebViewLoad animated:YES];
         }
         [sakaiWebView setHidden:NO];
     } else if ([webView isEqual:sakaiWebViewTemp]) {
