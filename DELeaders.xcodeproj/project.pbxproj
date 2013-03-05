@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		310E538A16E66734001395E5 /* CoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 310E538816E66734001395E5 /* CoursesViewController.m */; };
+		310E538B16E66734001395E5 /* CoursesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 310E538916E66734001395E5 /* CoursesViewController.xib */; };
 		314B573616DE8FB00065B50D /* bottom3.png in Resources */ = {isa = PBXBuildFile; fileRef = 314B573516DE8FB00065B50D /* bottom3.png */; };
 		314B573816DE98EC0065B50D /* facebookButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 314B573716DE98EC0065B50D /* facebookButton.png */; };
 		314B573A16DE9B710065B50D /* twitterButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 314B573916DE9B710065B50D /* twitterButton.png */; };
@@ -61,6 +63,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		310E538716E66734001395E5 /* CoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoursesViewController.h; sourceTree = "<group>"; };
+		310E538816E66734001395E5 /* CoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursesViewController.m; sourceTree = "<group>"; };
+		310E538916E66734001395E5 /* CoursesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoursesViewController.xib; sourceTree = "<group>"; };
 		314B573516DE8FB00065B50D /* bottom3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom3.png; sourceTree = "<group>"; };
 		314B573716DE98EC0065B50D /* facebookButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookButton.png; sourceTree = "<group>"; };
 		314B573916DE9B710065B50D /* twitterButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterButton.png; sourceTree = "<group>"; };
@@ -200,6 +205,9 @@
 				314B576A16E317B00065B50D /* SakaiViewControllerHelper.h */,
 				314B576B16E317B00065B50D /* SakaiViewControllerHelper.m */,
 				314B576C16E317B00065B50D /* SakaiViewControllerHelper.xib */,
+				310E538716E66734001395E5 /* CoursesViewController.h */,
+				310E538816E66734001395E5 /* CoursesViewController.m */,
+				310E538916E66734001395E5 /* CoursesViewController.xib */,
 			);
 			path = DELeaders;
 			sourceTree = "<group>";
@@ -342,6 +350,7 @@
 				314B576116E27E8E0065B50D /* SakaiViewController.xib in Resources */,
 				314B576916E316500065B50D /* SakaiCalendarViewController.xib in Resources */,
 				314B576E16E317B00065B50D /* SakaiViewControllerHelper.xib in Resources */,
+				310E538B16E66734001395E5 /* CoursesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +395,7 @@
 				314B576816E316500065B50D /* SakaiCalendarViewController.m in Sources */,
 				314B576D16E317B00065B50D /* SakaiViewControllerHelper.m in Sources */,
 				314B577116E328980065B50D /* MBProgressHUD.m in Sources */,
+				310E538A16E66734001395E5 /* CoursesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

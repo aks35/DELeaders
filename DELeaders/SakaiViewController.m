@@ -20,6 +20,7 @@ MBProgressHUD *hud;
 @synthesize sakaiWebViewLoad;
 @synthesize helperController;
 
+Utility *util;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,16 +46,17 @@ MBProgressHUD *hud;
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self setSelfAsWebViewsDelegate];
-    helperController = [[SakaiViewControllerHelper alloc]init];
-    Utility *util = [[Utility alloc]init];
+    util = [[Utility alloc]init];
     [util loadWebView:@"https://sakai.duke.edu/portal/pda/?force.login=yes":sakaiWebView];
-    [sakaiWebViewTemp setHidden:YES];
-    [sakaiWebViewLoad setHidden:YES];
-    [sakaiWebView setHidden:YES];
     sakaiWebViewLoad.opaque = NO;
     sakaiWebViewLoad.backgroundColor = [UIColor clearColor];
     hud = [[MBProgressHUD alloc]init];
     [hud hide:YES];
+    [sakaiWebViewTemp setHidden:YES];
+    [sakaiWebViewLoad setHidden:YES];
+    [sakaiWebView setHidden:YES];
+    helperController = [[SakaiViewControllerHelper alloc]init];
+
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {

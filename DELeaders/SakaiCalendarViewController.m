@@ -40,7 +40,6 @@ bool calendarRendered = NO;
 {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
     // Release any cached data, images, etc that aren't in use.
 }
 
@@ -50,20 +49,20 @@ bool calendarRendered = NO;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self setSelfAsWebViewsDelegate];
-    helperController = [[SakaiViewControllerHelper alloc]init];
-    util = [[Utility alloc]init];
     [sakaiCalViewLoad setHidden:YES];
     [sakaiCalViewTemp setHidden:YES];
     if (calendarRendered) {
-        [util loadWebView:calendarURL:sakaiCalView];
         [sakaiCalView setHidden:NO];
+        [util loadWebView:calendarURL:sakaiCalView];
     } else {
         [sakaiCalView setHidden:YES];
         [util loadWebView:@"https://sakai.duke.edu/portal/pda":sakaiCalView];            
     }
+    util = [[Utility alloc]init];
     hud = [[MBProgressHUD alloc]init];
     [hud hide:YES];
+    [self setSelfAsWebViewsDelegate];
+    helperController = [[SakaiViewControllerHelper alloc]init];
 }
 
 - (void)goToPageTemplate:(NSString *)index {

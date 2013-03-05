@@ -23,10 +23,13 @@
 @property (weak, nonatomic) IBOutlet UIButton *enterButton;
 @property (weak, nonatomic) IBOutlet UITextField *netIdField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
-@property (weak, nonatomic) IBOutlet UIButton *continueButton;
+@property (weak, nonatomic) IBOutlet UIButton *skipButton;
+
 
 - (void)registerForKeyboardNotifications;
 - (void)unregisterForKeyboardNotifications;
+- (void)checkForNetIdAndPassword;
+- (void)alertMessage:(NSString *)title:(NSString *)text;
 
 @property (weak, nonatomic) UIView *activeField;
 @property (weak, nonatomic) NSString *netId;

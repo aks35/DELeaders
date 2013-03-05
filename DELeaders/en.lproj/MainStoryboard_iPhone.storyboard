@@ -103,11 +103,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Sign In" id="CE4-3N-bQd"/>
                     <connections>
-                        <outlet property="continueButton" destination="U4t-Xk-czz" id="Iew-4L-abo"/>
                         <outlet property="enterButton" destination="AY2-x7-nMe" id="Mmh-oH-eAE"/>
                         <outlet property="netIdField" destination="5HQ-f1-ja8" id="Oef-cT-IuZ"/>
                         <outlet property="passwordField" destination="JYT-bM-mpm" id="3RT-AB-EYd"/>
                         <outlet property="scrollView" destination="NvM-VR-3j8" id="gVM-HM-hcn"/>
+                        <outlet property="skipButton" destination="U4t-Xk-czz" id="Pbx-h2-Nwy"/>
                     </connections>
                 </viewController>
                 <tapGestureRecognizer id="tFv-IJ-gM7">
@@ -131,6 +131,73 @@
                 </navigationController>
             </objects>
             <point key="canvasLocation" x="-489" y="-18"/>
+        </scene>
+        <scene sceneID="UfA-kR-qMm">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fRa-SA-1BK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="K2z-9g-VYx" customClass="CoursesViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Whx-9g-JtX">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="xUY-Ha-QT5">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Schedule" id="Jve-78-bYZ"/>
+                    <connections>
+                        <outlet property="scheduleView" destination="xUY-Ha-QT5" id="jLk-ct-h00"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="599" y="-18"/>
+        </scene>
+        <scene sceneID="Bmm-8o-qg4">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rUG-c5-PbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="h6v-Cw-w8o" customClass="CoursesViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pf8-L2-vYP">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="hjE-ci-KlS">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Details" id="NVF-IK-oWF"/>
+                    <connections>
+                        <outlet property="detailsView" destination="hjE-ci-KlS" id="H8i-wF-O41"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="257" y="-500"/>
+        </scene>
+        <scene sceneID="dRo-X2-Wwe">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lXb-Hx-20y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController definesPresentationContext="YES" id="Aay-pp-g1f" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Courses" id="32q-ak-jXv"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="RXa-uM-XYC">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="h6v-Cw-w8o" kind="relationship" relationship="viewControllers" id="TJG-dN-Chq"/>
+                        <segue destination="K2z-9g-VYx" kind="relationship" relationship="viewControllers" id="nMa-pX-Zzr"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="-116" y="-18"/>
         </scene>
         <scene sceneID="pM6-a8-Gep">
             <objects>
@@ -391,6 +458,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Aay-pp-g1f" kind="push" id="YGp-zF-sE5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ajV-hj-W0n">
                                 <rect key="frame" x="98" y="254" width="50" height="50"/>
@@ -562,7 +632,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Calendar" id="Umz-Rc-QQ6"/>
+                    <navigationItem key="navigationItem" title="Sakai Calendar" id="Umz-Rc-QQ6"/>
                     <connections>
                         <outlet property="sakaiCalView" destination="DxU-zJ-srr" id="UEg-al-YSz"/>
                         <outlet property="sakaiCalViewLoad" destination="N3Q-Ir-aEq" id="D49-pj-qXc"/>
@@ -577,7 +647,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zo1-Yj-Mh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController id="Axt-Zd-tyV" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="eV5-aO-wYa"/>
+                    <navigationItem key="navigationItem" title="Contacts" id="eV5-aO-wYa"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="1F0-40-c80">
                         <autoresizingMask key="autoresizingMask"/>

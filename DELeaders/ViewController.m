@@ -16,7 +16,7 @@
 @synthesize enterButton;
 @synthesize netIdField;
 @synthesize passwordField;
-@synthesize continueButton;
+@synthesize skipButton;
 @synthesize activeField;
 
 @synthesize netId;
@@ -32,33 +32,21 @@
 
 - (void)viewDidLoad
 {
-    
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    
+	// Do any additional setup after loading the view, typically from a nib.    
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     tap.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tap];
-    
-//    [self.view addSubview:scrollView];
-//    [scrollView addSubview:enterButton];
-//    [scrollView addSubview:continueButton];
-//    [scrollView addSubview:netIdField];
-//    [scrollView addSubview:passwordField];
-
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-    NSLog(@"HELLO THIS IS WORKING NOW");
+    [self checkForNetIdAndPassword];
 }
 
 - (void)viewDidUnload
 {
     [self setNetIdField:nil];
     [self setPasswordField:nil];
-    [self setContinueButton:nil];
     [self setEnterButton:nil];
     [self setScrollView:nil];
+    [self setSkipButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -119,8 +107,8 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://aces.duke.edu/" ]];
 }
 
--(void)testAlert:(NSString *)text {
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"ALERT" message:text delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+-(void)alertMessage:(NSString *)title:(NSString *)text {
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:title message:text delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [message show];    
 }
 
@@ -194,6 +182,18 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     activeField = nil;
+}
+
+- (void)checkForNetIdAndPassword {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSLog(@"WORKING");
+    netId = [defaults objectForKey:@"netId"];
+    password = [defaults objectForKey:@"password"];
+    if (netId && password) {
+        [skipButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+        [netIdField setText:netId];
+        [passwordField setText:password];
+    }
 }
 
 @end 
