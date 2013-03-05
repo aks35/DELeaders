@@ -12,6 +12,7 @@
 
 @synthesize netId;
 @synthesize password;
+@synthesize inWorkspace;
 @synthesize NO_LINK_TAG;
 
 NSString *const NO_LINK_TAG = @"THERE WAS NO LINK RETURNED";
@@ -45,7 +46,9 @@ bool pageVisited;
     if (!pageVisited) { // Init bool if not YES
         pageVisited = NO;
     }
-    
+    if (!inWorkspace) {
+        inWorkspace = NO;
+    }
 }
 
 - (void)viewDidUnload
@@ -67,24 +70,12 @@ bool pageVisited;
         NSString *href = [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.getElementById('loginLink1').href;"]];
         NSLog(@"FINISHED: %@", href);
         return href;
-//        [self initSakaiSubView:href:tempWebView];
     }
     return NO_LINK_TAG;
 }
 
 - (void)initSakaiSubView:(NSString *)urlString:(UIWebView *)webView
 {
-    //    
-    //    CGRect webFrame = CGRectMake(0.0, 0.0, 320.0, 460.0);
-    //    UIWebView *newWebView = [[UIWebView alloc] initWithFrame:webFrame];
-    //    [webView setBackgroundColor:[UIColor greenColor]];
-    //    if ([webView isEqual:sakaiTempWebView]) {
-    //        [newWebView se
-    //    } else {
-    //        
-    //    }
-    //    webView = newWebView;
-    //    [webView setDelegate:self];
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [webView loadRequest:requestObj];
@@ -100,17 +91,16 @@ bool pageVisited;
         netId = [defaults objectForKey:@"netId"];
         password = [defaults objectForKey:@"password"];
         javaScriptString = @"document.getElementById('j_username').value='%@';document.getElementById('j_password').value='%@';var d = document.getElementById('portlet-content'); var k = d.getElementsByTagName('form')[0]; k.submit();";
-        
-        NSLog(@"SAKAI SUB VIEW: %@", netId);
-        NSLog(@"SAKAI SUB VIEW: %@", password);
-        
         javaScriptString = [NSString stringWithFormat: javaScriptString, netId, password];
-        
-        NSString *result = [webView stringByEvaluatingJavaScriptFromString: javaScriptString];
-        NSLog(@"RESULT: %@", result);
+        [webView stringByEvaluatingJavaScriptFromString: javaScriptString];
         pageVisited = YES;
-        NSLog(pageVisited ? @"VISITED" : @"NOTE VISITED");
     }    
+}
+
+- (void)printCurrentURL:(UIWebView *)webView {
+    NSString *javascript = @"document.documentURI";
+    NSString *result = [webView stringByEvaluatingJavaScriptFromString:javascript];
+    NSLog(@"Current URI: %@", result);
 }
 
 - (BOOL)loggedIntoSakai {

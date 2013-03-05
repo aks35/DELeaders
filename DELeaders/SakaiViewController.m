@@ -57,19 +57,7 @@ MBProgressHUD *hud;
     [hud hide:YES];
 }
 
-- (void)webViewDidStartLoad:(UIWebView *)webView {
-//    if (webView.backgroundColor == ([UIColor greenColor])) {
-//        [self.view setHidden:YES];
-//    }
-}
-
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-//    NSLog(@"HELLO WORL");
-//    NSLog([webView isEqual:sakaiWebViewTemp] ? @"Yes Temp WEB" : @"No temp WEB");
-//    NSLog([webView isEqual:sakaiCalViewTemp] ? @"Yes temp CAL" : @"No temp CAL");
-    NSLog(@"ENtering FINISH LOAD WEB");
-    NSLog([helperController loggedIntoSakai] ? @"VISITED" : @"NOTE VISITED");
-    NSLog([hud isHidden] ? @"IS HIDDEN": @"NOT HIDDEN");
     if ([helperController loggedIntoSakai]) {
         if ([hud.labelText length] != 0) {
             [sakaiWebViewTemp setHidden:NO];
@@ -77,30 +65,20 @@ MBProgressHUD *hud;
         }
         [sakaiWebView setHidden:NO];
     } else if ([webView isEqual:sakaiWebViewTemp]) {
-        NSLog(@"TEMP WEB");
         [helperController fillSakaiSubViewForm:webView];
-       
     } else if (![helperController loggedIntoSakai]) {
         [sakaiWebViewLoad setHidden:NO];
-//        [sakaiWebView setHidden:YES];
-//        [sakaiWebViewTemp setHidden:YES];
         hud = [MBProgressHUD showHUDAddedTo:sakaiWebViewLoad animated:YES];
         hud.labelText = @"Logging into Sakai";
         NSLog(@"Page not visited");
         if ([webView isEqual:sakaiWebView]) {
-            NSLog(@"WEB VIEW");
             NSString *href = [helperController clickLoginLink:sakaiWebView :sakaiWebViewTemp];
             if (![href isEqualToString:helperController.NO_LINK_TAG]) {
                 [helperController initSakaiSubView:href :sakaiWebViewTemp];
-//                [self.view addSubview:sakaiWebViewTemp]; 
-//                [sakaiWebViewTemp setHidden:NO];
-
+                [self.view bringSubviewToFront:sakaiWebViewTemp];
             }
         }  
-    } else {
-        NSString *href = [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.documentURI;"]];
-        NSLog(@"NOTHING FINISHED: %@", href);
-    }
+    } 
 }
 
 - (void)viewDidUnload

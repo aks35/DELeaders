@@ -17,5 +17,8 @@
 
 @property (strong, nonatomic) SakaiViewControllerHelper *helperController;
 - (void)setSelfAsWebViewsDelegate;
+- (void)goToWorkspacePage;
+- (void)goToCalendarPage;
+- (void)goToPageTemplate:(NSString *)index;
 
 @end

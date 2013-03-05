@@ -13,10 +13,13 @@
 - (void)initSakaiSubView:(NSString *)urlString:(UIWebView *)webView;
 - (void)fillSakaiSubViewForm:(UIWebView *)webView;
 - (NSString *)clickLoginLink:(UIWebView *)webView:(UIWebView *)tempWebView;
+- (void)printCurrentURL:(UIWebView *)webView;
 - (BOOL)loggedIntoSakai;
+- (BOOL)inWorkspace;
 
 @property (weak, nonatomic) NSString *netId;
 @property (weak, nonatomic) NSString *password;
+@property (nonatomic) BOOL inWorkspace;
 @property (strong, nonatomic) NSString *const NO_LINK_TAG;
 
 
