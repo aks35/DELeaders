@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ContactsViewController : UIViewController
+@interface ContactsViewController : UIViewController <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *facultyView;
 @property (weak, nonatomic) IBOutlet UIWebView *studentsView;
 @property (weak, nonatomic) IBOutlet UIWebView *othersView;
 
 - (void)loadWebView:(NSString *)fullURL:(UIWebView *)webView;
+- (void)setSelfAsWebViewsDelegate;
+- (void)goToPageTempalte:(NSString *)index;
 
 @end
