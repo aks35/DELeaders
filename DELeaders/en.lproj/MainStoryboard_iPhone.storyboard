@@ -565,7 +565,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2pR-eg-SpB" kind="push" id="Vgm-zs-0IZ"/>
+                                    <segue destination="Ub0-0X-CGW" kind="push" id="r7d-vu-doM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4PO-D6-xPF">
@@ -783,16 +783,16 @@
             </objects>
             <point key="canvasLocation" x="355" y="553"/>
         </scene>
-        <!--View Controller - Images-->
-        <scene sceneID="vuX-ky-cbI">
+        <!--View Controller-->
+        <scene sceneID="N7p-h9-8Om">
             <objects>
-                <viewController id="2pR-eg-SpB" customClass="_LR4NFPD9GViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="d0k-SJ-GO0">
+                <viewController id="Ub0-0X-CGW" customClass="_LR4NFPD9GViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WpK-gH-bTJ">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="m3O-Z4-e51">
-                                <rect key="frame" x="20" y="15" width="142" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="atH-ta-vaO">
+                                <rect key="frame" x="20" y="14.625" width="142" height="44"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Upload a picture">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -802,67 +802,67 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="pickAnImage:" destination="2pR-eg-SpB" eventType="touchUpInside" id="azS-D6-ixe"/>
+                                    <action selector="pickAnImage:" destination="Ub0-0X-CGW" eventType="touchUpInside" id="Oyl-cP-YQ3"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="Iur-Dy-rVn">
-                                <rect key="frame" x="20" y="0.0" width="280" height="437"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1UW-8Z-dbx">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="cBb-ft-kaI">
+                                <rect key="frame" x="20" y="75" width="280" height="341"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pMB-6k-TKh">
                                     <size key="itemSize" width="129" height="130"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="simpleCellID" id="Ylo-cR-UTL" customClass="s3ImageCell">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="simpleCellID" id="DBk-ik-eUY" customClass="s3ImageCell">
                                         <rect key="frame" x="0.0" y="0.0" width="129" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="129" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" id="kNd-VX-3Z0" customClass="UIImageView">
-                                                    <rect key="frame" x="0.0" y="52" width="129" height="130"/>
+                                                <view contentMode="scaleToFill" id="S38-co-BNh" customClass="UIImageView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="129" height="130"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <outlet property="imageView" destination="kNd-VX-3Z0" id="Jgd-QK-gx7"/>
-                                            <segue destination="kQK-kI-3lu" kind="modal" id="HnX-a7-ggf"/>
+                                            <outlet property="imageView" destination="S38-co-BNh" id="tHt-dH-tDu"/>
+                                            <segue destination="3yA-PO-qgt" kind="modal" identifier="ShowPhoto" id="5GI-Xa-8BS"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="2pR-eg-SpB" id="J3f-ta-pwT"/>
-                                    <outlet property="delegate" destination="2pR-eg-SpB" id="v8M-aH-UnP"/>
+                                    <outlet property="dataSource" destination="Ub0-0X-CGW" id="eb6-1x-oT7"/>
+                                    <outlet property="delegate" destination="Ub0-0X-CGW" id="Lno-2p-DvP"/>
                                 </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Images" id="aIS-HE-MEj"/>
+                    <navigationItem key="navigationItem" id="ncm-y3-ug1"/>
                     <connections>
-                        <outlet property="collectionView" destination="Iur-Dy-rVn" id="j7w-g8-Byf"/>
+                        <outlet property="collectionView" destination="cBb-ft-kaI" id="zqb-C6-KC7"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pEL-jG-fQ6" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8lU-oy-CjF" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-116" y="1745"/>
+            <point key="canvasLocation" x="-489" y="1771"/>
         </scene>
         <!--Photo Detail View Controller-->
-        <scene sceneID="ExK-IF-Mpw">
+        <scene sceneID="Mfs-zt-bfk">
             <objects>
-                <viewController id="kQK-kI-3lu" customClass="photoDetailViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Z6E-Jo-Vt2">
+                <viewController id="3yA-PO-qgt" customClass="photoDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TYe-Bc-F0M">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="CYA-Jk-6Fg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="Teg-a0-5dS">
                                 <rect key="frame" x="20" y="62" width="280" height="377"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ofT-Rc-nYR">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZIk-1T-kg6">
                                 <rect key="frame" x="25" y="20" width="128" height="44"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Save to Phone">
@@ -873,10 +873,10 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="saveImageToPhone:" destination="kQK-kI-3lu" eventType="touchUpInside" id="HQm-L1-3ri"/>
+                                    <action selector="saveImageToPhone:" destination="3yA-PO-qgt" eventType="touchUpInside" id="nOO-rP-K2T"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VON-PI-4z0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TkD-lZ-oMz">
                                 <rect key="frame" x="207" y="20" width="62" height="44"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Done">
@@ -887,10 +887,10 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="doneButton:" destination="kQK-kI-3lu" eventType="touchUpInside" id="hwc-Ci-2gm"/>
+                                    <action selector="doneButton:" destination="3yA-PO-qgt" eventType="touchUpInside" id="dMm-Dt-avQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W6P-dZ-Ivo">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9cS-hC-c2p">
                                 <rect key="frame" x="139" y="63" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -899,15 +899,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="vSI-ge-Zwv"/>
+                    <navigationItem key="navigationItem" id="nrw-zm-GNT"/>
                     <connections>
-                        <outlet property="imageLabel" destination="W6P-dZ-Ivo" id="WVM-sU-KaH"/>
-                        <outlet property="imageView" destination="CYA-Jk-6Fg" id="xbl-d3-ie9"/>
+                        <outlet property="imageLabel" destination="9cS-hC-c2p" id="42G-yZ-WUt"/>
+                        <outlet property="imageView" destination="Teg-a0-5dS" id="78A-Ob-49k"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kUo-nI-gMh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m4M-so-4it" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="355" y="1745"/>
+            <point key="canvasLocation" x="-117" y="1771"/>
         </scene>
     </scenes>
     <resources>
