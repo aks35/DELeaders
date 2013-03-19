@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "LinksViewController.h"
 #import "AppDelegate.h"
 #import "Utility.h"
 
@@ -107,7 +107,7 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://aces.duke.edu/" ]];
 }
 
--(void)alertMessage:(NSString *)title:(NSString *)text {
+-(void)alertMessage:(NSString *)title text:(NSString *)text {
     UIAlertView *message = [[UIAlertView alloc] initWithTitle:title message:text delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [message show];    
 }

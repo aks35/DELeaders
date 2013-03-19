@@ -39,8 +39,8 @@ Utility *util;
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     util = [[Utility alloc]init];
-    [util loadWebView:@"https://sites.nicholas.duke.edu/delmeminfo/sample-page/draft-syllabi/" :detailsView];
-    [util loadWebView:@"https://sites.nicholas.duke.edu/delmeminfo/sample-page/semester-schedule/" :scheduleView];
+    [util loadWebView:@"https://sites.nicholas.duke.edu/delmeminfo/sample-page/draft-syllabi/" webView:detailsView];
+    [util loadWebView:@"https://sites.nicholas.duke.edu/delmeminfo/sample-page/semester-schedule/" webView:scheduleView];
 }
 
 - (void)viewDidUnload

@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIWebView *sakaiCalViewTemp;
 @property (weak, nonatomic) IBOutlet UIWebView *sakaiCalViewLoad;
 
-@property (strong, nonatomic) SakaiViewControllerHelper *helperController;
 - (void)setSelfAsWebViewsDelegate;
 - (void)goToWorkspacePage;
 - (void)goToCalendarPage;

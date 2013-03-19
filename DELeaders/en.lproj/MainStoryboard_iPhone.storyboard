@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="KuN-lb-aQ8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3103" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="KuN-lb-aQ8">
     <dependencies>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
+        <!--View Controller - Sign In-->
         <scene sceneID="vjs-FQ-mHI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pZe-o6-l88" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Fdh-S8-mTA" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gB5-MU-aMh">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
@@ -110,6 +109,7 @@
                         <outlet property="skipButton" destination="U4t-Xk-czz" id="Pbx-h2-Nwy"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pZe-o6-l88" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="tFv-IJ-gM7">
                     <connections>
                         <outlet property="delegate" destination="gB5-MU-aMh" id="beL-8Z-4bI"/>
@@ -118,9 +118,9 @@
             </objects>
             <point key="canvasLocation" x="-489" y="553"/>
         </scene>
+        <!--Navigation Controller-->
         <scene sceneID="QTq-Vo-XLG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ge1-Cp-kgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="KuN-lb-aQ8" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Ow6-iF-hTa">
                         <autoresizingMask key="autoresizingMask"/>
@@ -129,12 +129,13 @@
                         <segue destination="Fdh-S8-mTA" kind="relationship" relationship="rootViewController" id="5wx-MZ-7Z7"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ge1-Cp-kgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-489" y="-18"/>
         </scene>
+        <!--Courses View Controller - Schedule-->
         <scene sceneID="UfA-kR-qMm">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fRa-SA-1BK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="K2z-9g-VYx" customClass="CoursesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Whx-9g-JtX">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
@@ -153,12 +154,13 @@
                         <outlet property="scheduleView" destination="xUY-Ha-QT5" id="jLk-ct-h00"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fRa-SA-1BK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="599" y="-18"/>
         </scene>
+        <!--Courses View Controller - Details-->
         <scene sceneID="Bmm-8o-qg4">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rUG-c5-PbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="h6v-Cw-w8o" customClass="CoursesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pf8-L2-vYP">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
@@ -177,15 +179,16 @@
                         <outlet property="detailsView" destination="hjE-ci-KlS" id="H8i-wF-O41"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rUG-c5-PbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="257" y="-500"/>
         </scene>
+        <!--Tab Bar Controller - Courses-->
         <scene sceneID="dRo-X2-Wwe">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lXb-Hx-20y" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController definesPresentationContext="YES" id="Aay-pp-g1f" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Courses" id="32q-ak-jXv"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="RXa-uM-XYC">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -196,12 +199,13 @@
                         <segue destination="K2z-9g-VYx" kind="relationship" relationship="viewControllers" id="nMa-pX-Zzr"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lXb-Hx-20y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-116" y="-18"/>
         </scene>
+        <!--View Controller - Social Apps-->
         <scene sceneID="pM6-a8-Gep">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ahw-li-0gf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="dzt-6c-lZ5" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vwM-fJ-Jc5">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
@@ -265,12 +269,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Social Apps" id="oGf-2h-Wi1"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ahw-li-0gf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-489" y="1163"/>
         </scene>
+        <!--Sakai View Controller - Sakai-->
         <scene sceneID="htl-tp-80M">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="H0T-il-0TD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="aPS-nI-A4U" customClass="SakaiViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ccj-wu-B0U">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
@@ -310,37 +315,165 @@
                         <outlet property="sakaiWebViewTemp" destination="PXw-hY-GEZ" id="wkv-Ru-hlz"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H0T-il-0TD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-117" y="1167"/>
         </scene>
-        <scene sceneID="9UO-mL-suQ">
+        <!--Contacts View Controller - Contacts-->
+        <scene sceneID="3I0-NT-ZS7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nL8-Zw-63V" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="yGS-SN-yWj" customClass="ContactsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1ac-Jf-Wf3">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                <viewController id="oM4-4B-VFd" customClass="ContactsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eY9-AJ-x8M">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" id="CoW-8e-ZN2">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2gj-MY-3Pa">
+                                <rect key="frame" x="20" y="99" width="280" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Faculty">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="l10-4Y-rkS" kind="push" id="43M-gO-z0P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="v5G-Qk-9KW">
+                                <rect key="frame" x="20" y="178" width="280" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Students">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hGP-5l-NGc" kind="push" id="IUi-vi-5EP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gco-zn-iBc">
+                                <rect key="frame" x="20" y="257" width="280" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Others">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="eAV-MW-PHT" kind="push" id="oAZ-NX-6xl"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="top.png" id="mUQ-H1-hvv">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bottom3.png" id="pfD-n1-9qm">
+                                <rect key="frame" x="0.0" y="336" width="320" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contacts" id="0x2-aT-7Vl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XqX-CI-jtq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="355" y="1148"/>
+        </scene>
+        <!--Students View-->
+        <scene sceneID="wCC-BS-paz">
+            <objects>
+                <viewController id="hGP-5l-NGc" userLabel="Students View" customClass="ContactsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OVd-7p-2JJ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="XnQ-Ja-JYA">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                            <webView contentMode="scaleToFill" id="stL-Qw-tyo">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ahu-K1-19Q"/>
+                    <connections>
+                        <outlet property="studentsLoadView" destination="stL-Qw-tyo" id="ir3-au-nW4"/>
+                        <outlet property="studentsView" destination="XnQ-Ja-JYA" id="bZM-Pa-9kc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EK9-KD-Jtk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="771" y="1148"/>
+        </scene>
+        <!--Others View-->
+        <scene sceneID="wTO-GJ-cL5">
+            <objects>
+                <viewController id="eAV-MW-PHT" userLabel="Others View" customClass="ContactsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Xv-Lc-957">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="F4a-yz-k9p">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Faculty" id="hib-6l-xis"/>
+                    <navigationItem key="navigationItem" id="GZs-NS-9Qp"/>
                     <connections>
-                        <outlet property="facultyView" destination="CoW-8e-ZN2" id="F3q-zc-J75"/>
+                        <outlet property="othersView" destination="F4a-yz-k9p" id="xNm-cP-9i1"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1dQ-QC-XOi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="793" y="879"/>
+            <point key="canvasLocation" x="771" y="1745"/>
         </scene>
+        <!--Faculty View-->
+        <scene sceneID="cgL-Wg-BV0">
+            <objects>
+                <viewController id="l10-4Y-rkS" userLabel="Faculty View" customClass="ContactsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XBr-as-1fp">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="nQd-Ft-zUF">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cfT-8V-o5I"/>
+                    <connections>
+                        <outlet property="facultyView" destination="nQd-Ft-zUF" id="eoy-mG-Tky"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vYz-kU-zLL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="771" y="553"/>
+        </scene>
+        <!--Links - DELinks-->
         <scene sceneID="5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
-                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="2" customClass="Links" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -431,6 +564,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="2pR-eg-SpB" kind="push" id="Vgm-zs-0IZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4PO-D6-xPF">
                                 <rect key="frame" x="172" y="173" width="50" height="50"/>
@@ -474,7 +610,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Axt-Zd-tyV" kind="push" id="adA-Ru-u24"/>
+                                    <segue destination="oM4-4B-VFd" kind="push" id="9wv-HA-5U2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZIq-8U-H3c">
@@ -597,12 +733,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="DELinks" id="YwU-Zl-Aa0"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-116" y="553"/>
         </scene>
+        <!--Sakai Calendar View Controller - Sakai Calendar-->
         <scene sceneID="iDl-YR-D3y">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7pl-hz-amx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="bZN-vQ-nMg" customClass="SakaiCalendarViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8HH-2e-Kq8">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
@@ -613,11 +750,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <outlet property="delegate" destination="bZN-vQ-nMg" id="SDu-2e-Vzp"/>
+                                    <outlet property="delegate" destination="8HH-2e-Kq8" id="p96-FO-DJs"/>
                                 </connections>
                             </webView>
                             <webView contentMode="scaleToFill" id="8R7-0p-tZa">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="-7" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -625,9 +762,12 @@
                                 </connections>
                             </webView>
                             <webView contentMode="scaleToFill" id="N3Q-Ir-aEq">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="-7" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="bZN-vQ-nMg" id="hcO-uy-UCn"/>
+                                </connections>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -639,75 +779,135 @@
                         <outlet property="sakaiCalViewTemp" destination="8R7-0p-tZa" id="4Od-ey-rlk"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7pl-hz-amx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="355" y="553"/>
         </scene>
-        <scene sceneID="GBS-Pw-rhF">
+        <!--View Controller - Images-->
+        <scene sceneID="vuX-ky-cbI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zo1-Yj-Mh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tabBarController id="Axt-Zd-tyV" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Contacts" id="eV5-aO-wYa"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="1F0-40-c80">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="yGS-SN-yWj" kind="relationship" relationship="viewControllers" id="MMe-vW-J9G"/>
-                        <segue destination="xKf-O1-wk9" kind="relationship" relationship="viewControllers" id="1ww-7A-6pM"/>
-                        <segue destination="fff-DF-Oyx" kind="relationship" relationship="viewControllers" id="Bc6-yb-WWq"/>
-                    </connections>
-                </tabBarController>
-            </objects>
-            <point key="canvasLocation" x="339" y="1163"/>
-        </scene>
-        <scene sceneID="m5l-c1-PXW">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="COV-sk-fbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="fff-DF-Oyx" customClass="ContactsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rPD-eY-mgP">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                <viewController id="2pR-eg-SpB" customClass="_LR4NFPD9GViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d0k-SJ-GO0">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" id="wPq-7T-tXV">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="m3O-Z4-e51">
+                                <rect key="frame" x="20" y="15" width="142" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Upload a picture">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pickAnImage:" destination="2pR-eg-SpB" eventType="touchUpInside" id="azS-D6-ixe"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="Iur-Dy-rVn">
+                                <rect key="frame" x="20" y="0.0" width="280" height="437"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1UW-8Z-dbx">
+                                    <size key="itemSize" width="129" height="130"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="simpleCellID" id="Ylo-cR-UTL" customClass="s3ImageCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="129" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="129" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" id="kNd-VX-3Z0" customClass="UIImageView">
+                                                    <rect key="frame" x="0.0" y="52" width="129" height="130"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="imageView" destination="kNd-VX-3Z0" id="Jgd-QK-gx7"/>
+                                            <segue destination="kQK-kI-3lu" kind="modal" id="HnX-a7-ggf"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="2pR-eg-SpB" id="J3f-ta-pwT"/>
+                                    <outlet property="delegate" destination="2pR-eg-SpB" id="v8M-aH-UnP"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Others" id="iY4-T1-7s4"/>
+                    <navigationItem key="navigationItem" title="Images" id="aIS-HE-MEj"/>
                     <connections>
-                        <outlet property="othersView" destination="wPq-7T-tXV" id="eLU-4f-cAw"/>
+                        <outlet property="collectionView" destination="Iur-Dy-rVn" id="j7w-g8-Byf"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pEL-jG-fQ6" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="339" y="1750"/>
+            <point key="canvasLocation" x="-116" y="1745"/>
         </scene>
-        <scene sceneID="jOr-rT-RUj">
+        <!--Photo Detail View Controller-->
+        <scene sceneID="ExK-IF-Mpw">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="O9G-lV-wsO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="xKf-O1-wk9" customClass="ContactsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FsO-jV-1u8">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                <viewController id="kQK-kI-3lu" customClass="photoDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z6E-Jo-Vt2">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" id="2zq-r0-6Lt">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="CYA-Jk-6Fg">
+                                <rect key="frame" x="20" y="62" width="280" height="377"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ofT-Rc-nYR">
+                                <rect key="frame" x="25" y="20" width="128" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Save to Phone">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveImageToPhone:" destination="kQK-kI-3lu" eventType="touchUpInside" id="HQm-L1-3ri"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VON-PI-4z0">
+                                <rect key="frame" x="207" y="20" width="62" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButton:" destination="kQK-kI-3lu" eventType="touchUpInside" id="hwc-Ci-2gm"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W6P-dZ-Ivo">
+                                <rect key="frame" x="139" y="63" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Students" id="omg-oN-i3e"/>
+                    <navigationItem key="navigationItem" id="vSI-ge-Zwv"/>
                     <connections>
-                        <outlet property="studentsView" destination="2zq-r0-6Lt" id="guH-F7-jnf"/>
+                        <outlet property="imageLabel" destination="W6P-dZ-Ivo" id="WVM-sU-KaH"/>
+                        <outlet property="imageView" destination="CYA-Jk-6Fg" id="xbl-d3-ie9"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kUo-nI-gMh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="793" y="1453"/>
+            <point key="canvasLocation" x="355" y="1745"/>
         </scene>
     </scenes>
     <resources>
@@ -721,6 +921,90 @@
         <image name="twitterButton.png" width="242" height="56"/>
         <image name="wordpress.png" width="100" height="100"/>
     </resources>
+    <classes>
+        <class className="ContactsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="facultyView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="othersView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="studentsLoadView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="studentsView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="CoursesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoursesViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="detailsView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="scheduleView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="SakaiCalendarViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SakaiCalendarViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="sakaiCalView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="sakaiCalViewLoad" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="sakaiCalViewTemp" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="SakaiViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SakaiViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="sakaiWebView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="sakaiWebViewLoad" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="sakaiWebViewTemp" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="openACES:"/>
+                <relationship kind="action" name="openDEL:"/>
+                <relationship kind="action" name="openFacebook:"/>
+                <relationship kind="action" name="openLibrary:"/>
+                <relationship kind="action" name="openLinkedIn:"/>
+                <relationship kind="action" name="openNSE:"/>
+                <relationship kind="action" name="openTwitter:"/>
+                <relationship kind="action" name="openWP:"/>
+                <relationship kind="action" name="pressEnterButton:"/>
+                <relationship kind="outlet" name="enterButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="netIdField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="skipButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="_LR4NFPD9GViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/_LR4NFPD9GViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="pickAnImage:"/>
+                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
+            </relationships>
+        </class>
+        <class className="photoDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/photoDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneButton:"/>
+                <relationship kind="action" name="saveImageToPhone:"/>
+                <relationship kind="outlet" name="imageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="s3ImageCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/s3ImageCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

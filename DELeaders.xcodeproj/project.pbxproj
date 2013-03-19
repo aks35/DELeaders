@@ -37,7 +37,7 @@
 		317D103916C1ECF2007EBF76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 317D103816C1ECF2007EBF76 /* AppDelegate.m */; };
 		317D103C16C1ECF2007EBF76 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317D103A16C1ECF2007EBF76 /* MainStoryboard_iPhone.storyboard */; };
 		317D103F16C1ECF2007EBF76 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317D103D16C1ECF2007EBF76 /* MainStoryboard_iPad.storyboard */; };
-		317D104216C1ECF2007EBF76 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 317D104116C1ECF2007EBF76 /* ViewController.m */; };
+		317D104216C1ECF2007EBF76 /* LinksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 317D104116C1ECF2007EBF76 /* LinksViewController.m */; };
 		317D104A16C1ECF2007EBF76 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 317D104916C1ECF2007EBF76 /* SenTestingKit.framework */; };
 		317D104B16C1ECF2007EBF76 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 317D102816C1ECF2007EBF76 /* UIKit.framework */; };
 		317D104C16C1ECF2007EBF76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 317D102A16C1ECF2007EBF76 /* Foundation.framework */; };
@@ -50,6 +50,13 @@
 		3194987C16C4F492000CDA09 /* bottom2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3194987B16C4F492000CDA09 /* bottom2.png */; };
 		3194987E16C4F526000CDA09 /* LOGO2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3194987D16C4F526000CDA09 /* LOGO2.png */; };
 		31BF5C5D16C310D200B1CC64 /* del-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 31BF5C5C16C310D200B1CC64 /* del-icon.png */; };
+		6D6115D416F0326200CAE42E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6115D316F0326200CAE42E /* Default-568h@2x.png */; };
+		6D92DD0B16F8F72900AE0AD7 /* AmazonClientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DD0216F8F72900AE0AD7 /* AmazonClientManager.m */; };
+		6D92DD0C16F8F72900AE0AD7 /* _LR4NFPD9GAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DD0416F8F72900AE0AD7 /* _LR4NFPD9GAppDelegate.m */; };
+		6D92DD0D16F8F72900AE0AD7 /* photoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DD0616F8F72900AE0AD7 /* photoDetailViewController.m */; };
+		6D92DD0E16F8F72900AE0AD7 /* _LR4NFPD9GViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DD0816F8F72900AE0AD7 /* _LR4NFPD9GViewController.m */; };
+		6D92DD0F16F8F72900AE0AD7 /* s3ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DD0A16F8F72900AE0AD7 /* s3ImageCell.m */; };
+		6D92DD1516F8F8FB00AE0AD7 /* AWSiOSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D92DD1416F8F8FB00AE0AD7 /* AWSiOSSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,8 +112,8 @@
 		317D103816C1ECF2007EBF76 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		317D103B16C1ECF2007EBF76 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		317D103E16C1ECF2007EBF76 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		317D104016C1ECF2007EBF76 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		317D104116C1ECF2007EBF76 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		317D104016C1ECF2007EBF76 /* LinksViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinksViewController.h; sourceTree = "<group>"; };
+		317D104116C1ECF2007EBF76 /* LinksViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinksViewController.m; sourceTree = "<group>"; };
 		317D104816C1ECF2007EBF76 /* DELeadersTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DELeadersTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		317D104916C1ECF2007EBF76 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		317D105116C1ECF2007EBF76 /* DELeadersTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DELeadersTests-Info.plist"; sourceTree = "<group>"; };
@@ -120,6 +127,18 @@
 		3194987B16C4F492000CDA09 /* bottom2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom2.png; sourceTree = "<group>"; };
 		3194987D16C4F526000CDA09 /* LOGO2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGO2.png; sourceTree = "<group>"; };
 		31BF5C5C16C310D200B1CC64 /* del-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "del-icon.png"; path = "../../../Dropbox/DELeaders/del-icon.png"; sourceTree = "<group>"; };
+		6D6115D316F0326200CAE42E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		6D92DD0116F8F72900AE0AD7 /* AmazonClientManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AmazonClientManager.h; path = ../../s3ImageApp/S3Uploader/AmazonClientManager.h; sourceTree = "<group>"; };
+		6D92DD0216F8F72900AE0AD7 /* AmazonClientManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AmazonClientManager.m; path = ../../s3ImageApp/S3Uploader/AmazonClientManager.m; sourceTree = "<group>"; };
+		6D92DD0316F8F72900AE0AD7 /* _LR4NFPD9GAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _LR4NFPD9GAppDelegate.h; path = ../../s3ImageApp/S3Uploader/_LR4NFPD9GAppDelegate.h; sourceTree = "<group>"; };
+		6D92DD0416F8F72900AE0AD7 /* _LR4NFPD9GAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _LR4NFPD9GAppDelegate.m; path = ../../s3ImageApp/S3Uploader/_LR4NFPD9GAppDelegate.m; sourceTree = "<group>"; };
+		6D92DD0516F8F72900AE0AD7 /* photoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = photoDetailViewController.h; path = ../../s3ImageApp/S3Uploader/photoDetailViewController.h; sourceTree = "<group>"; };
+		6D92DD0616F8F72900AE0AD7 /* photoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = photoDetailViewController.m; path = ../../s3ImageApp/S3Uploader/photoDetailViewController.m; sourceTree = "<group>"; };
+		6D92DD0716F8F72900AE0AD7 /* _LR4NFPD9GViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _LR4NFPD9GViewController.h; path = ../../s3ImageApp/S3Uploader/_LR4NFPD9GViewController.h; sourceTree = "<group>"; };
+		6D92DD0816F8F72900AE0AD7 /* _LR4NFPD9GViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _LR4NFPD9GViewController.m; path = ../../s3ImageApp/S3Uploader/_LR4NFPD9GViewController.m; sourceTree = "<group>"; };
+		6D92DD0916F8F72900AE0AD7 /* s3ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = s3ImageCell.h; path = ../../s3ImageApp/S3Uploader/s3ImageCell.h; sourceTree = "<group>"; };
+		6D92DD0A16F8F72900AE0AD7 /* s3ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = s3ImageCell.m; path = ../../s3ImageApp/S3Uploader/s3ImageCell.m; sourceTree = "<group>"; };
+		6D92DD1416F8F8FB00AE0AD7 /* AWSiOSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSiOSSDK.framework; path = "../../Downloads/aws-ios-sdk-1.4.6/AWSiOSSDK.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +149,7 @@
 				317D102916C1ECF2007EBF76 /* UIKit.framework in Frameworks */,
 				317D102B16C1ECF2007EBF76 /* Foundation.framework in Frameworks */,
 				317D102D16C1ECF2007EBF76 /* CoreGraphics.framework in Frameworks */,
+				6D92DD1516F8F8FB00AE0AD7 /* AWSiOSSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +169,7 @@
 		317D101916C1ECF2007EBF76 = {
 			isa = PBXGroup;
 			children = (
+				6D6115D316F0326200CAE42E /* Default-568h@2x.png */,
 				317D102E16C1ECF2007EBF76 /* DELeaders */,
 				317D104F16C1ECF2007EBF76 /* DELeadersTests */,
 				317D102716C1ECF2007EBF76 /* Frameworks */,
@@ -168,6 +189,7 @@
 		317D102716C1ECF2007EBF76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6D92DD1416F8F8FB00AE0AD7 /* AWSiOSSDK.framework */,
 				317D102816C1ECF2007EBF76 /* UIKit.framework */,
 				317D102A16C1ECF2007EBF76 /* Foundation.framework */,
 				317D102C16C1ECF2007EBF76 /* CoreGraphics.framework */,
@@ -179,35 +201,28 @@
 		317D102E16C1ECF2007EBF76 /* DELeaders */ = {
 			isa = PBXGroup;
 			children = (
+				6D92DD0016F8F6E800AE0AD7 /* ImageApp */,
+				6D92DCF916F8F62700AE0AD7 /* SakaiControllers */,
 				314B577016E328970065B50D /* MBProgressHUD.m */,
 				314B576F16E3288F0065B50D /* MBProgressHUD.h */,
 				317D103716C1ECF2007EBF76 /* AppDelegate.h */,
 				317D103816C1ECF2007EBF76 /* AppDelegate.m */,
 				317D103A16C1ECF2007EBF76 /* MainStoryboard_iPhone.storyboard */,
 				317D103D16C1ECF2007EBF76 /* MainStoryboard_iPad.storyboard */,
-				317D104016C1ECF2007EBF76 /* ViewController.h */,
-				317D104116C1ECF2007EBF76 /* ViewController.m */,
-				317D102F16C1ECF2007EBF76 /* Supporting Files */,
+				317D104016C1ECF2007EBF76 /* LinksViewController.h */,
+				317D104116C1ECF2007EBF76 /* LinksViewController.m */,
 				314B574916DFC7E20065B50D /* LoadingAnimViewController.h */,
 				314B574A16DFC7E20065B50D /* LoadingAnimViewController.m */,
 				314B574B16DFC7E20065B50D /* LoadingAnimViewController.xib */,
 				314B575816E176230065B50D /* ContactsViewController.h */,
 				314B575916E176230065B50D /* ContactsViewController.m */,
 				314B575A16E176230065B50D /* ContactsViewController.xib */,
-				314B575D16E27E8E0065B50D /* SakaiViewController.h */,
-				314B575E16E27E8E0065B50D /* SakaiViewController.m */,
-				314B575F16E27E8E0065B50D /* SakaiViewController.xib */,
 				314B576216E280810065B50D /* Utility.h */,
 				314B576316E280810065B50D /* Utility.m */,
-				314B576516E3164F0065B50D /* SakaiCalendarViewController.h */,
-				314B576616E3164F0065B50D /* SakaiCalendarViewController.m */,
-				314B576716E316500065B50D /* SakaiCalendarViewController.xib */,
-				314B576A16E317B00065B50D /* SakaiViewControllerHelper.h */,
-				314B576B16E317B00065B50D /* SakaiViewControllerHelper.m */,
-				314B576C16E317B00065B50D /* SakaiViewControllerHelper.xib */,
 				310E538716E66734001395E5 /* CoursesViewController.h */,
 				310E538816E66734001395E5 /* CoursesViewController.m */,
 				310E538916E66734001395E5 /* CoursesViewController.xib */,
+				317D102F16C1ECF2007EBF76 /* Supporting Files */,
 			);
 			path = DELeaders;
 			sourceTree = "<group>";
@@ -257,6 +272,39 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6D92DCF916F8F62700AE0AD7 /* SakaiControllers */ = {
+			isa = PBXGroup;
+			children = (
+				314B576516E3164F0065B50D /* SakaiCalendarViewController.h */,
+				314B576616E3164F0065B50D /* SakaiCalendarViewController.m */,
+				314B576716E316500065B50D /* SakaiCalendarViewController.xib */,
+				314B576A16E317B00065B50D /* SakaiViewControllerHelper.h */,
+				314B576B16E317B00065B50D /* SakaiViewControllerHelper.m */,
+				314B576C16E317B00065B50D /* SakaiViewControllerHelper.xib */,
+				314B575D16E27E8E0065B50D /* SakaiViewController.h */,
+				314B575E16E27E8E0065B50D /* SakaiViewController.m */,
+				314B575F16E27E8E0065B50D /* SakaiViewController.xib */,
+			);
+			name = SakaiControllers;
+			sourceTree = "<group>";
+		};
+		6D92DD0016F8F6E800AE0AD7 /* ImageApp */ = {
+			isa = PBXGroup;
+			children = (
+				6D92DD0116F8F72900AE0AD7 /* AmazonClientManager.h */,
+				6D92DD0216F8F72900AE0AD7 /* AmazonClientManager.m */,
+				6D92DD0316F8F72900AE0AD7 /* _LR4NFPD9GAppDelegate.h */,
+				6D92DD0416F8F72900AE0AD7 /* _LR4NFPD9GAppDelegate.m */,
+				6D92DD0516F8F72900AE0AD7 /* photoDetailViewController.h */,
+				6D92DD0616F8F72900AE0AD7 /* photoDetailViewController.m */,
+				6D92DD0716F8F72900AE0AD7 /* _LR4NFPD9GViewController.h */,
+				6D92DD0816F8F72900AE0AD7 /* _LR4NFPD9GViewController.m */,
+				6D92DD0916F8F72900AE0AD7 /* s3ImageCell.h */,
+				6D92DD0A16F8F72900AE0AD7 /* s3ImageCell.m */,
+			);
+			name = ImageApp;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -302,7 +350,7 @@
 		317D101B16C1ECF2007EBF76 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = 317D101E16C1ECF2007EBF76 /* Build configuration list for PBXProject "DELeaders" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -351,6 +399,7 @@
 				314B576916E316500065B50D /* SakaiCalendarViewController.xib in Resources */,
 				314B576E16E317B00065B50D /* SakaiViewControllerHelper.xib in Resources */,
 				310E538B16E66734001395E5 /* CoursesViewController.xib in Resources */,
+				6D6115D416F0326200CAE42E /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +436,7 @@
 			files = (
 				317D103516C1ECF2007EBF76 /* main.m in Sources */,
 				317D103916C1ECF2007EBF76 /* AppDelegate.m in Sources */,
-				317D104216C1ECF2007EBF76 /* ViewController.m in Sources */,
+				317D104216C1ECF2007EBF76 /* LinksViewController.m in Sources */,
 				314B574C16DFC7E20065B50D /* LoadingAnimViewController.m in Sources */,
 				314B575B16E176230065B50D /* ContactsViewController.m in Sources */,
 				314B576016E27E8E0065B50D /* SakaiViewController.m in Sources */,
@@ -396,6 +445,11 @@
 				314B576D16E317B00065B50D /* SakaiViewControllerHelper.m in Sources */,
 				314B577116E328980065B50D /* MBProgressHUD.m in Sources */,
 				310E538A16E66734001395E5 /* CoursesViewController.m in Sources */,
+				6D92DD0B16F8F72900AE0AD7 /* AmazonClientManager.m in Sources */,
+				6D92DD0C16F8F72900AE0AD7 /* _LR4NFPD9GAppDelegate.m in Sources */,
+				6D92DD0D16F8F72900AE0AD7 /* photoDetailViewController.m in Sources */,
+				6D92DD0E16F8F72900AE0AD7 /* _LR4NFPD9GViewController.m in Sources */,
+				6D92DD0F16F8F72900AE0AD7 /* s3ImageCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +513,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -472,6 +530,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
@@ -485,12 +544,17 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
@@ -503,6 +567,10 @@
 		317D105B16C1ECF2007EBF76 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Downloads/aws-ios-sdk-1.4.6\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DELeaders/DELeaders-Prefix.pch";
 				INFOPLIST_FILE = "DELeaders/DELeaders-Info.plist";
@@ -514,6 +582,10 @@
 		317D105C16C1ECF2007EBF76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Downloads/aws-ios-sdk-1.4.6\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DELeaders/DELeaders-Prefix.pch";
 				INFOPLIST_FILE = "DELeaders/DELeaders-Info.plist";

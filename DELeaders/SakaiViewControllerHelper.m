@@ -17,8 +17,6 @@
 
 NSString *const NO_LINK_TAG = @"THERE WAS NO LINK RETURNED";
 
-bool pageVisited;
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,12 +41,6 @@ bool pageVisited;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    if (!pageVisited) { // Init bool if not YES
-        pageVisited = NO;
-    }
-    if (!inWorkspace) {
-        inWorkspace = NO;
-    }
 }
 
 - (void)viewDidUnload
@@ -64,7 +56,7 @@ bool pageVisited;
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (NSString *)clickLoginLink:(UIWebView *)webView:(UIWebView *)tempWebView {
+- (NSString *)clickLoginLink:(UIWebView *)webView tempWebView:(UIWebView *)tempWebView {
     NSString *linkExists = [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.getElementById('loginLink1')==null"]]; 
     if ([linkExists isEqualToString:@"false"]) {
         NSString *href = [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.getElementById('loginLink1').href;"]];
@@ -74,7 +66,7 @@ bool pageVisited;
     return NO_LINK_TAG;
 }
 
-- (void)initSakaiSubView:(NSString *)urlString:(UIWebView *)webView
+- (void)initSakaiSubView:(NSString *)urlString webView:(UIWebView *)webView
 {
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
@@ -93,7 +85,6 @@ bool pageVisited;
         javaScriptString = @"document.getElementById('j_username').value='%@';document.getElementById('j_password').value='%@';var d = document.getElementById('portlet-content'); var k = d.getElementsByTagName('form')[0]; k.submit();";
         javaScriptString = [NSString stringWithFormat: javaScriptString, netId, password];
         [webView stringByEvaluatingJavaScriptFromString: javaScriptString];
-        pageVisited = YES;
     }    
 }
 
@@ -103,11 +94,5 @@ bool pageVisited;
     NSLog(@"Current URI: %@", result);
 }
 
-- (BOOL)loggedIntoSakai {
-    if (pageVisited) {
-        return YES;
-    }
-    return NO;
-}
 
 @end

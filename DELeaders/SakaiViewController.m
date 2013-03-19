@@ -18,9 +18,10 @@ MBProgressHUD *hud;
 @synthesize sakaiWebView;
 @synthesize sakaiWebViewTemp;
 @synthesize sakaiWebViewLoad;
-@synthesize helperController;
 
+SakaiViewControllerHelper *helperController;
 Utility *util;
+bool loggedIntoSakai;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,7 +48,7 @@ Utility *util;
     // Do any additional setup after loading the view from its nib.
     [self setSelfAsWebViewsDelegate];
     util = [[Utility alloc]init];
-    [util loadWebView:@"https://sakai.duke.edu/portal/pda/?force.login=yes":sakaiWebView];
+    [util loadWebView:@"https://sakai.duke.edu/portal/pda/?force.login=yes" webView:sakaiWebView];
     sakaiWebViewLoad.opaque = NO;
     sakaiWebViewLoad.backgroundColor = [UIColor clearColor];
     hud = [[MBProgressHUD alloc]init];
@@ -60,7 +61,7 @@ Utility *util;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    if ([helperController loggedIntoSakai]) {
+    if (loggedIntoSakai) {
         if ([hud.labelText length] != 0) {
             [sakaiWebViewTemp setHidden:NO];
             [MBProgressHUD hideHUDForView:sakaiWebViewLoad animated:YES];
@@ -68,15 +69,16 @@ Utility *util;
         [sakaiWebView setHidden:NO];
     } else if ([webView isEqual:sakaiWebViewTemp]) {
         [helperController fillSakaiSubViewForm:webView];
-    } else if (![helperController loggedIntoSakai]) {
+        loggedIntoSakai = YES;
+    } else if (!loggedIntoSakai) {
         [sakaiWebViewLoad setHidden:NO];
         hud = [MBProgressHUD showHUDAddedTo:sakaiWebViewLoad animated:YES];
         hud.labelText = @"Logging into Sakai";
         NSLog(@"Page not visited");
         if ([webView isEqual:sakaiWebView]) {
-            NSString *href = [helperController clickLoginLink:sakaiWebView :sakaiWebViewTemp];
+            NSString *href = [helperController clickLoginLink:sakaiWebView tempWebView:sakaiWebViewTemp];
             if (![href isEqualToString:helperController.NO_LINK_TAG]) {
-                [helperController initSakaiSubView:href :sakaiWebViewTemp];
+                [helperController initSakaiSubView:href webView:sakaiWebViewTemp];
                 [self.view bringSubviewToFront:sakaiWebViewTemp];
             }
         }  

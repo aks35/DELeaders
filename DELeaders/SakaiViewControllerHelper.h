@@ -10,11 +10,10 @@
 
 @interface SakaiViewControllerHelper : UIViewController
 
-- (void)initSakaiSubView:(NSString *)urlString:(UIWebView *)webView;
+- (void)initSakaiSubView:(NSString *)urlString webView:(UIWebView *)webView;
 - (void)fillSakaiSubViewForm:(UIWebView *)webView;
-- (NSString *)clickLoginLink:(UIWebView *)webView:(UIWebView *)tempWebView;
+- (NSString *)clickLoginLink:(UIWebView *)webView tempWebView:(UIWebView *)tempWebView;
 - (void)printCurrentURL:(UIWebView *)webView;
-- (BOOL)loggedIntoSakai;
 - (BOOL)inWorkspace;
 
 @property (weak, nonatomic) NSString *netId;

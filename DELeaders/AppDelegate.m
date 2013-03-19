@@ -14,7 +14,7 @@
 @synthesize netID = _netID;
 @synthesize password = _password;
 
-- (void)loadWebView:(NSString *)fullURL:(UIWebView *)webView {
+- (void)loadWebView:(NSString *)fullURL webView:(UIWebView *)webView {
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [webView loadRequest:requestObj];

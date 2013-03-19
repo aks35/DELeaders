@@ -19,13 +19,11 @@ NSString *calendarURL;
 @synthesize sakaiCalView;
 @synthesize sakaiCalViewTemp;
 @synthesize sakaiCalViewLoad;
-@synthesize helperController;
 
+SakaiViewControllerHelper *helperController;
 Utility *util;
-bool goingIntoCalView = NO;
-bool inCalendar = NO;
+bool goingIntoCalView, inCalendar, calendarRendered, loggedIntoSakai;
 bool loggedInApriori = YES;
-bool calendarRendered = NO;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,10 +51,10 @@ bool calendarRendered = NO;
     [sakaiCalViewTemp setHidden:YES];
     if (calendarRendered) {
         [sakaiCalView setHidden:NO];
-        [util loadWebView:calendarURL:sakaiCalView];
+        [util loadWebView:calendarURL webView:sakaiCalView];
     } else {
         [sakaiCalView setHidden:YES];
-        [util loadWebView:@"https://sakai.duke.edu/portal/pda":sakaiCalView];            
+        [util loadWebView:@"https://sakai.duke.edu/portal/pda" webView:sakaiCalView];
     }
     util = [[Utility alloc]init];
     hud = [[MBProgressHUD alloc]init];
@@ -67,12 +65,11 @@ bool calendarRendered = NO;
 
 - (void)goToPageTemplate:(NSString *)index {
     NSString *javascript = @"var str;var links = document.getElementsByTagName('a');for(var i=0; i<links.length; ++i){if(links[i].innerHTML.indexOf('%@')!==-1){str=links[i].href;break;}}str;";
-//    NSString *javascript = @"var str;var links = document.getElementsByTagName('a');for(var i=0; i<links.length; ++i){str += links[i].href;}str;";
     javascript = [NSString stringWithFormat:javascript, index];
     NSString *result = [sakaiCalView stringByEvaluatingJavaScriptFromString:javascript];
     NSLog(@"JAVASCRIPT: %@", javascript);
     NSLog(@"RESULT BUZZ: %@", result);
-    [util loadWebView:result :sakaiCalView];
+    [util loadWebView:result webView:sakaiCalView];
     if ([index isEqualToString:@"Calendar"]) {
         calendarURL = result;
         calendarRendered = YES;
@@ -89,28 +86,25 @@ bool calendarRendered = NO;
     inCalendar = YES;
 }
 
-- (void)webViewDidStartLoad:(UIWebView *)webView {
-    if (calendarRendered) {
-
-    }
-}
-
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
+    NSLog(@"HELLO");
+
     if (calendarRendered && !loggedInApriori) {
         [sakaiCalView setHidden:NO];
         [self.view bringSubviewToFront:sakaiCalView];
     } else if ([webView isEqual:sakaiCalViewTemp]) {
-        if ([helperController loggedIntoSakai]) {
-            [util loadWebView:@"https://sakai.duke.edu/portal/pda":sakaiCalView];
+        if (loggedIntoSakai) {
+            [util loadWebView:@"https://sakai.duke.edu/portal/pda" webView:sakaiCalView];
         } else {
-            NSString *href = [helperController clickLoginLink:sakaiCalViewTemp :sakaiCalViewTemp];
+            NSString *href = [helperController clickLoginLink:sakaiCalViewTemp tempWebView:sakaiCalViewTemp];
             if (![href isEqualToString:helperController.NO_LINK_TAG]) {
-                [helperController initSakaiSubView:href :sakaiCalViewTemp];
+                [helperController initSakaiSubView:href webView:sakaiCalViewTemp];
                 loggedInApriori = NO;
                 [helperController fillSakaiSubViewForm:sakaiCalViewTemp];
+                loggedIntoSakai = YES;
             }
         }
-    } else if (![helperController loggedIntoSakai]) {
+    } else if (!loggedIntoSakai) {
         if ([webView isEqual:sakaiCalView]) {
             [sakaiCalViewLoad setHidden:NO];
             hud = [MBProgressHUD showHUDAddedTo:sakaiCalViewLoad animated:YES];
@@ -118,11 +112,11 @@ bool calendarRendered = NO;
             NSString *linkExists = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('loginLink')[0]==null;"];
             NSLog(@"%@", linkExists);
             if ([linkExists isEqualToString:@"false"]) {
-                [helperController initSakaiSubView:@"https://sakai.duke.edu/portal/pda/?force.login=yes":sakaiCalViewTemp];
+                [helperController initSakaiSubView:@"https://sakai.duke.edu/portal/pda/?force.login=yes" webView:sakaiCalViewTemp];
                 [self.view addSubview:sakaiCalViewTemp]; 
             }
         } 
-    } else if ([helperController loggedIntoSakai]) {
+    } else if (loggedIntoSakai) {
         if (loggedInApriori) {
             NSLog(@"Logged in before, reloading");
             loggedInApriori = NO;
@@ -171,7 +165,7 @@ bool calendarRendered = NO;
 
 - (void)setSelfAsWebViewsDelegate {
     [sakaiCalView setDelegate:self];
-    [sakaiCalView setDelegate:self];
+    [sakaiCalViewTemp setDelegate:self];
 }
 
 @end

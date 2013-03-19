@@ -29,7 +29,7 @@
 - (void)registerForKeyboardNotifications;
 - (void)unregisterForKeyboardNotifications;
 - (void)checkForNetIdAndPassword;
-- (void)alertMessage:(NSString *)title:(NSString *)text;
+- (void)alertMessage:(NSString *)title text:(NSString *)text;
 
 @property (weak, nonatomic) UIView *activeField;
 @property (weak, nonatomic) NSString *netId;

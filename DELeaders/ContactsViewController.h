@@ -9,13 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface ContactsViewController : UIViewController <UIWebViewDelegate>
-
 @property (weak, nonatomic) IBOutlet UIWebView *facultyView;
 @property (weak, nonatomic) IBOutlet UIWebView *studentsView;
 @property (weak, nonatomic) IBOutlet UIWebView *othersView;
+@property (weak, nonatomic) IBOutlet UIWebView *studentsLoadView;
 
-- (void)loadWebView:(NSString *)fullURL:(UIWebView *)webView;
-- (void)setSelfAsWebViewsDelegate;
-- (void)goToPageTempalte:(NSString *)index;
-
+- (void)goToPageTemplate:(NSString *)index;
+- (bool)loggedIntoWordpress;
 @end
