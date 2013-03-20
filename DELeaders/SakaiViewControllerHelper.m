@@ -66,18 +66,12 @@ NSString *const NO_LINK_TAG = @"THERE WAS NO LINK RETURNED";
     return NO_LINK_TAG;
 }
 
-- (void)initSakaiSubView:(NSString *)urlString webView:(UIWebView *)webView
-{
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    [webView loadRequest:requestObj];
-} 
-
 - (void)fillSakaiSubViewForm:(UIWebView *)webView {
     NSString* javaScriptString = @"document.getElementById('j_username')==null;";
     NSString *result = [webView stringByEvaluatingJavaScriptFromString: javaScriptString];
     if ([result isEqualToString:@"true"]) {
         //        [self.view setHidden:NO];
+        NSLog(@"COULD NOT Fill Sakai form");
     } else {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         netId = [defaults objectForKey:@"netId"];

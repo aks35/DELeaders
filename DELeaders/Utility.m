@@ -11,6 +11,7 @@
 @implementation Utility
 
 - (void)loadWebView:(NSString *)fullURL webView:(UIWebView *)webView {
+    NSLog(@"Loading web view: %@",fullURL);
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [webView loadRequest:requestObj];

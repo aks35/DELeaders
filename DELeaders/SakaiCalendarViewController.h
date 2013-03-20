@@ -10,10 +10,10 @@
 #import "SakaiViewControllerHelper.h"
 
 @interface SakaiCalendarViewController : UIViewController <UIWebViewDelegate>
-
 @property (weak, nonatomic) IBOutlet UIWebView *sakaiCalView;
 @property (weak, nonatomic) IBOutlet UIWebView *sakaiCalViewTemp;
 @property (weak, nonatomic) IBOutlet UIWebView *sakaiCalViewLoad;
+
 
 - (void)setSelfAsWebViewsDelegate;
 - (void)goToWorkspacePage;

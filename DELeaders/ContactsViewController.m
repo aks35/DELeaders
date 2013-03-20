@@ -11,19 +11,17 @@
 #import "SakaiViewControllerHelper.h"
 #import "MBProgressHUD.h"
 
-MBProgressHUD *hud;
-
 @implementation ContactsViewController
+
 @synthesize facultyView;
 @synthesize studentsView;
 @synthesize othersView;
 @synthesize studentsLoadView;
 
+MBProgressHUD *hud;
 Utility *util;
 SakaiViewControllerHelper *helperController;
-bool atLoginPage;
-bool clickedLoginLink, filledOutSakaiForm;
-bool loggedIn, atStudentDirectory, loadedStudentsDirectory;
+bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -82,7 +80,7 @@ bool loggedIn, atStudentDirectory, loadedStudentsDirectory;
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void)goToPageTempalte:(NSString *)index {
+- (void)goToPageTemplate:(NSString *)index {
     NSString *javascript = @"var str;var links = document.getElementsByTagName('a');for(var i=0; i<links.length; ++i){if(links[i].innerHTML.indexOf('%@')!==-1){str=links[i].href;break;}}str;";
     //    NSString *javascript = @"var str;var links = document.getElementsByTagName('a');for(var i=0; i<links.length; ++i){str += links[i].href;}str;";
     javascript = [NSString stringWithFormat:javascript, index];
@@ -121,14 +119,14 @@ bool loggedIn, atStudentDirectory, loadedStudentsDirectory;
         }
         else if (clickedLoginLink && !atLoginPage) {
             atLoginPage = YES;
-            [self goToPageTempalte:@"Click Here"];
+            [self goToPageTemplate:@"Click Here"];
         }
         else if (!clickedLoginLink && !atLoginPage) {
             hud = [MBProgressHUD showHUDAddedTo:studentsLoadView animated:YES];
             hud.labelText = @"Logging into Wordpress";
             NSLog(@"In STUDENTS VIEW");
             clickedLoginLink = YES;
-            [self goToPageTempalte:@"login"];
+            [self goToPageTemplate:@"login"];
         } else {
             NSLog(@"UNCAUGHT CASE");
         }

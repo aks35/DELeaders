@@ -10,7 +10,6 @@
 
 @interface SakaiViewControllerHelper : UIViewController
 
-- (void)initSakaiSubView:(NSString *)urlString webView:(UIWebView *)webView;
 - (void)fillSakaiSubViewForm:(UIWebView *)webView;
 - (NSString *)clickLoginLink:(UIWebView *)webView tempWebView:(UIWebView *)tempWebView;
 - (void)printCurrentURL:(UIWebView *)webView;

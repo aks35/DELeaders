@@ -410,7 +410,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ahu-K1-19Q"/>
+                    <navigationItem key="navigationItem" title="Student Contacts" id="Ahu-K1-19Q"/>
                     <connections>
                         <outlet property="studentsLoadView" destination="stL-Qw-tyo" id="ir3-au-nW4"/>
                         <outlet property="studentsView" destination="XnQ-Ja-JYA" id="bZM-Pa-9kc"/>
@@ -436,7 +436,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="GZs-NS-9Qp"/>
+                    <navigationItem key="navigationItem" title="Other Contacts" id="GZs-NS-9Qp"/>
                     <connections>
                         <outlet property="othersView" destination="F4a-yz-k9p" id="xNm-cP-9i1"/>
                     </connections>
@@ -461,7 +461,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="cfT-8V-o5I"/>
+                    <navigationItem key="navigationItem" title="Faculty Contacts" id="cfT-8V-o5I"/>
                     <connections>
                         <outlet property="facultyView" destination="nQd-Ft-zUF" id="eoy-mG-Tky"/>
                     </connections>
@@ -750,23 +750,23 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <outlet property="delegate" destination="8HH-2e-Kq8" id="p96-FO-DJs"/>
+                                    <outlet property="delegate" destination="bZN-vQ-nMg" id="0vQ-ZC-0Hq"/>
                                 </connections>
                             </webView>
                             <webView contentMode="scaleToFill" id="8R7-0p-tZa">
-                                <rect key="frame" x="-7" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <outlet property="delegate" destination="bZN-vQ-nMg" id="OqK-o9-J3o"/>
+                                    <outlet property="delegate" destination="bZN-vQ-nMg" id="wVG-jc-Yxk"/>
                                 </connections>
                             </webView>
                             <webView contentMode="scaleToFill" id="N3Q-Ir-aEq">
-                                <rect key="frame" x="-7" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <outlet property="delegate" destination="bZN-vQ-nMg" id="hcO-uy-UCn"/>
+                                    <outlet property="delegate" destination="bZN-vQ-nMg" id="LaW-lL-oTx"/>
                                 </connections>
                             </webView>
                         </subviews>
@@ -774,19 +774,19 @@
                     </view>
                     <navigationItem key="navigationItem" title="Sakai Calendar" id="Umz-Rc-QQ6"/>
                     <connections>
-                        <outlet property="sakaiCalView" destination="DxU-zJ-srr" id="UEg-al-YSz"/>
-                        <outlet property="sakaiCalViewLoad" destination="N3Q-Ir-aEq" id="D49-pj-qXc"/>
-                        <outlet property="sakaiCalViewTemp" destination="8R7-0p-tZa" id="4Od-ey-rlk"/>
+                        <outlet property="sakaiCalView" destination="DxU-zJ-srr" id="rJD-mi-q9z"/>
+                        <outlet property="sakaiCalViewLoad" destination="N3Q-Ir-aEq" id="xUz-3X-NwH"/>
+                        <outlet property="sakaiCalViewTemp" destination="8R7-0p-tZa" id="Rep-jK-r5r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7pl-hz-amx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="355" y="553"/>
         </scene>
-        <!--View Controller-->
+        <!--Image View Controller-->
         <scene sceneID="N7p-h9-8Om">
             <objects>
-                <viewController id="Ub0-0X-CGW" customClass="_LR4NFPD9GViewController" sceneMemberID="viewController">
+                <viewController id="Ub0-0X-CGW" customClass="ImageViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WpK-gH-bTJ">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -921,90 +921,6 @@
         <image name="twitterButton.png" width="242" height="56"/>
         <image name="wordpress.png" width="100" height="100"/>
     </resources>
-    <classes>
-        <class className="ContactsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="facultyView" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="othersView" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="studentsLoadView" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="studentsView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="CoursesViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoursesViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="detailsView" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="scheduleView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="SakaiCalendarViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SakaiCalendarViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="sakaiCalView" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="sakaiCalViewLoad" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="sakaiCalViewTemp" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="SakaiViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SakaiViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="sakaiWebView" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="sakaiWebViewLoad" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="sakaiWebViewTemp" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="openACES:"/>
-                <relationship kind="action" name="openDEL:"/>
-                <relationship kind="action" name="openFacebook:"/>
-                <relationship kind="action" name="openLibrary:"/>
-                <relationship kind="action" name="openLinkedIn:"/>
-                <relationship kind="action" name="openNSE:"/>
-                <relationship kind="action" name="openTwitter:"/>
-                <relationship kind="action" name="openWP:"/>
-                <relationship kind="action" name="pressEnterButton:"/>
-                <relationship kind="outlet" name="enterButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="netIdField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="skipButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="_LR4NFPD9GViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/_LR4NFPD9GViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="pickAnImage:"/>
-                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
-            </relationships>
-        </class>
-        <class className="photoDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/photoDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doneButton:"/>
-                <relationship kind="action" name="saveImageToPhone:"/>
-                <relationship kind="outlet" name="imageLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="s3ImageCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/s3ImageCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

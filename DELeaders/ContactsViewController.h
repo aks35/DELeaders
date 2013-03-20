@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIWebView *studentsView;
 @property (weak, nonatomic) IBOutlet UIWebView *othersView;
 @property (weak, nonatomic) IBOutlet UIWebView *studentsLoadView;
-
+- (void)setSelfAsWebViewsDelegate;
 - (void)goToPageTemplate:(NSString *)index;
 - (bool)loggedIntoWordpress;
 @end

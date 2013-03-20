@@ -78,7 +78,7 @@ bool loggedIntoSakai;
         if ([webView isEqual:sakaiWebView]) {
             NSString *href = [helperController clickLoginLink:sakaiWebView tempWebView:sakaiWebViewTemp];
             if (![href isEqualToString:helperController.NO_LINK_TAG]) {
-                [helperController initSakaiSubView:href webView:sakaiWebViewTemp];
+                [util loadWebView:href webView:sakaiWebViewTemp];
                 [self.view bringSubviewToFront:sakaiWebViewTemp];
             }
         }  
