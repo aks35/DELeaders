@@ -198,8 +198,23 @@
 		317D102E16C1ECF2007EBF76 /* DELeaders */ = {
 			isa = PBXGroup;
 			children = (
-				6D92DD0016F8F6E800AE0AD7 /* ImageApp */,
-				6D92DCF916F8F62700AE0AD7 /* SakaiControllers */,
+				314B576516E3164F0065B50D /* SakaiCalendarViewController.h */,
+				314B576616E3164F0065B50D /* SakaiCalendarViewController.m */,
+				314B576716E316500065B50D /* SakaiCalendarViewController.xib */,
+				314B576A16E317B00065B50D /* SakaiViewControllerHelper.h */,
+				314B576B16E317B00065B50D /* SakaiViewControllerHelper.m */,
+				314B576C16E317B00065B50D /* SakaiViewControllerHelper.xib */,
+				314B575D16E27E8E0065B50D /* SakaiViewController.h */,
+				314B575E16E27E8E0065B50D /* SakaiViewController.m */,
+				314B575F16E27E8E0065B50D /* SakaiViewController.xib */,
+				6D92DD0116F8F72900AE0AD7 /* AmazonClientManager.h */,
+				6D92DD0216F8F72900AE0AD7 /* AmazonClientManager.m */,
+				6D92DD0516F8F72900AE0AD7 /* photoDetailViewController.h */,
+				6D92DD0616F8F72900AE0AD7 /* photoDetailViewController.m */,
+				6D92DD0716F8F72900AE0AD7 /* ImageViewController.h */,
+				6D92DD0816F8F72900AE0AD7 /* ImageViewController.m */,
+				6D92DD0916F8F72900AE0AD7 /* s3ImageCell.h */,
+				6D92DD0A16F8F72900AE0AD7 /* s3ImageCell.m */,
 				314B577016E328970065B50D /* MBProgressHUD.m */,
 				314B576F16E3288F0065B50D /* MBProgressHUD.h */,
 				317D103716C1ECF2007EBF76 /* AppDelegate.h */,
@@ -267,37 +282,6 @@
 				317D105216C1ECF2007EBF76 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		6D92DCF916F8F62700AE0AD7 /* SakaiControllers */ = {
-			isa = PBXGroup;
-			children = (
-				314B576516E3164F0065B50D /* SakaiCalendarViewController.h */,
-				314B576616E3164F0065B50D /* SakaiCalendarViewController.m */,
-				314B576716E316500065B50D /* SakaiCalendarViewController.xib */,
-				314B576A16E317B00065B50D /* SakaiViewControllerHelper.h */,
-				314B576B16E317B00065B50D /* SakaiViewControllerHelper.m */,
-				314B576C16E317B00065B50D /* SakaiViewControllerHelper.xib */,
-				314B575D16E27E8E0065B50D /* SakaiViewController.h */,
-				314B575E16E27E8E0065B50D /* SakaiViewController.m */,
-				314B575F16E27E8E0065B50D /* SakaiViewController.xib */,
-			);
-			name = SakaiControllers;
-			sourceTree = "<group>";
-		};
-		6D92DD0016F8F6E800AE0AD7 /* ImageApp */ = {
-			isa = PBXGroup;
-			children = (
-				6D92DD0116F8F72900AE0AD7 /* AmazonClientManager.h */,
-				6D92DD0216F8F72900AE0AD7 /* AmazonClientManager.m */,
-				6D92DD0516F8F72900AE0AD7 /* photoDetailViewController.h */,
-				6D92DD0616F8F72900AE0AD7 /* photoDetailViewController.m */,
-				6D92DD0716F8F72900AE0AD7 /* ImageViewController.h */,
-				6D92DD0816F8F72900AE0AD7 /* ImageViewController.m */,
-				6D92DD0916F8F72900AE0AD7 /* s3ImageCell.h */,
-				6D92DD0A16F8F72900AE0AD7 /* s3ImageCell.m */,
-			);
-			name = ImageApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
