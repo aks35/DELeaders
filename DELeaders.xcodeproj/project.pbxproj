@@ -51,11 +51,11 @@
 		3194987E16C4F526000CDA09 /* LOGO2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3194987D16C4F526000CDA09 /* LOGO2.png */; };
 		31BF5C5D16C310D200B1CC64 /* del-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 31BF5C5C16C310D200B1CC64 /* del-icon.png */; };
 		6D6115D416F0326200CAE42E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6115D316F0326200CAE42E /* Default-568h@2x.png */; };
-		6D92DD0B16F8F72900AE0AD7 /* AmazonClientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DD0216F8F72900AE0AD7 /* AmazonClientManager.m */; };
-		6D92DD0D16F8F72900AE0AD7 /* photoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DD0616F8F72900AE0AD7 /* photoDetailViewController.m */; };
-		6D92DD0E16F8F72900AE0AD7 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DD0816F8F72900AE0AD7 /* ImageViewController.m */; };
-		6D92DD0F16F8F72900AE0AD7 /* s3ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DD0A16F8F72900AE0AD7 /* s3ImageCell.m */; };
 		6D92DD1516F8F8FB00AE0AD7 /* AWSiOSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D92DD1416F8F8FB00AE0AD7 /* AWSiOSSDK.framework */; };
+		6D92DDD516FA403B00AE0AD7 /* AmazonClientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DDCE16FA403B00AE0AD7 /* AmazonClientManager.m */; };
+		6D92DDD616FA403B00AE0AD7 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DDD016FA403B00AE0AD7 /* ImageViewController.m */; };
+		6D92DDD716FA403B00AE0AD7 /* photoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DDD216FA403B00AE0AD7 /* photoDetailViewController.m */; };
+		6D92DDD816FA403B00AE0AD7 /* s3ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DDD416FA403B00AE0AD7 /* s3ImageCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,15 +127,15 @@
 		3194987D16C4F526000CDA09 /* LOGO2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGO2.png; sourceTree = "<group>"; };
 		31BF5C5C16C310D200B1CC64 /* del-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "del-icon.png"; path = "../../../Dropbox/DELeaders/del-icon.png"; sourceTree = "<group>"; };
 		6D6115D316F0326200CAE42E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		6D92DD0116F8F72900AE0AD7 /* AmazonClientManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AmazonClientManager.h; path = ../../s3ImageApp/S3Uploader/AmazonClientManager.h; sourceTree = "<group>"; };
-		6D92DD0216F8F72900AE0AD7 /* AmazonClientManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AmazonClientManager.m; path = ../../s3ImageApp/S3Uploader/AmazonClientManager.m; sourceTree = "<group>"; };
-		6D92DD0516F8F72900AE0AD7 /* photoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = photoDetailViewController.h; path = ../../s3ImageApp/S3Uploader/photoDetailViewController.h; sourceTree = "<group>"; };
-		6D92DD0616F8F72900AE0AD7 /* photoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = photoDetailViewController.m; path = ../../s3ImageApp/S3Uploader/photoDetailViewController.m; sourceTree = "<group>"; };
-		6D92DD0716F8F72900AE0AD7 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageViewController.h; path = ../../s3ImageApp/S3Uploader/ImageViewController.h; sourceTree = "<group>"; };
-		6D92DD0816F8F72900AE0AD7 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageViewController.m; path = ../../s3ImageApp/S3Uploader/ImageViewController.m; sourceTree = "<group>"; };
-		6D92DD0916F8F72900AE0AD7 /* s3ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = s3ImageCell.h; path = ../../s3ImageApp/S3Uploader/s3ImageCell.h; sourceTree = "<group>"; };
-		6D92DD0A16F8F72900AE0AD7 /* s3ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = s3ImageCell.m; path = ../../s3ImageApp/S3Uploader/s3ImageCell.m; sourceTree = "<group>"; };
 		6D92DD1416F8F8FB00AE0AD7 /* AWSiOSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSiOSSDK.framework; path = "../../Downloads/aws-ios-sdk-1.4.6/AWSiOSSDK.framework"; sourceTree = "<group>"; };
+		6D92DDCD16FA403B00AE0AD7 /* AmazonClientManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmazonClientManager.h; sourceTree = "<group>"; };
+		6D92DDCE16FA403B00AE0AD7 /* AmazonClientManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmazonClientManager.m; sourceTree = "<group>"; };
+		6D92DDCF16FA403B00AE0AD7 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		6D92DDD016FA403B00AE0AD7 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		6D92DDD116FA403B00AE0AD7 /* photoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = photoDetailViewController.h; sourceTree = "<group>"; };
+		6D92DDD216FA403B00AE0AD7 /* photoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = photoDetailViewController.m; sourceTree = "<group>"; };
+		6D92DDD316FA403B00AE0AD7 /* s3ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = s3ImageCell.h; sourceTree = "<group>"; };
+		6D92DDD416FA403B00AE0AD7 /* s3ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = s3ImageCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +198,14 @@
 		317D102E16C1ECF2007EBF76 /* DELeaders */ = {
 			isa = PBXGroup;
 			children = (
+				6D92DDCD16FA403B00AE0AD7 /* AmazonClientManager.h */,
+				6D92DDCE16FA403B00AE0AD7 /* AmazonClientManager.m */,
+				6D92DDCF16FA403B00AE0AD7 /* ImageViewController.h */,
+				6D92DDD016FA403B00AE0AD7 /* ImageViewController.m */,
+				6D92DDD116FA403B00AE0AD7 /* photoDetailViewController.h */,
+				6D92DDD216FA403B00AE0AD7 /* photoDetailViewController.m */,
+				6D92DDD316FA403B00AE0AD7 /* s3ImageCell.h */,
+				6D92DDD416FA403B00AE0AD7 /* s3ImageCell.m */,
 				314B576516E3164F0065B50D /* SakaiCalendarViewController.h */,
 				314B576616E3164F0065B50D /* SakaiCalendarViewController.m */,
 				314B576716E316500065B50D /* SakaiCalendarViewController.xib */,
@@ -207,14 +215,6 @@
 				314B575D16E27E8E0065B50D /* SakaiViewController.h */,
 				314B575E16E27E8E0065B50D /* SakaiViewController.m */,
 				314B575F16E27E8E0065B50D /* SakaiViewController.xib */,
-				6D92DD0116F8F72900AE0AD7 /* AmazonClientManager.h */,
-				6D92DD0216F8F72900AE0AD7 /* AmazonClientManager.m */,
-				6D92DD0516F8F72900AE0AD7 /* photoDetailViewController.h */,
-				6D92DD0616F8F72900AE0AD7 /* photoDetailViewController.m */,
-				6D92DD0716F8F72900AE0AD7 /* ImageViewController.h */,
-				6D92DD0816F8F72900AE0AD7 /* ImageViewController.m */,
-				6D92DD0916F8F72900AE0AD7 /* s3ImageCell.h */,
-				6D92DD0A16F8F72900AE0AD7 /* s3ImageCell.m */,
 				314B577016E328970065B50D /* MBProgressHUD.m */,
 				314B576F16E3288F0065B50D /* MBProgressHUD.h */,
 				317D103716C1ECF2007EBF76 /* AppDelegate.h */,
@@ -424,10 +424,10 @@
 				314B576D16E317B00065B50D /* SakaiViewControllerHelper.m in Sources */,
 				314B577116E328980065B50D /* MBProgressHUD.m in Sources */,
 				310E538A16E66734001395E5 /* CoursesViewController.m in Sources */,
-				6D92DD0B16F8F72900AE0AD7 /* AmazonClientManager.m in Sources */,
-				6D92DD0D16F8F72900AE0AD7 /* photoDetailViewController.m in Sources */,
-				6D92DD0E16F8F72900AE0AD7 /* ImageViewController.m in Sources */,
-				6D92DD0F16F8F72900AE0AD7 /* s3ImageCell.m in Sources */,
+				6D92DDD516FA403B00AE0AD7 /* AmazonClientManager.m in Sources */,
+				6D92DDD616FA403B00AE0AD7 /* ImageViewController.m in Sources */,
+				6D92DDD716FA403B00AE0AD7 /* photoDetailViewController.m in Sources */,
+				6D92DDD816FA403B00AE0AD7 /* s3ImageCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
