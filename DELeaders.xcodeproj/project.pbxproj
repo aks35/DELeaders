@@ -41,11 +41,11 @@
 		6D92DDD716FA403B00AE0AD7 /* photoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DDD216FA403B00AE0AD7 /* photoDetailViewController.m */; };
 		6D92DDD816FA403B00AE0AD7 /* s3ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DDD416FA403B00AE0AD7 /* s3ImageCell.m */; };
 		6D92DDDB16FA423F00AE0AD7 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DDDA16FA423F00AE0AD7 /* MBProgressHUD.m */; };
-		6D92DDDD16FA550900AE0AD7 /* linkedinButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D92DDDC16FA550900AE0AD7 /* linkedinButton.png */; };
 		6D92DDDF16FA55C100AE0AD7 /* top.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D92DDDE16FA55C100AE0AD7 /* top.png */; };
 		6D92DDE316FA55E900AE0AD7 /* bottom3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D92DDE216FA55E900AE0AD7 /* bottom3.png */; };
 		6D92DDE516FA561400AE0AD7 /* facebookButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D92DDE416FA561400AE0AD7 /* facebookButton.png */; };
 		6D92DDE716FA562200AE0AD7 /* twitterButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D92DDE616FA562200AE0AD7 /* twitterButton.png */; };
+		6D92DDE916FA579300AE0AD7 /* linkedinButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D92DDE816FA579300AE0AD7 /* linkedinButton.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,11 +111,11 @@
 		6D92DDD416FA403B00AE0AD7 /* s3ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = s3ImageCell.m; sourceTree = "<group>"; };
 		6D92DDD916FA423F00AE0AD7 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		6D92DDDA16FA423F00AE0AD7 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		6D92DDDC16FA550900AE0AD7 /* linkedinButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = linkedinButton.png; path = /Users/andrewkshim/projects/DELeaders/DELeaders/linkedinButton.png; sourceTree = "<absolute>"; };
 		6D92DDDE16FA55C100AE0AD7 /* top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top.png; sourceTree = "<group>"; };
 		6D92DDE216FA55E900AE0AD7 /* bottom3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom3.png; sourceTree = "<group>"; };
 		6D92DDE416FA561400AE0AD7 /* facebookButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookButton.png; sourceTree = "<group>"; };
 		6D92DDE616FA562200AE0AD7 /* twitterButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterButton.png; sourceTree = "<group>"; };
+		6D92DDE816FA579300AE0AD7 /* linkedinButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = linkedinButton.png; path = /Users/andrewkshim/projects/DELeaders/DELeaders/linkedinButton.png; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,11 +222,11 @@
 		317D102F16C1ECF2007EBF76 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6D92DDE816FA579300AE0AD7 /* linkedinButton.png */,
 				6D92DDE616FA562200AE0AD7 /* twitterButton.png */,
 				6D92DDE416FA561400AE0AD7 /* facebookButton.png */,
 				6D92DDE216FA55E900AE0AD7 /* bottom3.png */,
 				6D92DDDE16FA55C100AE0AD7 /* top.png */,
-				6D92DDDC16FA550900AE0AD7 /* linkedinButton.png */,
 				317D103016C1ECF2007EBF76 /* DELeaders-Info.plist */,
 				317D103116C1ECF2007EBF76 /* InfoPlist.strings */,
 				317D103416C1ECF2007EBF76 /* main.m */,
@@ -334,11 +334,11 @@
 				314B576E16E317B00065B50D /* SakaiViewControllerHelper.xib in Resources */,
 				310E538B16E66734001395E5 /* CoursesViewController.xib in Resources */,
 				6D6115D416F0326200CAE42E /* Default-568h@2x.png in Resources */,
-				6D92DDDD16FA550900AE0AD7 /* linkedinButton.png in Resources */,
 				6D92DDDF16FA55C100AE0AD7 /* top.png in Resources */,
 				6D92DDE316FA55E900AE0AD7 /* bottom3.png in Resources */,
 				6D92DDE516FA561400AE0AD7 /* facebookButton.png in Resources */,
 				6D92DDE716FA562200AE0AD7 /* twitterButton.png in Resources */,
+				6D92DDE916FA579300AE0AD7 /* linkedinButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
