@@ -24,7 +24,6 @@
 		314B576916E316500065B50D /* SakaiCalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 314B576716E316500065B50D /* SakaiCalendarViewController.xib */; };
 		314B576D16E317B00065B50D /* SakaiViewControllerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B576B16E317B00065B50D /* SakaiViewControllerHelper.m */; };
 		314B576E16E317B00065B50D /* SakaiViewControllerHelper.xib in Resources */ = {isa = PBXBuildFile; fileRef = 314B576C16E317B00065B50D /* SakaiViewControllerHelper.xib */; };
-		314B577116E328980065B50D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B577016E328970065B50D /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3153FCD616C3199F00B77277 /* wordpress.png in Resources */ = {isa = PBXBuildFile; fileRef = 3153FCD516C3199F00B77277 /* wordpress.png */; };
 		3153FCD916C3228B00B77277 /* toplogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3153FCD816C3228B00B77277 /* toplogo.png */; };
 		3153FCDD16C32ACA00B77277 /* bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 3153FCDC16C32ACA00B77277 /* bottom.png */; };
@@ -56,6 +55,7 @@
 		6D92DDD616FA403B00AE0AD7 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DDD016FA403B00AE0AD7 /* ImageViewController.m */; };
 		6D92DDD716FA403B00AE0AD7 /* photoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DDD216FA403B00AE0AD7 /* photoDetailViewController.m */; };
 		6D92DDD816FA403B00AE0AD7 /* s3ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DDD416FA403B00AE0AD7 /* s3ImageCell.m */; };
+		6D92DDDB16FA423F00AE0AD7 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DDDA16FA423F00AE0AD7 /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,8 +93,6 @@
 		314B576A16E317B00065B50D /* SakaiViewControllerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SakaiViewControllerHelper.h; sourceTree = "<group>"; };
 		314B576B16E317B00065B50D /* SakaiViewControllerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SakaiViewControllerHelper.m; sourceTree = "<group>"; };
 		314B576C16E317B00065B50D /* SakaiViewControllerHelper.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SakaiViewControllerHelper.xib; sourceTree = "<group>"; };
-		314B576F16E3288F0065B50D /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = MBProgressHUD/MBProgressHUD.h; sourceTree = SOURCE_ROOT; };
-		314B577016E328970065B50D /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = MBProgressHUD/MBProgressHUD.m; sourceTree = SOURCE_ROOT; };
 		3153FCD516C3199F00B77277 /* wordpress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wordpress.png; path = ../../../Dropbox/DELeaders/wordpress.png; sourceTree = "<group>"; };
 		3153FCD816C3228B00B77277 /* toplogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = toplogo.png; path = ../../../Dropbox/DELeaders/toplogo.png; sourceTree = "<group>"; };
 		3153FCDC16C32ACA00B77277 /* bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bottom.png; path = ../../../Dropbox/DELeaders/bottom.png; sourceTree = "<group>"; };
@@ -136,6 +134,8 @@
 		6D92DDD216FA403B00AE0AD7 /* photoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = photoDetailViewController.m; sourceTree = "<group>"; };
 		6D92DDD316FA403B00AE0AD7 /* s3ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = s3ImageCell.h; sourceTree = "<group>"; };
 		6D92DDD416FA403B00AE0AD7 /* s3ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = s3ImageCell.m; sourceTree = "<group>"; };
+		6D92DDD916FA423F00AE0AD7 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		6D92DDDA16FA423F00AE0AD7 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +198,8 @@
 		317D102E16C1ECF2007EBF76 /* DELeaders */ = {
 			isa = PBXGroup;
 			children = (
+				6D92DDD916FA423F00AE0AD7 /* MBProgressHUD.h */,
+				6D92DDDA16FA423F00AE0AD7 /* MBProgressHUD.m */,
 				6D92DDCD16FA403B00AE0AD7 /* AmazonClientManager.h */,
 				6D92DDCE16FA403B00AE0AD7 /* AmazonClientManager.m */,
 				6D92DDCF16FA403B00AE0AD7 /* ImageViewController.h */,
@@ -215,8 +217,6 @@
 				314B575D16E27E8E0065B50D /* SakaiViewController.h */,
 				314B575E16E27E8E0065B50D /* SakaiViewController.m */,
 				314B575F16E27E8E0065B50D /* SakaiViewController.xib */,
-				314B577016E328970065B50D /* MBProgressHUD.m */,
-				314B576F16E3288F0065B50D /* MBProgressHUD.h */,
 				317D103716C1ECF2007EBF76 /* AppDelegate.h */,
 				317D103816C1ECF2007EBF76 /* AppDelegate.m */,
 				317D103A16C1ECF2007EBF76 /* MainStoryboard_iPhone.storyboard */,
@@ -422,12 +422,12 @@
 				314B576416E280810065B50D /* Utility.m in Sources */,
 				314B576816E316500065B50D /* SakaiCalendarViewController.m in Sources */,
 				314B576D16E317B00065B50D /* SakaiViewControllerHelper.m in Sources */,
-				314B577116E328980065B50D /* MBProgressHUD.m in Sources */,
 				310E538A16E66734001395E5 /* CoursesViewController.m in Sources */,
 				6D92DDD516FA403B00AE0AD7 /* AmazonClientManager.m in Sources */,
 				6D92DDD616FA403B00AE0AD7 /* ImageViewController.m in Sources */,
 				6D92DDD716FA403B00AE0AD7 /* photoDetailViewController.m in Sources */,
 				6D92DDD816FA403B00AE0AD7 /* s3ImageCell.m in Sources */,
+				6D92DDDB16FA423F00AE0AD7 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
