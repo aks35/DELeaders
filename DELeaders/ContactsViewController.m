@@ -21,7 +21,7 @@
 MBProgressHUD *hud;
 Utility *util;
 SakaiViewControllerHelper *helperController;
-bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory;
+bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudentsPage;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -56,7 +56,7 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory;
     helperController = [[SakaiViewControllerHelper alloc]init];
     [self setSelfAsWebViewsDelegate];
     [util loadWebView:@"https://sites.nicholas.duke.edu/delmeminfo/contact-information/faculty/" webView:facultyView];
-    [util loadWebView:@"https://sites.nicholas.duke.edu/delmeminfo/contact-information/students" webView:studentsView];
+    [util loadWebView:@"https://sites.nicholas.duke.edu/delmeminfo/contact-information/students/student-directory/" webView:studentsView];
     [util loadWebView:@"https://sites.nicholas.duke.edu/delmeminfo/contact-information/other-important-nicholas-school-contacts/" webView:othersView];
     hud = [[MBProgressHUD alloc]init];
     [hud hide:YES];
@@ -102,11 +102,17 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory;
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     if (webView == studentsView) {
-        if (atStudentDirectory) {
+        if (visitedStudentsPage) {
+            [studentsLoadView setHidden:YES];
+            [studentsView setHidden:NO];
+            NSLog(@"Page already visited");
+        }
+        else if (atStudentDirectory) {
             NSLog(@"Hello world");
             [MBProgressHUD hideHUDForView:studentsLoadView animated:YES];
             [studentsLoadView setHidden:YES];
             [studentsView setHidden:NO];
+            visitedStudentsPage = YES;
         }
         else if (clickedLoginLink && atLoginPage) {
             [helperController fillSakaiSubViewForm:studentsView];

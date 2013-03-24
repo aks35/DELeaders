@@ -8,16 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface LinksViewController : UIViewController
 - (IBAction)openDEL:(id)sender;
-- (IBAction)openNSE:(id)sender;
+- (IBAction)openNSOE:(id)sender;
 - (IBAction)openWP:(id)sender;
 - (IBAction)openLibrary:(id)sender;
 - (IBAction)openACES:(id)sender;
-- (IBAction)pressEnterButton:(id)sender;
-- (IBAction)openFacebook:(id)sender;
-- (IBAction)openTwitter:(id)sender;
-- (IBAction)openLinkedIn:(id)sender;
+
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIButton *enterButton;

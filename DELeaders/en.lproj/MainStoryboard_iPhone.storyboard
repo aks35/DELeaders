@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Sign In-->
+        <!--Links View Controller - Sign In-->
         <scene sceneID="vjs-FQ-mHI">
             <objects>
-                <viewController id="Fdh-S8-mTA" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="Fdh-S8-mTA" customClass="LinksViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gB5-MU-aMh">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -203,10 +203,10 @@
             </objects>
             <point key="canvasLocation" x="-116" y="-18"/>
         </scene>
-        <!--View Controller - Social Apps-->
+        <!--Links View Controller - Social Apps-->
         <scene sceneID="pM6-a8-Gep">
             <objects>
-                <viewController id="dzt-6c-lZ5" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="dzt-6c-lZ5" customClass="LinksViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vwM-fJ-Jc5">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -470,10 +470,10 @@
             </objects>
             <point key="canvasLocation" x="771" y="553"/>
         </scene>
-        <!--Links - DELinks-->
+        <!--Links View Controller - DELinks-->
         <scene sceneID="5">
             <objects>
-                <viewController id="2" customClass="Links" sceneMemberID="viewController">
+                <viewController id="2" customClass="LinksViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -490,7 +490,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="openNSE:" destination="2" eventType="touchUpInside" id="UAx-ed-V4Q"/>
+                                    <action selector="openNSOE:" destination="2" eventType="touchUpInside" id="YrH-AE-uFJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Vc-qZ-sxs">
@@ -520,7 +520,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="openWP:" destination="2" eventType="touchUpInside" id="JyD-CN-0oO"/>
+                                    <action selector="openWP:" destination="2" eventType="touchUpInside" id="Tbj-Tr-Kh4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2kr-RK-rN3">
@@ -535,7 +535,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="openDEL:" destination="2" eventType="touchUpInside" id="Qps-Gt-rUI"/>
+                                    <action selector="openDEL:" destination="2" eventType="touchUpInside" id="404-rh-sRy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TJ5-8S-9SF">
@@ -625,7 +625,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="openACES:" destination="2" eventType="touchUpInside" id="9bd-ZY-xiU"/>
+                                    <action selector="openACES:" destination="2" eventType="touchUpInside" id="kWA-nc-Xa4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="D7Q-0V-boB">
@@ -640,7 +640,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="openLibrary:" destination="2" eventType="touchUpInside" id="CTz-HT-oOf"/>
+                                    <action selector="openLibrary:" destination="2" eventType="touchUpInside" id="vUe-ji-QFf"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bottom3.png" id="Bw4-SW-o2n">
@@ -941,6 +941,25 @@
                 <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
             </relationships>
         </class>
+        <class className="LinksViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LinksViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="openACES:"/>
+                <relationship kind="action" name="openDEL:"/>
+                <relationship kind="action" name="openFacebook:"/>
+                <relationship kind="action" name="openLibrary:"/>
+                <relationship kind="action" name="openLinkedIn:"/>
+                <relationship kind="action" name="openNSOE:"/>
+                <relationship kind="action" name="openTwitter:"/>
+                <relationship kind="action" name="openWP:"/>
+                <relationship kind="action" name="pressEnterButton:"/>
+                <relationship kind="outlet" name="enterButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="netIdField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="skipButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
         <class className="SakaiCalendarViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SakaiCalendarViewController.h"/>
             <relationships>
@@ -965,25 +984,6 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="openACES:"/>
-                <relationship kind="action" name="openDEL:"/>
-                <relationship kind="action" name="openFacebook:"/>
-                <relationship kind="action" name="openLibrary:"/>
-                <relationship kind="action" name="openLinkedIn:"/>
-                <relationship kind="action" name="openNSE:"/>
-                <relationship kind="action" name="openTwitter:"/>
-                <relationship kind="action" name="openWP:"/>
-                <relationship kind="action" name="pressEnterButton:"/>
-                <relationship kind="outlet" name="enterButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="netIdField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="skipButton" candidateClass="UIButton"/>
-            </relationships>
         </class>
         <class className="photoDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/photoDetailViewController.h"/>

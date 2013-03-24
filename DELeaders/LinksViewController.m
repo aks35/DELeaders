@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 #import "Utility.h"
 
-@implementation ViewController
+@implementation LinksViewController
 
 @synthesize scrollView;
 @synthesize enterButton;
@@ -90,7 +90,7 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.nicholas.duke.edu/del/" ]];
 }
 
-- (IBAction)openNSE:(id)sender {
+- (IBAction)openNSOE:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.nicholas.duke.edu/" ]];
 }
 
@@ -196,4 +196,4 @@
     }
 }
 
-@end 
+@end

@@ -21,7 +21,7 @@ MBProgressHUD *hud;
 NSString *calendarURL;
 SakaiViewControllerHelper *helperController;
 Utility *util;
-bool atLogin, inCalendar, calendarRendered, loggedIntoSakai, loginFormSubmitted, inWorkspace;
+bool atLogin, inCalendar, calendarRendered, atRedirect, loggedIntoSakai, loginFormSubmitted, inWorkspace;
 bool loggedInApriori = YES;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -56,7 +56,7 @@ bool loggedInApriori = YES;
     [hud hide:YES];
     helperController = [[SakaiViewControllerHelper alloc]init];
     [self setSelfAsWebViewsDelegate];
-//    [sakaiCalView setHidden:YES];
+    [sakaiCalView setHidden:YES];
     [sakaiCalViewLoad setHidden:YES];
     [sakaiCalViewTemp setHidden:YES];
     if (calendarRendered) {
@@ -98,6 +98,8 @@ bool loggedInApriori = YES;
     NSLog(@"HELLO");
     if (calendarRendered && !loggedInApriori) {
         NSLog(@"HERE");
+        [MBProgressHUD hideHUDForView:sakaiCalViewLoad animated:YES];
+        [sakaiCalViewLoad setHidden:YES];
         [sakaiCalView setHidden:NO];
         [self.view bringSubviewToFront:sakaiCalView];
     } 
@@ -110,11 +112,10 @@ bool loggedInApriori = YES;
         else if (helperController.inWorkspace) {
             [self goToCalendarPage];
             helperController.inWorkspace = NO;
-            [sakaiCalViewLoad setHidden:YES];
+
             [sakaiCalView setHidden:NO];
             NSLog(@"GOING TO CALENDAR");
-        } else {
-//            [MBProgressHUD hideHUDForView:sakaiCalViewLoad animated:YES];
+        } else {   
             [self goToWorkspacePage];
             NSLog(@"GOING INTO WORKSPACE");
             if ([hud.labelText length] != 0 && !inCalendar) {
@@ -125,12 +126,14 @@ bool loggedInApriori = YES;
             }
         }
     }
+    else if (atRedirect) {
+        loggedIntoSakai = YES;
+    }
     else if (loginFormSubmitted) {
         NSLog(@"here only once");
         [helperController fillSakaiSubViewForm:sakaiCalView];
-        loggedIntoSakai = YES;
+        atRedirect = YES;
     }
-    
     else if (atLogin) {
         NSString *href = [helperController clickLoginLink:sakaiCalView tempWebView:sakaiCalView];
         NSLog(@"HREF %@",href);
@@ -142,7 +145,7 @@ bool loggedInApriori = YES;
     }
     
     else if (!loggedIntoSakai) {
-//        [sakaiCalViewLoad setHidden:NO];
+        [sakaiCalViewLoad setHidden:NO];
         hud = [MBProgressHUD showHUDAddedTo:sakaiCalViewLoad animated:YES];
         hud.labelText = @"Logging into Sakai";
         NSString *linkExists = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('loginLink')[0]==null;"];

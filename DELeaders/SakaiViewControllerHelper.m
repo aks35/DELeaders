@@ -78,7 +78,9 @@ NSString *const NO_LINK_TAG = @"THERE WAS NO LINK RETURNED";
         password = [defaults objectForKey:@"password"];
         javaScriptString = @"document.getElementById('j_username').value='%@';document.getElementById('j_password').value='%@';var d = document.getElementById('portlet-content'); var k = d.getElementsByTagName('form')[0]; k.submit();";
         javaScriptString = [NSString stringWithFormat: javaScriptString, netId, password];
+        NSLog(@"%@", javaScriptString);
         [webView stringByEvaluatingJavaScriptFromString: javaScriptString];
+        NSLog(@"Finished filling out form");
     }    
 }
 
