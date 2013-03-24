@@ -9,12 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface LinksViewController : UIViewController
-- (IBAction)openDEL:(id)sender;
-- (IBAction)openNSOE:(id)sender;
-- (IBAction)openWP:(id)sender;
-- (IBAction)openLibrary:(id)sender;
-- (IBAction)openACES:(id)sender;
-
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIButton *enterButton;

@@ -9,6 +9,7 @@
 #import "LinksViewController.h"
 #import "AppDelegate.h"
 #import "Utility.h"
+#import "GeneralWebViewController.h"
 
 @implementation LinksViewController
 
@@ -86,26 +87,30 @@
     }
 }
 
-- (IBAction)openDEL:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.nicholas.duke.edu/del/" ]];
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSString *identifier = segue.identifier;
+    if([identifier hasPrefix:@"gen-"]){
+        GeneralWebViewController *controller = (GeneralWebViewController *)segue.destinationViewController;
+        if ([identifier isEqualToString:@"gen-DELSegue"]) {
+            controller.myURL = @"http://www.nicholas.duke.edu/del/";
+            controller.myTitle = @"DEL";
+        } else if ([identifier isEqualToString:@"gen-NSOESegue"]) {
+            controller.myURL = @"http://www.nicholas.duke.edu/";
+            controller.myTitle = @"NSOE";
+        } else if ([identifier isEqualToString:@"gen-WPSegue"]) {
+            controller.myURL = @"https://sites.nicholas.duke.edu/delmeminfo/";
+            controller.myTitle = @"Wordpress";
+        } else if ([identifier isEqualToString:@"gen-LibrarySegue"]) {
+            controller.myURL = @"https://library.duke.edu/";
+            controller.myTitle = @"Duke Library";
+        } else if ([identifier isEqualToString:@"gen-ACESSegue"]) {
+            controller.myURL = @"https://aces.duke.edu/";
+            controller.myTitle = @"Duke";
+        }
+    }
 }
 
-- (IBAction)openNSOE:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.nicholas.duke.edu/" ]];
-}
-
-- (IBAction)openWP:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://sites.nicholas.duke.edu/delmeminfo/" ]];
-}
-
-
-- (IBAction)openLibrary:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://library.duke.edu/" ]];
-}
-
-- (IBAction)openACES:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://aces.duke.edu/" ]];
-}
 
 -(void)alertMessage:(NSString *)title text:(NSString *)text {
     UIAlertView *message = [[UIAlertView alloc] initWithTitle:title message:text delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -129,17 +134,6 @@
 
 }
 
-- (IBAction)openFacebook:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.facebook.com/" ]];
-}
-
-- (IBAction)openTwitter:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.twitter.com/" ]];
-}
-
-- (IBAction)openLinkedIn:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.linkedin.com/" ]];
-}
 
 - (void)registerForKeyboardNotifications {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardWillShowNotification object:nil];

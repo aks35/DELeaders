@@ -8,16 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		310E538A16E66734001395E5 /* CoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 310E538816E66734001395E5 /* CoursesViewController.m */; };
-		310E538B16E66734001395E5 /* CoursesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 310E538916E66734001395E5 /* CoursesViewController.xib */; };
 		314B574C16DFC7E20065B50D /* LoadingAnimViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B574A16DFC7E20065B50D /* LoadingAnimViewController.m */; };
-		314B574D16DFC7E20065B50D /* LoadingAnimViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 314B574B16DFC7E20065B50D /* LoadingAnimViewController.xib */; };
 		314B575B16E176230065B50D /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B575916E176230065B50D /* ContactsViewController.m */; };
 		314B575C16E176230065B50D /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 314B575A16E176230065B50D /* ContactsViewController.xib */; };
 		314B576016E27E8E0065B50D /* SakaiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B575E16E27E8E0065B50D /* SakaiViewController.m */; };
-		314B576116E27E8E0065B50D /* SakaiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 314B575F16E27E8E0065B50D /* SakaiViewController.xib */; };
 		314B576416E280810065B50D /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B576316E280810065B50D /* Utility.m */; };
 		314B576816E316500065B50D /* SakaiCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B576616E3164F0065B50D /* SakaiCalendarViewController.m */; };
-		314B576916E316500065B50D /* SakaiCalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 314B576716E316500065B50D /* SakaiCalendarViewController.xib */; };
 		314B576D16E317B00065B50D /* SakaiViewControllerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B576B16E317B00065B50D /* SakaiViewControllerHelper.m */; };
 		314B576E16E317B00065B50D /* SakaiViewControllerHelper.xib in Resources */ = {isa = PBXBuildFile; fileRef = 314B576C16E317B00065B50D /* SakaiViewControllerHelper.xib */; };
 		317D102916C1ECF2007EBF76 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 317D102816C1ECF2007EBF76 /* UIKit.framework */; };
@@ -46,6 +42,8 @@
 		6D92DDE516FA561400AE0AD7 /* facebookButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D92DDE416FA561400AE0AD7 /* facebookButton.png */; };
 		6D92DDE716FA562200AE0AD7 /* twitterButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D92DDE616FA562200AE0AD7 /* twitterButton.png */; };
 		6D92DDEB16FA593B00AE0AD7 /* linkedinButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D92DDEA16FA593B00AE0AD7 /* linkedinButton.png */; };
+		6DCDFE2D16FF991E004008E2 /* GeneralWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCDFE2C16FF991E004008E2 /* GeneralWebViewController.m */; };
+		6DF21AB816FFBA6D00C7A316 /* SocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF21AB716FFBA6D00C7A316 /* SocialViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,21 +59,17 @@
 /* Begin PBXFileReference section */
 		310E538716E66734001395E5 /* CoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoursesViewController.h; sourceTree = "<group>"; };
 		310E538816E66734001395E5 /* CoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursesViewController.m; sourceTree = "<group>"; };
-		310E538916E66734001395E5 /* CoursesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoursesViewController.xib; sourceTree = "<group>"; };
 		314B574916DFC7E20065B50D /* LoadingAnimViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingAnimViewController.h; sourceTree = "<group>"; };
 		314B574A16DFC7E20065B50D /* LoadingAnimViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingAnimViewController.m; sourceTree = "<group>"; };
-		314B574B16DFC7E20065B50D /* LoadingAnimViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingAnimViewController.xib; sourceTree = "<group>"; };
 		314B575816E176230065B50D /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
 		314B575916E176230065B50D /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
 		314B575A16E176230065B50D /* ContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsViewController.xib; sourceTree = "<group>"; };
 		314B575D16E27E8E0065B50D /* SakaiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SakaiViewController.h; sourceTree = "<group>"; };
 		314B575E16E27E8E0065B50D /* SakaiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SakaiViewController.m; sourceTree = "<group>"; };
-		314B575F16E27E8E0065B50D /* SakaiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SakaiViewController.xib; sourceTree = "<group>"; };
 		314B576216E280810065B50D /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		314B576316E280810065B50D /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		314B576516E3164F0065B50D /* SakaiCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SakaiCalendarViewController.h; sourceTree = "<group>"; };
 		314B576616E3164F0065B50D /* SakaiCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SakaiCalendarViewController.m; sourceTree = "<group>"; };
-		314B576716E316500065B50D /* SakaiCalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SakaiCalendarViewController.xib; sourceTree = "<group>"; };
 		314B576A16E317B00065B50D /* SakaiViewControllerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SakaiViewControllerHelper.h; sourceTree = "<group>"; };
 		314B576B16E317B00065B50D /* SakaiViewControllerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SakaiViewControllerHelper.m; sourceTree = "<group>"; };
 		314B576C16E317B00065B50D /* SakaiViewControllerHelper.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SakaiViewControllerHelper.xib; sourceTree = "<group>"; };
@@ -116,6 +110,10 @@
 		6D92DDE416FA561400AE0AD7 /* facebookButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookButton.png; sourceTree = "<group>"; };
 		6D92DDE616FA562200AE0AD7 /* twitterButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterButton.png; sourceTree = "<group>"; };
 		6D92DDEA16FA593B00AE0AD7 /* linkedinButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedinButton.png; sourceTree = "<group>"; };
+		6DCDFE2B16FF991E004008E2 /* GeneralWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralWebViewController.h; sourceTree = "<group>"; };
+		6DCDFE2C16FF991E004008E2 /* GeneralWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralWebViewController.m; sourceTree = "<group>"; };
+		6DF21AB616FFBA6D00C7A316 /* SocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialViewController.h; sourceTree = "<group>"; };
+		6DF21AB716FFBA6D00C7A316 /* SocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,13 +188,11 @@
 				6D92DDD416FA403B00AE0AD7 /* s3ImageCell.m */,
 				314B576516E3164F0065B50D /* SakaiCalendarViewController.h */,
 				314B576616E3164F0065B50D /* SakaiCalendarViewController.m */,
-				314B576716E316500065B50D /* SakaiCalendarViewController.xib */,
 				314B576A16E317B00065B50D /* SakaiViewControllerHelper.h */,
 				314B576B16E317B00065B50D /* SakaiViewControllerHelper.m */,
 				314B576C16E317B00065B50D /* SakaiViewControllerHelper.xib */,
 				314B575D16E27E8E0065B50D /* SakaiViewController.h */,
 				314B575E16E27E8E0065B50D /* SakaiViewController.m */,
-				314B575F16E27E8E0065B50D /* SakaiViewController.xib */,
 				317D103716C1ECF2007EBF76 /* AppDelegate.h */,
 				317D103816C1ECF2007EBF76 /* AppDelegate.m */,
 				317D103A16C1ECF2007EBF76 /* MainStoryboard_iPhone.storyboard */,
@@ -205,7 +201,6 @@
 				317D104116C1ECF2007EBF76 /* LinksViewController.m */,
 				314B574916DFC7E20065B50D /* LoadingAnimViewController.h */,
 				314B574A16DFC7E20065B50D /* LoadingAnimViewController.m */,
-				314B574B16DFC7E20065B50D /* LoadingAnimViewController.xib */,
 				314B575816E176230065B50D /* ContactsViewController.h */,
 				314B575916E176230065B50D /* ContactsViewController.m */,
 				314B575A16E176230065B50D /* ContactsViewController.xib */,
@@ -213,8 +208,11 @@
 				314B576316E280810065B50D /* Utility.m */,
 				310E538716E66734001395E5 /* CoursesViewController.h */,
 				310E538816E66734001395E5 /* CoursesViewController.m */,
-				310E538916E66734001395E5 /* CoursesViewController.xib */,
 				317D102F16C1ECF2007EBF76 /* Supporting Files */,
+				6DCDFE2B16FF991E004008E2 /* GeneralWebViewController.h */,
+				6DCDFE2C16FF991E004008E2 /* GeneralWebViewController.m */,
+				6DF21AB616FFBA6D00C7A316 /* SocialViewController.h */,
+				6DF21AB716FFBA6D00C7A316 /* SocialViewController.m */,
 			);
 			path = DELeaders;
 			sourceTree = "<group>";
@@ -327,12 +325,8 @@
 				317D103316C1ECF2007EBF76 /* InfoPlist.strings in Resources */,
 				317D103C16C1ECF2007EBF76 /* MainStoryboard_iPhone.storyboard in Resources */,
 				317D103F16C1ECF2007EBF76 /* MainStoryboard_iPad.storyboard in Resources */,
-				314B574D16DFC7E20065B50D /* LoadingAnimViewController.xib in Resources */,
 				314B575C16E176230065B50D /* ContactsViewController.xib in Resources */,
-				314B576116E27E8E0065B50D /* SakaiViewController.xib in Resources */,
-				314B576916E316500065B50D /* SakaiCalendarViewController.xib in Resources */,
 				314B576E16E317B00065B50D /* SakaiViewControllerHelper.xib in Resources */,
-				310E538B16E66734001395E5 /* CoursesViewController.xib in Resources */,
 				6D6115D416F0326200CAE42E /* Default-568h@2x.png in Resources */,
 				6D92DDDF16FA55C100AE0AD7 /* top.png in Resources */,
 				6D92DDE316FA55E900AE0AD7 /* bottom3.png in Resources */,
@@ -388,6 +382,8 @@
 				6D92DDD716FA403B00AE0AD7 /* photoDetailViewController.m in Sources */,
 				6D92DDD816FA403B00AE0AD7 /* s3ImageCell.m in Sources */,
 				6D92DDDB16FA423F00AE0AD7 /* MBProgressHUD.m in Sources */,
+				6DCDFE2D16FF991E004008E2 /* GeneralWebViewController.m in Sources */,
+				6DF21AB816FFBA6D00C7A316 /* SocialViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
