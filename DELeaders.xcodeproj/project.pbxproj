@@ -10,7 +10,6 @@
 		310E538A16E66734001395E5 /* CoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 310E538816E66734001395E5 /* CoursesViewController.m */; };
 		314B574C16DFC7E20065B50D /* LoadingAnimViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B574A16DFC7E20065B50D /* LoadingAnimViewController.m */; };
 		314B575B16E176230065B50D /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B575916E176230065B50D /* ContactsViewController.m */; };
-		314B575C16E176230065B50D /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 314B575A16E176230065B50D /* ContactsViewController.xib */; };
 		314B576016E27E8E0065B50D /* SakaiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B575E16E27E8E0065B50D /* SakaiViewController.m */; };
 		314B576416E280810065B50D /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B576316E280810065B50D /* Utility.m */; };
 		314B576816E316500065B50D /* SakaiCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B576616E3164F0065B50D /* SakaiCalendarViewController.m */; };
@@ -63,7 +62,6 @@
 		314B574A16DFC7E20065B50D /* LoadingAnimViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingAnimViewController.m; sourceTree = "<group>"; };
 		314B575816E176230065B50D /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
 		314B575916E176230065B50D /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
-		314B575A16E176230065B50D /* ContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsViewController.xib; sourceTree = "<group>"; };
 		314B575D16E27E8E0065B50D /* SakaiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SakaiViewController.h; sourceTree = "<group>"; };
 		314B575E16E27E8E0065B50D /* SakaiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SakaiViewController.m; sourceTree = "<group>"; };
 		314B576216E280810065B50D /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
@@ -176,43 +174,15 @@
 		317D102E16C1ECF2007EBF76 /* DELeaders */ = {
 			isa = PBXGroup;
 			children = (
-				6D92DDD916FA423F00AE0AD7 /* MBProgressHUD.h */,
-				6D92DDDA16FA423F00AE0AD7 /* MBProgressHUD.m */,
-				6D92DDCD16FA403B00AE0AD7 /* AmazonClientManager.h */,
-				6D92DDCE16FA403B00AE0AD7 /* AmazonClientManager.m */,
-				6D92DDCF16FA403B00AE0AD7 /* ImageViewController.h */,
-				6D92DDD016FA403B00AE0AD7 /* ImageViewController.m */,
-				6D92DDD116FA403B00AE0AD7 /* photoDetailViewController.h */,
-				6D92DDD216FA403B00AE0AD7 /* photoDetailViewController.m */,
-				6D92DDD316FA403B00AE0AD7 /* s3ImageCell.h */,
-				6D92DDD416FA403B00AE0AD7 /* s3ImageCell.m */,
-				314B576516E3164F0065B50D /* SakaiCalendarViewController.h */,
-				314B576616E3164F0065B50D /* SakaiCalendarViewController.m */,
-				314B576A16E317B00065B50D /* SakaiViewControllerHelper.h */,
-				314B576B16E317B00065B50D /* SakaiViewControllerHelper.m */,
-				314B576C16E317B00065B50D /* SakaiViewControllerHelper.xib */,
-				314B575D16E27E8E0065B50D /* SakaiViewController.h */,
-				314B575E16E27E8E0065B50D /* SakaiViewController.m */,
+				6D9E48321700CCAD00EE0245 /* util */,
+				6D9E48311700CC2200EE0245 /* imageApp */,
+				6D9E482F1700CB3C00EE0245 /* viewControllers */,
+				6D9E482E1700CAC100EE0245 /* vendor */,
 				317D103716C1ECF2007EBF76 /* AppDelegate.h */,
 				317D103816C1ECF2007EBF76 /* AppDelegate.m */,
 				317D103A16C1ECF2007EBF76 /* MainStoryboard_iPhone.storyboard */,
 				317D103D16C1ECF2007EBF76 /* MainStoryboard_iPad.storyboard */,
-				317D104016C1ECF2007EBF76 /* LinksViewController.h */,
-				317D104116C1ECF2007EBF76 /* LinksViewController.m */,
-				314B574916DFC7E20065B50D /* LoadingAnimViewController.h */,
-				314B574A16DFC7E20065B50D /* LoadingAnimViewController.m */,
-				314B575816E176230065B50D /* ContactsViewController.h */,
-				314B575916E176230065B50D /* ContactsViewController.m */,
-				314B575A16E176230065B50D /* ContactsViewController.xib */,
-				314B576216E280810065B50D /* Utility.h */,
-				314B576316E280810065B50D /* Utility.m */,
-				310E538716E66734001395E5 /* CoursesViewController.h */,
-				310E538816E66734001395E5 /* CoursesViewController.m */,
 				317D102F16C1ECF2007EBF76 /* Supporting Files */,
-				6DCDFE2B16FF991E004008E2 /* GeneralWebViewController.h */,
-				6DCDFE2C16FF991E004008E2 /* GeneralWebViewController.m */,
-				6DF21AB616FFBA6D00C7A316 /* SocialViewController.h */,
-				6DF21AB716FFBA6D00C7A316 /* SocialViewController.m */,
 			);
 			path = DELeaders;
 			sourceTree = "<group>";
@@ -250,6 +220,73 @@
 				317D105216C1ECF2007EBF76 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D9E482E1700CAC100EE0245 /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				6D92DDD916FA423F00AE0AD7 /* MBProgressHUD.h */,
+				6D92DDDA16FA423F00AE0AD7 /* MBProgressHUD.m */,
+			);
+			name = vendor;
+			sourceTree = "<group>";
+		};
+		6D9E482F1700CB3C00EE0245 /* viewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6DCDFE2B16FF991E004008E2 /* GeneralWebViewController.h */,
+				6DCDFE2C16FF991E004008E2 /* GeneralWebViewController.m */,
+				6DF21AB616FFBA6D00C7A316 /* SocialViewController.h */,
+				6DF21AB716FFBA6D00C7A316 /* SocialViewController.m */,
+				310E538716E66734001395E5 /* CoursesViewController.h */,
+				310E538816E66734001395E5 /* CoursesViewController.m */,
+				317D104016C1ECF2007EBF76 /* LinksViewController.h */,
+				317D104116C1ECF2007EBF76 /* LinksViewController.m */,
+				314B574916DFC7E20065B50D /* LoadingAnimViewController.h */,
+				314B574A16DFC7E20065B50D /* LoadingAnimViewController.m */,
+				314B575816E176230065B50D /* ContactsViewController.h */,
+				314B575916E176230065B50D /* ContactsViewController.m */,
+				6D9E48301700CB7400EE0245 /* sakai */,
+			);
+			name = viewControllers;
+			sourceTree = "<group>";
+		};
+		6D9E48301700CB7400EE0245 /* sakai */ = {
+			isa = PBXGroup;
+			children = (
+				314B576516E3164F0065B50D /* SakaiCalendarViewController.h */,
+				314B576616E3164F0065B50D /* SakaiCalendarViewController.m */,
+				314B576A16E317B00065B50D /* SakaiViewControllerHelper.h */,
+				314B576B16E317B00065B50D /* SakaiViewControllerHelper.m */,
+				314B576C16E317B00065B50D /* SakaiViewControllerHelper.xib */,
+				314B575D16E27E8E0065B50D /* SakaiViewController.h */,
+				314B575E16E27E8E0065B50D /* SakaiViewController.m */,
+			);
+			name = sakai;
+			sourceTree = "<group>";
+		};
+		6D9E48311700CC2200EE0245 /* imageApp */ = {
+			isa = PBXGroup;
+			children = (
+				6D92DDCF16FA403B00AE0AD7 /* ImageViewController.h */,
+				6D92DDD016FA403B00AE0AD7 /* ImageViewController.m */,
+				6D92DDD116FA403B00AE0AD7 /* photoDetailViewController.h */,
+				6D92DDD216FA403B00AE0AD7 /* photoDetailViewController.m */,
+				6D92DDD316FA403B00AE0AD7 /* s3ImageCell.h */,
+				6D92DDD416FA403B00AE0AD7 /* s3ImageCell.m */,
+				6D92DDCD16FA403B00AE0AD7 /* AmazonClientManager.h */,
+				6D92DDCE16FA403B00AE0AD7 /* AmazonClientManager.m */,
+			);
+			name = imageApp;
+			sourceTree = "<group>";
+		};
+		6D9E48321700CCAD00EE0245 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				314B576216E280810065B50D /* Utility.h */,
+				314B576316E280810065B50D /* Utility.m */,
+			);
+			name = util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,7 +362,6 @@
 				317D103316C1ECF2007EBF76 /* InfoPlist.strings in Resources */,
 				317D103C16C1ECF2007EBF76 /* MainStoryboard_iPhone.storyboard in Resources */,
 				317D103F16C1ECF2007EBF76 /* MainStoryboard_iPad.storyboard in Resources */,
-				314B575C16E176230065B50D /* ContactsViewController.xib in Resources */,
 				314B576E16E317B00065B50D /* SakaiViewControllerHelper.xib in Resources */,
 				6D6115D416F0326200CAE42E /* Default-568h@2x.png in Resources */,
 				6D92DDDF16FA55C100AE0AD7 /* top.png in Resources */,
