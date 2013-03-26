@@ -15,12 +15,15 @@
 @property (weak, nonatomic) IBOutlet UITextField *netIdField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UIButton *skipButton;
+@property (weak, nonatomic) IBOutlet UILabel *dayLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateNumLabel;
 
 
 - (void)registerForKeyboardNotifications;
 - (void)unregisterForKeyboardNotifications;
 - (void)checkForNetIdAndPassword;
 - (void)alertMessage:(NSString *)title text:(NSString *)text;
+- (void)updateDateLabels;
 
 @property (weak, nonatomic) UIView *activeField;
 @property (weak, nonatomic) NSString *netId;
