@@ -29,8 +29,8 @@
 		317D104C16C1ECF2007EBF76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 317D102A16C1ECF2007EBF76 /* Foundation.framework */; };
 		317D105416C1ECF2007EBF76 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 317D105216C1ECF2007EBF76 /* InfoPlist.strings */; };
 		317D105716C1ECF2007EBF76 /* DELeadersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 317D105616C1ECF2007EBF76 /* DELeadersTests.m */; };
+		6D4BC1571701F51C0045A55D /* calendarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D4BC1561701F51C0045A55D /* calendarIcon.png */; };
 		6D6115D416F0326200CAE42E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6115D316F0326200CAE42E /* Default-568h@2x.png */; };
-		6D676BFF1701CD53000BB565 /* calendarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D676BFE1701CD53000BB565 /* calendarIcon.png */; };
 		6D676C011701CD6A000BB565 /* wordpressIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D676C001701CD6A000BB565 /* wordpressIcon.png */; };
 		6D676C031701CD78000BB565 /* nsoeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D676C021701CD78000BB565 /* nsoeIcon.png */; };
 		6D676C051701CD84000BB565 /* greyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D676C041701CD84000BB565 /* greyIcon.png */; };
@@ -45,6 +45,14 @@
 		6D92DDE516FA561400AE0AD7 /* facebookButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D92DDE416FA561400AE0AD7 /* facebookButton.png */; };
 		6D92DDE716FA562200AE0AD7 /* twitterButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D92DDE616FA562200AE0AD7 /* twitterButton.png */; };
 		6D92DDEB16FA593B00AE0AD7 /* linkedinButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D92DDEA16FA593B00AE0AD7 /* linkedinButton.png */; };
+		6D9DB8B41702259D00EBF5D6 /* contactsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D9DB8B31702259D00EBF5D6 /* contactsIcon.png */; };
+		6D9DB8BC1702300200EBF5D6 /* imagesIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D9DB8BB1702300200EBF5D6 /* imagesIcon.png */; };
+		6D9DB8C817023CCE00EBF5D6 /* coursesIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D9DB8C717023CCE00EBF5D6 /* coursesIcon.png */; };
+		6D9DB8CE170241F600EBF5D6 /* sakaiIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D9DB8CD170241F600EBF5D6 /* sakaiIcon.png */; };
+		6D9DB8D417024C0300EBF5D6 /* libraryIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D9DB8D317024C0300EBF5D6 /* libraryIcon.png */; };
+		6D9DB8E217025DE600EBF5D6 /* acesIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D9DB8E117025DE600EBF5D6 /* acesIcon.png */; };
+		6D9DB8E617025E9500EBF5D6 /* delIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D9DB8E517025E9500EBF5D6 /* delIcon.png */; };
+		6D9DB8E817025F8400EBF5D6 /* socialIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D9DB8E717025F8400EBF5D6 /* socialIcon.png */; };
 		6DCDFE2D16FF991E004008E2 /* GeneralWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCDFE2C16FF991E004008E2 /* GeneralWebViewController.m */; };
 		6DF21AB816FFBA6D00C7A316 /* SocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF21AB716FFBA6D00C7A316 /* SocialViewController.m */; };
 /* End PBXBuildFile section */
@@ -95,8 +103,8 @@
 		317D105316C1ECF2007EBF76 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		317D105516C1ECF2007EBF76 /* DELeadersTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DELeadersTests.h; sourceTree = "<group>"; };
 		317D105616C1ECF2007EBF76 /* DELeadersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DELeadersTests.m; sourceTree = "<group>"; };
+		6D4BC1561701F51C0045A55D /* calendarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendarIcon.png; sourceTree = "<group>"; };
 		6D6115D316F0326200CAE42E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		6D676BFE1701CD53000BB565 /* calendarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendarIcon.png; sourceTree = "<group>"; };
 		6D676C001701CD6A000BB565 /* wordpressIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wordpressIcon.png; sourceTree = "<group>"; };
 		6D676C021701CD78000BB565 /* nsoeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nsoeIcon.png; sourceTree = "<group>"; };
 		6D676C041701CD84000BB565 /* greyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greyIcon.png; sourceTree = "<group>"; };
@@ -116,6 +124,14 @@
 		6D92DDE416FA561400AE0AD7 /* facebookButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookButton.png; sourceTree = "<group>"; };
 		6D92DDE616FA562200AE0AD7 /* twitterButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterButton.png; sourceTree = "<group>"; };
 		6D92DDEA16FA593B00AE0AD7 /* linkedinButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedinButton.png; sourceTree = "<group>"; };
+		6D9DB8B31702259D00EBF5D6 /* contactsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contactsIcon.png; sourceTree = "<group>"; };
+		6D9DB8BB1702300200EBF5D6 /* imagesIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagesIcon.png; sourceTree = "<group>"; };
+		6D9DB8C717023CCE00EBF5D6 /* coursesIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coursesIcon.png; sourceTree = "<group>"; };
+		6D9DB8CD170241F600EBF5D6 /* sakaiIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sakaiIcon.png; sourceTree = "<group>"; };
+		6D9DB8D317024C0300EBF5D6 /* libraryIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = libraryIcon.png; sourceTree = "<group>"; };
+		6D9DB8E117025DE600EBF5D6 /* acesIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = acesIcon.png; sourceTree = "<group>"; };
+		6D9DB8E517025E9500EBF5D6 /* delIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delIcon.png; sourceTree = "<group>"; };
+		6D9DB8E717025F8400EBF5D6 /* socialIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = socialIcon.png; sourceTree = "<group>"; };
 		6DCDFE2B16FF991E004008E2 /* GeneralWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralWebViewController.h; sourceTree = "<group>"; };
 		6DCDFE2C16FF991E004008E2 /* GeneralWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralWebViewController.m; sourceTree = "<group>"; };
 		6DF21AB616FFBA6D00C7A316 /* SocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialViewController.h; sourceTree = "<group>"; };
@@ -198,10 +214,18 @@
 		317D102F16C1ECF2007EBF76 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6D9DB8E717025F8400EBF5D6 /* socialIcon.png */,
+				6D9DB8E117025DE600EBF5D6 /* acesIcon.png */,
+				6D9DB8E517025E9500EBF5D6 /* delIcon.png */,
+				6D9DB8D317024C0300EBF5D6 /* libraryIcon.png */,
+				6D9DB8CD170241F600EBF5D6 /* sakaiIcon.png */,
+				6D9DB8C717023CCE00EBF5D6 /* coursesIcon.png */,
+				6D9DB8BB1702300200EBF5D6 /* imagesIcon.png */,
+				6D9DB8B31702259D00EBF5D6 /* contactsIcon.png */,
+				6D4BC1561701F51C0045A55D /* calendarIcon.png */,
 				6D676C041701CD84000BB565 /* greyIcon.png */,
 				6D676C021701CD78000BB565 /* nsoeIcon.png */,
 				6D676C001701CD6A000BB565 /* wordpressIcon.png */,
-				6D676BFE1701CD53000BB565 /* calendarIcon.png */,
 				6D92DDEA16FA593B00AE0AD7 /* linkedinButton.png */,
 				6D92DDE616FA562200AE0AD7 /* twitterButton.png */,
 				6D92DDE416FA561400AE0AD7 /* facebookButton.png */,
@@ -381,10 +405,18 @@
 				6D92DDE516FA561400AE0AD7 /* facebookButton.png in Resources */,
 				6D92DDE716FA562200AE0AD7 /* twitterButton.png in Resources */,
 				6D92DDEB16FA593B00AE0AD7 /* linkedinButton.png in Resources */,
-				6D676BFF1701CD53000BB565 /* calendarIcon.png in Resources */,
 				6D676C011701CD6A000BB565 /* wordpressIcon.png in Resources */,
 				6D676C031701CD78000BB565 /* nsoeIcon.png in Resources */,
 				6D676C051701CD84000BB565 /* greyIcon.png in Resources */,
+				6D4BC1571701F51C0045A55D /* calendarIcon.png in Resources */,
+				6D9DB8B41702259D00EBF5D6 /* contactsIcon.png in Resources */,
+				6D9DB8BC1702300200EBF5D6 /* imagesIcon.png in Resources */,
+				6D9DB8C817023CCE00EBF5D6 /* coursesIcon.png in Resources */,
+				6D9DB8CE170241F600EBF5D6 /* sakaiIcon.png in Resources */,
+				6D9DB8D417024C0300EBF5D6 /* libraryIcon.png in Resources */,
+				6D9DB8E217025DE600EBF5D6 /* acesIcon.png in Resources */,
+				6D9DB8E617025E9500EBF5D6 /* delIcon.png in Resources */,
+				6D9DB8E817025F8400EBF5D6 /* socialIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
