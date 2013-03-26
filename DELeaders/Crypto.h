@@ -15,24 +15,16 @@
 
 #import <Foundation/Foundation.h>
 
-#import <AWSiOSSDK/S3/AmazonS3Client.h>
-#import <AWSiOSSDK/SimpleDB/AmazonSimpleDBClient.h>
-#import <AWSiOSSDK/SQS/AmazonSQSClient.h>
-#import <AWSiOSSDK/SNS/AmazonSNSClient.h>
-#import "Constants.h"
-#import "Response.h"
 
-@interface AmazonClientManager:NSObject {
+@interface Crypto:NSObject {
 }
 
-+(AmazonS3Client *)s3;
-+(AmazonSimpleDBClient *)sdb;
-+(AmazonSQSClient *)sqs;
-+(AmazonSNSClient *)sns;
++(NSData *)decrypt:(NSString *)data key:(NSString *)key;
++(NSData *)aes128Decrypt:(NSData *)data key:(NSData *)key withIV:(NSData *)iv;
 
-+(bool)hasCredentials;
-+(Response *)validateCredentials;
-+(void)wipeAllCredentials;
-+ (BOOL)wipeCredentialsOnAuthError:(NSError *)error;
++(NSData *)hexDecode:(NSString *)hexString;
++(NSString *)hexEncode:(NSString *)string;
+
++(NSString *)generateRandomString;
 
 @end

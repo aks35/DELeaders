@@ -14,25 +14,20 @@
  */
 
 #import <Foundation/Foundation.h>
-
-#import <AWSiOSSDK/S3/AmazonS3Client.h>
-#import <AWSiOSSDK/SimpleDB/AmazonSimpleDBClient.h>
-#import <AWSiOSSDK/SQS/AmazonSQSClient.h>
-#import <AWSiOSSDK/SNS/AmazonSNSClient.h>
-#import "Constants.h"
 #import "Response.h"
 
-@interface AmazonClientManager:NSObject {
+@interface GetTokenResponse:Response {
+    NSString *accessKey;
+    NSString *secretKey;
+    NSString *securityToken;
+    NSString *expirationDate;
 }
 
-+(AmazonS3Client *)s3;
-+(AmazonSimpleDBClient *)sdb;
-+(AmazonSQSClient *)sqs;
-+(AmazonSNSClient *)sns;
+@property (nonatomic, retain) NSString *accessKey;
+@property (nonatomic, retain) NSString *secretKey;
+@property (nonatomic, retain) NSString *securityToken;
+@property (nonatomic, retain) NSString *expirationDate;
 
-+(bool)hasCredentials;
-+(Response *)validateCredentials;
-+(void)wipeAllCredentials;
-+ (BOOL)wipeCredentialsOnAuthError:(NSError *)error;
+-(id)initWithAccessKey:(NSString *)theAccessKey andSecretKey:(NSString *)theSecurityKey andSecurityToken:(NSString *)theSecurityToken andExpirationDate:(NSString *)theExpirationDate;
 
 @end

@@ -14,25 +14,18 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "Request.h"
 
-#import <AWSiOSSDK/S3/AmazonS3Client.h>
-#import <AWSiOSSDK/SimpleDB/AmazonSimpleDBClient.h>
-#import <AWSiOSSDK/SQS/AmazonSQSClient.h>
-#import <AWSiOSSDK/SNS/AmazonSNSClient.h>
-#import "Constants.h"
-#import "Response.h"
+#define REGISTER_REQUEST        @"http://%@/registerdevice?uid=%@&key=%@"
+#define SSL_REGISTER_REQUEST    @"https://%@/registerdevice?uid=%@&key=%@"
 
-@interface AmazonClientManager:NSObject {
+@interface RegisterDeviceRequest:Request {
+    NSString *endpoint;
+    NSString *uid;
+    NSString *key;
+    bool     useSSL;
 }
 
-+(AmazonS3Client *)s3;
-+(AmazonSimpleDBClient *)sdb;
-+(AmazonSQSClient *)sqs;
-+(AmazonSNSClient *)sns;
-
-+(bool)hasCredentials;
-+(Response *)validateCredentials;
-+(void)wipeAllCredentials;
-+ (BOOL)wipeCredentialsOnAuthError:(NSError *)error;
+-(id)initWithEndpoint:(NSString *)theEndpoint andUid:(NSString *)theUid andKey:(NSString *)theKey usingSSL:(bool)usingSSL;
 
 @end

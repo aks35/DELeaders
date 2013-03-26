@@ -8,6 +8,8 @@
 
 #import "photoDetailViewController.h"
 #import <AWSiOSSDK/S3/AmazonS3Client.h>
+#import "AmazonClientManager.h"
+
 
 @interface photoDetailViewController ()
 @property (weak) IBOutlet UIImageView *imageView;
@@ -15,8 +17,7 @@
 @end
 
 @implementation photoDetailViewController
-NSString *MY_ACCESS_KEY_ID2 = @"AKIAJXYLMJM5JBOWN7NA";
-NSString *MY_SECRET_KEY2 = @"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";
+AmazonS3Client *s3;
 UIImage *myImage;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,11 +31,8 @@ UIImage *myImage;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    AmazonS3Client *s3 = [[AmazonS3Client alloc] initWithAccessKey:MY_ACCESS_KEY_ID2 withSecretKey:MY_SECRET_KEY2];
-    
-    
-//    NSString* imageName = [listOfItems objectAtIndex:indexPath.row];
+    s3 = [AmazonClientManager s3];    
+
     
     
     S3GetObjectRequest* gor = [[S3GetObjectRequest alloc] initWithKey:self.imageName withBucket:@"delpictures"];
@@ -43,7 +41,6 @@ UIImage *myImage;
     
     myImage= [[UIImage alloc] initWithData:gore.body];
     self.imageLabel.text=self.imageName;
-//    self.navBarTitle.title=self.imageName;
     self.imageView.image=myImage;
 	// Do any additional setup after loading the view.
 }

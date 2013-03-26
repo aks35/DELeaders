@@ -13,26 +13,14 @@
  * permissions and limitations under the License.
  */
 
-#import <Foundation/Foundation.h>
+#import "Request.h"
 
-#import <AWSiOSSDK/S3/AmazonS3Client.h>
-#import <AWSiOSSDK/SimpleDB/AmazonSimpleDBClient.h>
-#import <AWSiOSSDK/SQS/AmazonSQSClient.h>
-#import <AWSiOSSDK/SNS/AmazonSNSClient.h>
-#import "Constants.h"
-#import "Response.h"
+@implementation Request
 
-@interface AmazonClientManager:NSObject {
+-(NSString *)buildRequestUrl
+{
+    return nil;
 }
 
-+(AmazonS3Client *)s3;
-+(AmazonSimpleDBClient *)sdb;
-+(AmazonSQSClient *)sqs;
-+(AmazonSNSClient *)sns;
-
-+(bool)hasCredentials;
-+(Response *)validateCredentials;
-+(void)wipeAllCredentials;
-+ (BOOL)wipeCredentialsOnAuthError:(NSError *)error;
-
 @end
+
