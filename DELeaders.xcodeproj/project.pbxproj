@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		235B505C170254ED002A8B65 /* AWSiOSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 235B505B170254ED002A8B65 /* AWSiOSSDK.framework */; };
+		235B505E17025509002A8B65 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 235B505D17025509002A8B65 /* Security.framework */; };
 		310E538A16E66734001395E5 /* CoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 310E538816E66734001395E5 /* CoursesViewController.m */; };
 		314B574C16DFC7E20065B50D /* LoadingAnimViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B574A16DFC7E20065B50D /* LoadingAnimViewController.m */; };
 		314B575B16E176230065B50D /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B575916E176230065B50D /* ContactsViewController.m */; };
@@ -30,7 +32,6 @@
 		317D105416C1ECF2007EBF76 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 317D105216C1ECF2007EBF76 /* InfoPlist.strings */; };
 		317D105716C1ECF2007EBF76 /* DELeadersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 317D105616C1ECF2007EBF76 /* DELeadersTests.m */; };
 		6D6115D416F0326200CAE42E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6115D316F0326200CAE42E /* Default-568h@2x.png */; };
-		6D92DD1516F8F8FB00AE0AD7 /* AWSiOSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D92DD1416F8F8FB00AE0AD7 /* AWSiOSSDK.framework */; };
 		6D92DDD516FA403B00AE0AD7 /* AmazonClientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DDCE16FA403B00AE0AD7 /* AmazonClientManager.m */; };
 		6D92DDD616FA403B00AE0AD7 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DDD016FA403B00AE0AD7 /* ImageViewController.m */; };
 		6D92DDD716FA403B00AE0AD7 /* photoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DDD216FA403B00AE0AD7 /* photoDetailViewController.m */; };
@@ -56,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		235B505B170254ED002A8B65 /* AWSiOSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSiOSSDK.framework; sourceTree = "<group>"; };
+		235B505D17025509002A8B65 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		310E538716E66734001395E5 /* CoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoursesViewController.h; sourceTree = "<group>"; };
 		310E538816E66734001395E5 /* CoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursesViewController.m; sourceTree = "<group>"; };
 		314B574916DFC7E20065B50D /* LoadingAnimViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingAnimViewController.h; sourceTree = "<group>"; };
@@ -92,7 +95,6 @@
 		317D105516C1ECF2007EBF76 /* DELeadersTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DELeadersTests.h; sourceTree = "<group>"; };
 		317D105616C1ECF2007EBF76 /* DELeadersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DELeadersTests.m; sourceTree = "<group>"; };
 		6D6115D316F0326200CAE42E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		6D92DD1416F8F8FB00AE0AD7 /* AWSiOSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSiOSSDK.framework; path = "../../Downloads/aws-ios-sdk-1.4.6/AWSiOSSDK.framework"; sourceTree = "<group>"; };
 		6D92DDCD16FA403B00AE0AD7 /* AmazonClientManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmazonClientManager.h; sourceTree = "<group>"; };
 		6D92DDCE16FA403B00AE0AD7 /* AmazonClientManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmazonClientManager.m; sourceTree = "<group>"; };
 		6D92DDCF16FA403B00AE0AD7 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
@@ -119,10 +121,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				235B505E17025509002A8B65 /* Security.framework in Frameworks */,
 				317D102916C1ECF2007EBF76 /* UIKit.framework in Frameworks */,
 				317D102B16C1ECF2007EBF76 /* Foundation.framework in Frameworks */,
 				317D102D16C1ECF2007EBF76 /* CoreGraphics.framework in Frameworks */,
-				6D92DD1516F8F8FB00AE0AD7 /* AWSiOSSDK.framework in Frameworks */,
+				235B505C170254ED002A8B65 /* AWSiOSSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +145,7 @@
 		317D101916C1ECF2007EBF76 = {
 			isa = PBXGroup;
 			children = (
+				235B505D17025509002A8B65 /* Security.framework */,
 				6D6115D316F0326200CAE42E /* Default-568h@2x.png */,
 				317D102E16C1ECF2007EBF76 /* DELeaders */,
 				317D104F16C1ECF2007EBF76 /* DELeadersTests */,
@@ -162,7 +166,7 @@
 		317D102716C1ECF2007EBF76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6D92DD1416F8F8FB00AE0AD7 /* AWSiOSSDK.framework */,
+				235B505B170254ED002A8B65 /* AWSiOSSDK.framework */,
 				317D102816C1ECF2007EBF76 /* UIKit.framework */,
 				317D102A16C1ECF2007EBF76 /* Foundation.framework */,
 				317D102C16C1ECF2007EBF76 /* CoreGraphics.framework */,
@@ -540,6 +544,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Downloads/aws-ios-sdk-1.4.6\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DELeaders/DELeaders-Prefix.pch";
@@ -555,6 +560,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Downloads/aws-ios-sdk-1.4.6\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DELeaders/DELeaders-Prefix.pch";
