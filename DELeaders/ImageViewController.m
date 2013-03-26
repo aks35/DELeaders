@@ -10,11 +10,10 @@
 #import <AWSiOSSDK/S3/AmazonS3Client.h>
 #import "s3ImageCell.h"
 #import "photoDetailViewController.h"
+#import "AmazonClientManager.h"
 
 
 @implementation ImageViewController
-NSString *MY_ACCESS_KEY_ID = @"AKIAJXYLMJM5JBOWN7NA";
-NSString *MY_SECRET_KEY = @"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";
 AmazonS3Client *s3;
 NSMutableArray *listOfItems;
 NSData *imageData;
@@ -28,12 +27,11 @@ S3Bucket *compressedBucket;
 	// Do any additional setup after loading the view, typically from a nib.
     self.collectionView.backgroundColor = [UIColor colorWithWhite:0.25f alpha:1.0f]; //set background color to grey
     [self.collectionView registerClass:[s3ImageCell class] forCellWithReuseIdentifier:@"simpleCellID"];
-    AmazonS3Client *s3 = [[AmazonS3Client alloc] initWithAccessKey:MY_ACCESS_KEY_ID withSecretKey:MY_SECRET_KEY];
+    s3 = [AmazonClientManager s3];
     NSArray *listOfBuckets = s3.listBuckets;
     
     
     //If the bucket does not exist, then create it.
-
     for(S3Bucket *bucket in listOfBuckets){
         if([[bucket name]isEqual:@"delpictures"]){
             myBucket=bucket;
@@ -46,7 +44,7 @@ S3Bucket *compressedBucket;
     
     
     //check for and if needed create the compressedBucket
-    
+
     for(S3Bucket *bucket in listOfBuckets){
         if([[bucket name]isEqual:@"delpicturescompressed"]){
             compressedBucket=bucket;
@@ -106,13 +104,8 @@ S3Bucket *compressedBucket;
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-//    NSLog(@"Entered: %@",[[alertView textFieldAtIndex:0] text]);
-    s3 = [[AmazonS3Client alloc] initWithAccessKey:MY_ACCESS_KEY_ID withSecretKey:MY_SECRET_KEY];
-    
+//    s3 = [AmazonClientManager s3];
 
-    
-    
-    
     //upload the original image
         NSString* keyName = [[alertView textFieldAtIndex:0] text];
     S3PutObjectRequest *por = [[S3PutObjectRequest alloc] initWithKey:keyName inBucket:@"delpictures"];
@@ -143,11 +136,8 @@ S3Bucket *compressedBucket;
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
 
-    s3 = [[AmazonS3Client alloc] initWithAccessKey:MY_ACCESS_KEY_ID withSecretKey:MY_SECRET_KEY];
-    
-    
+//    s3 = [AmazonClientManager s3];
     NSString* imageName = [listOfItems objectAtIndex:indexPath.row];
-    
     
     S3GetObjectRequest* gor = [[S3GetObjectRequest alloc] initWithKey:imageName withBucket:@"delpictures"];
     S3GetObjectResponse* gore = [s3 getObject:gor];
@@ -178,9 +168,8 @@ S3Bucket *compressedBucket;
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    s3 = [[AmazonS3Client alloc] initWithAccessKey:MY_ACCESS_KEY_ID withSecretKey:MY_SECRET_KEY];
 
-
+//    s3 = [AmazonClientManager s3];
     static NSString* MyCellID = @"simpleCellID";
     NSString* imageName = [listOfItems objectAtIndex:indexPath.row];
     NSString* compressedImageName = [imageName stringByAppendingString:@"_compressed"];

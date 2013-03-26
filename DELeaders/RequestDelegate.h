@@ -15,24 +15,18 @@
 
 #import <Foundation/Foundation.h>
 
-#import <AWSiOSSDK/S3/AmazonS3Client.h>
-#import <AWSiOSSDK/SimpleDB/AmazonSimpleDBClient.h>
-#import <AWSiOSSDK/SQS/AmazonSQSClient.h>
-#import <AWSiOSSDK/SNS/AmazonSNSClient.h>
-#import "Constants.h"
-#import "Response.h"
 
-@interface AmazonClientManager:NSObject {
+@interface RequestDelegate:NSObject {
+    NSMutableData *receivedData;
+
+    NSString      *responseBody;
+
+    bool          failed;
+    bool          done;
 }
 
-+(AmazonS3Client *)s3;
-+(AmazonSimpleDBClient *)sdb;
-+(AmazonSQSClient *)sqs;
-+(AmazonSNSClient *)sns;
-
-+(bool)hasCredentials;
-+(Response *)validateCredentials;
-+(void)wipeAllCredentials;
-+ (BOOL)wipeCredentialsOnAuthError:(NSError *)error;
+@property (nonatomic, retain) NSString *responseBody;
+@property (nonatomic) bool             failed;
+@property (nonatomic) bool             done;
 
 @end

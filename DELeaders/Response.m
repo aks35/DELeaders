@@ -13,26 +13,33 @@
  * permissions and limitations under the License.
  */
 
-#import <Foundation/Foundation.h>
-
-#import <AWSiOSSDK/S3/AmazonS3Client.h>
-#import <AWSiOSSDK/SimpleDB/AmazonSimpleDBClient.h>
-#import <AWSiOSSDK/SQS/AmazonSQSClient.h>
-#import <AWSiOSSDK/SNS/AmazonSNSClient.h>
-#import "Constants.h"
 #import "Response.h"
 
-@interface AmazonClientManager:NSObject {
+@implementation Response
+
+@synthesize code;
+@synthesize message;
+
+-(id)initWithCode:(int)theCode andMessage:(NSString *)theMessage
+{
+    if ((self = [super init])) {
+        code         = theCode;
+        self.message = theMessage;
+    }
+
+    return self;
 }
 
-+(AmazonS3Client *)s3;
-+(AmazonSimpleDBClient *)sdb;
-+(AmazonSQSClient *)sqs;
-+(AmazonSNSClient *)sns;
+-(bool)wasSuccessful
+{
+    return self.code == 200;
+}
 
-+(bool)hasCredentials;
-+(Response *)validateCredentials;
-+(void)wipeAllCredentials;
-+ (BOOL)wipeCredentialsOnAuthError:(NSError *)error;
+-(void)dealloc
+{
+    [message release];
+    [super dealloc];
+}
 
 @end
+
