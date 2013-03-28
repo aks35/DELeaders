@@ -53,13 +53,13 @@ Utility *util;
     if([identifier hasPrefix:@"soc-"]){
         SocialViewController *controller = (SocialViewController *)segue.destinationViewController;
         if ([identifier isEqualToString:@"soc-FacebookSegue"]) {
-            controller.myURL = @"http://www.facebook.com/";
+            controller.myURL = @"https://www.facebook.com/DukeEnvironmentalLeadership";
             controller.myTitle = @"Facebook";
         } else if ([identifier isEqualToString:@"soc-TwitterSegue"]) {
-            controller.myURL = @"http://www.twitter.com/";
+            controller.myURL = @"https://twitter.com/DEL_Duke";
             controller.myTitle = @"Twitter";
         } else if ([identifier isEqualToString:@"soc-LinkedinSegue"]) {
-            controller.myURL = @"http://www.linkedin.com";
+            controller.myURL = @"http://www.linkedin.com/groups/Duke-Environmental-Leadership-Master-Environmental-1124597?gid=1124597&trk=hb_side_g";
             controller.myTitle = @"Linkedin";
         }
     }
@@ -75,7 +75,7 @@ Utility *util;
 
 - (IBAction)openLinkedIn:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.linkedin.com/" ]];
-}
+}   
 
 - (void)viewDidUnload {
     [self setMyWebView:nil];

@@ -19,6 +19,8 @@
 @synthesize passwordField;
 @synthesize skipButton;
 @synthesize activeField;
+@synthesize dayLabel;
+@synthesize dateNumLabel;
 
 @synthesize netId;
 @synthesize password;
@@ -39,6 +41,7 @@
     tap.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tap];
     [self checkForNetIdAndPassword];
+    [self updateDateLabels];
 }
 
 - (void)viewDidUnload
@@ -48,6 +51,8 @@
     [self setEnterButton:nil];
     [self setScrollView:nil];
     [self setSkipButton:nil];
+    [self setDayLabel:nil];
+    [self setDateNumLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -188,6 +193,22 @@
         [netIdField setText:netId];
         [passwordField setText:password];
     }
+}
+
+- (void)updateDateLabels {
+    NSDate *now = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"EEEE"];
+    NSString *dayString = [formatter stringFromDate:now];
+    NSLog(@"Current DAY: %@", dayString);
+    dayLabel.text = dayString;
+    [formatter setDateFormat:@"d"];
+    NSString *dateString = [formatter stringFromDate:now];
+    NSLog(@"Current DATE: %@", dateString);
+    dateNumLabel.text = dateString;
+    dateNumLabel.font = [UIFont fontWithName:dateNumLabel.font.fontName size:dateNumLabel.frame.size.height];
+    
+    
 }
 
 @end
