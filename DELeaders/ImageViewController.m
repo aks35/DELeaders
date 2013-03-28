@@ -77,14 +77,6 @@ S3Bucket *compressedBucket;
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)pickAnImage:(id)sender {
-    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-    imagePicker.delegate = self;
-    [self presentModalViewController:imagePicker animated:YES];
-
-
-
-}
 
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
@@ -190,4 +182,9 @@ S3Bucket *compressedBucket;
 
 
 
+- (IBAction)Upload:(id)sender {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate = self;
+    [self presentModalViewController:imagePicker animated:YES];
+}
 @end

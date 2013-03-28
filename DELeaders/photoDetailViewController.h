@@ -11,7 +11,7 @@
 @interface photoDetailViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UILabel *imageLabel;
 - (IBAction)saveImageToPhone:(id)sender;
-- (IBAction)doneButton:(id)sender;
+- (IBAction)shareImage:(id)sender;
 
 @property (weak, nonatomic) NSString *imageName;
 

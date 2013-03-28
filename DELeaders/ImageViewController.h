@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ImageViewController : UIViewController <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
-- (IBAction)pickAnImage:(id)sender;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+- (IBAction)Upload:(id)sender;
 
 
 
