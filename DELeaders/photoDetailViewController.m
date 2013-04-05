@@ -57,7 +57,18 @@ UIImage *myImage;
     UIImageWriteToSavedPhotosAlbum(myImage, nil, nil, nil);
 }
 
-- (IBAction)doneButton:(id)sender {
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:^{}];
+- (IBAction)shareImage:(id)sender {
+    NSArray *activityItems;
+    
+    activityItems = @[myImage];
+    
+    UIActivityViewController *activityController =
+    [[UIActivityViewController alloc]
+     initWithActivityItems:activityItems
+     applicationActivities:nil];
+    
+    [self presentViewController:activityController
+                       animated:YES completion:nil];
 }
+
 @end

@@ -167,7 +167,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="xUY-Ha-QT5">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="366"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -192,7 +192,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="hjE-ci-KlS">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="366"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -874,19 +874,19 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="cBb-ft-kaI">
-                                <rect key="frame" x="20" y="75" width="280" height="341"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pMB-6k-TKh">
-                                    <size key="itemSize" width="129" height="130"/>
+                                    <size key="itemSize" width="149" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="simpleCellID" id="DBk-ik-eUY" customClass="s3ImageCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="129" height="130"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="149" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="129" height="130"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="149" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" id="S38-co-BNh" customClass="UIImageView">
@@ -910,7 +910,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Images" id="ncm-y3-ug1"/>
+                    <navigationItem key="navigationItem" title="Images" id="ncm-y3-ug1">
+                        <barButtonItem key="rightBarButtonItem" title="Upload" id="4SV-db-Ieo">
+                            <connections>
+                                <action selector="Upload:" destination="Ub0-0X-CGW" id="9SX-ef-DOj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="cBb-ft-kaI" id="zqb-C6-KC7"/>
                     </connections>
@@ -959,7 +965,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9cS-hC-c2p">
-                                <rect key="frame" x="139" y="56" width="42" height="21"/>
+                                <rect key="frame" x="139" y="11" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -967,7 +973,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Images" id="nrw-zm-GNT"/>
+                    <navigationItem key="navigationItem" title="Images" id="nrw-zm-GNT">
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="ioj-aa-mZG">
+                            <connections>
+                                <action selector="shareImage:" destination="3yA-PO-qgt" id="HdV-Bc-v7p"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="imageLabel" destination="9cS-hC-c2p" id="42G-yZ-WUt"/>
                         <outlet property="imageView" destination="Teg-a0-5dS" id="78A-Ob-49k"/>
@@ -1024,6 +1037,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageViewController.h"/>
             <relationships>
                 <relationship kind="action" name="pickAnImage:"/>
+                <relationship kind="action" name="Upload:"/>
                 <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
             </relationships>
         </class>
@@ -1075,6 +1089,7 @@
             <relationships>
                 <relationship kind="action" name="doneButton:"/>
                 <relationship kind="action" name="saveImageToPhone:"/>
+                <relationship kind="action" name="shareImage:"/>
                 <relationship kind="outlet" name="imageLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
             </relationships>

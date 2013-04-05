@@ -1200,22 +1200,22 @@
         </scene>
     </scenes>
     <resources>
-        <image name="acesIcon.png" width="50" height="50"/>
-        <image name="calendarIcon.png" width="50" height="50"/>
-        <image name="contactsIcon.png" width="50" height="50"/>
-        <image name="coursesIcon.png" width="50" height="50"/>
-        <image name="delIcon.png" width="50" height="50"/>
-        <image name="del_logo_shaded.png" width="380" height="92"/>
-        <image name="facebookButton.png" width="242" height="56"/>
-        <image name="imagesIcon.png" width="50" height="50"/>
-        <image name="libraryIcon.png" width="50" height="50"/>
-        <image name="linkedinButton.png" width="242" height="56"/>
-        <image name="nsoeIcon.png" width="50" height="50"/>
-        <image name="sakaiIcon.png" width="50" height="50"/>
-        <image name="socialIcon.png" width="50" height="50"/>
-        <image name="top.png" width="640" height="125"/>
-        <image name="twitterButton.png" width="242" height="56"/>
-        <image name="wordpressIcon.png" width="50" height="50"/>
+        <image name="acesIcon.png" width="16" height="16"/>
+        <image name="calendarIcon.png" width="16" height="16"/>
+        <image name="contactsIcon.png" width="16" height="16"/>
+        <image name="coursesIcon.png" width="16" height="16"/>
+        <image name="delIcon.png" width="16" height="16"/>
+        <image name="del_logo_shaded.png" width="16" height="16"/>
+        <image name="facebookButton.png" width="16" height="16"/>
+        <image name="imagesIcon.png" width="16" height="16"/>
+        <image name="libraryIcon.png" width="16" height="16"/>
+        <image name="linkedinButton.png" width="16" height="16"/>
+        <image name="nsoeIcon.png" width="16" height="16"/>
+        <image name="sakaiIcon.png" width="16" height="16"/>
+        <image name="socialIcon.png" width="16" height="16"/>
+        <image name="top.png" width="16" height="16"/>
+        <image name="twitterButton.png" width="16" height="16"/>
+        <image name="wordpressIcon.png" width="16" height="16"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

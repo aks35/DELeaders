@@ -16,6 +16,8 @@
 @implementation ImageViewController
 AmazonS3Client *s3;
 NSMutableArray *listOfItems;
+NSMutableArray *compressedImages;
+//NSMutableArray *fullImages;
 NSData *imageData;
 NSData *compressedImageData;
 S3Bucket *myBucket;
@@ -61,10 +63,21 @@ S3Bucket *compressedBucket;
     for(S3ObjectSummary* object in objectList){
         [listOfItems addObject:object.description];
     }
-
     
-
     
+    compressedImages = [[NSMutableArray alloc] init];
+    for (NSString* imageName in listOfItems) {
+        NSString* compressedImageName = [imageName stringByAppendingString:@"_compressed"];
+        
+        
+        S3GetObjectRequest* gor = [[S3GetObjectRequest alloc] initWithKey:compressedImageName withBucket:@"delpicturescompressed"];
+        S3GetObjectResponse* gore = [s3 getObject:gor];
+        gore.contentType=@"image/jpeg";
+        
+        UIImage *compressedThumbnail = [[UIImage alloc] initWithData:gore.body];
+        [compressedImages addObject:compressedThumbnail];
+
+    }
     
         
 }
@@ -77,14 +90,6 @@ S3Bucket *compressedBucket;
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)pickAnImage:(id)sender {
-    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-    imagePicker.delegate = self;
-    [self presentModalViewController:imagePicker animated:YES];
-
-
-
-}
 
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
@@ -104,7 +109,6 @@ S3Bucket *compressedBucket;
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-//    s3 = [AmazonClientManager s3];
 
     //upload the original image
         NSString* keyName = [[alertView textFieldAtIndex:0] text];
@@ -135,8 +139,6 @@ S3Bucket *compressedBucket;
 
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-
-//    s3 = [AmazonClientManager s3];
     NSString* imageName = [listOfItems objectAtIndex:indexPath.row];
     
     S3GetObjectRequest* gor = [[S3GetObjectRequest alloc] initWithKey:imageName withBucket:@"delpictures"];
@@ -169,18 +171,8 @@ S3Bucket *compressedBucket;
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 
-//    s3 = [AmazonClientManager s3];
     static NSString* MyCellID = @"simpleCellID";
-    NSString* imageName = [listOfItems objectAtIndex:indexPath.row];
-    NSString* compressedImageName = [imageName stringByAppendingString:@"_compressed"];
-    
-    
-    S3GetObjectRequest* gor = [[S3GetObjectRequest alloc] initWithKey:compressedImageName withBucket:@"delpicturescompressed"];
-    S3GetObjectResponse* gore = [s3 getObject:gor];
-    gore.contentType=@"image/jpeg";
-    
-    UIImage *compressedThumbnail = [[UIImage alloc] initWithData:gore.body];
-    
+    UIImage *compressedThumbnail = [compressedImages objectAtIndex:indexPath.row];
     s3ImageCell* newCell = [collectionView dequeueReusableCellWithReuseIdentifier:MyCellID
                                                                            forIndexPath:indexPath];
 
@@ -190,4 +182,9 @@ S3Bucket *compressedBucket;
 
 
 
+- (IBAction)Upload:(id)sender {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate = self;
+    [self presentModalViewController:imagePicker animated:YES];
+}
 @end
