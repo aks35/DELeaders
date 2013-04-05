@@ -112,15 +112,16 @@
             [self.window makeKeyAndVisible];
         }
         
-    } else if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
-        
-    {   // The iOS device = iPad
-        
-        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-        UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-        splitViewController.delegate = (id)navigationController.topViewController;
-        
     }
+//    else if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
+//        
+//    {   // The iOS device = iPad
+//        
+//        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+//        UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
+//        splitViewController.delegate = (id)navigationController.topViewController;
+//        
+//    }
 
 }
 

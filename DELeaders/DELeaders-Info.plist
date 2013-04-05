@@ -13,7 +13,7 @@
 		<string>del.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>ark5.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.ark5.DELinks</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
