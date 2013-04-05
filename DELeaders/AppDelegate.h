@@ -15,5 +15,6 @@
 @property (weak, nonatomic) NSString *password;
 
 - (void)loadWebView:(NSString *)fullURL webView:(UIWebView *)webView;
+- (void)initializeStoryBoardBasedOnScreenSize;
 
 @end

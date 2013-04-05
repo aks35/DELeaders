@@ -37,6 +37,7 @@ Utility *util;
     [myWebView setDelegate:self];
     util = [[Utility alloc]init];
     [util loadWebView:myURL webView:myWebView];
+    myWebView.scalesPageToFit = YES;
     self.navigationItem.title = myTitle;
 }
 
