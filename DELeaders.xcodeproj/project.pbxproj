@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		234AF837170400C2000FCD51 /* AWSiOSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234AF836170400C2000FCD51 /* AWSiOSSDK.framework */; };
 		235B5063170255C6002A8B65 /* AmazonClientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B5060170255C6002A8B65 /* AmazonClientManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		235B5064170255C6002A8B65 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B5062170255C6002A8B65 /* Constants.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		235B507E170255FE002A8B65 /* AmazonTVMClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B5067170255FE002A8B65 /* AmazonTVMClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		235B507F170255FE002A8B65 /* AmazonKeyChainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B5069170255FE002A8B65 /* AmazonKeyChainWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		235B5080170255FE002A8B65 /* Crypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B506B170255FE002A8B65 /* Crypto.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		235B5081170255FE002A8B65 /* GetTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B506D170255FE002A8B65 /* GetTokenRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		235B5082170255FE002A8B65 /* GetTokenResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B506F170255FE002A8B65 /* GetTokenResponse.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		235B5083170255FE002A8B65 /* GetTokenResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B5071170255FE002A8B65 /* GetTokenResponseHandler.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		235B5084170255FE002A8B65 /* JSONUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B5073170255FE002A8B65 /* JSONUtilities.m */; };
 		235B5085170255FE002A8B65 /* RegisterDeviceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B5075170255FE002A8B65 /* RegisterDeviceRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -21,20 +21,7 @@
 		235B5087170255FE002A8B65 /* RequestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B5079170255FE002A8B65 /* RequestDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		235B5088170255FE002A8B65 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B507B170255FE002A8B65 /* Response.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		235B5089170255FE002A8B65 /* ResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B507D170255FE002A8B65 /* ResponseHandler.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		234AF837170400C2000FCD51 /* AWSiOSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234AF836170400C2000FCD51 /* AWSiOSSDK.framework */; };
-		237EA6B51704A8A100EB1D09 /* ResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 237EA69B1704A8A100EB1D09 /* ResponseHandler.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		237EA6B61704A8A100EB1D09 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 237EA69D1704A8A100EB1D09 /* Response.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		237EA6B71704A8A100EB1D09 /* RequestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 237EA69F1704A8A100EB1D09 /* RequestDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		237EA6B81704A8A100EB1D09 /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 237EA6A11704A8A100EB1D09 /* Request.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		237EA6B91704A8A100EB1D09 /* RegisterDeviceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 237EA6A31704A8A100EB1D09 /* RegisterDeviceRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		237EA6BA1704A8A100EB1D09 /* JSONUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 237EA6A51704A8A100EB1D09 /* JSONUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		237EA6BB1704A8A100EB1D09 /* GetTokenResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 237EA6A71704A8A100EB1D09 /* GetTokenResponseHandler.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		237EA6BC1704A8A100EB1D09 /* GetTokenResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 237EA6A91704A8A100EB1D09 /* GetTokenResponse.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		237EA6BD1704A8A100EB1D09 /* GetTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 237EA6AB1704A8A100EB1D09 /* GetTokenRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		237EA6BE1704A8A100EB1D09 /* Crypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 237EA6AD1704A8A100EB1D09 /* Crypto.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		237EA6BF1704A8A100EB1D09 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 237EA6AF1704A8A100EB1D09 /* Constants.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		237EA6C01704A8A100EB1D09 /* AmazonTVMClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 237EA6B11704A8A100EB1D09 /* AmazonTVMClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		237EA6C11704A8A100EB1D09 /* AmazonKeyChainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 237EA6B31704A8A100EB1D09 /* AmazonKeyChainWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		310E538A16E66734001395E5 /* CoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 310E538816E66734001395E5 /* CoursesViewController.m */; };
 		314B574C16DFC7E20065B50D /* LoadingAnimViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B574A16DFC7E20065B50D /* LoadingAnimViewController.m */; };
 		314B575B16E176230065B50D /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B575916E176230065B50D /* ContactsViewController.m */; };
@@ -66,10 +53,6 @@
 		6D676C011701CD6A000BB565 /* wordpressIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D676C001701CD6A000BB565 /* wordpressIcon.png */; };
 		6D676C051701CD84000BB565 /* greyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D676C041701CD84000BB565 /* greyIcon.png */; };
 		6D740E091702780A00013F2D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D740E081702780A00013F2D /* Security.framework */; };
-		6D92DD1516F8F8FB00AE0AD7 /* AWSiOSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D92DD1416F8F8FB00AE0AD7 /* AWSiOSSDK.framework */; };
-		6D6EFA19170266B200E6CAC6 /* nsoeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6EFA18170266B200E6CAC6 /* nsoeIcon.png */; };
-		6D6EFA1B1702681E00E6CAC6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6EFA1A1702681E00E6CAC6 /* Security.framework */; };
-		6D92DDD516FA403B00AE0AD7 /* AmazonClientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DDCE16FA403B00AE0AD7 /* AmazonClientManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6D92DDD616FA403B00AE0AD7 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DDD016FA403B00AE0AD7 /* ImageViewController.m */; };
 		6D92DDD716FA403B00AE0AD7 /* photoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DDD216FA403B00AE0AD7 /* photoDetailViewController.m */; };
 		6D92DDD816FA403B00AE0AD7 /* s3ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DDD416FA403B00AE0AD7 /* s3ImageCell.m */; };
@@ -102,6 +85,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		234AF836170400C2000FCD51 /* AWSiOSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSiOSSDK.framework; sourceTree = "<group>"; };
 		235B505F170255C6002A8B65 /* AmazonClientManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmazonClientManager.h; sourceTree = "<group>"; };
 		235B5060170255C6002A8B65 /* AmazonClientManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmazonClientManager.m; sourceTree = "<group>"; };
 		235B5061170255C6002A8B65 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -130,7 +114,6 @@
 		235B507B170255FE002A8B65 /* Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Response.m; sourceTree = "<group>"; };
 		235B507C170255FE002A8B65 /* ResponseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseHandler.h; sourceTree = "<group>"; };
 		235B507D170255FE002A8B65 /* ResponseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseHandler.m; sourceTree = "<group>"; };
-		234AF836170400C2000FCD51 /* AWSiOSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSiOSSDK.framework; sourceTree = "<group>"; };
 		237EA69B1704A8A100EB1D09 /* ResponseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseHandler.m; sourceTree = "<group>"; };
 		237EA69C1704A8A100EB1D09 /* ResponseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseHandler.h; sourceTree = "<group>"; };
 		237EA69D1704A8A100EB1D09 /* Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Response.m; sourceTree = "<group>"; };
@@ -201,11 +184,6 @@
 		6D676C001701CD6A000BB565 /* wordpressIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wordpressIcon.png; sourceTree = "<group>"; };
 		6D676C041701CD84000BB565 /* greyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greyIcon.png; sourceTree = "<group>"; };
 		6D740E081702780A00013F2D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		6D92DD1416F8F8FB00AE0AD7 /* AWSiOSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSiOSSDK.framework; path = "../../Downloads/aws-ios-sdk-1.4.6/AWSiOSSDK.framework"; sourceTree = "<group>"; };
-		6D6EFA18170266B200E6CAC6 /* nsoeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nsoeIcon.png; sourceTree = "<group>"; };
-		6D6EFA1A1702681E00E6CAC6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		6D92DDCD16FA403B00AE0AD7 /* AmazonClientManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmazonClientManager.h; sourceTree = "<group>"; };
-		6D92DDCE16FA403B00AE0AD7 /* AmazonClientManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmazonClientManager.m; sourceTree = "<group>"; };
 		6D92DDCF16FA403B00AE0AD7 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		6D92DDD016FA403B00AE0AD7 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		6D92DDD116FA403B00AE0AD7 /* photoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = photoDetailViewController.h; sourceTree = "<group>"; };
@@ -614,6 +592,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				235B507E170255FE002A8B65 /* AmazonTVMClient.m in Sources */,
 				317D103516C1ECF2007EBF76 /* main.m in Sources */,
 				317D103916C1ECF2007EBF76 /* AppDelegate.m in Sources */,
 				317D104216C1ECF2007EBF76 /* LinksViewController.m in Sources */,
@@ -632,11 +611,9 @@
 				6DF21AB816FFBA6D00C7A316 /* SocialViewController.m in Sources */,
 				235B5063170255C6002A8B65 /* AmazonClientManager.m in Sources */,
 				235B5064170255C6002A8B65 /* Constants.m in Sources */,
-				235B507E170255FE002A8B65 /* AmazonTVMClient.m in Sources */,
 				235B507F170255FE002A8B65 /* AmazonKeyChainWrapper.m in Sources */,
 				235B5080170255FE002A8B65 /* Crypto.m in Sources */,
 				235B5081170255FE002A8B65 /* GetTokenRequest.m in Sources */,
-				235B5082170255FE002A8B65 /* GetTokenResponse.m in Sources */,
 				235B5083170255FE002A8B65 /* GetTokenResponseHandler.m in Sources */,
 				235B5084170255FE002A8B65 /* JSONUtilities.m in Sources */,
 				235B5085170255FE002A8B65 /* RegisterDeviceRequest.m in Sources */,
@@ -644,19 +621,7 @@
 				235B5087170255FE002A8B65 /* RequestDelegate.m in Sources */,
 				235B5088170255FE002A8B65 /* Response.m in Sources */,
 				235B5089170255FE002A8B65 /* ResponseHandler.m in Sources */,
-				237EA6B51704A8A100EB1D09 /* ResponseHandler.m in Sources */,
-				237EA6B61704A8A100EB1D09 /* Response.m in Sources */,
-				237EA6B71704A8A100EB1D09 /* RequestDelegate.m in Sources */,
-				237EA6B81704A8A100EB1D09 /* Request.m in Sources */,
-				237EA6B91704A8A100EB1D09 /* RegisterDeviceRequest.m in Sources */,
-				237EA6BA1704A8A100EB1D09 /* JSONUtilities.m in Sources */,
-				237EA6BB1704A8A100EB1D09 /* GetTokenResponseHandler.m in Sources */,
 				237EA6BC1704A8A100EB1D09 /* GetTokenResponse.m in Sources */,
-				237EA6BD1704A8A100EB1D09 /* GetTokenRequest.m in Sources */,
-				237EA6BE1704A8A100EB1D09 /* Crypto.m in Sources */,
-				237EA6BF1704A8A100EB1D09 /* Constants.m in Sources */,
-				237EA6C01704A8A100EB1D09 /* AmazonTVMClient.m in Sources */,
-				237EA6C11704A8A100EB1D09 /* AmazonKeyChainWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
