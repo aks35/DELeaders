@@ -53,9 +53,6 @@ UIImage *myImage;
 -(void)done:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:^{}];
 }
-- (IBAction)saveImageToPhone:(id)sender {
-    UIImageWriteToSavedPhotosAlbum(myImage, nil, nil, nil);
-}
 
 - (IBAction)shareImage:(id)sender {
     NSArray *activityItems;
@@ -70,5 +67,6 @@ UIImage *myImage;
     [self presentViewController:activityController
                        animated:YES completion:nil];
 }
+
 
 @end

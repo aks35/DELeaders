@@ -187,4 +187,5 @@ S3Bucket *compressedBucket;
     imagePicker.delegate = self;
     [self presentModalViewController:imagePicker animated:YES];
 }
+
 @end

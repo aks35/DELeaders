@@ -1048,7 +1048,7 @@
             </objects>
             <point key="canvasLocation" x="295" y="553"/>
         </scene>
-        <!--Image View Controller - Images-->
+        <!--Image View Controller - Title-->
         <scene sceneID="SZY-gT-sPD">
             <objects>
                 <viewController id="1LQ-mj-cRi" customClass="ImageViewController" sceneMemberID="viewController">
@@ -1056,19 +1056,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ypn-FR-tLJ">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Upload a picture">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pickAnImage:" destination="1LQ-mj-cRi" eventType="touchUpInside" id="XCv-Qb-c01"/>
-                                </connections>
-                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RG6-u7-dFk">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="341" id="uMH-Xs-17p"/>
@@ -1114,13 +1101,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="RG6-u7-dFk" firstAttribute="bottom" secondItem="gL8-Id-WKI" secondAttribute="bottom" type="default" id="Er8-2U-8pm"/>
-                            <constraint firstItem="Ypn-FR-tLJ" firstAttribute="leading" secondItem="gL8-Id-WKI" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Gnb-ix-IiJ"/>
                             <constraint firstAttribute="trailing" secondItem="RG6-u7-dFk" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Ykw-xz-FZK"/>
                             <constraint firstItem="RG6-u7-dFk" firstAttribute="leading" secondItem="gL8-Id-WKI" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fH1-Ap-Nad"/>
-                            <constraint firstItem="Ypn-FR-tLJ" firstAttribute="top" secondItem="gL8-Id-WKI" secondAttribute="top" constant="18" id="hxv-gP-nIK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Images" id="dVk-Iv-tO0"/>
+                    <navigationItem key="navigationItem" title="Title" id="mCC-LA-ebt">
+                        <barButtonItem key="rightBarButtonItem" title="Upload" id="C3F-xO-hbc">
+                            <connections>
+                                <action selector="Upload:" destination="1LQ-mj-cRi" id="sSO-Gn-5tX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="RG6-u7-dFk" id="941-4U-9CH"/>
                     </connections>
@@ -1139,36 +1130,13 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l62-Xe-ds5">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="377" id="n9j-2z-fx3"/>
+                                    <constraint firstAttribute="height" constant="423" id="ISH-z6-Hhz"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNo-YE-Tsp">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Save to Phone">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveImageToPhone:" destination="egp-kT-bar" eventType="touchUpInside" id="YEd-Lq-FQM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hkx-yY-q2e">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Done">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="doneButton:" destination="egp-kT-bar" eventType="touchUpInside" id="g2h-8S-fqa"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4RU-L5-UTs">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="211" id="xas-0F-pjL"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -1176,19 +1144,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hNo-YE-Tsp" firstAttribute="leading" secondItem="5ar-Mv-tXW" secondAttribute="leading" constant="25" id="Apn-DD-p2p"/>
-                            <constraint firstItem="4RU-L5-UTs" firstAttribute="top" secondItem="5ar-Mv-tXW" secondAttribute="top" constant="69" id="I1E-mr-1At"/>
-                            <constraint firstItem="l62-Xe-ds5" firstAttribute="top" secondItem="5ar-Mv-tXW" secondAttribute="top" constant="95" id="Lkw-hn-r3h"/>
+                            <constraint firstItem="l62-Xe-ds5" firstAttribute="top" secondItem="4RU-L5-UTs" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5hh-0j-A7N"/>
+                            <constraint firstItem="4RU-L5-UTs" firstAttribute="top" secondItem="5ar-Mv-tXW" secondAttribute="top" constant="20" symbolic="YES" type="default" id="7dQ-PX-fVT"/>
                             <constraint firstAttribute="trailing" secondItem="l62-Xe-ds5" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Nt9-O6-W2Q"/>
-                            <constraint firstItem="Hkx-yY-q2e" firstAttribute="top" secondItem="hNo-YE-Tsp" secondAttribute="top" type="default" id="bfG-Zh-qa9"/>
-                            <constraint firstAttribute="trailing" secondItem="Hkx-yY-q2e" secondAttribute="trailing" constant="51" id="eDW-eb-kIC"/>
-                            <constraint firstItem="4RU-L5-UTs" firstAttribute="centerX" secondItem="l62-Xe-ds5" secondAttribute="centerX" type="default" id="njm-30-UUb"/>
+                            <constraint firstItem="4RU-L5-UTs" firstAttribute="leading" secondItem="5ar-Mv-tXW" secondAttribute="leading" constant="41" id="btI-fm-YFG"/>
                             <constraint firstItem="l62-Xe-ds5" firstAttribute="leading" secondItem="5ar-Mv-tXW" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="q3G-gE-clJ"/>
-                            <constraint firstItem="Hkx-yY-q2e" firstAttribute="baseline" secondItem="hNo-YE-Tsp" secondAttribute="baseline" type="default" id="qc8-w7-V2i"/>
-                            <constraint firstItem="hNo-YE-Tsp" firstAttribute="top" secondItem="5ar-Mv-tXW" secondAttribute="top" constant="23" id="xKx-tB-B42"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Images" id="Bjn-5i-33c"/>
+                    <navigationItem key="navigationItem" title="Images" id="Bjn-5i-33c">
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="oTj-47-Wnf">
+                            <connections>
+                                <action selector="shareImage:" destination="egp-kT-bar" id="waw-GC-D3G"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageLabel" destination="4RU-L5-UTs" id="y9A-pK-V1y"/>
                         <outlet property="imageView" destination="l62-Xe-ds5" id="zKe-WM-lxd"/>
@@ -1200,22 +1169,22 @@
         </scene>
     </scenes>
     <resources>
-        <image name="acesIcon.png" width="16" height="16"/>
-        <image name="calendarIcon.png" width="16" height="16"/>
-        <image name="contactsIcon.png" width="16" height="16"/>
-        <image name="coursesIcon.png" width="16" height="16"/>
-        <image name="delIcon.png" width="16" height="16"/>
-        <image name="del_logo_shaded.png" width="16" height="16"/>
-        <image name="facebookButton.png" width="16" height="16"/>
-        <image name="imagesIcon.png" width="16" height="16"/>
-        <image name="libraryIcon.png" width="16" height="16"/>
-        <image name="linkedinButton.png" width="16" height="16"/>
-        <image name="nsoeIcon.png" width="16" height="16"/>
-        <image name="sakaiIcon.png" width="16" height="16"/>
-        <image name="socialIcon.png" width="16" height="16"/>
-        <image name="top.png" width="16" height="16"/>
-        <image name="twitterButton.png" width="16" height="16"/>
-        <image name="wordpressIcon.png" width="16" height="16"/>
+        <image name="acesIcon.png" width="50" height="50"/>
+        <image name="calendarIcon.png" width="50" height="50"/>
+        <image name="contactsIcon.png" width="50" height="50"/>
+        <image name="coursesIcon.png" width="50" height="50"/>
+        <image name="delIcon.png" width="50" height="50"/>
+        <image name="del_logo_shaded.png" width="380" height="92"/>
+        <image name="facebookButton.png" width="242" height="56"/>
+        <image name="imagesIcon.png" width="50" height="50"/>
+        <image name="libraryIcon.png" width="50" height="50"/>
+        <image name="linkedinButton.png" width="242" height="56"/>
+        <image name="nsoeIcon.png" width="50" height="50"/>
+        <image name="sakaiIcon.png" width="50" height="50"/>
+        <image name="socialIcon.png" width="50" height="50"/>
+        <image name="top.png" width="640" height="125"/>
+        <image name="twitterButton.png" width="242" height="56"/>
+        <image name="wordpressIcon.png" width="50" height="50"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
