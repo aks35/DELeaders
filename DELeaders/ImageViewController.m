@@ -96,7 +96,23 @@ S3Bucket *compressedBucket;
     //show an alert window to input the image name
     UIImage *myImage = [info objectForKey: @"UIImagePickerControllerOriginalImage"];
     imageData = [NSData dataWithData:UIImageJPEGRepresentation(myImage, 1.0)];
-    compressedImageData = [NSData dataWithData:UIImageJPEGRepresentation(myImage, 0.05)];
+    
+    
+    
+    CGFloat scaleToWidth = 300;
+    CGFloat scaleFactor = scaleToWidth/myImage.size.width;
+    CGFloat scaledWidth = myImage.size.width*scaleFactor;
+    CGFloat scaledHeight = myImage.size.height*scaleFactor;
+    
+    CGSize newSize = CGSizeMake(scaledWidth, scaledHeight);
+    UIGraphicsBeginImageContext(newSize);
+    [myImage drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    compressedImageData = [NSData dataWithData:UIImageJPEGRepresentation(newImage, 1.0)];
+    
+//    compressedImageData = [NSData dataWithData:UIImageJPEGRepresentation(myImage, 0.05)];
 
 
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Name Your Image" message:@"" delegate:self cancelButtonTitle:@"Done" otherButtonTitles:nil];
@@ -180,7 +196,28 @@ S3Bucket *compressedBucket;
     return newCell;
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+//    NSString *searchTerm = self.searches[indexPath.section];
+//    FlickrPhoto *photo = self.searchResults[searchTerm][indexPath.row];
+    UIImage *compressedThumbnail = [compressedImages objectAtIndex:indexPath.row];
 
+    // 2
+    CGFloat scaleToWidth = 150;
+    CGFloat scaleFactor = scaleToWidth/compressedThumbnail.size.width;
+    CGFloat scaledWidth = compressedThumbnail.size.width*scaleFactor;
+    CGFloat scaledHeight = compressedThumbnail.size.height*scaleFactor;
+    
+    
+    
+    CGSize retval = compressedThumbnail.size.width > 0 ? CGSizeMake(scaledWidth,scaledHeight) : CGSizeMake(scaledWidth, scaledHeight);
+    return retval;
+}
+//
+//// 3
+- (UIEdgeInsets)collectionView:
+(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(5, 5, 5, 5);
+}
 
 - (IBAction)Upload:(id)sender {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
