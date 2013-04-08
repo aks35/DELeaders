@@ -11,8 +11,10 @@
 @interface ImageViewController : UIViewController <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 - (IBAction)Upload:(id)sender;
+@property (strong, nonatomic) IBOutlet UIView *viewForLoadingCircle;
 
 
+@property (strong, nonatomic) IBOutlet UIView *viewForLoadingCircle2;
 
 
 

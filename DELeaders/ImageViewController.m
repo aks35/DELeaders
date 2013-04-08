@@ -11,9 +11,11 @@
 #import "s3ImageCell.h"
 #import "photoDetailViewController.h"
 #import "AmazonClientManager.h"
+#import "MBProgressHUD.h"
 
 
 @implementation ImageViewController
+MBProgressHUD *hud;
 AmazonS3Client *s3;
 NSMutableArray *listOfItems;
 NSMutableArray *compressedImages;
@@ -27,6 +29,10 @@ S3Bucket *compressedBucket;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [_viewForLoadingCircle2 setHidden:YES];
+//    hud = [[MBProgressHUD alloc]init];
+//    [hud hide:YES];
+    
     self.collectionView.backgroundColor = [UIColor colorWithWhite:0.25f alpha:1.0f]; //set background color to grey
     [self.collectionView registerClass:[s3ImageCell class] forCellWithReuseIdentifier:@"simpleCellID"];
     s3 = [AmazonClientManager s3];
@@ -155,11 +161,9 @@ S3Bucket *compressedBucket;
 
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+
     NSString* imageName = [listOfItems objectAtIndex:indexPath.row];
-    
-    S3GetObjectRequest* gor = [[S3GetObjectRequest alloc] initWithKey:imageName withBucket:@"delpictures"];
-    S3GetObjectResponse* gore = [s3 getObject:gor];
-    gore.contentType=@"image/jpeg";
+
     
     [self performSegueWithIdentifier:@"ShowPhoto"
                               sender:imageName];
@@ -225,4 +229,9 @@ S3Bucket *compressedBucket;
     [self presentModalViewController:imagePicker animated:YES];
 }
 
+     - (void)viewDidUnload {
+         [self setViewForLoadingCircle:nil];
+         [self setViewForLoadingCircle2:nil];
+         [super viewDidUnload];
+     }
 @end
