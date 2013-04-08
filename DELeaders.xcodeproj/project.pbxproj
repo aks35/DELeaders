@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		234AF837170400C2000FCD51 /* AWSiOSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234AF836170400C2000FCD51 /* AWSiOSSDK.framework */; };
 		235B5063170255C6002A8B65 /* AmazonClientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B5060170255C6002A8B65 /* AmazonClientManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		235B5064170255C6002A8B65 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B5062170255C6002A8B65 /* Constants.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		235B507E170255FE002A8B65 /* AmazonTVMClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B5067170255FE002A8B65 /* AmazonTVMClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -93,7 +92,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		234AF836170400C2000FCD51 /* AWSiOSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSiOSSDK.framework; sourceTree = "<group>"; };
 		235B505F170255C6002A8B65 /* AmazonClientManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmazonClientManager.h; sourceTree = "<group>"; };
 		235B5060170255C6002A8B65 /* AmazonClientManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmazonClientManager.m; sourceTree = "<group>"; };
 		235B5061170255C6002A8B65 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -232,7 +230,6 @@
 				317D102916C1ECF2007EBF76 /* UIKit.framework in Frameworks */,
 				317D102B16C1ECF2007EBF76 /* Foundation.framework in Frameworks */,
 				317D102D16C1ECF2007EBF76 /* CoreGraphics.framework in Frameworks */,
-				234AF837170400C2000FCD51 /* AWSiOSSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +301,6 @@
 		317D102716C1ECF2007EBF76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				234AF836170400C2000FCD51 /* AWSiOSSDK.framework */,
 				317D102816C1ECF2007EBF76 /* UIKit.framework */,
 				317D102A16C1ECF2007EBF76 /* Foundation.framework */,
 				317D102C16C1ECF2007EBF76 /* CoreGraphics.framework */,
