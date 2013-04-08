@@ -13,17 +13,35 @@
 
 @implementation LinksViewController
 
-@synthesize scrollView;
-@synthesize enterButton;
-@synthesize netIdField;
-@synthesize passwordField;
-@synthesize skipButton;
-@synthesize activeField;
+@synthesize delButton;
+@synthesize nsoeButton;
+@synthesize wpButton;
+@synthesize calButton;
+@synthesize coursesButton;
+@synthesize sakaiButton;
+@synthesize socialButton;
+@synthesize imagesButton;
+@synthesize libraryButton;
+@synthesize contactsButton;
+@synthesize acesButton;
+
+@synthesize delLabel;
+@synthesize nsoeLabel;
+@synthesize wpLabel;
+@synthesize calLabel;
+@synthesize coursesLabel;
+@synthesize sakaiLabel;
+@synthesize socialLabel;
+@synthesize imagesLabel;
+@synthesize libraryLabel;
+@synthesize contactsLabel;
+@synthesize acesLabel;
+
+@synthesize scrollView_iPad;
+@synthesize linksView;
 @synthesize dayLabel;
 @synthesize dateNumLabel;
 
-@synthesize netId;
-@synthesize password;
 
 - (void)didReceiveMemoryWarning
 {
@@ -37,50 +55,53 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
-    tap.cancelsTouchesInView = NO;
-    [self.view addGestureRecognizer:tap];
-    [self checkForNetIdAndPassword];
     [self updateDateLabels];
+    [scrollView_iPad setScrollEnabled:YES];
+//    scrollView_iPad.backgroundColor = [UIColor cyanColor];
+    
+//    scrollView_iPad.backgroundColor = [UIColor cyanColor];
+    // Detect orientations
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self selector:@selector(orientationChanged:)
+     name:UIDeviceOrientationDidChangeNotification
+     object:[UIDevice currentDevice]];
+    
 }
 
 - (void)viewDidUnload
 {
-    [self setNetIdField:nil];
-    [self setPasswordField:nil];
-    [self setEnterButton:nil];
-    [self setScrollView:nil];
-    [self setSkipButton:nil];
     [self setDayLabel:nil];
     [self setDateNumLabel:nil];
+    [self setLinksView:nil];
+    [self setScrollView_iPad:nil];
+    [self setDelButton:nil];
+    [self setDelLabel:nil];
+    [self setNsoeButton:nil];
+    [self setWpButton:nil];
+    [self setCalButton:nil];
+    [self setCoursesButton:nil];
+    [self setSakaiButton:nil];
+    [self setSocialButton:nil];
+    [self setImagesButton:nil];
+    [self setLibraryButton:nil];
+    [self setContactsButton:nil];
+    [self setAcesButton:nil];
+    [self setNsoeLabel:nil];
+    [self setWpLabel:nil];
+    [self setCalLabel:nil];
+    [self setCoursesLabel:nil];
+    [self setSakaiLabel:nil];
+    [self setSocialLabel:nil];
+    [self setImagesLabel:nil];
+    [self setLibraryLabel:nil];
+    [self setContactsLabel:nil];
+    [self setAcesLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self registerForKeyboardNotifications];
-
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-    [self registerForKeyboardNotifications];
-
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -91,7 +112,6 @@
         return YES;
     }
 }
-
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NSString *identifier = segue.identifier;
@@ -116,85 +136,6 @@
     }
 }
 
-
--(void)alertMessage:(NSString *)title text:(NSString *)text {
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:title message:text delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [message show];    
-}
-
--(void)dismissKeyboard {
-    [netIdField resignFirstResponder];
-    [passwordField resignFirstResponder];
-}
-
-- (IBAction)pressEnterButton:(id)sender {
-//    [self testAlert:netIdField.text];
-    netId = netIdField.text;
-    password = passwordField.text;
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:netId forKey:@"netId"];
-    [defaults setObject:password forKey:@"password"];
-    NSLog(@"netId: %@",netId);
-    NSLog(@"password: %@", password);
-
-}
-
-
-- (void)registerForKeyboardNotifications {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];
-}
-
-- (void)unregisterForKeyboardNotifications {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
-}
-
-- (void)keyboardWasShown:(NSNotification *)aNotification {
-    NSDictionary* info = [aNotification userInfo];
-    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
-    scrollView.contentInset = contentInsets;
-    scrollView.scrollIndicatorInsets = contentInsets;
-    
-    CGRect aRect = self.view.frame;
-    aRect.size.height -= kbSize.height;
-    CGPoint origin = activeField.frame.origin;
-    origin.y -= scrollView.contentOffset.y;
-    if (!CGRectContainsPoint(aRect, origin)) {
-        CGPoint scrollPoint = CGPointMake(0.0, activeField.frame.origin.y-aRect.size.height);
-        [scrollView setContentOffset:scrollPoint animated:YES];
-    }
-}
-
-- (void)keyboardWillBeHidden:(NSNotification *)aNotification {
-    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
-    scrollView.contentInset = contentInsets;
-    scrollView.scrollIndicatorInsets = contentInsets;
-}
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    activeField = textField;
-//    NSLog(@"Active field set");
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    activeField = nil;
-}
-
-- (void)checkForNetIdAndPassword {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSLog(@"WORKING");
-    netId = [defaults objectForKey:@"netId"];
-    password = [defaults objectForKey:@"password"];
-    if (netId && password) {
-        [skipButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-        [netIdField setText:netId];
-        [passwordField setText:password];
-    }
-}
-
 - (void)updateDateLabels {
     NSDate *now = [NSDate date];
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
@@ -209,6 +150,52 @@
     dateNumLabel.font = [UIFont fontWithName:dateNumLabel.font.fontName size:dateNumLabel.frame.size.height];
     
     
+}
+
+-(void)alertMessage:(NSString *)title text:(NSString *)text {
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:title message:text delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [message show];
+}
+
+- (void)changeLayout:(UIDeviceOrientation *)orientation {
+    [delButton setCenter:CGPointMake(63, 127)];
+    [nsoeButton setCenter:CGPointMake(151, 127)];
+    [wpButton setCenter:CGPointMake(239, 127)];
+    [calButton setCenter:CGPointMake(327, 127)];
+    [coursesButton setCenter:CGPointMake(415, 127)];
+    [sakaiLabel setCenter:CGPointMake(503, 127)];
+    
+    [delLabel setCenter:CGPointMake(63, 162)];
+    [nsoeLabel setCenter:CGPointMake(151, 162)];
+    
+    
+}
+
+- (void)orientationChanged:(NSNotification *)note
+{
+    UIDevice * device = note.object;
+    switch(device.orientation)
+    {
+        case UIDeviceOrientationPortrait:
+            [scrollView_iPad setContentSize:CGSizeMake(0, 0)];
+
+            break;
+        case UIDeviceOrientationPortraitUpsideDown:
+            [scrollView_iPad setContentSize:CGSizeMake(0, 0)];
+
+            break;
+        case UIDeviceOrientationLandscapeLeft:
+            [scrollView_iPad setContentSize:CGSizeMake(1248, 1248)];
+            scrollView_iPad.frame = CGRectMake(0, 196, 960, 768);
+            
+            break;
+        case UIDeviceOrientationLandscapeRight:
+            [scrollView_iPad setContentSize:CGSizeMake(1248, 1248)];
+            scrollView_iPad.frame = CGRectMake(0, 196, 960, 768);
+            break;
+        default:
+            break;
+    };
 }
 
 @end

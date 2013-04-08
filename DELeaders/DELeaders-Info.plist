@@ -10,7 +10,7 @@
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>del.png</string>
+		<string></string>
 	</array>
 	<key>CFBundleIdentifier</key>
 	<string>com.ark5.DELinks</string>
