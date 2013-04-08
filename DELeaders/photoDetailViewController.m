@@ -38,10 +38,10 @@ UIImage *myImage;
     S3GetObjectRequest* gor = [[S3GetObjectRequest alloc] initWithKey:self.imageName withBucket:@"delpictures"];
     S3GetObjectResponse* gore = [s3 getObject:gor];
     gore.contentType=@"image/jpeg";
-    
+    self.titleBar.title=self.imageName;
     myImage= [[UIImage alloc] initWithData:gore.body];
-    self.imageLabel.text=self.imageName;
     self.imageView.image=myImage;
+
 	// Do any additional setup after loading the view.
 }
 
@@ -69,4 +69,8 @@ UIImage *myImage;
 }
 
 
+- (void)viewDidUnload {
+    [self setTitleBar:nil];
+    [super viewDidUnload];
+}
 @end

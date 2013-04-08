@@ -15,7 +15,7 @@
 
 
 @property (strong, nonatomic) IBOutlet UIView *viewForLoadingCircle2;
-
+-(void) loadItemsIntoListOfItemsAndImagesIntoCompressedImages;
 
 
 @end

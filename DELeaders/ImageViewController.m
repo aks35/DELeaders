@@ -15,11 +15,9 @@
 
 
 @implementation ImageViewController
-MBProgressHUD *hud;
 AmazonS3Client *s3;
 NSMutableArray *listOfItems;
 NSMutableArray *compressedImages;
-//NSMutableArray *fullImages;
 NSData *imageData;
 NSData *compressedImageData;
 S3Bucket *myBucket;
@@ -30,10 +28,8 @@ S3Bucket *compressedBucket;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [_viewForLoadingCircle2 setHidden:YES];
-//    hud = [[MBProgressHUD alloc]init];
-//    [hud hide:YES];
     
-    self.collectionView.backgroundColor = [UIColor colorWithWhite:0.25f alpha:1.0f]; //set background color to grey
+    self.collectionView.backgroundColor = [UIColor blackColor]; //set background color to grey
     [self.collectionView registerClass:[s3ImageCell class] forCellWithReuseIdentifier:@"simpleCellID"];
     s3 = [AmazonClientManager s3];
     NSArray *listOfBuckets = s3.listBuckets;
@@ -63,7 +59,13 @@ S3Bucket *compressedBucket;
         [s3 createBucket:[[S3CreateBucketRequest alloc] initWithName:@"delpicturescompressed"]];
     }
     
+    self.loadItemsIntoListOfItemsAndImagesIntoCompressedImages;
+
     
+        
+}
+
+-(void)loadItemsIntoListOfItemsAndImagesIntoCompressedImages{
     listOfItems = [[NSMutableArray alloc] init];
     NSArray * objectList = [s3 listObjectsInBucket:myBucket.name];
     for(S3ObjectSummary* object in objectList){
@@ -82,12 +84,11 @@ S3Bucket *compressedBucket;
         
         UIImage *compressedThumbnail = [[UIImage alloc] initWithData:gore.body];
         [compressedImages addObject:compressedThumbnail];
-
+        
     }
     
-        
+    
 }
-
 
 
 - (void)didReceiveMemoryWarning
@@ -118,8 +119,6 @@ S3Bucket *compressedBucket;
     
     compressedImageData = [NSData dataWithData:UIImageJPEGRepresentation(newImage, 1.0)];
     
-//    compressedImageData = [NSData dataWithData:UIImageJPEGRepresentation(myImage, 0.05)];
-
 
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Name Your Image" message:@"" delegate:self cancelButtonTitle:@"Done" otherButtonTitles:nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
@@ -154,6 +153,11 @@ S3Bucket *compressedBucket;
     for(S3ObjectSummary* object in objectList){
         [listOfItems addObject:object.description];
     }
+    //reload compressedImages
+    self.loadItemsIntoListOfItemsAndImagesIntoCompressedImages;
+
+    
+    
     [self.collectionView reloadData];
 }
 
@@ -201,11 +205,10 @@ S3Bucket *compressedBucket;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    NSString *searchTerm = self.searches[indexPath.section];
-//    FlickrPhoto *photo = self.searchResults[searchTerm][indexPath.row];
+
     UIImage *compressedThumbnail = [compressedImages objectAtIndex:indexPath.row];
 
-    // 2
+
     CGFloat scaleToWidth = 150;
     CGFloat scaleFactor = scaleToWidth/compressedThumbnail.size.width;
     CGFloat scaledWidth = compressedThumbnail.size.width*scaleFactor;
@@ -216,8 +219,7 @@ S3Bucket *compressedBucket;
     CGSize retval = compressedThumbnail.size.width > 0 ? CGSizeMake(scaledWidth,scaledHeight) : CGSizeMake(scaledWidth, scaledHeight);
     return retval;
 }
-//
-//// 3
+
 - (UIEdgeInsets)collectionView:
 (UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(5, 5, 5, 5);
