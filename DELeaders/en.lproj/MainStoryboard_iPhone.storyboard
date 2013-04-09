@@ -1228,7 +1228,10 @@
                 <relationship kind="outlet" name="bottomImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="enterButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="netIdField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="netIdLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passwordLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="promptLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="skipButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="topImage" candidateClass="UIImageView"/>
@@ -1237,6 +1240,9 @@
         <class className="SocialViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialViewController.h"/>
             <relationships>
+                <relationship kind="action" name="openFacebook:"/>
+                <relationship kind="action" name="openLinkedIn:"/>
+                <relationship kind="action" name="openTwitter:"/>
                 <relationship kind="outlet" name="myWebView" candidateClass="UIWebView"/>
             </relationships>
         </class>
@@ -1248,6 +1254,9 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
         <class className="photoDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/photoDetailViewController.h"/>
