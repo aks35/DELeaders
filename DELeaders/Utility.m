@@ -23,4 +23,23 @@
     NSLog(@"Current URI: %@", result);
 }
 
+- (BOOL)isFourInchScreen {
+    CGSize iOSDeviceScreenSize = [[UIScreen mainScreen] bounds].size;
+    return iOSDeviceScreenSize.height == 568 || iOSDeviceScreenSize.width == 568;
+}
+
+- (BOOL)isPad {
+    CGSize iOSDeviceScreenSize = [[UIScreen mainScreen] bounds].size;
+    return iOSDeviceScreenSize.height == 960 || iOSDeviceScreenSize.width == 960;
+}
+
+- (void)registerOrientationHandler:(UIViewController *)controller {
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+    [[NSNotificationCenter defaultCenter]
+     addObserver:controller selector:@selector(orientationChanged:)
+     name:UIDeviceOrientationDidChangeNotification
+     object:[UIDevice currentDevice]];
+}
+
+
 @end

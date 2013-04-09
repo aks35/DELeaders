@@ -13,17 +13,39 @@
 
 @implementation LinksViewController
 
-@synthesize scrollView;
-@synthesize enterButton;
-@synthesize netIdField;
-@synthesize passwordField;
-@synthesize skipButton;
-@synthesize activeField;
+@synthesize delButton;
+@synthesize nsoeButton;
+@synthesize wpButton;
+@synthesize calButton;
+@synthesize coursesButton;
+@synthesize sakaiButton;
+@synthesize socialButton;
+@synthesize imagesButton;
+@synthesize libraryButton;
+@synthesize contactsButton;
+@synthesize acesButton;
+
+@synthesize delLabel;
+@synthesize nsoeLabel;
+@synthesize wpLabel;
+@synthesize calLabel;
+@synthesize coursesLabel;
+@synthesize sakaiLabel;
+@synthesize socialLabel;
+@synthesize imagesLabel;
+@synthesize libraryLabel;
+@synthesize contactsLabel;
+@synthesize acesLabel;
+@synthesize topImage;
+@synthesize bottomImage;
+@synthesize scrollView_iPad;
+@synthesize linksView;
 @synthesize dayLabel;
 @synthesize dateNumLabel;
 
-@synthesize netId;
-@synthesize password;
+NSMutableArray *buttonList;
+NSMutableArray *labelList;
+Utility *util;
 
 - (void)didReceiveMemoryWarning
 {
@@ -37,49 +59,81 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
-    tap.cancelsTouchesInView = NO;
-    [self.view addGestureRecognizer:tap];
-    [self checkForNetIdAndPassword];
     [self updateDateLabels];
+    [scrollView_iPad setScrollEnabled:YES];
+    
+    buttonList = [[NSMutableArray alloc]init];
+    [buttonList addObject:delButton];
+    [buttonList addObject:nsoeButton];
+    [buttonList addObject:wpButton];
+    [buttonList addObject:calButton];
+    [buttonList addObject:coursesButton];
+    [buttonList addObject:sakaiButton];
+    [buttonList addObject:socialButton];
+    [buttonList addObject:imagesButton];
+    [buttonList addObject:libraryButton];
+    [buttonList addObject:contactsButton];
+    [buttonList addObject:acesButton];
+    
+    labelList = [[NSMutableArray alloc]init];
+    [labelList addObject:delLabel];
+    [labelList addObject:nsoeLabel];
+    [labelList addObject:wpLabel];
+    [labelList addObject:calLabel];
+    [labelList addObject:coursesLabel];
+    [labelList addObject:sakaiLabel];
+    [labelList addObject:socialLabel];
+    [labelList addObject:imagesLabel];
+    [labelList addObject:libraryLabel];
+    [labelList addObject:contactsLabel];
+    [labelList addObject:acesLabel];
+    
+    util = [[Utility alloc]init];
+    [util registerOrientationHandler:self];
+   
 }
 
 - (void)viewDidUnload
 {
-    [self setNetIdField:nil];
-    [self setPasswordField:nil];
-    [self setEnterButton:nil];
-    [self setScrollView:nil];
-    [self setSkipButton:nil];
     [self setDayLabel:nil];
     [self setDateNumLabel:nil];
+    [self setLinksView:nil];
+    [self setScrollView_iPad:nil];
+    [self setDelButton:nil];
+    [self setDelLabel:nil];
+    [self setNsoeButton:nil];
+    [self setWpButton:nil];
+    [self setCalButton:nil];
+    [self setCoursesButton:nil];
+    [self setSakaiButton:nil];
+    [self setSocialButton:nil];
+    [self setImagesButton:nil];
+    [self setLibraryButton:nil];
+    [self setContactsButton:nil];
+    [self setAcesButton:nil];
+    [self setNsoeLabel:nil];
+    [self setWpLabel:nil];
+    [self setCalLabel:nil];
+    [self setCoursesLabel:nil];
+    [self setSakaiLabel:nil];
+    [self setSocialLabel:nil];
+    [self setImagesLabel:nil];
+    [self setLibraryLabel:nil];
+    [self setContactsLabel:nil];
+    [self setAcesLabel:nil];
+    [self setTopImage:nil];
+    [self setBottomImage:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self registerForKeyboardNotifications];
-
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-    [self registerForKeyboardNotifications];
-
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -91,7 +145,6 @@
         return YES;
     }
 }
-
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NSString *identifier = segue.identifier;
@@ -116,85 +169,6 @@
     }
 }
 
-
--(void)alertMessage:(NSString *)title text:(NSString *)text {
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:title message:text delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [message show];    
-}
-
--(void)dismissKeyboard {
-    [netIdField resignFirstResponder];
-    [passwordField resignFirstResponder];
-}
-
-- (IBAction)pressEnterButton:(id)sender {
-//    [self testAlert:netIdField.text];
-    netId = netIdField.text;
-    password = passwordField.text;
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:netId forKey:@"netId"];
-    [defaults setObject:password forKey:@"password"];
-    NSLog(@"netId: %@",netId);
-    NSLog(@"password: %@", password);
-
-}
-
-
-- (void)registerForKeyboardNotifications {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];
-}
-
-- (void)unregisterForKeyboardNotifications {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
-}
-
-- (void)keyboardWasShown:(NSNotification *)aNotification {
-    NSDictionary* info = [aNotification userInfo];
-    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
-    scrollView.contentInset = contentInsets;
-    scrollView.scrollIndicatorInsets = contentInsets;
-    
-    CGRect aRect = self.view.frame;
-    aRect.size.height -= kbSize.height;
-    CGPoint origin = activeField.frame.origin;
-    origin.y -= scrollView.contentOffset.y;
-    if (!CGRectContainsPoint(aRect, origin)) {
-        CGPoint scrollPoint = CGPointMake(0.0, activeField.frame.origin.y-aRect.size.height);
-        [scrollView setContentOffset:scrollPoint animated:YES];
-    }
-}
-
-- (void)keyboardWillBeHidden:(NSNotification *)aNotification {
-    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
-    scrollView.contentInset = contentInsets;
-    scrollView.scrollIndicatorInsets = contentInsets;
-}
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    activeField = textField;
-//    NSLog(@"Active field set");
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    activeField = nil;
-}
-
-- (void)checkForNetIdAndPassword {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSLog(@"WORKING");
-    netId = [defaults objectForKey:@"netId"];
-    password = [defaults objectForKey:@"password"];
-    if (netId && password) {
-        [skipButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-        [netIdField setText:netId];
-        [passwordField setText:password];
-    }
-}
-
 - (void)updateDateLabels {
     NSDate *now = [NSDate date];
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
@@ -207,8 +181,92 @@
     NSLog(@"Current DATE: %@", dateString);
     dateNumLabel.text = dateString;
     dateNumLabel.font = [UIFont fontWithName:dateNumLabel.font.fontName size:dateNumLabel.frame.size.height];
+}
+
+-(void)alertMessage:(NSString *)title text:(NSString *)text {
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:title message:text delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [message show];
+}
+
+- (void)changeToPortraitLayout {
+    [topImage setFrame:CGRectMake(0, 0, 320, 80)];
+    [topImage setImage:[UIImage imageNamed:@"top.png"]];
+    [bottomImage setHidden:NO];
+    if ([util isFourInchScreen]) {
+        CGFloat xStart = 49;
+        CGFloat yStart = 145;
+        for (int i = 0; i < [buttonList count]; ++i) {
+            [buttonList[i] setCenter:CGPointMake(xStart+((i%4)*74), yStart+((i/4)*96))];
+        }
+        [dayLabel setCenter:CGPointMake(271, 128)];
+        [dateNumLabel setCenter:CGPointMake(271, 152)];
+        yStart = 180;
+        for (int i = 0; i < [labelList count]; ++i) {
+            [labelList[i] setCenter:CGPointMake(xStart+((i%4)*74), yStart+((i/4)*96))];
+        }
+    } else {
+        CGFloat xStart = 49;
+        CGFloat yStart = 113;
+        for (int i = 0; i < [buttonList count]; ++i) {
+            [buttonList[i] setCenter:CGPointMake(xStart+((i%4)*74), yStart+((i/4)*81))];
+        }
+        [dayLabel setCenter:CGPointMake(271, 96)];
+        [dateNumLabel setCenter:CGPointMake(271, 120)];
+        yStart = 148;
+        for (int i = 0; i < [labelList count]; ++i) {
+            [labelList[i] setCenter:CGPointMake(xStart+((i%4)*74), yStart+((i/4)*82))];
+        }
+    }
+}
+
+- (void)changeToLandscapeLayout {
+    if ([util isFourInchScreen]) {
+        [topImage setFrame:CGRectMake(0, 0, 568, 30)];
+    } else {
+        [topImage setFrame:CGRectMake(0, 0, 480, 30)];
+    }
+    [topImage setImage:[UIImage imageNamed:@"top_small.png"]];
+    [bottomImage setHidden:YES];
     
-    
+    CGFloat xStart = 63;
+    CGFloat yStart = 83;
+    for (int i = 0; i < [buttonList count]; ++i) {
+        [buttonList[i] setCenter:CGPointMake(xStart+((i%6)*88), yStart+((i/6)*84))];
+    }
+    [dayLabel setCenter:CGPointMake(327, 66)];
+    [dateNumLabel setCenter:CGPointMake(327, 90)];
+    yStart = 118;
+    for (int i = 0; i < [labelList count]; ++i) {
+        [labelList[i] setCenter:CGPointMake(xStart+((i%6)*88), yStart+((i/6)*84))];
+    }
+}
+
+- (void)orientationChanged:(NSNotification *)note
+{
+    UIDevice * device = note.object;
+    [self.view setNeedsDisplay];
+    switch(device.orientation)
+    {
+        case UIDeviceOrientationPortrait:
+            [self changeToPortraitLayout];
+            [scrollView_iPad setContentSize:CGSizeMake(0, 0)];
+            break;
+
+        case UIDeviceOrientationLandscapeLeft:
+            [self changeToLandscapeLayout];
+            [scrollView_iPad setContentSize:CGSizeMake(1248, 1248)];
+            scrollView_iPad.frame = CGRectMake(0, 196, 960, 768);
+            break;
+            
+        case UIDeviceOrientationLandscapeRight:
+            [self changeToLandscapeLayout];
+            [scrollView_iPad setContentSize:CGSizeMake(1248, 1248)];
+            scrollView_iPad.frame = CGRectMake(0, 196, 960, 768);
+            break;
+            
+        default:
+            break;
+    };
 }
 
 @end

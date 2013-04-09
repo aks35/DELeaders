@@ -11,4 +11,7 @@
 @interface Utility : NSObject
 - (void)loadWebView:(NSString *)fullURL webView:(UIWebView *)webView;
 - (void)logCurrentURL:(UIWebView *)webView;
+- (BOOL)isFourInchScreen;
+- (BOOL)isPad;
+- (void)registerOrientationHandler:(UIViewController *)controller;
 @end

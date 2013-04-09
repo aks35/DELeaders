@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		234AF837170400C2000FCD51 /* AWSiOSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234AF836170400C2000FCD51 /* AWSiOSSDK.framework */; };
 		235B5063170255C6002A8B65 /* AmazonClientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B5060170255C6002A8B65 /* AmazonClientManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		235B5064170255C6002A8B65 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B5062170255C6002A8B65 /* Constants.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		235B507E170255FE002A8B65 /* AmazonTVMClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B5067170255FE002A8B65 /* AmazonTVMClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -45,20 +44,17 @@
 		317D105416C1ECF2007EBF76 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 317D105216C1ECF2007EBF76 /* InfoPlist.strings */; };
 		317D105716C1ECF2007EBF76 /* DELeadersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 317D105616C1ECF2007EBF76 /* DELeadersTests.m */; };
 		6D0C308C170D4B470059C98A /* FourInchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D0C308B170D4B470059C98A /* FourInchStoryboard.storyboard */; };
-		6D110B6E170E203C0098B268 /* del_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D110B6D170E203C0098B268 /* del_logo.png */; };
+		6D0D03CC171095A700621B04 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0D03CB171095A700621B04 /* SignInViewController.m */; };
 		6D110B74170EA0890098B268 /* del_logo_shaded.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D110B73170EA0890098B268 /* del_logo_shaded.png */; };
 		6D110B76170EA1350098B268 /* calendarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D110B75170EA1350098B268 /* calendarIcon.png */; };
 		6D253363170E1C31006F5398 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D253361170E1C31006F5398 /* MainStoryboard_iPad.storyboard */; };
-		6D5EF0EE170B5FDA008758FA /* top.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D5EF0ED170B5FDA008758FA /* top.png */; };
 		6D6115D416F0326200CAE42E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6115D316F0326200CAE42E /* Default-568h@2x.png */; };
 		6D676C011701CD6A000BB565 /* wordpressIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D676C001701CD6A000BB565 /* wordpressIcon.png */; };
-		6D676C051701CD84000BB565 /* greyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D676C041701CD84000BB565 /* greyIcon.png */; };
 		6D740E091702780A00013F2D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D740E081702780A00013F2D /* Security.framework */; };
 		6D92DDD616FA403B00AE0AD7 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DDD016FA403B00AE0AD7 /* ImageViewController.m */; };
 		6D92DDD716FA403B00AE0AD7 /* photoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DDD216FA403B00AE0AD7 /* photoDetailViewController.m */; };
 		6D92DDD816FA403B00AE0AD7 /* s3ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DDD416FA403B00AE0AD7 /* s3ImageCell.m */; };
 		6D92DDDB16FA423F00AE0AD7 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DDDA16FA423F00AE0AD7 /* MBProgressHUD.m */; };
-		6D92DDE316FA55E900AE0AD7 /* bottom3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D92DDE216FA55E900AE0AD7 /* bottom3.png */; };
 		6D92DDE516FA561400AE0AD7 /* facebookButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D92DDE416FA561400AE0AD7 /* facebookButton.png */; };
 		6D92DDE716FA562200AE0AD7 /* twitterButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D92DDE616FA562200AE0AD7 /* twitterButton.png */; };
 		6D92DDEB16FA593B00AE0AD7 /* linkedinButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D92DDEA16FA593B00AE0AD7 /* linkedinButton.png */; };
@@ -71,7 +67,18 @@
 		6DA1FCB4170276A600FD8D57 /* sakaiIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA1FCAA170276A600FD8D57 /* sakaiIcon.png */; };
 		6DA1FCB5170276A600FD8D57 /* socialIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA1FCAB170276A600FD8D57 /* socialIcon.png */; };
 		6DA1FCB7170276C000FD8D57 /* imagesIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA1FCB6170276C000FD8D57 /* imagesIcon.png */; };
+		6DA7B47C170F7ED7004BA98B /* top.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D5EF0ED170B5FDA008758FA /* top.png */; };
+		6DB0C4AC170F7B8600E265DD /* delIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA1FCA6170276A600FD8D57 /* delIcon.png */; };
+		6DB0C4AD170F7B8E00E265DD /* nsoeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA1FCA9170276A600FD8D57 /* nsoeIcon.png */; };
+		6DB0C4AE170F7BA400E265DD /* coursesIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA1FCA5170276A600FD8D57 /* coursesIcon.png */; };
+		6DB0C4AF170F7BB000E265DD /* sakaiIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA1FCAA170276A600FD8D57 /* sakaiIcon.png */; };
+		6DB0C4B0170F7BBC00E265DD /* socialIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA1FCAB170276A600FD8D57 /* socialIcon.png */; };
+		6DB0C4B1170F7BC400E265DD /* libraryIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA1FCA8170276A600FD8D57 /* libraryIcon.png */; };
+		6DB0C4B2170F7BCE00E265DD /* contactsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA1FCA4170276A600FD8D57 /* contactsIcon.png */; };
+		6DB0C4B3170F7BD500E265DD /* acesIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA1FCA2170276A600FD8D57 /* acesIcon.png */; };
 		6DCDFE2D16FF991E004008E2 /* GeneralWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCDFE2C16FF991E004008E2 /* GeneralWebViewController.m */; };
+		6DE6EF611711D9CB0002D4F1 /* top_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DE6EF601711D9CB0002D4F1 /* top_small.png */; };
+		6DE6EF631711F3E40002D4F1 /* del_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DE6EF621711F3E40002D4F1 /* del_small.png */; };
 		6DF21AB816FFBA6D00C7A316 /* SocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF21AB716FFBA6D00C7A316 /* SocialViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -86,7 +93,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		234AF836170400C2000FCD51 /* AWSiOSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSiOSSDK.framework; sourceTree = "<group>"; };
 		235B505F170255C6002A8B65 /* AmazonClientManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmazonClientManager.h; sourceTree = "<group>"; };
 		235B5060170255C6002A8B65 /* AmazonClientManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmazonClientManager.m; sourceTree = "<group>"; };
 		235B5061170255C6002A8B65 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -177,6 +183,8 @@
 		317D105516C1ECF2007EBF76 /* DELeadersTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DELeadersTests.h; sourceTree = "<group>"; };
 		317D105616C1ECF2007EBF76 /* DELeadersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DELeadersTests.m; sourceTree = "<group>"; };
 		6D0C308B170D4B470059C98A /* FourInchStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FourInchStoryboard.storyboard; sourceTree = "<group>"; };
+		6D0D03CA171095A700621B04 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		6D0D03CB171095A700621B04 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		6D110B6D170E203C0098B268 /* del_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = del_logo.png; sourceTree = "<group>"; };
 		6D110B73170EA0890098B268 /* del_logo_shaded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = del_logo_shaded.png; sourceTree = "<group>"; };
 		6D110B75170EA1350098B268 /* calendarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendarIcon.png; sourceTree = "<group>"; };
@@ -209,6 +217,8 @@
 		6DA1FCB6170276C000FD8D57 /* imagesIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagesIcon.png; sourceTree = "<group>"; };
 		6DCDFE2B16FF991E004008E2 /* GeneralWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralWebViewController.h; sourceTree = "<group>"; };
 		6DCDFE2C16FF991E004008E2 /* GeneralWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralWebViewController.m; sourceTree = "<group>"; };
+		6DE6EF601711D9CB0002D4F1 /* top_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_small.png; sourceTree = "<group>"; };
+		6DE6EF621711F3E40002D4F1 /* del_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = del_small.png; sourceTree = "<group>"; };
 		6DF21AB616FFBA6D00C7A316 /* SocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialViewController.h; sourceTree = "<group>"; };
 		6DF21AB716FFBA6D00C7A316 /* SocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -222,7 +232,6 @@
 				317D102916C1ECF2007EBF76 /* UIKit.framework in Frameworks */,
 				317D102B16C1ECF2007EBF76 /* Foundation.framework in Frameworks */,
 				317D102D16C1ECF2007EBF76 /* CoreGraphics.framework in Frameworks */,
-				234AF837170400C2000FCD51 /* AWSiOSSDK.framework in Frameworks */,
 				235CE1851711E3ED00D9323C /* AWSiOSSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,7 +305,6 @@
 			isa = PBXGroup;
 			children = (
 				235CE1841711E3ED00D9323C /* AWSiOSSDK.framework */,
-				234AF836170400C2000FCD51 /* AWSiOSSDK.framework */,
 				317D102816C1ECF2007EBF76 /* UIKit.framework */,
 				317D102A16C1ECF2007EBF76 /* Foundation.framework */,
 				317D102C16C1ECF2007EBF76 /* CoreGraphics.framework */,
@@ -326,6 +334,8 @@
 			isa = PBXGroup;
 			children = (
 				6D110B73170EA0890098B268 /* del_logo_shaded.png */,
+				6DE6EF621711F3E40002D4F1 /* del_small.png */,
+				6DE6EF601711D9CB0002D4F1 /* top_small.png */,
 				6D110B6D170E203C0098B268 /* del_logo.png */,
 				6D110B75170EA1350098B268 /* calendarIcon.png */,
 				6D676C041701CD84000BB565 /* greyIcon.png */,
@@ -383,6 +393,8 @@
 		6D9E482F1700CB3C00EE0245 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6D0D03CA171095A700621B04 /* SignInViewController.h */,
+				6D0D03CB171095A700621B04 /* SignInViewController.m */,
 				6DCDFE2B16FF991E004008E2 /* GeneralWebViewController.h */,
 				6DCDFE2C16FF991E004008E2 /* GeneralWebViewController.m */,
 				6DF21AB616FFBA6D00C7A316 /* SocialViewController.h */,
@@ -537,23 +549,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DA7B47C170F7ED7004BA98B /* top.png in Resources */,
+				6DB0C4B3170F7BD500E265DD /* acesIcon.png in Resources */,
+				6DB0C4B2170F7BCE00E265DD /* contactsIcon.png in Resources */,
+				6DB0C4B1170F7BC400E265DD /* libraryIcon.png in Resources */,
+				6DB0C4B0170F7BBC00E265DD /* socialIcon.png in Resources */,
+				6DB0C4AF170F7BB000E265DD /* sakaiIcon.png in Resources */,
+				6DB0C4AE170F7BA400E265DD /* coursesIcon.png in Resources */,
+				6DB0C4AD170F7B8E00E265DD /* nsoeIcon.png in Resources */,
+				6DB0C4AC170F7B8600E265DD /* delIcon.png in Resources */,
 				317D103316C1ECF2007EBF76 /* InfoPlist.strings in Resources */,
 				317D103C16C1ECF2007EBF76 /* MainStoryboard_iPhone.storyboard in Resources */,
 				314B576E16E317B00065B50D /* SakaiViewControllerHelper.xib in Resources */,
 				6D6115D416F0326200CAE42E /* Default-568h@2x.png in Resources */,
-				6D92DDE316FA55E900AE0AD7 /* bottom3.png in Resources */,
 				6D92DDE516FA561400AE0AD7 /* facebookButton.png in Resources */,
 				6D92DDE716FA562200AE0AD7 /* twitterButton.png in Resources */,
 				6D92DDEB16FA593B00AE0AD7 /* linkedinButton.png in Resources */,
 				6D676C011701CD6A000BB565 /* wordpressIcon.png in Resources */,
-				6D676C051701CD84000BB565 /* greyIcon.png in Resources */,
 				6DA1FCB7170276C000FD8D57 /* imagesIcon.png in Resources */,
-				6D5EF0EE170B5FDA008758FA /* top.png in Resources */,
 				6D0C308C170D4B470059C98A /* FourInchStoryboard.storyboard in Resources */,
 				6D253363170E1C31006F5398 /* MainStoryboard_iPad.storyboard in Resources */,
-				6D110B6E170E203C0098B268 /* del_logo.png in Resources */,
 				6D110B74170EA0890098B268 /* del_logo_shaded.png in Resources */,
 				6D110B76170EA1350098B268 /* calendarIcon.png in Resources */,
+				6DE6EF611711D9CB0002D4F1 /* top_small.png in Resources */,
+				6DE6EF631711F3E40002D4F1 /* del_small.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,6 +645,7 @@
 				235B5088170255FE002A8B65 /* Response.m in Sources */,
 				235B5089170255FE002A8B65 /* ResponseHandler.m in Sources */,
 				237EA6BC1704A8A100EB1D09 /* GetTokenResponse.m in Sources */,
+				6D0D03CC171095A700621B04 /* SignInViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -743,8 +763,8 @@
 		317D105B16C1ECF2007EBF76 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph Tse (B9Z2S99KFX)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joseph Tse (B9Z2S99KFX)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Shim (6PQN59ARVY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Shim (6PQN59ARVY)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Downloads/aws-ios-sdk-1.4.6\"",
@@ -754,8 +774,8 @@
 				GCC_PREFIX_HEADER = "DELeaders/DELeaders-Prefix.pch";
 				INFOPLIST_FILE = "DELeaders/DELeaders-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "98611AF6-70F8-4E03-A578-A9D0C77C1ACA";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "98611AF6-70F8-4E03-A578-A9D0C77C1ACA";
+				PROVISIONING_PROFILE = "5D8C668C-E3D6-4338-95EA-6B7220394588";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5D8C668C-E3D6-4338-95EA-6B7220394588";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -763,8 +783,8 @@
 		317D105C16C1ECF2007EBF76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph Tse (B9Z2S99KFX)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joseph Tse (B9Z2S99KFX)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Shim (6PQN59ARVY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Shim (6PQN59ARVY)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Downloads/aws-ios-sdk-1.4.6\"",
@@ -774,8 +794,8 @@
 				GCC_PREFIX_HEADER = "DELeaders/DELeaders-Prefix.pch";
 				INFOPLIST_FILE = "DELeaders/DELeaders-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "98611AF6-70F8-4E03-A578-A9D0C77C1ACA";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "98611AF6-70F8-4E03-A578-A9D0C77C1ACA";
+				PROVISIONING_PROFILE = "5D8C668C-E3D6-4338-95EA-6B7220394588";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5D8C668C-E3D6-4338-95EA-6B7220394588";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

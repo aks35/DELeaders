@@ -41,6 +41,9 @@ Utility *util;
     util = [[Utility alloc]init];
     [util loadWebView:@"https://sites.nicholas.duke.edu/delmeminfo/sample-page/draft-syllabi/" webView:detailsView];
     [util loadWebView:@"https://sites.nicholas.duke.edu/delmeminfo/sample-page/semester-schedule/" webView:scheduleView];
+    detailsView.scalesPageToFit = YES;
+    scheduleView.scalesPageToFit = YES;
+
 }
 
 - (void)viewDidUnload

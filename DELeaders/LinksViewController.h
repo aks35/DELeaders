@@ -8,25 +8,44 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LinksViewController : UIViewController
+@interface LinksViewController : UIViewController <UIScrollViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIButton *enterButton;
-@property (weak, nonatomic) IBOutlet UITextField *netIdField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordField;
-@property (weak, nonatomic) IBOutlet UIButton *skipButton;
+// Buttons
+@property (weak, nonatomic) IBOutlet UIButton *delButton;
+@property (weak, nonatomic) IBOutlet UIButton *nsoeButton;
+@property (weak, nonatomic) IBOutlet UIButton *wpButton;
+@property (weak, nonatomic) IBOutlet UIButton *calButton;
+@property (weak, nonatomic) IBOutlet UIButton *coursesButton;
+@property (weak, nonatomic) IBOutlet UIButton *sakaiButton;
+@property (weak, nonatomic) IBOutlet UIButton *socialButton;
+@property (weak, nonatomic) IBOutlet UIButton *imagesButton;
+@property (weak, nonatomic) IBOutlet UIButton *libraryButton;
+@property (weak, nonatomic) IBOutlet UIButton *contactsButton;
+@property (weak, nonatomic) IBOutlet UIButton *acesButton;
+
+// Labels
+@property (weak, nonatomic) IBOutlet UILabel *delLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nsoeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *wpLabel;
+@property (weak, nonatomic) IBOutlet UILabel *calLabel;
+@property (weak, nonatomic) IBOutlet UILabel *coursesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *sakaiLabel;
+@property (weak, nonatomic) IBOutlet UILabel *socialLabel;
+@property (weak, nonatomic) IBOutlet UILabel *imagesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *libraryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *contactsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *acesLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *topImage;
+@property (weak, nonatomic) IBOutlet UIImageView *bottomImage;
+
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView_iPad;
+@property (weak, nonatomic) IBOutlet UIView *linksView;
 @property (weak, nonatomic) IBOutlet UILabel *dayLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateNumLabel;
 
-
-- (void)registerForKeyboardNotifications;
-- (void)unregisterForKeyboardNotifications;
-- (void)checkForNetIdAndPassword;
 - (void)alertMessage:(NSString *)title text:(NSString *)text;
 - (void)updateDateLabels;
 
-@property (weak, nonatomic) UIView *activeField;
-@property (weak, nonatomic) NSString *netId;
-@property (weak, nonatomic) NSString *password;
 
 @end
