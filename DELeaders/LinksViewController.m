@@ -43,6 +43,9 @@
 @synthesize dayLabel;
 @synthesize dateNumLabel;
 
+NSMutableArray *buttonList;
+NSMutableArray *labelList;
+Utility *util;
 
 - (void)didReceiveMemoryWarning
 {
@@ -66,17 +69,36 @@
 	// Do any additional setup after loading the view, typically from a nib.    
     [self updateDateLabels];
     [scrollView_iPad setScrollEnabled:YES];
-//    scrollView_iPad.backgroundColor = [UIColor cyanColor];
     
-//    scrollView_iPad.backgroundColor = [UIColor cyanColor];
-    // Detect orientations
-    [self handleCurrentOrientation];
-    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-    [[NSNotificationCenter defaultCenter]
-     addObserver:self selector:@selector(orientationChanged:)
-     name:UIDeviceOrientationDidChangeNotification
-     object:[UIDevice currentDevice]];
+    buttonList = [[NSMutableArray alloc]init];
+    [buttonList addObject:delButton];
+    [buttonList addObject:nsoeButton];
+    [buttonList addObject:wpButton];
+    [buttonList addObject:calButton];
+    [buttonList addObject:coursesButton];
+    [buttonList addObject:sakaiButton];
+    [buttonList addObject:socialButton];
+    [buttonList addObject:imagesButton];
+    [buttonList addObject:libraryButton];
+    [buttonList addObject:contactsButton];
+    [buttonList addObject:acesButton];
     
+    labelList = [[NSMutableArray alloc]init];
+    [labelList addObject:delLabel];
+    [labelList addObject:nsoeLabel];
+    [labelList addObject:wpLabel];
+    [labelList addObject:calLabel];
+    [labelList addObject:coursesLabel];
+    [labelList addObject:sakaiLabel];
+    [labelList addObject:socialLabel];
+    [labelList addObject:imagesLabel];
+    [labelList addObject:libraryLabel];
+    [labelList addObject:contactsLabel];
+    [labelList addObject:acesLabel];
+    
+    util = [[Utility alloc]init];
+    [util registerOrientationHandler:self];
+   
 }
 
 - (void)viewDidUnload
@@ -120,7 +142,6 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    NSLog(@"PREPARING FOR SEGUE");
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -168,8 +189,6 @@
     NSLog(@"Current DATE: %@", dateString);
     dateNumLabel.text = dateString;
     dateNumLabel.font = [UIFont fontWithName:dateNumLabel.font.fontName size:dateNumLabel.frame.size.height];
-    
-    
 }
 
 -(void)alertMessage:(NSString *)title text:(NSString *)text {
@@ -177,58 +196,78 @@
     [message show];
 }
 
+- (void)changeToPortraitLayout {
+    [topImage setFrame:CGRectMake(0, 0, 320, 80)];
+    [topImage setImage:[UIImage imageNamed:@"top.png"]];
+    [bottomImage setHidden:NO];
+    if ([util isFourInchScreen]) {
+        CGFloat xStart = 49;
+        CGFloat yStart = 145;
+        for (int i = 0; i < [buttonList count]; ++i) {
+            [buttonList[i] setCenter:CGPointMake(xStart+((i%4)*74), yStart+((i/4)*96))];
+        }
+        [dayLabel setCenter:CGPointMake(271, 128)];
+        [dateNumLabel setCenter:CGPointMake(271, 152)];
+        yStart = 180;
+        for (int i = 0; i < [labelList count]; ++i) {
+            [labelList[i] setCenter:CGPointMake(xStart+((i%4)*74), yStart+((i/4)*96))];
+        }
+    } else {
+        CGFloat xStart = 49;
+        CGFloat yStart = 113;
+        for (int i = 0; i < [buttonList count]; ++i) {
+            [buttonList[i] setCenter:CGPointMake(xStart+((i%4)*74), yStart+((i/4)*81))];
+        }
+        [dayLabel setCenter:CGPointMake(271, 96)];
+        [dateNumLabel setCenter:CGPointMake(271, 120)];
+        yStart = 148;
+        for (int i = 0; i < [labelList count]; ++i) {
+            [labelList[i] setCenter:CGPointMake(xStart+((i%4)*74), yStart+((i/4)*82))];
+        }
+    }
+}
+
 - (void)changeToLandscapeLayout {
-    NSLog(@"LOGGING");
-    [topImage setFrame:CGRectMake(0, 0, 568, 30)];
+    if ([util isFourInchScreen]) {
+        [topImage setFrame:CGRectMake(0, 0, 568, 30)];
+    } else {
+        [topImage setFrame:CGRectMake(0, 0, 480, 30)];
+    }
     [topImage setImage:[UIImage imageNamed:@"top_small.png"]];
     [bottomImage setHidden:YES];
     
-    [delButton setCenter:CGPointMake(63.0, 127.0)];
-    [nsoeButton setCenter:CGPointMake(151.0, 127.0)];
-    [wpButton setCenter:CGPointMake(239.0, 127.0)];
-    [calButton setCenter:CGPointMake(327.0, 127.0)];
-    [coursesButton setCenter:CGPointMake(415.0, 127.0)];
-    [sakaiButton setCenter:CGPointMake(503.0, 127.0)];
-    [socialButton setCenter:CGPointMake(63.0, 211.0)];
-    [imagesButton setCenter:CGPointMake(151.0, 211.0)];
-    [libraryButton setCenter:CGPointMake(239.0, 211.0)];
-    [contactsButton setCenter:CGPointMake(327.0, 211.0)];
-    [acesButton setCenter:CGPointMake(415.0, 211.0)];
-    
-    [delLabel setCenter:CGPointMake(63, 162)];
-    [nsoeLabel setCenter:CGPointMake(151, 162)];
-    [wpLabel setCenter:CGPointMake(239, 162)];
-    [calLabel setCenter:CGPointMake(327, 162)];
-    [coursesLabel setCenter:CGPointMake(415, 162)];
-    [sakaiLabel setCenter:CGPointMake(503, 162)];
-    [socialLabel setCenter:CGPointMake(63, 246)];
-    [imagesLabel setCenter:CGPointMake(151, 246)];
-    [libraryLabel setCenter:CGPointMake(239, 246)];
-    [contactsLabel setCenter:CGPointMake(327, 246)];
-    [acesLabel setCenter:CGPointMake(415, 246)];
-    
-    
+    CGFloat xStart = 63;
+    CGFloat yStart = 83;
+    for (int i = 0; i < [buttonList count]; ++i) {
+        [buttonList[i] setCenter:CGPointMake(xStart+((i%6)*88), yStart+((i/6)*84))];
+    }
+    [dayLabel setCenter:CGPointMake(327, 66)];
+    [dateNumLabel setCenter:CGPointMake(327, 90)];
+    yStart = 118;
+    for (int i = 0; i < [labelList count]; ++i) {
+        [labelList[i] setCenter:CGPointMake(xStart+((i%6)*88), yStart+((i/6)*84))];
+    }
 }
 
 - (void)orientationChanged:(NSNotification *)note
 {
     UIDevice * device = note.object;
+    [self.view setNeedsDisplay];
     switch(device.orientation)
     {
         case UIDeviceOrientationPortrait:
-            [scrollView_iPad setContentSize:CGSizeMake(0, 0)];
+            [self changeToPortraitLayout];
+            NSLog(@"Orientation changed!!");
 
-            break;
-        case UIDeviceOrientationPortraitUpsideDown:
             [scrollView_iPad setContentSize:CGSizeMake(0, 0)];
-
             break;
+
         case UIDeviceOrientationLandscapeLeft:
             [self changeToLandscapeLayout];
             [scrollView_iPad setContentSize:CGSizeMake(1248, 1248)];
             scrollView_iPad.frame = CGRectMake(0, 196, 960, 768);
-            
             break;
+            
         case UIDeviceOrientationLandscapeRight:
             [self changeToLandscapeLayout];
             [scrollView_iPad setContentSize:CGSizeMake(1248, 1248)];

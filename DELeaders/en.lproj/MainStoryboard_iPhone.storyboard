@@ -94,7 +94,7 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="del_logo_shaded.png" id="tT2-Qq-GCK">
                                 <rect key="frame" x="0.0" y="328" width="320" height="88"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -102,11 +102,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Sign In" id="CE4-3N-bQd"/>
                     <connections>
+                        <outlet property="bottomImage" destination="tT2-Qq-GCK" id="153-HJ-p5w"/>
                         <outlet property="enterButton" destination="AY2-x7-nMe" id="Mmh-oH-eAE"/>
                         <outlet property="netIdField" destination="5HQ-f1-ja8" id="Oef-cT-IuZ"/>
                         <outlet property="passwordField" destination="JYT-bM-mpm" id="3RT-AB-EYd"/>
                         <outlet property="scrollView" destination="NvM-VR-3j8" id="gVM-HM-hcn"/>
                         <outlet property="skipButton" destination="U4t-Xk-czz" id="Pbx-h2-Nwy"/>
+                        <outlet property="topImage" destination="JzW-be-wBz" id="35K-Mo-EaL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZe-o6-l88" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -227,6 +229,156 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lXb-Hx-20y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-116" y="-18"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="OxK-1L-Ncq">
+            <objects>
+                <viewController id="Bz5-x3-o2U" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5SD-W5-1Ca">
+                        <rect key="frame" x="0.0" y="20" width="480" height="300"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="top_small.png" id="4Yd-6W-7eQ">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XgW-al-QzY">
+                                <rect key="frame" x="110" y="65" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="NSE" image="nsoeIcon.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rs5-ak-oBw">
+                                <rect key="frame" x="258" y="64" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="calendarIcon.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ySe-VI-jNu">
+                                <rect key="frame" x="184" y="65" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="WP" image="wordpressIcon.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2Vs-D2-Q17">
+                                <rect key="frame" x="36" y="65" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="DEL" image="delIcon.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="DEL" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="mPQ-U9-6Oh">
+                                <rect key="frame" x="36" y="114" width="50" height="20"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Calendar" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="tZ9-Ux-qNU">
+                                <rect key="frame" x="258" y="114" width="50" height="21"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Wordpress" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="ZqE-Z2-Mlt">
+                                <rect key="frame" x="184" y="114" width="50" height="21"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="NSOE" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="i1l-bz-Qch">
+                                <rect key="frame" x="110" y="114" width="50" height="21"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ofy-rO-H0O">
+                                <rect key="frame" x="262" y="79" width="42" height="34"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" id="SOv-kp-VPX">
+                                <rect key="frame" x="263" y="65" width="40" height="14"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uhi-xY-X96">
+                                <rect key="frame" x="416" y="65" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Sak" image="sakaiIcon.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="K2N-a8-Rji">
+                                <rect key="frame" x="342" y="65" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Crs" image="coursesIcon.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sakai" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="QYM-ho-9WJ">
+                                <rect key="frame" x="416" y="114" width="50" height="21"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Courses" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="c5Q-xg-flG">
+                                <rect key="frame" x="342" y="114" width="50" height="21"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OzC-AO-o2o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12" y="-56"/>
         </scene>
         <!--General Web View Controller-->
         <scene sceneID="rmE-O3-xI6">
@@ -709,21 +861,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Library" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="bEx-Ld-1a9">
-                                <rect key="frame" x="24" y="311" width="50" height="21"/>
+                                <rect key="frame" x="24" y="301" width="50" height="21"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Contacts" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="CCp-mD-s5Z">
-                                <rect key="frame" x="98" y="311" width="50" height="21"/>
+                                <rect key="frame" x="98" y="301" width="50" height="21"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="ACES" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="tbQ-UD-iJY">
-                                <rect key="frame" x="172" y="311" width="50" height="21"/>
+                                <rect key="frame" x="172" y="301" width="50" height="21"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -797,8 +949,32 @@
                     </view>
                     <navigationItem key="navigationItem" title="DELinks" id="YwU-Zl-Aa0"/>
                     <connections>
+                        <outlet property="acesButton" destination="ZIq-8U-H3c" id="AxC-05-X7y"/>
+                        <outlet property="acesLabel" destination="tbQ-UD-iJY" id="09c-99-SQF"/>
+                        <outlet property="bottomImage" destination="Bw4-SW-o2n" id="Een-vR-vW2"/>
+                        <outlet property="calButton" destination="6Vc-qZ-sxs" id="7ca-bt-yJ9"/>
+                        <outlet property="calLabel" destination="JH4-oV-iVT" id="fEj-DB-efh"/>
+                        <outlet property="contactsButton" destination="ajV-hj-W0n" id="HbG-EU-Dal"/>
+                        <outlet property="contactsLabel" destination="CCp-mD-s5Z" id="i0O-0T-jIQ"/>
+                        <outlet property="coursesButton" destination="Nhe-M5-DTU" id="GKT-u8-7gK"/>
+                        <outlet property="coursesLabel" destination="li8-ov-133" id="ahK-Ry-POx"/>
                         <outlet property="dateNumLabel" destination="84X-WJ-GkF" id="xZ9-mb-ZYB"/>
                         <outlet property="dayLabel" destination="OL0-cL-XEc" id="9AI-fU-PCY"/>
+                        <outlet property="delButton" destination="2kr-RK-rN3" id="VHi-E6-D4C"/>
+                        <outlet property="delLabel" destination="pcG-pR-0ao" id="H0G-hT-UN5"/>
+                        <outlet property="imagesButton" destination="wJN-Es-eiX" id="TFP-0f-ZPK"/>
+                        <outlet property="imagesLabel" destination="N3j-hK-dap" id="RxQ-xW-9bt"/>
+                        <outlet property="libraryButton" destination="D7Q-0V-boB" id="VpC-5Y-NwA"/>
+                        <outlet property="libraryLabel" destination="bEx-Ld-1a9" id="KkK-Xd-MN3"/>
+                        <outlet property="nsoeButton" destination="lO4-fM-Fm1" id="Xoi-LG-Ozc"/>
+                        <outlet property="nsoeLabel" destination="CbP-Tm-2tm" id="Nio-bk-Lo6"/>
+                        <outlet property="sakaiButton" destination="TJ5-8S-9SF" id="6UW-nU-Rik"/>
+                        <outlet property="sakaiLabel" destination="hTu-3L-lQz" id="YEF-Eq-Q2r"/>
+                        <outlet property="socialButton" destination="4PO-D6-xPF" id="0GG-Cq-u7y"/>
+                        <outlet property="socialLabel" destination="niz-UH-bdk" id="H5d-3H-9gj"/>
+                        <outlet property="topImage" destination="kcJ-1G-ttR" id="e7s-0T-gzS"/>
+                        <outlet property="wpButton" destination="AWb-E3-TMT" id="6gF-5R-rHw"/>
+                        <outlet property="wpLabel" destination="cDG-cL-Nar" id="eNM-Ng-l7Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -962,9 +1138,132 @@
         <image name="sakaiIcon.png" width="50" height="50"/>
         <image name="socialIcon.png" width="50" height="50"/>
         <image name="top.png" width="640" height="125"/>
+        <image name="top_small.png" width="637" height="30"/>
         <image name="twitterButton.png" width="242" height="56"/>
         <image name="wordpressIcon.png" width="50" height="50"/>
     </resources>
+    <classes>
+        <class className="ContactsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="facultyView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="othersView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="studentsLoadView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="studentsView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="CoursesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoursesViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="detailsView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="scheduleView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="GeneralWebViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GeneralWebViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="myWebView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ImageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Upload:"/>
+                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
+            </relationships>
+        </class>
+        <class className="LinksViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LinksViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="acesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="acesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bottomImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="calButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="calLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="contactsButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="contactsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="coursesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="coursesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dateNumLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dayLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="delButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="delLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imagesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imagesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="libraryButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="libraryLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="linksView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="nsoeButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="nsoeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sakaiButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sakaiLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrollView_iPad" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="socialButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="socialLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="topImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wpButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="wpLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SakaiCalendarViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SakaiCalendarViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="sakaiCalView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="sakaiCalViewLoad" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="sakaiCalViewTemp" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="SakaiViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SakaiViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="sakaiWebView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="sakaiWebViewLoad" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="sakaiWebViewTemp" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="SignInViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignInViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="pressEnterButton:"/>
+                <relationship kind="outlet" name="bottomImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="enterButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="netIdField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="skipButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="topImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="SocialViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="myWebView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="photoDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/photoDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="shareImage:"/>
+                <relationship kind="outlet" name="imageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="s3ImageCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/s3ImageCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

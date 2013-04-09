@@ -232,7 +232,6 @@
 				317D102916C1ECF2007EBF76 /* UIKit.framework in Frameworks */,
 				317D102B16C1ECF2007EBF76 /* Foundation.framework in Frameworks */,
 				317D102D16C1ECF2007EBF76 /* CoreGraphics.framework in Frameworks */,
-				234AF837170400C2000FCD51 /* AWSiOSSDK.framework in Frameworks */,
 				235CE1851711E3ED00D9323C /* AWSiOSSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,7 +305,6 @@
 			isa = PBXGroup;
 			children = (
 				235CE1841711E3ED00D9323C /* AWSiOSSDK.framework */,
-				234AF836170400C2000FCD51 /* AWSiOSSDK.framework */,
 				317D102816C1ECF2007EBF76 /* UIKit.framework */,
 				317D102A16C1ECF2007EBF76 /* Foundation.framework */,
 				317D102C16C1ECF2007EBF76 /* CoreGraphics.framework */,

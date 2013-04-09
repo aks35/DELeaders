@@ -6,6 +6,7 @@
 //
 //
 
+#import "Utility.h"
 #import "SignInViewController.h"
 
 @interface SignInViewController ()
@@ -23,6 +24,13 @@
 @synthesize activeField;
 @synthesize netId;
 @synthesize password;
+@synthesize topImage;
+@synthesize bottomImage;
+@synthesize promptLabel;
+@synthesize netIdLabel;
+@synthesize passwordLabel;
+
+Utility *util;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,6 +49,10 @@
     tap.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tap];
     [self checkForNetIdAndPassword];
+    
+    util = [[Utility alloc]init];
+    [util registerOrientationHandler:self];
+    NSLog(@"WORKING");
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,6 +67,11 @@
     [self setNetIdField:nil];
     [self setPasswordField:nil];
     [self setScrollView:nil];
+    [self setTopImage:nil];
+    [self setBottomImage:nil];
+    [self setPromptLabel:nil];
+    [self setNetIdLabel:nil];
+    [self setPasswordLabel:nil];
     [super viewDidUnload];
 }
 
@@ -156,6 +173,62 @@
         [netIdField setText:netId];
         [passwordField setText:password];
     }
+}
+
+- (void)changeToPortraitLayout {
+    [topImage setFrame:CGRectMake(0, 0, 320, 80)];
+    [topImage setImage:[UIImage imageNamed:@"top.png"]];
+    [bottomImage setHidden:NO];
+    
+    [scrollView setFrame:CGRectMake(0, 80, 320, 344)];
+    [promptLabel setFrame:CGRectMake(0, 26, 320, 48)];
+    [netIdLabel setFrame:CGRectMake(67, 87, 53, 21)];
+    [passwordLabel setFrame:CGRectMake(67, 130, 81, 21)];
+    [netIdField setFrame:CGRectMake(156, 82, 97, 31)];
+    [passwordField setFrame:CGRectMake(156, 130, 97, 31)];
+    [enterButton setFrame:CGRectMake(73, 189, 75, 37)];
+    [skipButton setFrame:CGRectMake(167, 189, 75, 37)];
+}
+
+- (void)changeToLandscapeLayout {
+    if ([util isFourInchScreen]) {
+        [topImage setFrame:CGRectMake(0, 0, 568, 30)];
+    } else {
+        [topImage setFrame:CGRectMake(0, 0, 480, 30)];
+    }
+    [topImage setImage:[UIImage imageNamed:@"top_small.png"]];
+    [bottomImage setHidden:YES];
+    
+    [scrollView setFrame:CGRectMake(124, 38, 320, 218)];
+    [promptLabel setFrame:CGRectMake(0, 0, 320, 48)];
+    [netIdLabel setFrame:CGRectMake(67, 60, 53, 21)];
+    [passwordLabel setFrame:CGRectMake(67, 103, 81, 21)];
+    [netIdField setFrame:CGRectMake(156, 55, 97, 31)];
+    [passwordField setFrame:CGRectMake(156, 103, 97, 31)];
+    [enterButton setFrame:CGRectMake(73, 162, 75, 37)];
+    [skipButton setFrame:CGRectMake(167, 162, 75, 37)];
+}
+
+- (void)orientationChanged:(NSNotification *)note
+{
+    UIDevice * device = note.object;
+    [self.view setNeedsDisplay];
+    switch(device.orientation)
+    {
+        case UIDeviceOrientationPortrait:
+            [self changeToPortraitLayout];
+            break;
+            
+        case UIDeviceOrientationLandscapeLeft:
+            [self changeToLandscapeLayout];
+            break;
+            
+        case UIDeviceOrientationLandscapeRight:
+            [self changeToLandscapeLayout];
+            break;
+        default:
+            break;
+    };
 }
 
 @end
