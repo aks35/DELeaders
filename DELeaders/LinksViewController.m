@@ -36,7 +36,8 @@
 @synthesize libraryLabel;
 @synthesize contactsLabel;
 @synthesize acesLabel;
-
+@synthesize topImage;
+@synthesize bottomImage;
 @synthesize scrollView_iPad;
 @synthesize linksView;
 @synthesize dayLabel;
@@ -47,6 +48,14 @@
 {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
+}
+
+- (void)handleCurrentOrientation {
+    if (UIDeviceOrientationIsLandscape([[UIDevice currentDevice] orientation])) {
+        [topImage setFrame:CGRectMake(0, 0, 568, 30)];
+        [topImage setImage:[UIImage imageNamed:@"top_small.png"]];
+        [bottomImage setHidden:YES];
+    }
 }
 
 #pragma mark - View lifecycle
@@ -61,6 +70,7 @@
     
 //    scrollView_iPad.backgroundColor = [UIColor cyanColor];
     // Detect orientations
+    [self handleCurrentOrientation];
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter]
      addObserver:self selector:@selector(orientationChanged:)
@@ -97,11 +107,21 @@
     [self setLibraryLabel:nil];
     [self setContactsLabel:nil];
     [self setAcesLabel:nil];
+    [self setTopImage:nil];
+    [self setBottomImage:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    NSLog(@"PREPARING FOR SEGUE");
+}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -157,16 +177,35 @@
     [message show];
 }
 
-- (void)changeLayout:(UIDeviceOrientation *)orientation {
-    [delButton setCenter:CGPointMake(63, 127)];
-    [nsoeButton setCenter:CGPointMake(151, 127)];
-    [wpButton setCenter:CGPointMake(239, 127)];
-    [calButton setCenter:CGPointMake(327, 127)];
-    [coursesButton setCenter:CGPointMake(415, 127)];
-    [sakaiLabel setCenter:CGPointMake(503, 127)];
+- (void)changeToLandscapeLayout {
+    NSLog(@"LOGGING");
+    [topImage setFrame:CGRectMake(0, 0, 568, 30)];
+    [topImage setImage:[UIImage imageNamed:@"top_small.png"]];
+    [bottomImage setHidden:YES];
+    
+    [delButton setCenter:CGPointMake(63.0, 127.0)];
+    [nsoeButton setCenter:CGPointMake(151.0, 127.0)];
+    [wpButton setCenter:CGPointMake(239.0, 127.0)];
+    [calButton setCenter:CGPointMake(327.0, 127.0)];
+    [coursesButton setCenter:CGPointMake(415.0, 127.0)];
+    [sakaiButton setCenter:CGPointMake(503.0, 127.0)];
+    [socialButton setCenter:CGPointMake(63.0, 211.0)];
+    [imagesButton setCenter:CGPointMake(151.0, 211.0)];
+    [libraryButton setCenter:CGPointMake(239.0, 211.0)];
+    [contactsButton setCenter:CGPointMake(327.0, 211.0)];
+    [acesButton setCenter:CGPointMake(415.0, 211.0)];
     
     [delLabel setCenter:CGPointMake(63, 162)];
     [nsoeLabel setCenter:CGPointMake(151, 162)];
+    [wpLabel setCenter:CGPointMake(239, 162)];
+    [calLabel setCenter:CGPointMake(327, 162)];
+    [coursesLabel setCenter:CGPointMake(415, 162)];
+    [sakaiLabel setCenter:CGPointMake(503, 162)];
+    [socialLabel setCenter:CGPointMake(63, 246)];
+    [imagesLabel setCenter:CGPointMake(151, 246)];
+    [libraryLabel setCenter:CGPointMake(239, 246)];
+    [contactsLabel setCenter:CGPointMake(327, 246)];
+    [acesLabel setCenter:CGPointMake(415, 246)];
     
     
 }
@@ -185,11 +224,13 @@
 
             break;
         case UIDeviceOrientationLandscapeLeft:
+            [self changeToLandscapeLayout];
             [scrollView_iPad setContentSize:CGSizeMake(1248, 1248)];
             scrollView_iPad.frame = CGRectMake(0, 196, 960, 768);
             
             break;
         case UIDeviceOrientationLandscapeRight:
+            [self changeToLandscapeLayout];
             [scrollView_iPad setContentSize:CGSizeMake(1248, 1248)];
             scrollView_iPad.frame = CGRectMake(0, 196, 960, 768);
             break;

@@ -35,6 +35,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *libraryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contactsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *acesLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *topImage;
+@property (weak, nonatomic) IBOutlet UIImageView *bottomImage;
 
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView_iPad;
