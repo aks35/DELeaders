@@ -52,7 +52,11 @@ Utility *util;
     
     util = [[Utility alloc]init];
     [util registerOrientationHandler:self];
+    
+
     NSLog(@"WORKING");
+
+//    [topImage setFrame:CGRectMake(0, 0, 320, 80)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,6 +83,7 @@ Utility *util;
 {
     [super viewWillAppear:animated];
     [self registerForKeyboardNotifications];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -91,6 +96,11 @@ Utility *util;
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+//    if (UIDeviceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
+//        [self changeToLandscapeLayout];
+//    } else if (UIDeviceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)) {
+//        [self changeToPortraitLayout];
+//    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -181,13 +191,13 @@ Utility *util;
     [bottomImage setHidden:NO];
     
     [scrollView setFrame:CGRectMake(0, 80, 320, 344)];
-    [promptLabel setFrame:CGRectMake(0, 26, 320, 48)];
-    [netIdLabel setFrame:CGRectMake(67, 87, 53, 21)];
-    [passwordLabel setFrame:CGRectMake(67, 130, 81, 21)];
-    [netIdField setFrame:CGRectMake(156, 82, 97, 31)];
-    [passwordField setFrame:CGRectMake(156, 130, 97, 31)];
-    [enterButton setFrame:CGRectMake(73, 189, 75, 37)];
-    [skipButton setFrame:CGRectMake(167, 189, 75, 37)];
+    [promptLabel setFrame:CGRectMake(0, 44, 320, 48)];
+    [netIdLabel setFrame:CGRectMake(67, 105, 53, 21)];
+    [passwordLabel setFrame:CGRectMake(67, 148, 81, 21)];
+    [netIdField setFrame:CGRectMake(156, 100, 97, 31)];
+    [passwordField setFrame:CGRectMake(156, 148, 97, 31)];
+    [enterButton setFrame:CGRectMake(73, 207, 75, 37)];
+    [skipButton setFrame:CGRectMake(167, 207, 75, 37)];
 }
 
 - (void)changeToLandscapeLayout {

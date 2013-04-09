@@ -53,14 +53,6 @@ Utility *util;
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (void)handleCurrentOrientation {
-    if (UIDeviceOrientationIsLandscape([[UIDevice currentDevice] orientation])) {
-        [topImage setFrame:CGRectMake(0, 0, 568, 30)];
-        [topImage setImage:[UIImage imageNamed:@"top_small.png"]];
-        [bottomImage setHidden:YES];
-    }
-}
-
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -257,8 +249,6 @@ Utility *util;
     {
         case UIDeviceOrientationPortrait:
             [self changeToPortraitLayout];
-            NSLog(@"Orientation changed!!");
-
             [scrollView_iPad setContentSize:CGSizeMake(0, 0)];
             break;
 
@@ -273,6 +263,7 @@ Utility *util;
             [scrollView_iPad setContentSize:CGSizeMake(1248, 1248)];
             scrollView_iPad.frame = CGRectMake(0, 196, 960, 768);
             break;
+            
         default:
             break;
     };
