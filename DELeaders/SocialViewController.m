@@ -44,6 +44,7 @@ Utility *util;
     util = [[Utility alloc]init];
     [util registerOrientationHandler:self];
     [util loadWebView:myURL webView:myWebView];
+    myWebView.scalesPageToFit = YES;
     self.navigationItem.title = myTitle;
     
 }
@@ -60,28 +61,16 @@ Utility *util;
     if([identifier hasPrefix:@"soc-"]){
         SocialViewController *controller = (SocialViewController *)segue.destinationViewController;
         if ([identifier isEqualToString:@"soc-FacebookSegue"]) {
-            controller.myURL = @"http://www.facebook.com/";
+            controller.myURL = @"https://www.facebook.com/DukeEnvironmentalLeadership";
             controller.myTitle = @"Facebook";
         } else if ([identifier isEqualToString:@"soc-TwitterSegue"]) {
-            controller.myURL = @"http://www.twitter.com/";
+            controller.myURL = @"https://twitter.com/DEL_Duke";
             controller.myTitle = @"Twitter";
         } else if ([identifier isEqualToString:@"soc-LinkedinSegue"]) {
-            controller.myURL = @"http://www.linkedin.com";
+            controller.myURL = @"http://www.linkedin.com/groups/Duke-Environmental-Leadership-Master-Environmental-1124597?home=&gid=1124597&trk=anet_ug_hm";
             controller.myTitle = @"Linkedin";
         }
     }
-}
-
-- (IBAction)openFacebook:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.facebook.com/" ]];
-}
-
-- (IBAction)openTwitter:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.twitter.com/" ]];
-}
-
-- (IBAction)openLinkedIn:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.linkedin.com/" ]];
 }
 
 - (void)viewDidUnload {

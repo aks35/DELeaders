@@ -56,8 +56,11 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
     helperController = [[SakaiViewControllerHelper alloc]init];
     [self setSelfAsWebViewsDelegate];
     [util loadWebView:@"https://sites.nicholas.duke.edu/delmeminfo/contact-information/faculty/" webView:facultyView];
+    facultyView.scalesPageToFit = YES;
     [util loadWebView:@"https://sites.nicholas.duke.edu/delmeminfo/contact-information/students/student-directory/" webView:studentsView];
+    studentsView.scalesPageToFit = YES;
     [util loadWebView:@"https://sites.nicholas.duke.edu/delmeminfo/contact-information/other-important-nicholas-school-contacts/" webView:othersView];
+    othersView.scalesPageToFit = YES;
     hud = [[MBProgressHUD alloc]init];
     [hud hide:YES];
     [studentsView setHidden:YES];
