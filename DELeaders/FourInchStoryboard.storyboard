@@ -1008,19 +1008,16 @@
         <scene sceneID="yR0-B1-oke">
             <objects>
                 <viewController id="egp-kT-bar" customClass="photoDetailViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5ar-Mv-tXW">
+                    <view key="view" contentMode="scaleToFill" id="UUY-EJ-KZy">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="l62-Xe-ds5"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="cNv-Zw-1xe">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="l62-Xe-ds5" firstAttribute="trailing" secondItem="5ar-Mv-tXW" secondAttribute="trailing" type="default" id="URP-5w-tMi"/>
-                            <constraint firstItem="l62-Xe-ds5" firstAttribute="top" secondItem="5ar-Mv-tXW" secondAttribute="top" type="default" id="fRJ-NT-2XX"/>
-                            <constraint firstItem="l62-Xe-ds5" firstAttribute="leading" secondItem="5ar-Mv-tXW" secondAttribute="leading" type="default" id="lzt-lk-5Sq"/>
-                            <constraint firstItem="l62-Xe-ds5" firstAttribute="bottom" secondItem="5ar-Mv-tXW" secondAttribute="bottom" type="default" id="veG-oi-igU"/>
-                        </constraints>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Images" id="Bjn-5i-33c">
                         <barButtonItem key="rightBarButtonItem" title="Share" id="oTj-47-Wnf">
@@ -1030,7 +1027,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageView" destination="l62-Xe-ds5" id="zKe-WM-lxd"/>
+                        <outlet property="imageView" destination="cNv-Zw-1xe" id="KHx-zt-W8c"/>
                         <outlet property="titleBar" destination="Bjn-5i-33c" id="24e-Ug-3Ss"/>
                     </connections>
                 </viewController>
@@ -1122,9 +1119,6 @@
                 <relationship kind="outlet" name="wpButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="wpLabel" candidateClass="UILabel"/>
             </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
         <class className="SakaiCalendarViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SakaiCalendarViewController.h"/>
