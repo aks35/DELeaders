@@ -163,7 +163,7 @@
 		314B576A16E317B00065B50D /* SakaiViewControllerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SakaiViewControllerHelper.h; sourceTree = "<group>"; };
 		314B576B16E317B00065B50D /* SakaiViewControllerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SakaiViewControllerHelper.m; sourceTree = "<group>"; };
 		314B576C16E317B00065B50D /* SakaiViewControllerHelper.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SakaiViewControllerHelper.xib; sourceTree = "<group>"; };
-		317D102416C1ECF2007EBF76 /* DELeaders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DELeaders.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		317D102416C1ECF2007EBF76 /* DELinks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DELinks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		317D102816C1ECF2007EBF76 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		317D102A16C1ECF2007EBF76 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		317D102C16C1ECF2007EBF76 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -295,7 +295,7 @@
 		317D102516C1ECF2007EBF76 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				317D102416C1ECF2007EBF76 /* DELeaders.app */,
+				317D102416C1ECF2007EBF76 /* DELinks.app */,
 				317D104816C1ECF2007EBF76 /* DELeadersTests.octest */,
 			);
 			name = Products;
@@ -496,7 +496,7 @@
 			);
 			name = DELeaders;
 			productName = DELeaders;
-			productReference = 317D102416C1ECF2007EBF76 /* DELeaders.app */;
+			productReference = 317D102416C1ECF2007EBF76 /* DELinks.app */;
 			productType = "com.apple.product-type.application";
 		};
 		317D104716C1ECF2007EBF76 /* DELeadersTests */ = {
@@ -773,8 +773,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DELeaders/DELeaders-Prefix.pch";
 				INFOPLIST_FILE = "DELeaders/DELeaders-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5D8C668C-E3D6-4338-95EA-6B7220394588";
+				PRODUCT_NAME = DELinks;
+				PROVISIONING_PROFILE = "4511E8C4-7871-4913-8DFC-C14323B52D34";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5D8C668C-E3D6-4338-95EA-6B7220394588";
 				WRAPPER_EXTENSION = app;
 			};
@@ -793,9 +793,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DELeaders/DELeaders-Prefix.pch";
 				INFOPLIST_FILE = "DELeaders/DELeaders-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5D8C668C-E3D6-4338-95EA-6B7220394588";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5D8C668C-E3D6-4338-95EA-6B7220394588";
+				PRODUCT_NAME = DELinks;
+				PROVISIONING_PROFILE = "4511E8C4-7871-4913-8DFC-C14323B52D34";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4511E8C4-7871-4913-8DFC-C14323B52D34";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "317D102316C1ECF2007EBF76"
-               BuildableName = "DELeaders.app"
+               BuildableName = "DELinks.app"
                BlueprintName = "DELeaders"
                ReferencedContainer = "container:DELeaders.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "317D102316C1ECF2007EBF76"
-            BuildableName = "DELeaders.app"
+            BuildableName = "DELinks.app"
             BlueprintName = "DELeaders"
             ReferencedContainer = "container:DELeaders.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "317D102316C1ECF2007EBF76"
-            BuildableName = "DELeaders.app"
+            BuildableName = "DELinks.app"
             BlueprintName = "DELeaders"
             ReferencedContainer = "container:DELeaders.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "317D102316C1ECF2007EBF76"
-            BuildableName = "DELeaders.app"
+            BuildableName = "DELinks.app"
             BlueprintName = "DELeaders"
             ReferencedContainer = "container:DELeaders.xcodeproj">
          </BuildableReference>
