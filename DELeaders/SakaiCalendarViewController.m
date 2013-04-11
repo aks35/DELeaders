@@ -60,15 +60,11 @@ bool loggedInApriori = YES;
     [sakaiCalViewLoad setHidden:YES];
     [sakaiCalViewTemp setHidden:YES];
     if (calendarRendered) {
-        NSLog(@"CalendarRendered TRUE");
         [sakaiCalView setHidden:NO];
         [util loadWebView:calendarURL webView:sakaiCalView];
     } else {
-        NSLog(@"CalendarRendered FALSE");
         [util loadWebView:@"https://sakai.duke.edu/portal/pda" webView:sakaiCalView];
-        NSLog(@"Called loadWebView");
     }
-    NSLog(@"Finished loading");
 }
 
 - (void)goToPageTemplate:(NSString *)index {
@@ -94,34 +90,26 @@ bool loggedInApriori = YES;
     inCalendar = YES;
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-    NSLog(@"HELLO");
+- (void)autoLoginToSakai:(UIWebView *)webView {
     if (calendarRendered && !loggedInApriori) {
-        NSLog(@"HERE");
         [MBProgressHUD hideHUDForView:sakaiCalViewLoad animated:YES];
         [sakaiCalViewLoad setHidden:YES];
         [sakaiCalView setHidden:NO];
         [self.view bringSubviewToFront:sakaiCalView];
-    } 
+    }
     else if (loggedIntoSakai) {
         if (loggedInApriori) {
-            NSLog(@"Logged in before, reloading");
             loggedInApriori = NO;
             [self goToWorkspacePage];
         }
         else if (helperController.inWorkspace) {
             [self goToCalendarPage];
             helperController.inWorkspace = NO;
-
             [sakaiCalView setHidden:NO];
-            NSLog(@"GOING TO CALENDAR");
-        } else {   
+        } else {
             [self goToWorkspacePage];
-            NSLog(@"GOING INTO WORKSPACE");
             if ([hud.labelText length] != 0 && !inCalendar) {
-                
             } else {
-                NSLog(@"ONE DAY");
                 [self.view bringSubviewToFront:sakaiCalView];
             }
         }
@@ -130,7 +118,6 @@ bool loggedInApriori = YES;
         loggedIntoSakai = YES;
     }
     else if (loginFormSubmitted) {
-        NSLog(@"here only once");
         [helperController fillSakaiSubViewForm:sakaiCalView];
         atRedirect = YES;
     }
@@ -143,7 +130,6 @@ bool loggedInApriori = YES;
             loggedInApriori = NO;
         }
     }
-    
     else if (!loggedIntoSakai) {
         [sakaiCalViewLoad setHidden:NO];
         hud = [MBProgressHUD showHUDAddedTo:sakaiCalViewLoad animated:YES];
@@ -158,6 +144,14 @@ bool loggedInApriori = YES;
     else {
         NSString *href = [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.documentURI;"]];
         NSLog(@"NOTHING FINISHED: %@", href);
+    }
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    if ([util userLoggedIn]) {
+        [self autoLoginToSakai:webView];
+    } else {
+        [sakaiCalView setHidden:NO];
     }
 }
 

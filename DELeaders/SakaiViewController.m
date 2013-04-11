@@ -60,7 +60,7 @@ bool loggedIntoSakai;
 
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
+- (void)autoLoginToSakai:(UIWebView *)webView {
     if (loggedIntoSakai) {
         if ([hud.labelText length] != 0) {
             [sakaiWebViewTemp setHidden:NO];
@@ -81,8 +81,16 @@ bool loggedIntoSakai;
                 [util loadWebView:href webView:sakaiWebViewTemp];
                 [self.view bringSubviewToFront:sakaiWebViewTemp];
             }
-        }  
-    } 
+        }
+    }
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    if ([util userLoggedIn]) {
+        [self autoLoginToSakai:webView];
+    } else {
+        [sakaiWebView setHidden:NO];
+    }
 }
 
 - (void)viewDidUnload

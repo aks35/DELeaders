@@ -14,4 +14,5 @@
 - (BOOL)isFourInchScreen;
 - (BOOL)isPad;
 - (void)registerOrientationHandler:(UIViewController *)controller;
+- (BOOL)userLoggedIn;
 @end

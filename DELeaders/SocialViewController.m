@@ -46,7 +46,11 @@ Utility *util;
     [util loadWebView:myURL webView:myWebView];
     myWebView.scalesPageToFit = YES;
     self.navigationItem.title = myTitle;
-    
+    if (UIDeviceOrientationIsPortrait(self.interfaceOrientation)) {
+        [self changeToPortraitLayout];
+    } else if (UIDeviceOrientationIsLandscape(self.interfaceOrientation)) {
+        [self changeToLandscapeLayout];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -88,13 +92,13 @@ Utility *util;
     [topImage setImage:[UIImage imageNamed:@"top.png"]];
     [bottomImage setHidden:NO];
     if ([util isFourInchScreen]) {
-        [facebookButton setFrame:CGRectMake(39, 120, 242, 60)];
-        [twitterButton setFrame:CGRectMake(39, 223, 242, 60)];
-        [linkedInButton setFrame:CGRectMake(39, 326, 242, 60)];
+        [facebookButton setFrame:CGRectMake(30, 120, 260, 60)];
+        [twitterButton setFrame:CGRectMake(30, 223, 260, 60)];
+        [linkedInButton setFrame:CGRectMake(30, 326, 260, 60)];
     } else {
-        [facebookButton setFrame:CGRectMake(39, 107, 242, 56)];
-        [twitterButton setFrame:CGRectMake(39, 181, 242, 56)];
-        [linkedInButton setFrame:CGRectMake(39, 253, 242, 56)];
+        [facebookButton setFrame:CGRectMake(30, 104, 260, 56)];
+        [twitterButton setFrame:CGRectMake(30, 178, 260, 56)];
+        [linkedInButton setFrame:CGRectMake(30, 252, 260, 56)];
     }
 
 }
@@ -111,7 +115,6 @@ Utility *util;
         [twitterButton setFrame:CGRectMake(119, 120, 242, 56)];
         [linkedInButton setFrame:CGRectMake(119, 192, 242, 56)];
     }
-    NSLog(@"HELLLOWE");
     [topImage setImage:[UIImage imageNamed:@"top_small.png"]];
     [bottomImage setHidden:YES];
     

@@ -70,6 +70,11 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
     hud = [[MBProgressHUD alloc]init];
     [hud hide:YES];
     [studentsView setHidden:YES];
+    if (UIDeviceOrientationIsPortrait(self.interfaceOrientation)) {
+        [self changeToPortraitLayout];
+    } else if (UIDeviceOrientationIsLandscape(self.interfaceOrientation)) {
+        [self changeToLandscapeLayout];
+    }
 }
 
 - (void)viewDidUnload
@@ -162,9 +167,9 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
         [studentsButton setFrame:CGRectMake(30, 216, 260, 60)];
         [othersButton setFrame:CGRectMake(30, 306, 260, 60)];
     } else {
-        [facultyButton setFrame:CGRectMake(30, 99, 260, 60)];
+        [facultyButton setFrame:CGRectMake(30, 104, 260, 60)];
         [studentsButton setFrame:CGRectMake(30, 178, 260, 60)];
-        [othersButton setFrame:CGRectMake(30, 257, 260, 60)];
+        [othersButton setFrame:CGRectMake(30, 252, 260, 60)];
     }
     
 }

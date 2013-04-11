@@ -41,5 +41,15 @@
      object:[UIDevice currentDevice]];
 }
 
+- (BOOL)userLoggedIn {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *netId = [defaults objectForKey:@"netId"];
+    NSString *password = [defaults objectForKey:@"password"];
+    if (netId && password) {
+        return YES;
+    }
+    return NO;
+}
+
 
 @end

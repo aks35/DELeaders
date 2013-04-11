@@ -90,6 +90,11 @@ Utility *util;
     
     util = [[Utility alloc]init];
     [util registerOrientationHandler:self];
+    if (UIDeviceOrientationIsPortrait(self.interfaceOrientation)) {
+        [self changeToPortraitLayout];
+    } else if (UIDeviceOrientationIsLandscape(self.interfaceOrientation)) {
+        [self changeToLandscapeLayout];
+    }
    
 }
 
@@ -222,23 +227,35 @@ Utility *util;
 - (void)changeToLandscapeLayout {
     if ([util isFourInchScreen]) {
         [topImage setFrame:CGRectMake(0, 0, 568, 30)];
+        CGFloat xStart = 63;
+        CGFloat yStart = 83;
+        for (int i = 0; i < [buttonList count]; ++i) {
+            [buttonList[i] setCenter:CGPointMake(xStart+((i%6)*88), yStart+((i/6)*84))];
+        }
+        [dayLabel setCenter:CGPointMake(327, 66)];
+        [dateNumLabel setCenter:CGPointMake(327, 90)];
+        yStart = 118;
+        for (int i = 0; i < [labelList count]; ++i) {
+            [labelList[i] setCenter:CGPointMake(xStart+((i%6)*88), yStart+((i/6)*84))];
+        }
     } else {
         [topImage setFrame:CGRectMake(0, 0, 480, 30)];
+        CGFloat xStart = 53;
+        CGFloat yStart = 85;
+        for (int i = 0; i < [buttonList count]; ++i) {
+            [buttonList[i] setCenter:CGPointMake(xStart+((i%6)*75), yStart+((i/6)*90))];
+        }
+        [dayLabel setCenter:CGPointMake(278, 67)];
+        [dateNumLabel setCenter:CGPointMake(278, 91)];
+        yStart = 119;
+        for (int i = 0; i < [labelList count]; ++i) {
+            [labelList[i] setCenter:CGPointMake(xStart+((i%6)*75), yStart+((i/6)*90))];
+        }
     }
     [topImage setImage:[UIImage imageNamed:@"top_small.png"]];
     [bottomImage setHidden:YES];
     
-    CGFloat xStart = 63;
-    CGFloat yStart = 83;
-    for (int i = 0; i < [buttonList count]; ++i) {
-        [buttonList[i] setCenter:CGPointMake(xStart+((i%6)*88), yStart+((i/6)*84))];
-    }
-    [dayLabel setCenter:CGPointMake(327, 66)];
-    [dateNumLabel setCenter:CGPointMake(327, 90)];
-    yStart = 118;
-    for (int i = 0; i < [labelList count]; ++i) {
-        [labelList[i] setCenter:CGPointMake(xStart+((i%6)*88), yStart+((i/6)*84))];
-    }
+
 }
 
 - (void)orientationChanged:(NSNotification *)note

@@ -49,14 +49,13 @@ Utility *util;
     tap.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tap];
     [self checkForNetIdAndPassword];
-    
     util = [[Utility alloc]init];
     [util registerOrientationHandler:self];
-    
-
-    NSLog(@"WORKING");
-
-//    [topImage setFrame:CGRectMake(0, 0, 320, 80)];
+    if (UIDeviceOrientationIsPortrait(self.interfaceOrientation)) {
+        [self changeToPortraitLayout];
+    } else if (UIDeviceOrientationIsLandscape(self.interfaceOrientation)) {
+        [self changeToLandscapeLayout];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -83,14 +82,13 @@ Utility *util;
 {
     [super viewWillAppear:animated];
     [self registerForKeyboardNotifications];
-
+    NSLog(@"VIEW APPERS");
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
-    [self registerForKeyboardNotifications];
-    
+    [self unregisterForKeyboardNotifications];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -122,7 +120,6 @@ Utility *util;
     [defaults setObject:password forKey:@"password"];
     NSLog(@"netId: %@",netId);
     NSLog(@"password: %@", password);
-    
 }
 
 - (void)registerForKeyboardNotifications {
@@ -143,13 +140,14 @@ Utility *util;
     scrollView.contentInset = contentInsets;
     scrollView.scrollIndicatorInsets = contentInsets;
     
-    CGRect aRect = self.view.frame;
+    CGRect aRect = scrollView.frame;
     aRect.size.height -= kbSize.height;
     CGPoint origin = activeField.frame.origin;
     origin.y -= scrollView.contentOffset.y;
     if (!CGRectContainsPoint(aRect, origin)) {
         CGPoint scrollPoint = CGPointMake(0.0, activeField.frame.origin.y-aRect.size.height);
         [scrollView setContentOffset:scrollPoint animated:YES];
+        NSLog(@"HELLOOO");
     }
 }
 
@@ -161,7 +159,7 @@ Utility *util;
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     activeField = textField;
-    //    NSLog(@"Active field set");
+    NSLog(@"%@", textField.text);
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
@@ -170,7 +168,6 @@ Utility *util;
 
 - (void)checkForNetIdAndPassword {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSLog(@"WORKING");
     netId = [defaults objectForKey:@"netId"];
     password = [defaults objectForKey:@"password"];
     if (netId && password) {
@@ -213,7 +210,6 @@ Utility *util;
     } else {
         [topImage setFrame:CGRectMake(0, 0, 480, 30)];
         [scrollView setFrame:CGRectMake(80, 38, 320, 250)];
-
     }
     [topImage setImage:[UIImage imageNamed:@"top_small.png"]];
     [bottomImage setHidden:YES];
