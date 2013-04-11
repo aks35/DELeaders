@@ -87,24 +87,35 @@ Utility *util;
     [topImage setFrame:CGRectMake(0, 0, 320, 80)];
     [topImage setImage:[UIImage imageNamed:@"top.png"]];
     [bottomImage setHidden:NO];
-    
-    [facebookButton setFrame:CGRectMake(39, 120, 242, 60)];
-    [twitterButton setFrame:CGRectMake(39, 223, 242, 60)];
-    [linkedInButton setFrame:CGRectMake(39, 326, 242, 60)];
+    if ([util isFourInchScreen]) {
+        [facebookButton setFrame:CGRectMake(39, 120, 242, 60)];
+        [twitterButton setFrame:CGRectMake(39, 223, 242, 60)];
+        [linkedInButton setFrame:CGRectMake(39, 326, 242, 60)];
+    } else {
+        [facebookButton setFrame:CGRectMake(39, 107, 242, 56)];
+        [twitterButton setFrame:CGRectMake(39, 181, 242, 56)];
+        [linkedInButton setFrame:CGRectMake(39, 253, 242, 56)];
+    }
+
 }
 
 - (void)changeToLandscapeLayout {
     if ([util isFourInchScreen]) {
         [topImage setFrame:CGRectMake(0, 0, 568, 30)];
+        [facebookButton setFrame:CGRectMake(163, 44, 242, 60)];
+        [twitterButton setFrame:CGRectMake(163, 115, 242, 60)];
+        [linkedInButton setFrame:CGRectMake(163, 186, 242, 60)];
     } else {
         [topImage setFrame:CGRectMake(0, 0, 480, 30)];
+        [facebookButton setFrame:CGRectMake(119, 46, 242, 56)];
+        [twitterButton setFrame:CGRectMake(119, 120, 242, 56)];
+        [linkedInButton setFrame:CGRectMake(119, 192, 242, 56)];
     }
+    NSLog(@"HELLLOWE");
     [topImage setImage:[UIImage imageNamed:@"top_small.png"]];
     [bottomImage setHidden:YES];
     
-    [facebookButton setFrame:CGRectMake(163, 44, 242, 60)];
-    [twitterButton setFrame:CGRectMake(163, 115, 242, 60)];
-    [linkedInButton setFrame:CGRectMake(163, 186, 242, 60)];
+
 }
 
 - (void)orientationChanged:(NSNotification *)note

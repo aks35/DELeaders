@@ -96,11 +96,6 @@ Utility *util;
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-//    if (UIDeviceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
-//        [self changeToLandscapeLayout];
-//    } else if (UIDeviceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)) {
-//        [self changeToPortraitLayout];
-//    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -189,27 +184,39 @@ Utility *util;
     [topImage setFrame:CGRectMake(0, 0, 320, 80)];
     [topImage setImage:[UIImage imageNamed:@"top.png"]];
     [bottomImage setHidden:NO];
-    
-    [scrollView setFrame:CGRectMake(0, 80, 320, 344)];
-    [promptLabel setFrame:CGRectMake(0, 44, 320, 48)];
-    [netIdLabel setFrame:CGRectMake(67, 105, 53, 21)];
-    [passwordLabel setFrame:CGRectMake(67, 148, 81, 21)];
-    [netIdField setFrame:CGRectMake(156, 100, 97, 31)];
-    [passwordField setFrame:CGRectMake(156, 148, 97, 31)];
-    [enterButton setFrame:CGRectMake(73, 207, 75, 37)];
-    [skipButton setFrame:CGRectMake(167, 207, 75, 37)];
+    if ([util isFourInchScreen]) {
+        [scrollView setFrame:CGRectMake(0, 80, 320, 344)];
+        [promptLabel setFrame:CGRectMake(0, 44, 320, 48)];
+        [netIdLabel setFrame:CGRectMake(67, 105, 53, 21)];
+        [passwordLabel setFrame:CGRectMake(67, 148, 81, 21)];
+        [netIdField setFrame:CGRectMake(156, 100, 97, 31)];
+        [passwordField setFrame:CGRectMake(156, 148, 97, 31)];
+        [enterButton setFrame:CGRectMake(73, 207, 75, 37)];
+        [skipButton setFrame:CGRectMake(167, 207, 75, 37)];
+    } else {
+        [scrollView setFrame:CGRectMake(0, 80, 320, 250)];
+        [promptLabel setFrame:CGRectMake(0, 14, 320, 48)];
+        [netIdLabel setFrame:CGRectMake(67, 80, 53, 21)];
+        [passwordLabel setFrame:CGRectMake(67, 128, 81, 21)];
+        [netIdField setFrame:CGRectMake(156, 70, 97, 31)];
+        [passwordField setFrame:CGRectMake(156, 119, 97, 31)];
+        [enterButton setFrame:CGRectMake(73, 175, 75, 37)];
+        [skipButton setFrame:CGRectMake(167, 175, 75, 37)];
+    }
+
 }
 
 - (void)changeToLandscapeLayout {
     if ([util isFourInchScreen]) {
         [topImage setFrame:CGRectMake(0, 0, 568, 30)];
+        [scrollView setFrame:CGRectMake(124, 38, 320, 218)];
     } else {
         [topImage setFrame:CGRectMake(0, 0, 480, 30)];
+        [scrollView setFrame:CGRectMake(80, 38, 320, 250)];
+
     }
     [topImage setImage:[UIImage imageNamed:@"top_small.png"]];
     [bottomImage setHidden:YES];
-    
-    [scrollView setFrame:CGRectMake(124, 38, 320, 218)];
     [promptLabel setFrame:CGRectMake(0, 0, 320, 48)];
     [netIdLabel setFrame:CGRectMake(67, 60, 53, 21)];
     [passwordLabel setFrame:CGRectMake(67, 103, 81, 21)];
@@ -228,11 +235,9 @@ Utility *util;
         case UIDeviceOrientationPortrait:
             [self changeToPortraitLayout];
             break;
-            
         case UIDeviceOrientationLandscapeLeft:
             [self changeToLandscapeLayout];
             break;
-            
         case UIDeviceOrientationLandscapeRight:
             [self changeToLandscapeLayout];
             break;

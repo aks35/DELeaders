@@ -17,6 +17,11 @@
 @synthesize studentsView;
 @synthesize othersView;
 @synthesize studentsLoadView;
+@synthesize topImage;
+@synthesize bottomImage;
+@synthesize facultyButton;
+@synthesize studentsButton;
+@synthesize othersButton;
 
 MBProgressHUD *hud;
 Utility *util;
@@ -55,6 +60,7 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
     util = [[Utility alloc]init];
     helperController = [[SakaiViewControllerHelper alloc]init];
     [self setSelfAsWebViewsDelegate];
+    [util registerOrientationHandler:self];
     [util loadWebView:@"https://sites.nicholas.duke.edu/delmeminfo/contact-information/faculty/" webView:facultyView];
     facultyView.scalesPageToFit = YES;
     [util loadWebView:@"https://sites.nicholas.duke.edu/delmeminfo/contact-information/students/student-directory/" webView:studentsView];
@@ -72,6 +78,11 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
     [self setStudentsView:nil];
     [self setOthersView:nil];
     [self setStudentsLoadView:nil];
+    [self setTopImage:nil];
+    [self setBottomImage:nil];
+    [self setFacultyButton:nil];
+    [self setStudentsButton:nil];
+    [self setOthersButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -141,5 +152,59 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
         }
     }
 }
+
+- (void)changeToPortraitLayout {
+    [topImage setFrame:CGRectMake(0, 0, 320, 80)];
+    [topImage setImage:[UIImage imageNamed:@"top.png"]];
+    [bottomImage setHidden:NO];
+    if ([util isFourInchScreen]) {
+        [facultyButton setFrame:CGRectMake(30, 126, 260, 60)];
+        [studentsButton setFrame:CGRectMake(30, 216, 260, 60)];
+        [othersButton setFrame:CGRectMake(30, 306, 260, 60)];
+    } else {
+        [facultyButton setFrame:CGRectMake(30, 99, 260, 60)];
+        [studentsButton setFrame:CGRectMake(30, 178, 260, 60)];
+        [othersButton setFrame:CGRectMake(30, 257, 260, 60)];
+    }
+    
+}
+
+- (void)changeToLandscapeLayout {
+    [topImage setImage:[UIImage imageNamed:@"top_small.png"]];
+    [bottomImage setHidden:YES];
+    if ([util isFourInchScreen]) {
+        [topImage setFrame:CGRectMake(0, 0, 568, 30)];
+        [facultyButton setFrame:CGRectMake(154, 45, 260, 60)];
+        [studentsButton setFrame:CGRectMake(154, 115, 260, 60)];
+        [othersButton setFrame:CGRectMake(154, 185, 260, 60)];
+
+    } else {
+        [topImage setFrame:CGRectMake(0, 0, 480, 30)];
+        [facultyButton setFrame:CGRectMake(110, 40, 260, 60)];
+        [studentsButton setFrame:CGRectMake(110, 119, 260, 60)];
+        [othersButton setFrame:CGRectMake(110, 198, 260, 60)];
+    }
+}
+
+- (void)orientationChanged:(NSNotification *)note
+{
+    UIDevice * device = note.object;
+    [self.view setNeedsDisplay];
+    switch(device.orientation)
+    {
+        case UIDeviceOrientationPortrait:
+            [self changeToPortraitLayout];
+            break;
+        case UIDeviceOrientationLandscapeLeft:
+            [self changeToLandscapeLayout];
+            break;
+        case UIDeviceOrientationLandscapeRight:
+            [self changeToLandscapeLayout];
+            break;
+        default:
+            break;
+    };
+}
+
 
 @end
