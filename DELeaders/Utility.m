@@ -30,7 +30,7 @@
 
 - (BOOL)isPad {
     CGSize iOSDeviceScreenSize = [[UIScreen mainScreen] bounds].size;
-    return iOSDeviceScreenSize.height == 960 || iOSDeviceScreenSize.width == 960;
+    return iOSDeviceScreenSize.height == 1024 || iOSDeviceScreenSize.width == 1024 ;
 }
 
 - (void)registerOrientationHandler:(UIViewController *)controller {

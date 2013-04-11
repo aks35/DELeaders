@@ -38,8 +38,6 @@
 @synthesize acesLabel;
 @synthesize topImage;
 @synthesize bottomImage;
-@synthesize scrollView_iPad;
-@synthesize linksView;
 @synthesize dayLabel;
 @synthesize dateNumLabel;
 
@@ -60,7 +58,6 @@ Utility *util;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.    
     [self updateDateLabels];
-    [scrollView_iPad setScrollEnabled:YES];
     
     buttonList = [[NSMutableArray alloc]init];
     [buttonList addObject:delButton];
@@ -102,8 +99,6 @@ Utility *util;
 {
     [self setDayLabel:nil];
     [self setDateNumLabel:nil];
-    [self setLinksView:nil];
-    [self setScrollView_iPad:nil];
     [self setDelButton:nil];
     [self setDelLabel:nil];
     [self setNsoeButton:nil];
@@ -181,11 +176,12 @@ Utility *util;
     NSString *dayString = [formatter stringFromDate:now];
     NSLog(@"Current DAY: %@", dayString);
     dayLabel.text = dayString;
+    dayLabel.font = [UIFont fontWithName:dayLabel.font.fontName size:dayLabel.frame.size.height-(dayLabel.frame.size.height/7)];
     [formatter setDateFormat:@"d"];
     NSString *dateString = [formatter stringFromDate:now];
     NSLog(@"Current DATE: %@", dateString);
     dateNumLabel.text = dateString;
-    dateNumLabel.font = [UIFont fontWithName:dateNumLabel.font.fontName size:dateNumLabel.frame.size.height];
+    dateNumLabel.font = [UIFont fontWithName:dateNumLabel.font.fontName size:dateNumLabel.frame.size.height-(dateNumLabel.frame.size.height/7)];
 }
 
 -(void)alertMessage:(NSString *)title text:(NSString *)text {
@@ -194,10 +190,10 @@ Utility *util;
 }
 
 - (void)changeToPortraitLayout {
-    [topImage setFrame:CGRectMake(0, 0, 320, 80)];
     [topImage setImage:[UIImage imageNamed:@"top.png"]];
     [bottomImage setHidden:NO];
     if ([util isFourInchScreen]) {
+        [topImage setFrame:CGRectMake(0, 0, 320, 80)];
         CGFloat xStart = 49;
         CGFloat yStart = 145;
         for (int i = 0; i < [buttonList count]; ++i) {
@@ -209,15 +205,30 @@ Utility *util;
         for (int i = 0; i < [labelList count]; ++i) {
             [labelList[i] setCenter:CGPointMake(xStart+((i%4)*74), yStart+((i/4)*96))];
         }
+    } else if ([util isPad]) {
+        NSLog(@"THIS IS AN IPAD");
+        [topImage setFrame:CGRectMake(0, 0, 768, 196)];
+        CGFloat xStart = 123;
+        CGFloat yStart = 291;
+        for (int i = 0; i < [buttonList count]; ++i) {
+            [buttonList[i] setCenter:CGPointMake(xStart+((i%4)*174), yStart+((i/4)*178))];
+        }
+        [dayLabel setCenter:CGPointMake(645, 250)];
+        [dateNumLabel setCenter:CGPointMake(645, 305)];
+        yStart = 364;
+        for (int i = 0; i < [labelList count]; ++i) {
+            [labelList[i] setCenter:CGPointMake(xStart+((i%4)*174), yStart+((i/4)*178))];
+        }
     } else {
+        [topImage setFrame:CGRectMake(0, 0, 320, 80)];
         CGFloat xStart = 49;
-        CGFloat yStart = 113;
+        CGFloat yStart = 116;
         for (int i = 0; i < [buttonList count]; ++i) {
             [buttonList[i] setCenter:CGPointMake(xStart+((i%4)*74), yStart+((i/4)*81))];
         }
-        [dayLabel setCenter:CGPointMake(271, 96)];
-        [dateNumLabel setCenter:CGPointMake(271, 120)];
-        yStart = 148;
+        [dayLabel setCenter:CGPointMake(271, 99)];
+        [dateNumLabel setCenter:CGPointMake(271, 123)];
+        yStart = 151;
         for (int i = 0; i < [labelList count]; ++i) {
             [labelList[i] setCenter:CGPointMake(xStart+((i%4)*74), yStart+((i/4)*82))];
         }
@@ -238,6 +249,20 @@ Utility *util;
         for (int i = 0; i < [labelList count]; ++i) {
             [labelList[i] setCenter:CGPointMake(xStart+((i%6)*88), yStart+((i/6)*84))];
         }
+    } else if ([util isPad]) {
+        [topImage setFrame:CGRectMake(0, 0, 1024, 55)];
+        CGFloat xStart = 251;
+        CGFloat yStart = 184;
+        for (int i = 0; i < [buttonList count]; ++i) {
+            [buttonList[i] setCenter:CGPointMake(xStart+((i%4)*174), yStart+((i/4)*178))];
+            NSLog(@"%2.2f", [buttonList[i] frame].origin.y);
+        }
+        [dayLabel setCenter:CGPointMake(773, 144)];
+        [dateNumLabel setCenter:CGPointMake(773, 199)];
+        yStart = 257;
+        for (int i = 0; i < [labelList count]; ++i) {
+            [labelList[i] setCenter:CGPointMake(xStart+((i%4)*174), yStart+((i/4)*178))];
+        }
     } else {
         [topImage setFrame:CGRectMake(0, 0, 480, 30)];
         CGFloat xStart = 53;
@@ -254,8 +279,6 @@ Utility *util;
     }
     [topImage setImage:[UIImage imageNamed:@"top_small.png"]];
     [bottomImage setHidden:YES];
-    
-
 }
 
 - (void)orientationChanged:(NSNotification *)note
@@ -266,19 +289,14 @@ Utility *util;
     {
         case UIDeviceOrientationPortrait:
             [self changeToPortraitLayout];
-            [scrollView_iPad setContentSize:CGSizeMake(0, 0)];
             break;
 
         case UIDeviceOrientationLandscapeLeft:
             [self changeToLandscapeLayout];
-            [scrollView_iPad setContentSize:CGSizeMake(1248, 1248)];
-            scrollView_iPad.frame = CGRectMake(0, 196, 960, 768);
             break;
             
         case UIDeviceOrientationLandscapeRight:
             [self changeToLandscapeLayout];
-            [scrollView_iPad setContentSize:CGSizeMake(1248, 1248)];
-            scrollView_iPad.frame = CGRectMake(0, 196, 960, 768);
             break;
             
         default:

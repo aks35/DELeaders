@@ -39,8 +39,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *bottomImage;
 
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView_iPad;
-@property (weak, nonatomic) IBOutlet UIView *linksView;
 @property (weak, nonatomic) IBOutlet UILabel *dayLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateNumLabel;
 
