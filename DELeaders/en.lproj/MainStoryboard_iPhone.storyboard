@@ -1082,6 +1082,10 @@
                 <relationship kind="outlet" name="studentsLoadView" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="studentsView" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="topImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="facultyView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="othersView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="studentsLoadView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="studentsView" candidateClass="UIWebView"/>
             </relationships>
         </class>
         <class className="CoursesViewController" superclassName="UIViewController">
@@ -1190,6 +1194,9 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
         <class className="photoDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/photoDetailViewController.h"/>
