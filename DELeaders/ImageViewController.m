@@ -12,6 +12,7 @@
 #import "photoDetailViewController.h"
 #import "AmazonClientManager.h"
 #import "MBProgressHUD.h"
+#import "Constants.h"
 
 
 @implementation ImageViewController
@@ -22,6 +23,9 @@ NSData *imageData;
 NSData *compressedImageData;
 S3Bucket *myBucket;
 S3Bucket *compressedBucket;
+
+
+
 
 - (void)viewDidLoad
 {
@@ -37,26 +41,26 @@ S3Bucket *compressedBucket;
     
     //If the bucket does not exist, then create it.
     for(S3Bucket *bucket in listOfBuckets){
-        if([[bucket name]isEqual:@"delpictures"]){
+        if([[bucket name]isEqual:ORIGINAL_IMAGE_BUCKET_NAME]){
             myBucket=bucket;
         }
     }
     // create the bucket if it does not yet exist
     if(myBucket==nil){
-        [s3 createBucket:[[S3CreateBucketRequest alloc] initWithName:@"delpictures"]];
+        [s3 createBucket:[[S3CreateBucketRequest alloc] initWithName:ORIGINAL_IMAGE_BUCKET_NAME]];
     }
     
     
     //check for and if needed create the compressedBucket
 
     for(S3Bucket *bucket in listOfBuckets){
-        if([[bucket name]isEqual:@"delpicturescompressed"]){
+        if([[bucket name]isEqual:COMPRESSED_IMAGE_BUCKET_NAME]){
             compressedBucket=bucket;
         }
     }
     // create the bucket if it does not yet exist
     if(compressedBucket==nil){
-        [s3 createBucket:[[S3CreateBucketRequest alloc] initWithName:@"delpicturescompressed"]];
+        [s3 createBucket:[[S3CreateBucketRequest alloc] initWithName:COMPRESSED_IMAGE_BUCKET_NAME]];
     }
     
     self.loadItemsIntoListOfItemsAndImagesIntoCompressedImages;
@@ -67,7 +71,7 @@ S3Bucket *compressedBucket;
 
 -(void)loadItemsIntoListOfItemsAndImagesIntoCompressedImages{
     listOfItems = [[NSMutableArray alloc] init];
-    NSArray * objectList = [s3 listObjectsInBucket:myBucket.name];
+    NSArray * objectList = [s3 listObjectsInBucket:compressedBucket.name];
     for(S3ObjectSummary* object in objectList){
         [listOfItems addObject:object.description];
     }
@@ -75,10 +79,10 @@ S3Bucket *compressedBucket;
     
     compressedImages = [[NSMutableArray alloc] init];
     for (NSString* imageName in listOfItems) {
-        NSString* compressedImageName = [imageName stringByAppendingString:@"_compressed"];
+//        NSString* compressedImageName = [imageName stringByAppendingString:@"_compressed"];
         
         
-        S3GetObjectRequest* gor = [[S3GetObjectRequest alloc] initWithKey:compressedImageName withBucket:@"delpicturescompressed"];
+        S3GetObjectRequest* gor = [[S3GetObjectRequest alloc] initWithKey:imageName withBucket:COMPRESSED_IMAGE_BUCKET_NAME];
         S3GetObjectResponse* gore = [s3 getObject:gor];
         gore.contentType=@"image/jpeg";
         
@@ -133,14 +137,14 @@ S3Bucket *compressedBucket;
 
     //upload the original image
         NSString* keyName = [[alertView textFieldAtIndex:0] text];
-    S3PutObjectRequest *por = [[S3PutObjectRequest alloc] initWithKey:keyName inBucket:@"delpictures"];
+    S3PutObjectRequest *por = [[S3PutObjectRequest alloc] initWithKey:keyName inBucket:ORIGINAL_IMAGE_BUCKET_NAME];
     por.contentType = @"image/jpeg";
     por.data = imageData;
     [s3 putObject:por];
 
     //upload the compressed image
-    NSString* compressedKeyName = [keyName stringByAppendingString:@"_compressed"];
-    S3PutObjectRequest *porCompressed = [[S3PutObjectRequest alloc] initWithKey:compressedKeyName inBucket:@"delpicturescompressed"];
+    NSString* compressedKeyName = [keyName stringByAppendingString:COMPRESSED_SUFFIX ];
+    S3PutObjectRequest *porCompressed = [[S3PutObjectRequest alloc] initWithKey:compressedKeyName inBucket:COMPRESSED_IMAGE_BUCKET_NAME];
     porCompressed.contentType = @"image/jpeg";
     porCompressed.data = compressedImageData;
     [s3 putObject:porCompressed];
@@ -177,8 +181,8 @@ S3Bucket *compressedBucket;
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ShowPhoto"]) {
-        photoDetailViewController *flickrPhotoViewController = segue.destinationViewController;
-        flickrPhotoViewController.imageName = sender;
+        photoDetailViewController *PhotoViewController = segue.destinationViewController;
+        PhotoViewController.imageNameWithCompressedSuffix = sender;
     }
 }
 

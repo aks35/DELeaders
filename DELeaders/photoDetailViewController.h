@@ -13,6 +13,6 @@
 - (IBAction)shareImage:(id)sender;
 @property (strong, nonatomic) IBOutlet UINavigationItem *titleBar;
 
-@property (weak, nonatomic) NSString *imageName;
+@property (weak, nonatomic) NSString *imageNameWithCompressedSuffix;
 
 @end
