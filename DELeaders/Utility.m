@@ -10,6 +10,7 @@
 #import "SVWebViewController.h"
 #import "SakaiViewController.h"
 #import "SakaiCalendarViewController.h"
+#import "ContactsViewController.h"
 
 @implementation Utility
 
@@ -86,6 +87,15 @@
     return webViewController;
 }
 
+
+- (SVWebViewController *)openWebBrowserContacts:(NSString *)url viewController:(UINavigationController *)nav {
+    SVWebViewController *webViewController = [[SVWebViewController alloc] init];
+    ContactsViewController *contacts = [[ContactsViewController alloc]init];
+    [webViewController registerContactsHandler:contacts];
+    NSLog(@"Registered contacts controller");
+    [nav pushViewController:webViewController animated:YES];
+    return webViewController;
+}
 
 - (void)changeCurrentView:(UIViewController *)view url:(NSString *)url {
     view =[[SVWebViewController alloc] initWithAddress:url];

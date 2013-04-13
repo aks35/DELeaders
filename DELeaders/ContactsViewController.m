@@ -23,6 +23,8 @@
 @synthesize studentsButton;
 @synthesize othersButton;
 
+@synthesize svWebController, svWebViewMain, svWebViewLoad, svWebViewFinal;
+
 MBProgressHUD *hud;
 Utility *util;
 SakaiViewControllerHelper *helperController;
@@ -52,6 +54,7 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
 }
 
 - (IBAction)studentsPressed:(id)sender {
+    [util openWebBrowserContacts:@"https://sites.nicholas.duke.edu/delmeminfo/contact-information/students/student-directory/" viewController:self.navigationController];
 }
 
 - (IBAction)othersPressed:(id)sender {
@@ -114,15 +117,15 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
     NSString *javascript = @"var str;var links = document.getElementsByTagName('a');for(var i=0; i<links.length; ++i){if(links[i].innerHTML.indexOf('%@')!==-1){str=links[i].href;break;}}str;";
     //    NSString *javascript = @"var str;var links = document.getElementsByTagName('a');for(var i=0; i<links.length; ++i){str += links[i].href;}str;";
     javascript = [NSString stringWithFormat:javascript, index];
-    NSString *result = [studentsView stringByEvaluatingJavaScriptFromString:javascript];
+    NSString *result = [svWebViewMain stringByEvaluatingJavaScriptFromString:javascript];
     NSLog(@"JAVASCRIPT: %@", javascript);
     NSLog(@"RESULT BUZZ: %@", result);
-    [util loadWebView:result webView:studentsView];
+    [util loadWebView:result webView:svWebViewMain];
 }
 
 - (bool)loggedIntoWordpress {
     NSString *javascript = @"document.getElementById('wpadminbar')==null;";
-    NSString *result = [studentsView stringByEvaluatingJavaScriptFromString:javascript];
+    NSString *result = [svWebViewMain stringByEvaluatingJavaScriptFromString:javascript];
     NSLog(@"===== RESULTS: %@",result);
     if ([result isEqualToString:@"true"]) {
         return NO;
@@ -131,42 +134,6 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    if (webView == studentsView) {
-        if (visitedStudentsPage) {
-            [studentsLoadView setHidden:YES];
-            [studentsView setHidden:NO];
-            NSLog(@"Page already visited");
-        }
-        else if (atStudentDirectory) {
-            NSLog(@"Hello world");
-            [MBProgressHUD hideHUDForView:studentsLoadView animated:YES];
-            [studentsLoadView setHidden:YES];
-            [studentsView setHidden:NO];
-            visitedStudentsPage = YES;
-        }
-        else if (clickedLoginLink && atLoginPage) {
-            [helperController fillSakaiSubViewForm:studentsView];
-            if ([self loggedIntoWordpress]){
-                loggedIn = YES;
-                NSLog(@"FINISHED LOGGING IN");
-                [util loadWebView:@"http://sites.nicholas.duke.edu/delmeminfo/contact-information/students/student-directory/" webView:studentsView];
-                atStudentDirectory = YES;
-            }
-        }
-        else if (clickedLoginLink && !atLoginPage) {
-            atLoginPage = YES;
-            [self goToPageTemplate:@"Click Here"];
-        }
-        else if (!clickedLoginLink && !atLoginPage) {
-            hud = [MBProgressHUD showHUDAddedTo:studentsLoadView animated:YES];
-            hud.labelText = @"Logging into Wordpress";
-            NSLog(@"In STUDENTS VIEW");
-            clickedLoginLink = YES;
-            [self goToPageTemplate:@"login"];
-        } else {
-            NSLog(@"UNCAUGHT CASE");
-        }
-    }
 }
 
 - (void)changeToPortraitLayout {
@@ -220,6 +187,80 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
         default:
             break;
     };
+}
+
+
+- (BOOL)autoLoginToWordpress:(UIWebView *)webView {
+    if (webView == svWebViewMain) {
+        if (visitedStudentsPage) {
+            [svWebViewLoad setHidden:YES];
+            [svWebViewMain setHidden:NO];
+            NSLog(@"Page already visited");
+            return NO;
+        }
+        else if (atStudentDirectory) {
+            NSLog(@"Hello world");
+            [MBProgressHUD hideHUDForView:svWebViewLoad animated:YES];
+            [svWebViewLoad setHidden:YES];
+            [svWebViewMain setHidden:NO];
+            visitedStudentsPage = YES;
+            return NO;
+        }
+        else if (clickedLoginLink && atLoginPage) {
+            [helperController fillSakaiSubViewForm:svWebViewMain];
+            if ([self loggedIntoWordpress]){
+                loggedIn = YES;
+                NSLog(@"FINISHED LOGGING IN");
+                [util loadWebView:@"http://sites.nicholas.duke.edu/delmeminfo/contact-information/students/student-directory/" webView:svWebViewMain];
+                atStudentDirectory = YES;
+            }
+        }
+        else if (clickedLoginLink && !atLoginPage) {
+            atLoginPage = YES;
+            [self goToPageTemplate:@"Click Here"];
+        }
+        else if (!clickedLoginLink && !atLoginPage) {
+            hud = [MBProgressHUD showHUDAddedTo:svWebViewLoad animated:YES];
+            hud.labelText = @"Logging into Wordpress";
+            NSLog(@"In STUDENTS VIEW");
+            clickedLoginLink = YES;
+            [self goToPageTemplate:@"login"];
+        } else {
+            NSLog(@"UNCAUGHT CASE");
+        }
+    }
+    return YES;
+}
+
+- (BOOL)contactsWebViewDidFinishLoad:(UIWebView *)webView {
+    NSLog(@"IN ContaCts WEB VIEW DID FINISH LOAD");
+    if ([util userLoggedIn]) {
+        return [self autoLoginToWordpress:webView];
+    } else {
+        return NO;
+    }
+}
+
+
+- (void)registerSVWebController:(SVWebViewController *)webController {
+    svWebController = webController;
+    svWebViewMain = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
+    svWebViewLoad = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
+    svWebViewFinal = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
+    
+    [svWebViewMain setHidden:YES];
+    
+    [svWebViewMain setDelegate:svWebController];
+    svWebViewMain.scalesPageToFit = YES;
+    
+    [webController.view addSubview:svWebViewMain];
+    [webController.view addSubview:svWebViewLoad];
+    [webController setMainView:svWebViewMain];
+    
+    util = [[Utility alloc]init];
+    
+    [util loadWebView:@"https://sites.nicholas.duke.edu/delmeminfo/contact-information/students/student-directory/" webView:svWebViewMain];
+    helperController = [[SakaiViewControllerHelper alloc]init];
 }
 
 

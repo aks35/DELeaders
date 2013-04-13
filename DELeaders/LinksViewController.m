@@ -147,26 +147,6 @@ Utility *util;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-//    NSString *identifier = segue.identifier;
-//    if([identifier hasPrefix:@"gen-"]){
-//        GeneralWebViewController *controller = (GeneralWebViewController *)segue.destinationViewController;
-//        if ([identifier isEqualToString:@"gen-DELSegue"]) {
-//            controller.myURL = @"http://www.nicholas.duke.edu/del/";
-//            controller.myTitle = @"DEL";
-//        } else if ([identifier isEqualToString:@"gen-NSOESegue"]) {
-//            controller.myURL = @"http://www.nicholas.duke.edu/";
-//            controller.myTitle = @"NSOE";
-//        } else if ([identifier isEqualToString:@"gen-WPSegue"]) {
-//            controller.myURL = @"https://sites.nicholas.duke.edu/delmeminfo/";
-//            controller.myTitle = @"Wordpress";
-//        } else if ([identifier isEqualToString:@"gen-LibrarySegue"]) {
-//            controller.myURL = @"https://library.duke.edu/";
-//            controller.myTitle = @"Duke Library";
-//        } else if ([identifier isEqualToString:@"gen-ACESSegue"]) {
-//            controller.myURL = @"https://aces.duke.edu/";
-//            controller.myTitle = @"Duke";
-//        }
-//    }
 }
 
 - (void)updateDateLabels {
