@@ -82,6 +82,11 @@
     SVWebViewController *webViewController = [[SVWebViewController alloc] init];
     SakaiCalendarViewController *sakaiCal = [[SakaiCalendarViewController alloc]init];
     sakaiCal.needToFillOutForm = fillBool;
+    if (fillBool ) {
+        NSLog(@"NEED TO FILLE OUT FORM");
+    } else {
+        NSLog(@"DO NOT NEED TO FILL OUT FORM");
+    }
     [webViewController registerSakaiCalHandler:sakaiCal];
     NSLog(@"Registered sakai calendar controller");
     [nav pushViewController:webViewController animated:YES];

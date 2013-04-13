@@ -125,6 +125,10 @@ bool loggedIntoSakai;
     [webController.view addSubview:svWebViewMain];
     [webController.view addSubview:svWebViewTemp];
     [webController.view addSubview:svWebViewLoad];
+    
+    svWebViewTemp.scalesPageToFit = YES;
+    svWebViewTemp.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
     [webController setMainView:svWebViewTemp];
     
     util = [[Utility alloc]init];

@@ -205,9 +205,10 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
         else if (atStudentDirectory) {
             NSLog(@"Hello world");
             [MBProgressHUD hideHUDForView:svWebViewLoad animated:YES];
+            [svWebController.navigationItem setHidesBackButton:NO animated:YES];
             [svWebViewLoad setHidden:YES];
             [svWebViewMain setHidden:NO];
-            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loggedIntoSakai"];
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loggedIntoWordPress"];
             visitedStudentsPage = YES;
             return NO;
         }
@@ -227,6 +228,7 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
         else if (!clickedLoginLink && !atLoginPage) {
             hud = [MBProgressHUD showHUDAddedTo:svWebViewLoad animated:YES];
             hud.labelText = @"Logging into Wordpress";
+            [svWebController.navigationItem setHidesBackButton:YES animated:YES];
             NSLog(@"In STUDENTS VIEW");
             clickedLoginLink = YES;
             [self goToPageTemplate:@"login"];

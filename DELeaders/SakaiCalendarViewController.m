@@ -206,10 +206,14 @@ bool loggedInApriori = YES;
     
     [svWebViewMain setDelegate:svWebController];
     [svWebViewTemp setDelegate:svWebController];
-    
+
     [webController.view addSubview:svWebViewMain];
     [webController.view addSubview:svWebViewTemp];
     [webController.view addSubview:svWebViewLoad];
+
+    
+    svWebViewMain.scalesPageToFit = YES;
+    svWebViewMain.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
     [webController setMainView:svWebViewMain];
     
