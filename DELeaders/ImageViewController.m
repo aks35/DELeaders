@@ -26,7 +26,6 @@ S3Bucket *compressedBucket;
 
 
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -104,7 +103,7 @@ S3Bucket *compressedBucket;
 
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    //show an alert window to input the image name
+
     UIImage *myImage = [info objectForKey: @"UIImagePickerControllerOriginalImage"];
     imageData = [NSData dataWithData:UIImageJPEGRepresentation(myImage, 1.0)];
     
@@ -123,7 +122,7 @@ S3Bucket *compressedBucket;
     
     compressedImageData = [NSData dataWithData:UIImageJPEGRepresentation(newImage, 1.0)];
     
-
+    //show an alert window to input the image name
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Name Your Image" message:@"" delegate:self cancelButtonTitle:@"Done" otherButtonTitles:nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alert show];
@@ -169,17 +168,27 @@ S3Bucket *compressedBucket;
 
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:NO];
+    hud.labelText = @"Loading Image";
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        NSString* imageName = [listOfItems objectAtIndex:indexPath.row];
+        
+        
+        [self performSegueWithIdentifier:@"ShowPhoto"
+                                  sender:imageName];
+        [self.collectionView
+         deselectItemAtIndexPath:indexPath animated:YES];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    });
 
-    NSString* imageName = [listOfItems objectAtIndex:indexPath.row];
 
-    
-    [self performSegueWithIdentifier:@"ShowPhoto"
-                              sender:imageName];
-    [self.collectionView
-     deselectItemAtIndexPath:indexPath animated:YES];
     
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ 
+    
+    
     if ([segue.identifier isEqualToString:@"ShowPhoto"]) {
         photoDetailViewController *PhotoViewController = segue.destinationViewController;
         PhotoViewController.imageNameWithCompressedSuffix = sender;

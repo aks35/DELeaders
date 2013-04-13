@@ -1067,12 +1067,10 @@
                 <relationship kind="outlet" name="imagesLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="libraryButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="libraryLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="linksView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="nsoeButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="nsoeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="sakaiButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="sakaiLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scrollView_iPad" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="socialButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="socialLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="topImage" candidateClass="UIImageView"/>
