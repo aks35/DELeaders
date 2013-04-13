@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+//Constants
 
 @interface ImageViewController : UIViewController <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;

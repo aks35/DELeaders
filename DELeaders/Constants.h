@@ -32,6 +32,9 @@
 #define CREDENTIALS_ALERT_MESSAGE    @"Please update the Constants.h file with your credentials or Token Vending Machine URL."
 #define ACCESS_KEY_ID                @"USED-ONLY-FOR-TESTING"  // Leave this value as is.
 #define SECRET_KEY                   @"USED-ONLY-FOR-TESTING"  // Leave this value as is.
+#define COMPRESSED_SUFFIX            @"_compressed"
+#define ORIGINAL_IMAGE_BUCKET_NAME   @"delpictures"
+#define COMPRESSED_IMAGE_BUCKET_NAME @"delpicturescompressed"
 
 
 @interface Constants:NSObject {

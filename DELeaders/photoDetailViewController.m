@@ -9,7 +9,7 @@
 #import "photoDetailViewController.h"
 #import <AWSiOSSDK/S3/AmazonS3Client.h>
 #import "AmazonClientManager.h"
-
+#import "Constants.h"
 
 @interface photoDetailViewController ()
 @property (weak) IBOutlet UIImageView *imageView;
@@ -34,11 +34,12 @@ UIImage *myImage;
     s3 = [AmazonClientManager s3];    
 
     
-    
-    S3GetObjectRequest* gor = [[S3GetObjectRequest alloc] initWithKey:self.imageName withBucket:@"delpictures"];
+    //first look for regular uncompressedImage
+    NSString* imageNameWithoutCompressedSuffix = [self.imageNameWithCompressedSuffix substringToIndex:[self.imageNameWithCompressedSuffix length]- COMPRESSED_SUFFIX.length];
+    S3GetObjectRequest* gor = [[S3GetObjectRequest alloc] initWithKey:imageNameWithoutCompressedSuffix withBucket:ORIGINAL_IMAGE_BUCKET_NAME];
     S3GetObjectResponse* gore = [s3 getObject:gor];
     gore.contentType=@"image/jpeg";
-    self.titleBar.title=self.imageName;
+    self.titleBar.title=imageNameWithoutCompressedSuffix;
     myImage= [[UIImage alloc] initWithData:gore.body];
     self.imageView.image=myImage;
 
