@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "SakaiCalendarViewController.h"
 
 @implementation AppDelegate
 
@@ -24,6 +25,7 @@
 {
     // Override point for customization after application launch.
     [self initializeStoryBoardBasedOnScreenSize];
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"loggedIntoSakai"];
     return YES;
 }
 
@@ -64,14 +66,14 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"loggedIntoSakai"];
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:calendarUrlKey];
 }
 
 - (void)initializeStoryBoardBasedOnScreenSize {
     
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone)
     {    // The iOS device = iPhone or iPod Touch
-        
-        
         CGSize iOSDeviceScreenSize = [[UIScreen mainScreen] bounds].size;
         
         if (iOSDeviceScreenSize.height == 480)
@@ -113,16 +115,6 @@
         }
         
     }
-//    else if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
-//        
-//    {   // The iOS device = iPad
-//        
-//        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-//        UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-//        splitViewController.delegate = (id)navigationController.topViewController;
-//        
-//    }
-
 }
 
 

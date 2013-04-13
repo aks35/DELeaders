@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SakaiViewControllerHelper.h"
+@class SakaiCalendarViewController;
+@class SVWebViewController;
+@class MBProgressHUD;
 
 extern NSString* const sakaiTempWebViewTag;
 extern NSString* const sakaiTempCalViewTag;
@@ -19,5 +21,15 @@ extern NSString* const sakaiTempCalViewTag;
 @property (weak, nonatomic) IBOutlet UIWebView *sakaiWebViewLoad;
 
 - (void)setSelfAsWebViewsDelegate;
+- (BOOL)sakaiWebViewDidFinishLoad:(UIWebView *)webView;
+- (void)registerSVWebController:(SVWebViewController *)webController;
+
+@property (strong, nonatomic) SVWebViewController *svWebController;
+@property (strong, nonatomic) UIWebView *svWebViewMain;
+@property (strong, nonatomic) UIWebView *svWebViewLoad;
+@property (strong, nonatomic) UIWebView *svWebViewTemp;
+@property (strong, nonatomic) UIWebView *svWebViewFinal;
+@property (strong, nonatomic) MBProgressHUD *hud;
+
 
 @end

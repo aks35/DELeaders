@@ -7,6 +7,9 @@
 //
 
 #import "Utility.h"
+#import "SVWebViewController.h"
+#import "SakaiViewController.h"
+#import "SakaiCalendarViewController.h"
 
 @implementation Utility
 
@@ -17,10 +20,11 @@
     [webView loadRequest:requestObj];
 }
 
-- (void)logCurrentURL:(UIWebView *)webView {
+- (NSString *)getCurrentURL:(UIWebView *)webView {
     NSString *javascript = @"document.documentURI";
     NSString *result = [webView stringByEvaluatingJavaScriptFromString:javascript];
     NSLog(@"Current URI: %@", result);
+    return result;
 }
 
 - (BOOL)isFourInchScreen {
@@ -51,5 +55,48 @@
     return NO;
 }
 
+- (SVWebViewController *)openWebBrowser:(NSString *)url viewController:(UINavigationController *)nav {
+    SVWebViewController *webViewController = [[SVWebViewController alloc] initWithAddress:url];
+    [nav pushViewController:webViewController animated:YES];
+    return webViewController;
+}
+
+- (SVWebViewController *)replaceWebBrowser:(NSString *)url viewController:(UINavigationController *)nav {
+    SVWebViewController *webViewController = [[SVWebViewController alloc] initWithAddress:url];
+    [nav popViewControllerAnimated:NO];
+    [nav pushViewController:webViewController animated:YES];
+    return webViewController;
+}
+
+- (SVWebViewController *)openWebBrowserSakai:(NSString *)url viewController:(UINavigationController *)nav {
+    SVWebViewController *webViewController = [[SVWebViewController alloc] init];
+    SakaiViewController *sakai = [[SakaiViewController alloc]init];
+    [webViewController registerSakaiHandler:sakai];
+    NSLog(@"Registered sakai controller");
+    [nav pushViewController:webViewController animated:YES];
+    return webViewController;
+}
+
+- (SVWebViewController *)openWebBrowserSakaiCal:(NSString *)url viewController:(UINavigationController *)nav {
+    SVWebViewController *webViewController = [[SVWebViewController alloc] init];
+    SakaiCalendarViewController *sakaiCal = [[SakaiCalendarViewController alloc]init];
+    [webViewController registerSakaiCalHandler:sakaiCal];
+    NSLog(@"Registered sakai calendar controller");
+    [nav pushViewController:webViewController animated:YES];
+    return webViewController;
+}
+
+
+- (void)changeCurrentView:(UIViewController *)view url:(NSString *)url {
+    view =[[SVWebViewController alloc] initWithAddress:url];
+}
+
+- (BOOL)nsStringContains:(NSString *)main sub:(NSString *)sub {
+    if ([main rangeOfString:sub].location == NSNotFound) {
+        return NO;
+    } else {
+        return YES;
+    }
+}
 
 @end

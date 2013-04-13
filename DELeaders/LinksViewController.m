@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 #import "Utility.h"
 #import "GeneralWebViewController.h"
-
+#import "SakaiCalendarViewController.h"
 @implementation LinksViewController
 
 @synthesize delButton;
@@ -147,26 +147,26 @@ Utility *util;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    NSString *identifier = segue.identifier;
-    if([identifier hasPrefix:@"gen-"]){
-        GeneralWebViewController *controller = (GeneralWebViewController *)segue.destinationViewController;
-        if ([identifier isEqualToString:@"gen-DELSegue"]) {
-            controller.myURL = @"http://www.nicholas.duke.edu/del/";
-            controller.myTitle = @"DEL";
-        } else if ([identifier isEqualToString:@"gen-NSOESegue"]) {
-            controller.myURL = @"http://www.nicholas.duke.edu/";
-            controller.myTitle = @"NSOE";
-        } else if ([identifier isEqualToString:@"gen-WPSegue"]) {
-            controller.myURL = @"https://sites.nicholas.duke.edu/delmeminfo/";
-            controller.myTitle = @"Wordpress";
-        } else if ([identifier isEqualToString:@"gen-LibrarySegue"]) {
-            controller.myURL = @"https://library.duke.edu/";
-            controller.myTitle = @"Duke Library";
-        } else if ([identifier isEqualToString:@"gen-ACESSegue"]) {
-            controller.myURL = @"https://aces.duke.edu/";
-            controller.myTitle = @"Duke";
-        }
-    }
+//    NSString *identifier = segue.identifier;
+//    if([identifier hasPrefix:@"gen-"]){
+//        GeneralWebViewController *controller = (GeneralWebViewController *)segue.destinationViewController;
+//        if ([identifier isEqualToString:@"gen-DELSegue"]) {
+//            controller.myURL = @"http://www.nicholas.duke.edu/del/";
+//            controller.myTitle = @"DEL";
+//        } else if ([identifier isEqualToString:@"gen-NSOESegue"]) {
+//            controller.myURL = @"http://www.nicholas.duke.edu/";
+//            controller.myTitle = @"NSOE";
+//        } else if ([identifier isEqualToString:@"gen-WPSegue"]) {
+//            controller.myURL = @"https://sites.nicholas.duke.edu/delmeminfo/";
+//            controller.myTitle = @"Wordpress";
+//        } else if ([identifier isEqualToString:@"gen-LibrarySegue"]) {
+//            controller.myURL = @"https://library.duke.edu/";
+//            controller.myTitle = @"Duke Library";
+//        } else if ([identifier isEqualToString:@"gen-ACESSegue"]) {
+//            controller.myURL = @"https://aces.duke.edu/";
+//            controller.myTitle = @"Duke";
+//        }
+//    }
 }
 
 - (void)updateDateLabels {
@@ -304,4 +304,40 @@ Utility *util;
     };
 }
 
+- (IBAction)calPressed:(id)sender {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loggedIntoSakai"]) {
+        [util openWebBrowser:[[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey] viewController:self.navigationController];
+    } else {
+        [util openWebBrowserSakaiCal:@"https://sakai.duke.edu/portal/pda" viewController:self.navigationController];
+    }
+}
+
+- (IBAction)sakaiPressed:(id)sender {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loggedIntoSakai"]) {
+        [util openWebBrowser:@"https://sakai.duke.edu/portal/pda/?force.login=yes" viewController:self.navigationController];
+    } else {
+        [util openWebBrowserSakai:@"https://sakai.duke.edu/portal/pda/?force.login=yes" viewController:self.navigationController];
+    }
+}
+
+- (IBAction)delPressed:(id)sender {
+    [util openWebBrowser:@"http://www.nicholas.duke.edu/del/" viewController:self.navigationController];
+}
+
+- (IBAction)nsoePressed:(id)sender {
+    [util openWebBrowser:@"http://www.nicholas.duke.edu/" viewController:self.navigationController];
+    self.navigationController.title = @"NSOE";
+}
+
+- (IBAction)wpPressed:(id)sender {
+    [util openWebBrowser:@"https://sites.nicholas.duke.edu/delmeminfo/" viewController:self.navigationController];
+}
+
+- (IBAction)libraryPressed:(id)sender {
+    [util openWebBrowser:@"https://library.duke.edu/" viewController:self.navigationController];
+}
+
+- (IBAction)acesPressed:(id)sender {
+    [util openWebBrowser:@"https://aces.duke.edu/" viewController:self.navigationController];
+}
 @end

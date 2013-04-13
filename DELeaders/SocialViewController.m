@@ -59,24 +59,6 @@ Utility *util;
     // Dispose of any resources that can be recreated.
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    NSString *identifier = segue.identifier;
-    NSLog(@"Identifier: %@", identifier);
-    if([identifier hasPrefix:@"soc-"]){
-        SocialViewController *controller = (SocialViewController *)segue.destinationViewController;
-        if ([identifier isEqualToString:@"soc-FacebookSegue"]) {
-            controller.myURL = @"https://www.facebook.com/DukeEnvironmentalLeadership";
-            controller.myTitle = @"Facebook";
-        } else if ([identifier isEqualToString:@"soc-TwitterSegue"]) {
-            controller.myURL = @"https://twitter.com/DEL_Duke";
-            controller.myTitle = @"Twitter";
-        } else if ([identifier isEqualToString:@"soc-LinkedinSegue"]) {
-            controller.myURL = @"http://www.linkedin.com/groups/Duke-Environmental-Leadership-Master-Environmental-1124597?home=&gid=1124597&trk=anet_ug_hm";
-            controller.myTitle = @"Linkedin";
-        }
-    }
-}
-
 - (void)viewDidUnload {
     [self setMyWebView:nil];
     [self setFacebookButton:nil];
@@ -141,6 +123,18 @@ Utility *util;
         default:
             break;
     };
+}
+
+- (IBAction)facebookPressed:(id)sender {
+    [util openWebBrowser:@"https://www.facebook.com/DukeEnvironmentalLeadership" viewController:self.navigationController];
+}
+
+- (IBAction)twitterPressed:(id)sender {
+    [util openWebBrowser:@"https://twitter.com/DEL_Duke" viewController:self.navigationController];
+}
+
+- (IBAction)linkedInPressed:(id)sender {
+    [util openWebBrowser:@"http://www.linkedin.com/groups/Duke-Environmental-Leadership-Master-Environmental-1124597?home=&gid=1124597&trk=anet_ug_hm" viewController:self.navigationController];
 }
 
 @end

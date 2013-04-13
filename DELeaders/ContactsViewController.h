@@ -18,6 +18,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *facultyButton;
 @property (weak, nonatomic) IBOutlet UIButton *studentsButton;
 @property (weak, nonatomic) IBOutlet UIButton *othersButton;
+
+- (IBAction)facultyPressed:(id)sender;
+- (IBAction)studentsPressed:(id)sender;
+- (IBAction)othersPressed:(id)sender;
+
 - (void)setSelfAsWebViewsDelegate;
 - (void)goToPageTemplate:(NSString *)index;
 - (bool)loggedIntoWordpress;

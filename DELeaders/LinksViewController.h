@@ -37,7 +37,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *acesLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *topImage;
 @property (weak, nonatomic) IBOutlet UIImageView *bottomImage;
+- (IBAction)calPressed:(id)sender;
+- (IBAction)sakaiPressed:(id)sender;
 
+- (IBAction)delPressed:(id)sender;
+- (IBAction)nsoePressed:(id)sender;
+- (IBAction)wpPressed:(id)sender;
+- (IBAction)libraryPressed:(id)sender;
+- (IBAction)acesPressed:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *dayLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateNumLabel;
