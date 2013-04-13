@@ -14,11 +14,7 @@
 
 @implementation SakaiViewController
 
-@synthesize sakaiWebView;
-@synthesize sakaiWebViewTemp;
-@synthesize sakaiWebViewLoad;
 @synthesize svWebController, svWebViewMain, svWebViewLoad, svWebViewTemp, svWebViewFinal;
-
 
 SakaiViewControllerHelper *helperController;
 Utility *util;
@@ -48,21 +44,6 @@ bool loggedIntoSakai;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self setSelfAsWebViewsDelegate];
-    util = [[Utility alloc]init];
-    NSLog(@"--------------------");
-    NSLog(@"LOADING SAKAI VIEW");
-    NSLog(@"--------------------");
-    [util loadWebView:@"https://sakai.duke.edu/portal/pda/?force.login=yes" webView:sakaiWebView];
-    sakaiWebViewLoad.opaque = NO;
-    sakaiWebViewLoad.backgroundColor = [UIColor clearColor];
-    _hud = [[MBProgressHUD alloc]init];
-    [_hud hide:YES];
-    [sakaiWebViewTemp setHidden:YES];
-    [sakaiWebViewLoad setHidden:YES];
-    [sakaiWebView setHidden:YES];
-    helperController = [[SakaiViewControllerHelper alloc]init];
-
 }
 
 - (void)renderSite {
@@ -114,16 +95,12 @@ bool loggedIntoSakai;
     if ([util userLoggedIn]) {
         return [self autoLoginToSakai:webView];
     } else {
-        [sakaiWebView setHidden:NO];
         return NO;
     }
 }
 
 - (void)viewDidUnload
 {
-    [self setSakaiWebView:nil];
-    [self setSakaiWebViewTemp:nil];
-    [self setSakaiWebViewLoad:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -133,11 +110,6 @@ bool loggedIntoSakai;
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
-- (void)setSelfAsWebViewsDelegate {
-    [sakaiWebView setDelegate:self];
-    [sakaiWebViewTemp setDelegate:self];
 }
 
 - (void)registerSVWebController:(SVWebViewController *)webController {
@@ -160,9 +132,7 @@ bool loggedIntoSakai;
     [webController setMainView:svWebViewTemp];
     
     util = [[Utility alloc]init];
-    NSLog(@"--------------------");
-    NSLog(@"LOADING SAKAI VIEW");
-    NSLog(@"--------------------");
+
     [util loadWebView:@"https://sakai.duke.edu/portal/pda/?force.login=yes" webView:svWebViewMain];
     helperController = [[SakaiViewControllerHelper alloc]init];
 }

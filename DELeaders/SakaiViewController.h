@@ -16,11 +16,6 @@ extern NSString* const sakaiTempCalViewTag;
 
 @interface SakaiViewController : UIViewController <UIWebViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIWebView *sakaiWebView;
-@property (weak, nonatomic) IBOutlet UIWebView *sakaiWebViewTemp;
-@property (weak, nonatomic) IBOutlet UIWebView *sakaiWebViewLoad;
-
-- (void)setSelfAsWebViewsDelegate;
 - (BOOL)sakaiWebViewDidFinishLoad:(UIWebView *)webView;
 - (void)registerSVWebController:(SVWebViewController *)webController;
 

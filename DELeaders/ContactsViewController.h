@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SVWebViewController;
+@class MBProgressHUD;
 
 @interface ContactsViewController : UIViewController <UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *facultyView;
@@ -26,4 +28,15 @@
 - (void)setSelfAsWebViewsDelegate;
 - (void)goToPageTemplate:(NSString *)index;
 - (bool)loggedIntoWordpress;
+
+- (BOOL)contactsWebViewDidFinishLoad:(UIWebView *)webView;
+- (void)registerSVWebController:(SVWebViewController *)webController;
+
+@property (strong, nonatomic) SVWebViewController *svWebController;
+@property (strong, nonatomic) UIWebView *svWebViewMain;
+@property (strong, nonatomic) UIWebView *svWebViewLoad;
+@property (strong, nonatomic) UIWebView *svWebViewTemp;
+@property (strong, nonatomic) UIWebView *svWebViewFinal;
+@property (strong, nonatomic) MBProgressHUD *hud;
+
 @end

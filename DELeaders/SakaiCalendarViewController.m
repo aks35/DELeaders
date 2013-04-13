@@ -13,9 +13,6 @@
 
 @implementation SakaiCalendarViewController
 
-@synthesize sakaiCalView;
-@synthesize sakaiCalViewTemp;
-@synthesize sakaiCalViewLoad;
 @synthesize svWebController, svWebViewMain, svWebViewLoad, svWebViewTemp, svWebViewFinal;
 
 //MBProgressHUD *webHud;
@@ -47,36 +44,10 @@ bool loggedInApriori = YES;
     [self.navigationController popViewControllerAnimated: YES];
 }
 
-
-- (void)setSelfAsWebViewsDelegate {
-    [sakaiCalView setDelegate:self];
-//    [sakaiCalViewTemp setDelegate:self];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    util = [[Utility alloc]init];
-//    _hud = [[MBProgressHUD alloc]init];
-//    [_hud hide:YES];
-//    webHud = [[MBProgressHUD alloc]init];
-//    [webHud hide:YES];
-    helperController = [[SakaiViewControllerHelper alloc]init];
-    [self setSelfAsWebViewsDelegate];
-    [sakaiCalView setHidden:YES];
-    [sakaiCalViewLoad setHidden:YES];
-    [sakaiCalViewTemp setHidden:YES];
-    if (calendarRendered) {
-        [sakaiCalView setHidden:NO];
-//        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//        [util loadWebView:[defaults objectForKey:calendarUrlKey] webView:sakaiCalView];
-        [util replaceWebBrowser:[[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey] viewController:self.navigationController];
-
-    } else {
-        [util loadWebView:@"https://sakai.duke.edu/portal/pda" webView:sakaiCalView];
-    }
-//    [self.navigationItem setHidesBackButton:YES animated:YES];
 }
 
 - (void)goToPageTemplate:(NSString *)index {
@@ -183,23 +154,10 @@ bool loggedInApriori = YES;
     return YES;
 }
 
-- (void)updateBackButton {
-    if ([sakaiCalView canGoBack]) {
-        if (!self.navigationItem.leftBarButtonItem) {
-            UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(backWasClicked:)];
-            [self.navigationItem setLeftBarButtonItem:backItem animated:YES];
-        }
-    } else {
-        [self.navigationItem setLeftBarButtonItem:nil animated:YES];
-    }
-}
-
 - (void)webViewDidStartLoad:(UIWebView *)webView {
-//    webHud = [MBProgressHUD showHUDAddedTo:webView animated:YES];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-//    [MBProgressHUD hideHUDForView:webView animated:NO];
     if ([util userLoggedIn]) {
         [self autoLoginToSakai:webView];
     } else {
@@ -209,18 +167,9 @@ bool loggedInApriori = YES;
 
 - (void)viewDidUnload
 {
-    [self setSakaiCalView:nil];
-//    [self setSakaiCalViewTemp:nil];
-    [self setSakaiCalViewLoad:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-}
-
-- (void)backWasClicked:(id)sender {
-    if ([sakaiCalView canGoBack]) {
-        [sakaiCalView goBack];
-    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -230,11 +179,9 @@ bool loggedInApriori = YES;
 }
 
 - (BOOL)sakaiWebViewDidFinishLoad:(UIWebView *)webView {
-    NSLog(@"IN SAKAI CALENDAR VIEW DID FINISH LOAD");
     if ([util userLoggedIn]) {
         return [self autoLoginToSakai:webView];
     } else {
-        [sakaiCalView setHidden:NO];
         return NO;
     }
 }

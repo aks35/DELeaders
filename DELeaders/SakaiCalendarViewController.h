@@ -14,14 +14,7 @@
 #define calendarUrlKey @"sakaiCalendarUrl"
 
 @interface SakaiCalendarViewController : UIViewController <UIWebViewDelegate>
-@property (weak, nonatomic) IBOutlet UIWebView *sakaiCalView;
-@property (weak, nonatomic) IBOutlet UIWebView *sakaiCalViewTemp;
-@property (weak, nonatomic) IBOutlet UIWebView *sakaiCalViewLoad;
-@property (weak, nonatomic) NSString *calendarURL;
 
-- (IBAction)homePressed:(id)sender;
-
-- (void)setSelfAsWebViewsDelegate;
 - (void)goToWorkspacePage;
 - (void)goToCalendarPage;
 - (void)goToPageTemplate:(NSString *)index;
