@@ -35,6 +35,8 @@
 #define COMPRESSED_SUFFIX            @"_compressed"
 #define ORIGINAL_IMAGE_BUCKET_NAME   @"delpictures"
 #define COMPRESSED_IMAGE_BUCKET_NAME @"delpicturescompressed"
+#define COMPRESSED_IMAGE_WIDTH       300
+#define COMPRESSED_IMAGE_DISPLAY_WIDTH 150
 
 
 @interface Constants:NSObject {
