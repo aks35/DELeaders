@@ -77,7 +77,9 @@ Utility *util;
     [topImage setImage:[UIImage imageNamed:@"top.png"]];
     [bottomImage setHidden:NO];
     if ([util isFourInchScreen]) {
-
+        [topImage setFrame:CGRectMake(0, 0, 320, 80)];
+        [detailsButton setFrame:CGRectMake(30, 179, 260, 60)];
+        [scheduleButton setFrame:CGRectMake(30, 266, 260, 60)];
     } else if ([util isPad]) {
 
     } else {
@@ -90,6 +92,8 @@ Utility *util;
 - (void)changeToLandscapeLayout {
     if ([util isFourInchScreen]) {
         [topImage setFrame:CGRectMake(0, 0, 568, 30)];
+        [detailsButton setFrame:CGRectMake(154, 77, 260, 60)];
+        [scheduleButton setFrame:CGRectMake(154, 164, 260, 60)];
 
     } else if ([util isPad]) {
         [topImage setFrame:CGRectMake(0, 0, 1024, 55)];

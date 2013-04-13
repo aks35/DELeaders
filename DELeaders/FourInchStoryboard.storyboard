@@ -123,31 +123,6 @@
             </objects>
             <point key="canvasLocation" x="-598" y="652"/>
         </scene>
-        <!--Social View Controller-->
-        <scene sceneID="9Dj-2v-d2G">
-            <objects>
-                <viewController id="cIX-kS-BVV" customClass="SocialViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="caB-pt-1Px">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" id="6FJ-9b-0p3">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="5qa-cp-aer"/>
-                    <connections>
-                        <outlet property="myWebView" destination="6FJ-9b-0p3" id="gn1-D0-FLQ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JQ4-fI-xvR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-116" y="1168"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="tlV-dQ-8ol">
             <objects>
@@ -163,100 +138,67 @@
             </objects>
             <point key="canvasLocation" x="-489" y="-18"/>
         </scene>
-        <!--Courses View Controller - Schedule-->
+        <!--Courses View Controller - Courses-->
         <scene sceneID="jdp-dD-9H5">
             <objects>
                 <viewController id="z5d-bz-c1z" customClass="CoursesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8pt-b3-RkV">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" id="E9K-ZV-Mtf">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="top.png" id="Blc-77-Bwo">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="del_logo_shaded.png" id="pQV-GP-oce">
+                                <rect key="frame" x="0.0" y="424" width="320" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HQF-Xl-FUU">
+                                <rect key="frame" x="30" y="179" width="260" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Details">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="detailsPressed:" destination="z5d-bz-c1z" eventType="touchUpInside" id="FLD-jd-4SP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ykB-ct-qkz">
+                                <rect key="frame" x="30" y="266" width="260" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Schedule">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="schedulePressed:" destination="z5d-bz-c1z" eventType="touchUpInside" id="G7Q-ys-icu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Schedule" id="PJF-ky-vD3"/>
+                    <navigationItem key="navigationItem" title="Courses" id="MZv-4O-M3O"/>
                     <connections>
-                        <outlet property="scheduleView" destination="E9K-ZV-Mtf" id="hQ4-0T-XcD"/>
+                        <outlet property="bottomImage" destination="pQV-GP-oce" id="X6w-Wn-Ftx"/>
+                        <outlet property="detailsButton" destination="HQF-Xl-FUU" id="BOh-Mi-M6N"/>
+                        <outlet property="scheduleButton" destination="ykB-ct-qkz" id="6CO-4d-AYL"/>
+                        <outlet property="topImage" destination="Blc-77-Bwo" id="Ba8-IG-r4P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xwP-Ma-rHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-116" y="-604"/>
-        </scene>
-        <!--Courses View Controller - Details-->
-        <scene sceneID="l1z-RH-OHk">
-            <objects>
-                <viewController id="AVH-PY-yUF" customClass="CoursesViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Tor-Pt-cJQ">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" id="SqE-dF-B2o">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Details" id="bQj-BF-hax"/>
-                    <connections>
-                        <outlet property="detailsView" destination="SqE-dF-B2o" id="IMU-PC-ZzF"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="r9A-Je-mMi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-489" y="-604"/>
-        </scene>
-        <!--Tab Bar Controller - Courses-->
-        <scene sceneID="RiX-R9-398">
-            <objects>
-                <tabBarController definesPresentationContext="YES" id="GX4-wp-VEC" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Courses" id="lbI-lG-Emb"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="hB5-a0-xxK">
-                        <rect key="frame" x="129" y="330" width="163" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="AVH-PY-yUF" kind="relationship" relationship="viewControllers" id="Yk1-wA-2Tf"/>
-                        <segue destination="z5d-bz-c1z" kind="relationship" relationship="viewControllers" id="3Bc-ft-H3a"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Lc-Hb-mNc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-116" y="-18"/>
-        </scene>
-        <!--General Web View Controller-->
-        <scene sceneID="2qY-gF-mOd">
-            <objects>
-                <viewController id="6O6-Ls-KWk" customClass="GeneralWebViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hOZ-6D-AZe">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" id="Hvk-k7-5TF">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Yco-Wr-Ui6"/>
-                    <connections>
-                        <outlet property="myWebView" destination="Hvk-k7-5TF" id="xMu-f6-b6x"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ge-bT-aYo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="303" y="-115"/>
+            <point key="canvasLocation" x="-70" y="-212"/>
         </scene>
         <!--Social View Controller - Social Apps-->
         <scene sceneID="Fj2-sN-DNt">
@@ -278,7 +220,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cIX-kS-BVV" kind="push" identifier="soc-TwitterSegue" id="hRW-fo-MVI"/>
+                                    <action selector="twitterPressed:" destination="0vO-kk-IXG" eventType="touchUpInside" id="FQz-sO-ubc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0Js-rZ-bMC">
@@ -293,7 +235,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cIX-kS-BVV" kind="push" identifier="soc-FacebookSegue" id="YpO-wK-xQ3"/>
+                                    <action selector="facebookPressed:" destination="0vO-kk-IXG" eventType="touchUpInside" id="Pe1-uk-iWa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VB1-SI-KdI">
@@ -308,7 +250,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cIX-kS-BVV" kind="push" identifier="soc-LinkedinSegue" id="WlX-UC-ktL"/>
+                                    <action selector="linkedInPressed:" destination="0vO-kk-IXG" eventType="touchUpInside" id="M5N-gS-6yj"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="top.png" id="oTj-Qx-dJl">
@@ -333,53 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sIH-Y7-Aaj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-711" y="1118"/>
-        </scene>
-        <!--Sakai View Controller - Sakai-->
-        <scene sceneID="QMm-Us-dZB">
-            <objects>
-                <viewController id="MKw-eZ-1lU" customClass="SakaiViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bPl-k4-fMO">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" id="Q26-q0-wCN">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="MKw-eZ-1lU" id="3ce-GL-e05"/>
-                                </connections>
-                            </webView>
-                            <webView contentMode="scaleToFill" id="2pc-0V-Wxn">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="MKw-eZ-1lU" id="QOy-Zx-NPM"/>
-                                </connections>
-                            </webView>
-                            <webView contentMode="scaleToFill" id="a7P-8a-Dum">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="MKw-eZ-1lU" id="JTs-t1-uEg"/>
-                                </connections>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Sakai" id="DZd-PL-Ntg"/>
-                    <connections>
-                        <outlet property="sakaiWebView" destination="Q26-q0-wCN" id="Q7c-0f-NNX"/>
-                        <outlet property="sakaiWebViewLoad" destination="a7P-8a-Dum" id="F9M-Pf-N1G"/>
-                        <outlet property="sakaiWebViewTemp" destination="2pc-0V-Wxn" id="L4s-0X-WPL"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0sD-5B-x8R" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="649" y="-80"/>
+            <point key="canvasLocation" x="-254" y="1238"/>
         </scene>
         <!--Contacts View Controller - Contacts-->
         <scene sceneID="d9a-kc-Wlv">
@@ -401,7 +297,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yMo-Pj-tcr" kind="push" id="Xsz-HW-hci"/>
+                                    <action selector="facultyPressed:" destination="xhQ-nc-FT3" eventType="touchUpInside" id="pO1-dz-6pV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PF8-UU-JM5">
@@ -416,7 +312,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="FRc-ax-yXg" kind="push" id="tsH-w5-TXQ"/>
+                                    <action selector="studentsPressed:" destination="xhQ-nc-FT3" eventType="touchUpInside" id="OnP-mU-Oi1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dsI-U1-mNi">
@@ -431,7 +327,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yyh-NB-8HN" kind="push" id="QZg-t8-ZEd"/>
+                                    <action selector="othersPressed:" destination="xhQ-nc-FT3" eventType="touchUpInside" id="SdE-I4-jcv"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="top.png" id="M0M-wt-Xnp">
@@ -458,87 +354,6 @@
             </objects>
             <point key="canvasLocation" x="303" y="1118"/>
         </scene>
-        <!--Students View-->
-        <scene sceneID="ZwS-o9-dWR">
-            <objects>
-                <viewController id="FRc-ax-yXg" userLabel="Students View" customClass="ContactsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xCf-iW-SaT">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" id="HqO-as-1Y5">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
-                            <webView contentMode="scaleToFill" id="HSR-EO-ILL">
-                                <rect key="frame" x="0.0" y="-3" width="320" height="509"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Student Contacts" id="3nb-Ia-lQc"/>
-                    <connections>
-                        <outlet property="studentsLoadView" destination="HSR-EO-ILL" id="4BR-vo-pax"/>
-                        <outlet property="studentsView" destination="HqO-as-1Y5" id="fUg-a8-Inw"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gb5-CU-9J8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="681" y="1118"/>
-        </scene>
-        <!--Others View-->
-        <scene sceneID="fPx-ov-Kgv">
-            <objects>
-                <viewController id="yyh-NB-8HN" userLabel="Others View" customClass="ContactsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2vV-Qx-s4O">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" id="pRw-eO-hxZ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Other Contacts" id="qXA-rK-ctr"/>
-                    <connections>
-                        <outlet property="othersView" destination="pRw-eO-hxZ" id="WJP-7e-IRi"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GzR-oS-geS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="303" y="1687"/>
-        </scene>
-        <!--Faculty View-->
-        <scene sceneID="k6R-v0-0xw">
-            <objects>
-                <viewController id="yMo-Pj-tcr" userLabel="Faculty View" customClass="ContactsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Dmp-Vb-ncl">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" id="6Nn-F3-xZp">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Faculty Contacts" id="caH-Mw-Rhd"/>
-                    <connections>
-                        <outlet property="facultyView" destination="6Nn-F3-xZp" id="MwP-R7-bio"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sek-q6-7Wc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="676" y="408"/>
-        </scene>
         <!--Links View Controller - DELinks-->
         <scene sceneID="cJG-fc-dBu">
             <objects>
@@ -559,7 +374,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="6O6-Ls-KWk" kind="push" identifier="gen-NSOESegue" id="hru-g6-jnS"/>
+                                    <action selector="nsoePressed:" destination="Wue-Dx-6EF" eventType="touchUpInside" id="YKJ-oM-4dF"/>
                                 </connections>
                             </button>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nhe-vS-aX8">
@@ -574,7 +389,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="93R-15-79Q" kind="push" id="9uV-EA-D9g"/>
+                                    <action selector="calPressed:" destination="Wue-Dx-6EF" eventType="touchUpInside" id="2pX-NK-ooW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Oja-Yt-67c">
@@ -589,7 +404,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="6O6-Ls-KWk" kind="push" identifier="gen-WPSegue" id="sJ4-XD-KBs"/>
+                                    <action selector="wpPressed:" destination="Wue-Dx-6EF" eventType="touchUpInside" id="llK-Km-ciX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qCF-rw-zco">
@@ -604,7 +419,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="6O6-Ls-KWk" kind="push" identifier="gen-DELSegue" id="Fb3-Iz-f2I"/>
+                                    <action selector="delPressed:" destination="Wue-Dx-6EF" eventType="touchUpInside" id="HzR-0N-U6K"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0UH-qV-XJ4">
@@ -619,7 +434,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="MKw-eZ-1lU" kind="push" id="FYT-VM-GBe"/>
+                                    <action selector="sakaiPressed:" destination="Wue-Dx-6EF" eventType="touchUpInside" id="JeP-1h-eRK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="L67-Lw-QoU">
@@ -664,7 +479,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="GX4-wp-VEC" kind="push" id="iUx-KN-CS9"/>
+                                    <segue destination="z5d-bz-c1z" kind="push" id="4ho-TV-0nz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vVU-qr-mTr">
@@ -694,7 +509,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="6O6-Ls-KWk" kind="push" identifier="gen-ACESSegue" id="qfm-Cg-jMS"/>
+                                    <action selector="acesPressed:" destination="Wue-Dx-6EF" eventType="touchUpInside" id="bVs-Cy-e9A"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pXg-JM-Ix1">
@@ -709,7 +524,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="6O6-Ls-KWk" kind="push" identifier="gen-LibrarySegue" id="oZo-Mv-hes"/>
+                                    <action selector="libraryPressed:" destination="Wue-Dx-6EF" eventType="touchUpInside" id="LC3-h5-8T0"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="del_logo_shaded.png" id="1mX-1G-9ny">
@@ -848,52 +663,6 @@
             </objects>
             <point key="canvasLocation" x="-219" y="576"/>
         </scene>
-        <!--Sakai Calendar View Controller - Sakai Calendar-->
-        <scene sceneID="MdQ-Mp-skW">
-            <objects>
-                <viewController id="93R-15-79Q" customClass="SakaiCalendarViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WDU-LF-t3S">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" id="u8x-hw-Udu">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="93R-15-79Q" id="8SY-Ew-9aq"/>
-                                </connections>
-                            </webView>
-                            <webView contentMode="scaleToFill" id="b73-H7-F6d">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="93R-15-79Q" id="fGd-oI-I8N"/>
-                                </connections>
-                            </webView>
-                            <webView contentMode="scaleToFill" id="Kc6-7h-cIC">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="93R-15-79Q" id="kas-xS-lQh"/>
-                                </connections>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Sakai Calendar" id="Rob-ZN-WoH"/>
-                    <connections>
-                        <outlet property="sakaiCalView" destination="u8x-hw-Udu" id="47o-Cj-F8s"/>
-                        <outlet property="sakaiCalViewLoad" destination="Kc6-7h-cIC" id="Em8-u1-Ff4"/>
-                        <outlet property="sakaiCalViewTemp" destination="b73-H7-F6d" id="9wY-Hf-zwt"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DIL-gJ-5Mz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="277" y="547"/>
-        </scene>
         <!--Image View Controller - Images-->
         <scene sceneID="SZY-gT-sPD">
             <objects>
@@ -1004,14 +773,139 @@
         <image name="twitterButton.png" width="242" height="56"/>
         <image name="wordpressIcon.png" width="120" height="120"/>
     </resources>
+    <classes>
+        <class className="ContactsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="facultyPressed:"/>
+                <relationship kind="action" name="othersPressed:"/>
+                <relationship kind="action" name="studentsPressed:"/>
+                <relationship kind="outlet" name="bottomImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="facultyButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="othersButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="studentsButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="topImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="CoursesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoursesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="detailsPressed:"/>
+                <relationship kind="action" name="schedulePressed:"/>
+                <relationship kind="outlet" name="bottomImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="detailsButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scheduleButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="topImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="ImageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Upload:"/>
+                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
+                <relationship kind="outlet" name="viewForLoadingCircle" candidateClass="UIView"/>
+                <relationship kind="outlet" name="viewForLoadingCircle2" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="LinksViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LinksViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="acesPressed:"/>
+                <relationship kind="action" name="calPressed:"/>
+                <relationship kind="action" name="delPressed:"/>
+                <relationship kind="action" name="libraryPressed:"/>
+                <relationship kind="action" name="nsoePressed:"/>
+                <relationship kind="action" name="sakaiPressed:"/>
+                <relationship kind="action" name="wpPressed:"/>
+                <relationship kind="outlet" name="acesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="acesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bottomImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="calButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="calLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="contactsButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="contactsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="coursesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="coursesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dateNumLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dayLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="delButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="delLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imagesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imagesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="libraryButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="libraryLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nsoeButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="nsoeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sakaiButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sakaiLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="socialButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="socialLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="topImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wpButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="wpLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SignInViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignInViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="pressEnterButton:"/>
+                <relationship kind="outlet" name="bottomImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="enterButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="netIdField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="netIdLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passwordLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="promptLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="skipButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="topImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="SocialViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="facebookPressed:"/>
+                <relationship kind="action" name="linkedInPressed:"/>
+                <relationship kind="action" name="twitterPressed:"/>
+                <relationship kind="outlet" name="bottomImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="facebookButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="linkedInButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="myWebView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="topImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="twitterButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="photoDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/photoDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="shareImage:"/>
+                <relationship kind="outlet" name="imageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titleBar" candidateClass="UINavigationItem"/>
+            </relationships>
+        </class>
+        <class className="s3ImageCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/s3ImageCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="hRW-fo-MVI"/>
         <segue reference="uux-Kg-cqa"/>
-        <segue reference="sJ4-XD-KBs"/>
     </inferredMetricsTieBreakers>
 </document>

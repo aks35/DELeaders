@@ -13,10 +13,6 @@
 
 @implementation ContactsViewController
 
-@synthesize facultyView;
-@synthesize studentsView;
-@synthesize othersView;
-@synthesize studentsLoadView;
 @synthesize topImage;
 @synthesize bottomImage;
 @synthesize facultyButton;
@@ -65,42 +61,14 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
     [util openWebBrowser:@"https://sites.nicholas.duke.edu/delmeminfo/contact-information/other-important-nicholas-school-contacts/" viewController:self.navigationController];
 }
 
-- (void)setSelfAsWebViewsDelegate {
-    [facultyView setDelegate:self];
-    [studentsView setDelegate:self];
-    [othersView setDelegate:self];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    util = [[Utility alloc]init];
-    helperController = [[SakaiViewControllerHelper alloc]init];
-    [self setSelfAsWebViewsDelegate];
-    [util registerOrientationHandler:self];
-    [util loadWebView:@"https://sites.nicholas.duke.edu/delmeminfo/contact-information/faculty/" webView:facultyView];
-    facultyView.scalesPageToFit = YES;
-    [util loadWebView:@"https://sites.nicholas.duke.edu/delmeminfo/contact-information/students/student-directory/" webView:studentsView];
-    studentsView.scalesPageToFit = YES;
-    [util loadWebView:@"https://sites.nicholas.duke.edu/delmeminfo/contact-information/other-important-nicholas-school-contacts/" webView:othersView];
-    othersView.scalesPageToFit = YES;
-    hud = [[MBProgressHUD alloc]init];
-    [hud hide:YES];
-    [studentsView setHidden:YES];
-    if (UIDeviceOrientationIsPortrait(self.interfaceOrientation)) {
-        [self changeToPortraitLayout];
-    } else if (UIDeviceOrientationIsLandscape(self.interfaceOrientation)) {
-        [self changeToLandscapeLayout];
-    }
 }
 
 - (void)viewDidUnload
 {
-    [self setFacultyView:nil];
-    [self setStudentsView:nil];
-    [self setOthersView:nil];
-    [self setStudentsLoadView:nil];
     [self setTopImage:nil];
     [self setBottomImage:nil];
     [self setFacultyButton:nil];
@@ -205,9 +173,11 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
         else if (atStudentDirectory) {
             NSLog(@"Hello world");
             [MBProgressHUD hideHUDForView:svWebViewLoad animated:YES];
+            [svWebController.navigationItem setHidesBackButton:NO animated:YES];
+            [svWebController enableBackButton];
             [svWebViewLoad setHidden:YES];
             [svWebViewMain setHidden:NO];
-            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loggedIntoSakai"];
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loggedIntoWordPress"];
             visitedStudentsPage = YES;
             return NO;
         }
@@ -227,6 +197,8 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
         else if (!clickedLoginLink && !atLoginPage) {
             hud = [MBProgressHUD showHUDAddedTo:svWebViewLoad animated:YES];
             hud.labelText = @"Logging into Wordpress";
+            [svWebController.navigationItem setHidesBackButton:YES animated:YES];
+            [svWebController disableBackButton];
             NSLog(@"In STUDENTS VIEW");
             clickedLoginLink = YES;
             [self goToPageTemplate:@"login"];

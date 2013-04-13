@@ -26,6 +26,7 @@
 @property (nonatomic, strong) SakaiViewController *mySakai;
 @property (nonatomic, strong) SakaiCalendarViewController *mySakaiCal;
 @property (nonatomic, strong) ContactsViewController *myContacts;
+@property (nonatomic) bool backButtonDisabled;
 
 - (id)initWithAddress:(NSString*)urlString;
 - (id)initWithURL:(NSURL*)URL;
@@ -48,7 +49,7 @@
 
 @synthesize URL, mainWebView;
 @synthesize backBarButtonItem, forwardBarButtonItem, refreshBarButtonItem, stopBarButtonItem, actionBarButtonItem, pageActionSheet;
-@synthesize mySakai, mySakaiCal, myContacts;
+@synthesize mySakai, mySakaiCal, myContacts, backButtonDisabled;
 
 BOOL sakaiNotLoaded, sakaiCalNotLoaded, contactsNotLoaded;
 
@@ -327,7 +328,9 @@ BOOL sakaiNotLoaded, sakaiCalNotLoaded, contactsNotLoaded;
 #pragma mark - Target actions
 
 - (void)goBackClicked:(UIBarButtonItem *)sender {
-    [mainWebView goBack];
+    if (!backButtonDisabled) {
+        [mainWebView goBack];
+    }
 }
 
 - (void)goForwardClicked:(UIBarButtonItem *)sender {
@@ -459,6 +462,15 @@ BOOL sakaiNotLoaded, sakaiCalNotLoaded, contactsNotLoaded;
 
 - (void)setMainView:(UIWebView *)mainView {
     mainWebView = mainView;
+}
+
+- (void)disableBackButton {
+    backButtonDisabled = YES;
+    NSLog(@"DISABLED BUTTON");
+}
+
+- (void)enableBackButton {
+    backButtonDisabled = NO;
 }
 
 @end

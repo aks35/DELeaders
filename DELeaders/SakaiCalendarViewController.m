@@ -93,6 +93,7 @@ bool loggedInApriori = YES;
     else if (calendarRendered && !loggedInApriori) {
         [MBProgressHUD hideHUDForView:svWebViewLoad animated:YES];
         [svWebController.navigationItem setHidesBackButton:NO animated:YES];
+        [svWebController enableBackButton];
         [svWebViewLoad setHidden:YES];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loggedIntoSakai"];
         calendarDone = YES;
@@ -146,6 +147,7 @@ bool loggedInApriori = YES;
         _hud = [MBProgressHUD showHUDAddedTo:svWebViewLoad animated:YES];
         _hud.labelText = @"Logging into Sakai";
         [svWebController.navigationItem setHidesBackButton:YES animated:YES];
+        [svWebController disableBackButton];
         NSString *linkExists = [svWebViewMain stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('loginLink')[0]==null;"];
         
         NSLog(@"%@", linkExists);
@@ -206,10 +208,13 @@ bool loggedInApriori = YES;
     
     [svWebViewMain setDelegate:svWebController];
     [svWebViewTemp setDelegate:svWebController];
-    
+
     [webController.view addSubview:svWebViewMain];
     [webController.view addSubview:svWebViewTemp];
     [webController.view addSubview:svWebViewLoad];
+    
+    svWebViewMain.scalesPageToFit = YES;
+    svWebViewMain.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
     [webController setMainView:svWebViewMain];
     
