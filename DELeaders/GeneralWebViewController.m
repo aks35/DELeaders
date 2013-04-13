@@ -53,20 +53,8 @@ MBProgressHUD *hud;
     // Dispose of any resources that can be recreated.
 }
 
-- (void)updateBackButton {
-    if ([myWebView canGoBack]) {
-        if (!self.navigationItem.leftBarButtonItem) {
-            UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(backWasClicked:)];
-            [self.navigationItem setLeftBarButtonItem:backItem animated:YES];
-        }
-    } else {
-        [self.navigationItem setLeftBarButtonItem:nil animated:YES];
-    }
-}
-
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     hud = [MBProgressHUD showHUDAddedTo:webView animated:YES];
-    [self updateBackButton];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
@@ -83,10 +71,5 @@ MBProgressHUD *hud;
     [self.navigationController popViewControllerAnimated: YES];
 }
 
-- (void)backWasClicked:(id)sender {
-    if ([myWebView canGoBack]) {
-        [myWebView goBack];
-    }
-}
 
 @end

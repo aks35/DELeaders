@@ -286,9 +286,15 @@ Utility *util;
 
 - (IBAction)calPressed:(id)sender {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loggedIntoSakai"]) {
-        [util openWebBrowser:[[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey] viewController:self.navigationController];
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey]) {
+            [util openWebBrowser:[[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey] viewController:self.navigationController];
+            NSLog(@"Calendar URL: %@", [[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey]);
+        } else {
+            NSLog(@"WORKING IN HERE");
+            [util openWebBrowserSakaiCal:@"https://sakai.duke.edu/portal/pda" viewController:self.navigationController needToFillOutForm:NO];
+        }
     } else {
-        [util openWebBrowserSakaiCal:@"https://sakai.duke.edu/portal/pda" viewController:self.navigationController];
+        [util openWebBrowserSakaiCal:@"https://sakai.duke.edu/portal/pda" viewController:self.navigationController needToFillOutForm:YES];
     }
 }
 

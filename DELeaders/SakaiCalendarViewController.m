@@ -14,6 +14,7 @@
 @implementation SakaiCalendarViewController
 
 @synthesize svWebController, svWebViewMain, svWebViewLoad, svWebViewTemp, svWebViewFinal;
+@synthesize needToFillOutForm;
 
 //MBProgressHUD *webHud;
 SakaiViewControllerHelper *helperController;
@@ -21,6 +22,7 @@ Utility *util;
 bool calendarDone;
 bool atLogin, inCalendar, calendarRendered, atRedirect, loggedIntoSakai, loginFormSubmitted, inWorkspace;
 bool loggedInApriori = YES;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -71,13 +73,13 @@ bool loggedInApriori = YES;
 }
 
 - (void)goToWorkspacePage {
-    [self goToPageTemplate:@"Workspace"];
     helperController.inWorkspace = YES;
+    [self goToPageTemplate:@"Workspace"];
 }
 
 - (void)goToCalendarPage {
-    [self goToPageTemplate:@"Calendar"];
     inCalendar = YES;
+    [self goToPageTemplate:@"Calendar"];
 }
 
 - (void)backWasClicked {
@@ -120,9 +122,14 @@ bool loggedInApriori = YES;
     }
     else if (atRedirect) {
         loggedIntoSakai = YES;
+        if (!needToFillOutForm) {
+            [self goToWorkspacePage];
+        }
     }
     else if (loginFormSubmitted) {
-        [helperController fillSakaiSubViewForm:svWebViewMain];
+        if (needToFillOutForm) {
+            [helperController fillSakaiSubViewForm:svWebViewMain];
+        } 
         atRedirect = YES;
     }
     else if (atLogin) {
@@ -203,6 +210,7 @@ bool loggedInApriori = YES;
     [webController.view addSubview:svWebViewMain];
     [webController.view addSubview:svWebViewTemp];
     [webController.view addSubview:svWebViewLoad];
+
     [webController setMainView:svWebViewMain];
     
     util = [[Utility alloc]init];

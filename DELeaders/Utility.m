@@ -78,9 +78,10 @@
     return webViewController;
 }
 
-- (SVWebViewController *)openWebBrowserSakaiCal:(NSString *)url viewController:(UINavigationController *)nav {
+- (SVWebViewController *)openWebBrowserSakaiCal:(NSString *)url viewController:(UINavigationController *)nav needToFillOutForm:(bool)fillBool {
     SVWebViewController *webViewController = [[SVWebViewController alloc] init];
     SakaiCalendarViewController *sakaiCal = [[SakaiCalendarViewController alloc]init];
+    sakaiCal.needToFillOutForm = fillBool;
     [webViewController registerSakaiCalHandler:sakaiCal];
     NSLog(@"Registered sakai calendar controller");
     [nav pushViewController:webViewController animated:YES];

@@ -54,7 +54,11 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
 }
 
 - (IBAction)studentsPressed:(id)sender {
-    [util openWebBrowserContacts:@"https://sites.nicholas.duke.edu/delmeminfo/contact-information/students/student-directory/" viewController:self.navigationController];
+    if (visitedStudentsPage) {
+        [util openWebBrowser:@"https://sites.nicholas.duke.edu/delmeminfo/contact-information/students/student-directory/"  viewController:self.navigationController];
+    } else {
+        [util openWebBrowserContacts:@"https://sites.nicholas.duke.edu/delmeminfo/contact-information/students/student-directory/" viewController:self.navigationController];
+    }
 }
 
 - (IBAction)othersPressed:(id)sender {
@@ -203,6 +207,7 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
             [MBProgressHUD hideHUDForView:svWebViewLoad animated:YES];
             [svWebViewLoad setHidden:YES];
             [svWebViewMain setHidden:NO];
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loggedIntoSakai"];
             visitedStudentsPage = YES;
             return NO;
         }

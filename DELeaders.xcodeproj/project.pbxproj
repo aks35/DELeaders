@@ -52,10 +52,6 @@
 		6D316F3F1717740200FA5D61 /* forwardButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D316F3E1717740200FA5D61 /* forwardButton.png */; };
 		6D316F431717840400FA5D61 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D316F421717840400FA5D61 /* MessageUI.framework */; };
 		6D316F451717840A00FA5D61 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D316F441717840A00FA5D61 /* Security.framework */; };
-		6D316F541717842600FA5D61 /* SVWebViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D316F471717842600FA5D61 /* SVWebViewController.strings */; };
-		6D316F551717842600FA5D61 /* SVModalWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D316F4E1717842600FA5D61 /* SVModalWebViewController.m */; };
-		6D316F561717842600FA5D61 /* SVWebViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6D316F4F1717842600FA5D61 /* SVWebViewController.bundle */; };
-		6D316F571717842600FA5D61 /* SVWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D316F511717842600FA5D61 /* SVWebViewController.m */; };
 		6D6115D416F0326200CAE42E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6115D316F0326200CAE42E /* Default-568h@2x.png */; };
 		6D87293F171692AE00DC829E /* iconBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D87293E171692AE00DC829E /* iconBackground.png */; };
 		6D87294B1716951300DC829E /* wordpressIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D87294A1716951300DC829E /* wordpressIcon.png */; };
@@ -197,18 +193,6 @@
 		6D316F3E1717740200FA5D61 /* forwardButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forwardButton.png; sourceTree = "<group>"; };
 		6D316F421717840400FA5D61 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		6D316F441717840A00FA5D61 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		6D316F481717842600FA5D61 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/SVWebViewController.strings; sourceTree = "<group>"; };
-		6D316F491717842600FA5D61 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SVWebViewController.strings; sourceTree = "<group>"; };
-		6D316F4A1717842600FA5D61 /* es-ES */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-ES"; path = "es-ES.lproj/SVWebViewController.strings"; sourceTree = "<group>"; };
-		6D316F4B1717842600FA5D61 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/SVWebViewController.strings; sourceTree = "<group>"; };
-		6D316F4C1717842600FA5D61 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/SVWebViewController.strings; sourceTree = "<group>"; };
-		6D316F4D1717842600FA5D61 /* SVModalWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVModalWebViewController.h; sourceTree = "<group>"; };
-		6D316F4E1717842600FA5D61 /* SVModalWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVModalWebViewController.m; sourceTree = "<group>"; };
-		6D316F4F1717842600FA5D61 /* SVWebViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVWebViewController.bundle; sourceTree = "<group>"; };
-		6D316F501717842600FA5D61 /* SVWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVWebViewController.h; sourceTree = "<group>"; };
-		6D316F511717842600FA5D61 /* SVWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVWebViewController.m; sourceTree = "<group>"; };
-		6D316F521717842600FA5D61 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SVWebViewController.strings"; sourceTree = "<group>"; };
-		6D316F531717842600FA5D61 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/SVWebViewController.strings"; sourceTree = "<group>"; };
 		6D5EF0ED170B5FDA008758FA /* top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top.png; sourceTree = "<group>"; };
 		6D6115D316F0326200CAE42E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6D87293E171692AE00DC829E /* iconBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconBackground.png; sourceTree = "<group>"; };
@@ -394,18 +378,11 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6D316F461717842600FA5D61 /* SVWebViewController */ = {
+		6D2157BA1719BFF600AE443D /* SVWebViewController */ = {
 			isa = PBXGroup;
 			children = (
-				6D316F471717842600FA5D61 /* SVWebViewController.strings */,
-				6D316F4D1717842600FA5D61 /* SVModalWebViewController.h */,
-				6D316F4E1717842600FA5D61 /* SVModalWebViewController.m */,
-				6D316F4F1717842600FA5D61 /* SVWebViewController.bundle */,
-				6D316F501717842600FA5D61 /* SVWebViewController.h */,
-				6D316F511717842600FA5D61 /* SVWebViewController.m */,
 			);
-			name = SVWebViewController;
-			path = "../../../Downloads/SVWebViewController-master/SVWebViewController";
+			path = SVWebViewController;
 			sourceTree = "<group>";
 		};
 		6D87293117168C7A00DC829E /* images */ = {
@@ -435,7 +412,7 @@
 		6D9E482E1700CAC100EE0245 /* vendor */ = {
 			isa = PBXGroup;
 			children = (
-				6D316F461717842600FA5D61 /* SVWebViewController */,
+				6D2157BA1719BFF600AE443D /* SVWebViewController */,
 				6D92DDD916FA423F00AE0AD7 /* MBProgressHUD.h */,
 				6D92DDDA16FA423F00AE0AD7 /* MBProgressHUD.m */,
 			);
@@ -638,8 +615,6 @@
 				6D87298517175E7F00DC829E /* del-icon-72.png in Resources */,
 				6D316F3D171773BD00FA5D61 /* backButton.png in Resources */,
 				6D316F3F1717740200FA5D61 /* forwardButton.png in Resources */,
-				6D316F541717842600FA5D61 /* SVWebViewController.strings in Resources */,
-				6D316F561717842600FA5D61 /* SVWebViewController.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,8 +680,6 @@
 				235B5089170255FE002A8B65 /* ResponseHandler.m in Sources */,
 				237EA6BC1704A8A100EB1D09 /* GetTokenResponse.m in Sources */,
 				6D0D03CC171095A700621B04 /* SignInViewController.m in Sources */,
-				6D316F551717842600FA5D61 /* SVModalWebViewController.m in Sources */,
-				6D316F571717842600FA5D61 /* SVWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -759,20 +732,6 @@
 				6D253362170E1C31006F5398 /* en */,
 			);
 			name = MainStoryboard_iPad.storyboard;
-			sourceTree = "<group>";
-		};
-		6D316F471717842600FA5D61 /* SVWebViewController.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6D316F481717842600FA5D61 /* da */,
-				6D316F491717842600FA5D61 /* en */,
-				6D316F4A1717842600FA5D61 /* es-ES */,
-				6D316F4B1717842600FA5D61 /* es */,
-				6D316F4C1717842600FA5D61 /* fr */,
-				6D316F521717842600FA5D61 /* zh-Hans */,
-				6D316F531717842600FA5D61 /* zh-Hant */,
-			);
-			name = SVWebViewController.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
