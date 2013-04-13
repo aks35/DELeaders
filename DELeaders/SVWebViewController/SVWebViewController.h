@@ -23,6 +23,8 @@
 
 - (void)addSakaiSubView:(UIWebView *)webView;
 - (void)setMainView:(UIWebView *)mainView;
+- (void)disableBackButton;
+- (void)enableBackButton;
 
 @property (nonatomic, readwrite) SVWebViewControllerAvailableActions availableActions;
 

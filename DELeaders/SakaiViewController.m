@@ -54,6 +54,7 @@ bool loggedIntoSakai;
         } else {
             [MBProgressHUD hideHUDForView:svWebViewLoad animated:YES];
             [svWebController.navigationItem setHidesBackButton:NO animated:YES];
+            [svWebController enableBackButton];
             [svWebViewLoad removeFromSuperview];
             [svWebViewMain removeFromSuperview];
             [svWebViewTemp setHidden:NO];
@@ -69,6 +70,7 @@ bool loggedIntoSakai;
         _hud = [MBProgressHUD showHUDAddedTo:svWebViewLoad animated:YES];
         [_hud setLabelText:@"Logging into Sakai"];
         [svWebController.navigationItem setHidesBackButton:YES animated:YES];
+        [svWebController disableBackButton];
         NSLog(@"Page not visited");
         NSLog(@"Web view description: %@", webView.description);
         if ([webView isEqual:svWebViewMain]) {

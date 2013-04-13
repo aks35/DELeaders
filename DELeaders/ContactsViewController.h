@@ -11,10 +11,7 @@
 @class MBProgressHUD;
 
 @interface ContactsViewController : UIViewController <UIWebViewDelegate>
-@property (weak, nonatomic) IBOutlet UIWebView *facultyView;
-@property (weak, nonatomic) IBOutlet UIWebView *studentsView;
-@property (weak, nonatomic) IBOutlet UIWebView *othersView;
-@property (weak, nonatomic) IBOutlet UIWebView *studentsLoadView;
+
 @property (weak, nonatomic) IBOutlet UIImageView *topImage;
 @property (weak, nonatomic) IBOutlet UIImageView *bottomImage;
 @property (weak, nonatomic) IBOutlet UIButton *facultyButton;
@@ -25,7 +22,6 @@
 - (IBAction)studentsPressed:(id)sender;
 - (IBAction)othersPressed:(id)sender;
 
-- (void)setSelfAsWebViewsDelegate;
 - (void)goToPageTemplate:(NSString *)index;
 - (bool)loggedIntoWordpress;
 
