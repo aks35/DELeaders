@@ -30,7 +30,6 @@ S3Bucket *compressedBucket;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [_viewForLoadingCircle2 setHidden:YES];
     
     self.collectionView.backgroundColor = [UIColor blackColor]; //set background color to grey
     [self.collectionView registerClass:[s3ImageCell class] forCellWithReuseIdentifier:@"simpleCellID"];
@@ -109,7 +108,7 @@ S3Bucket *compressedBucket;
     
     
     
-    CGFloat scaleToWidth = 300;
+    CGFloat scaleToWidth = COMPRESSED_IMAGE_WIDTH;
     CGFloat scaleFactor = scaleToWidth/myImage.size.width;
     CGFloat scaledWidth = myImage.size.width*scaleFactor;
     CGFloat scaledHeight = myImage.size.height*scaleFactor;
@@ -123,8 +122,9 @@ S3Bucket *compressedBucket;
     compressedImageData = [NSData dataWithData:UIImageJPEGRepresentation(newImage, 1.0)];
     
     //show an alert window to input the image name
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Name Your Image" message:@"" delegate:self cancelButtonTitle:@"Done" otherButtonTitles:nil];
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Name Your Image" message:@"" delegate:self cancelButtonTitle:@"Upload" otherButtonTitles:nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    alert.tag=1;
     [alert show];
 
 
@@ -133,35 +133,57 @@ S3Bucket *compressedBucket;
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-
-    //upload the original image
+    //if we are returning from the alertview for giving an uploaded image a name
+    if(alertView.tag==1){
+        //upload the original image
         NSString* keyName = [[alertView textFieldAtIndex:0] text];
-    S3PutObjectRequest *por = [[S3PutObjectRequest alloc] initWithKey:keyName inBucket:ORIGINAL_IMAGE_BUCKET_NAME];
-    por.contentType = @"image/jpeg";
-    por.data = imageData;
-    [s3 putObject:por];
-
-    //upload the compressed image
-    NSString* compressedKeyName = [keyName stringByAppendingString:COMPRESSED_SUFFIX ];
-    S3PutObjectRequest *porCompressed = [[S3PutObjectRequest alloc] initWithKey:compressedKeyName inBucket:COMPRESSED_IMAGE_BUCKET_NAME];
-    porCompressed.contentType = @"image/jpeg";
-    porCompressed.data = compressedImageData;
-    [s3 putObject:porCompressed];
-    
-    
-    
-    //reload data
-    listOfItems = [[NSMutableArray alloc] init];
-    NSArray * objectList = [s3 listObjectsInBucket:myBucket.name];
-    for(S3ObjectSummary* object in objectList){
-        [listOfItems addObject:object.description];
+        S3PutObjectRequest *por = [[S3PutObjectRequest alloc] initWithKey:keyName inBucket:ORIGINAL_IMAGE_BUCKET_NAME];
+        por.contentType = @"image/jpeg";
+        por.data = imageData;
+        [s3 putObject:por];
+        
+        //upload the compressed image
+        NSString* compressedKeyName = [keyName stringByAppendingString:COMPRESSED_SUFFIX ];
+        S3PutObjectRequest *porCompressed = [[S3PutObjectRequest alloc] initWithKey:compressedKeyName inBucket:COMPRESSED_IMAGE_BUCKET_NAME];
+        porCompressed.contentType = @"image/jpeg";
+        porCompressed.data = compressedImageData;
+        [s3 putObject:porCompressed];
+        
+        
+        
+        //reload data
+        listOfItems = [[NSMutableArray alloc] init];
+        NSArray * objectList = [s3 listObjectsInBucket:myBucket.name];
+        for(S3ObjectSummary* object in objectList){
+            [listOfItems addObject:object.description];
+        }
+        //reload compressedImages
+        self.loadItemsIntoListOfItemsAndImagesIntoCompressedImages;
+        
+        
+        
+        [self.collectionView reloadData];
     }
-    //reload compressedImages
-    self.loadItemsIntoListOfItemsAndImagesIntoCompressedImages;
+    //if we are returning from the alertview for selecting Camera upload vs. image picker upload
+    if(alertView.tag==2){
+        NSLog(@"clicked button: %d", buttonIndex);
+        //upload from camera
+        if(buttonIndex==1){
+            UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+            imagePicker.delegate = self;
+            imagePicker.sourceType=UIImagePickerControllerSourceTypeCamera;
+            [self presentModalViewController:imagePicker animated:YES];
+        }
+        //upload from gallery
+        else if(buttonIndex==2){
+            UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+            imagePicker.delegate = self;
+            [self presentModalViewController:imagePicker animated:YES];
+        }
 
+    }
     
     
-    [self.collectionView reloadData];
 }
 
 
@@ -222,7 +244,7 @@ S3Bucket *compressedBucket;
     UIImage *compressedThumbnail = [compressedImages objectAtIndex:indexPath.row];
 
 
-    CGFloat scaleToWidth = 150;
+    CGFloat scaleToWidth = COMPRESSED_IMAGE_DISPLAY_WIDTH;
     CGFloat scaleFactor = scaleToWidth/compressedThumbnail.size.width;
     CGFloat scaledWidth = compressedThumbnail.size.width*scaleFactor;
     CGFloat scaledHeight = compressedThumbnail.size.height*scaleFactor;
@@ -239,14 +261,18 @@ S3Bucket *compressedBucket;
 }
 
 - (IBAction)Upload:(id)sender {
-    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-    imagePicker.delegate = self;
-    [self presentModalViewController:imagePicker animated:YES];
+    //show an alertview Window to choose whether to select from the phone's gallery or from camera
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Upload From Where?" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+    alert.tag=2;
+    [alert addButtonWithTitle:@"Camera"];
+    [alert addButtonWithTitle:@"Gallery"];
+    [alert show];
+    
+    
+
 }
 
      - (void)viewDidUnload {
-         [self setViewForLoadingCircle:nil];
-         [self setViewForLoadingCircle2:nil];
          [super viewDidUnload];
      }
 @end

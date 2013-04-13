@@ -837,8 +837,8 @@
 		317D105B16C1ECF2007EBF76 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Shim (6PQN59ARVY)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph Tse (B9Z2S99KFX)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joseph Tse (B9Z2S99KFX)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Downloads/aws-ios-sdk-1.4.6\"",
@@ -848,8 +848,8 @@
 				GCC_PREFIX_HEADER = "DELeaders/DELeaders-Prefix.pch";
 				INFOPLIST_FILE = "DELeaders/DELeaders-Info.plist";
 				PRODUCT_NAME = DELinks;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EADD23B6-851C-45D4-9008-0321C9A3BF94";
+				PROVISIONING_PROFILE = "98611AF6-70F8-4E03-A578-A9D0C77C1ACA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "98611AF6-70F8-4E03-A578-A9D0C77C1ACA";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -857,8 +857,8 @@
 		317D105C16C1ECF2007EBF76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Shim (6PQN59ARVY)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph Tse (B9Z2S99KFX)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joseph Tse (B9Z2S99KFX)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Downloads/aws-ios-sdk-1.4.6\"",
@@ -868,8 +868,8 @@
 				GCC_PREFIX_HEADER = "DELeaders/DELeaders-Prefix.pch";
 				INFOPLIST_FILE = "DELeaders/DELeaders-Info.plist";
 				PRODUCT_NAME = DELinks;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EADD23B6-851C-45D4-9008-0321C9A3BF94";
+				PROVISIONING_PROFILE = "98611AF6-70F8-4E03-A578-A9D0C77C1ACA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "98611AF6-70F8-4E03-A578-A9D0C77C1ACA";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
