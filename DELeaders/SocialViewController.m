@@ -17,7 +17,6 @@
 
 @synthesize myWebView;
 @synthesize myURL;
-@synthesize myTitle;
 
 @synthesize facebookButton;
 @synthesize twitterButton;
@@ -45,7 +44,6 @@ Utility *util;
     [util registerOrientationHandler:self];
     [util loadWebView:myURL webView:myWebView];
     myWebView.scalesPageToFit = YES;
-    self.navigationItem.title = myTitle;
     if (UIDeviceOrientationIsPortrait(self.interfaceOrientation)) {
         [self changeToPortraitLayout];
     } else if (UIDeviceOrientationIsLandscape(self.interfaceOrientation)) {

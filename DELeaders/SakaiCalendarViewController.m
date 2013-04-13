@@ -99,8 +99,9 @@ bool loggedInApriori = YES;
         calendarDone = YES;
         [svWebViewLoad removeFromSuperview];
         [svWebViewTemp removeFromSuperview];
-        [svWebViewMain setHidden:NO];
 
+        [svWebViewMain setHidden:NO];
+        [svWebController enableTitleControl];
 //        [util replaceWebBrowser:[[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey] viewController:self.navigationController];
         return NO;
     }
@@ -197,10 +198,24 @@ bool loggedInApriori = YES;
 
 - (void)registerSVWebController:(SVWebViewController *)webController {
     svWebController = webController;
+    [svWebController setTitle:@"Calendar"];
+    [svWebController disableTitleControl];
+    if (UIDeviceOrientationIsPortrait(self.interfaceOrientation)) {
+//        svWebViewMain = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
+        svWebViewLoad = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
+//        svWebViewTemp = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
+//        svWebViewFinal = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
+    } else if (UIDeviceOrientationIsLandscape(self.interfaceOrientation)) {
+//        svWebViewMain = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.height, svWebController.view.frame.size.width)];
+        svWebViewLoad = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.height, svWebController.view.frame.size.width)];
+//        svWebViewTemp = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.height, svWebController.view.frame.size.width)];
+//        svWebViewFinal = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.height, svWebController.view.frame.size.width)];
+    }
     svWebViewMain = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
-    svWebViewLoad = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
+//    svWebViewLoad = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
     svWebViewTemp = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
     svWebViewFinal = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
+
     
     [svWebViewMain setHidden:YES];
     [svWebViewLoad setHidden:YES];

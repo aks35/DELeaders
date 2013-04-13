@@ -25,6 +25,9 @@
 - (void)setMainView:(UIWebView *)mainView;
 - (void)disableBackButton;
 - (void)enableBackButton;
+- (void)disableTitleControl;
+- (void)enableTitleControl;
+
 
 @property (nonatomic, readwrite) SVWebViewControllerAvailableActions availableActions;
 

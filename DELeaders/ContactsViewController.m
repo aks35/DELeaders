@@ -65,6 +65,13 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    util = [[Utility alloc]init];
+    [util registerOrientationHandler:self];
+    if (UIDeviceOrientationIsPortrait(self.interfaceOrientation)) {
+        [self changeToPortraitLayout];
+    } else if (UIDeviceOrientationIsLandscape(self.interfaceOrientation)) {
+        [self changeToLandscapeLayout];
+    }
 }
 
 - (void)viewDidUnload
@@ -116,6 +123,8 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
         [facultyButton setFrame:CGRectMake(30, 126, 260, 60)];
         [studentsButton setFrame:CGRectMake(30, 216, 260, 60)];
         [othersButton setFrame:CGRectMake(30, 306, 260, 60)];
+    } else if ([util isPad]) {
+        // iPad code HERE
     } else {
         [facultyButton setFrame:CGRectMake(30, 104, 260, 60)];
         [studentsButton setFrame:CGRectMake(30, 178, 260, 60)];
@@ -132,7 +141,8 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
         [facultyButton setFrame:CGRectMake(154, 45, 260, 60)];
         [studentsButton setFrame:CGRectMake(154, 115, 260, 60)];
         [othersButton setFrame:CGRectMake(154, 185, 260, 60)];
-
+    } else if ([util isPad]) {
+        // iPad code HERE
     } else {
         [topImage setFrame:CGRectMake(0, 0, 480, 30)];
         [facultyButton setFrame:CGRectMake(110, 40, 260, 60)];
@@ -175,6 +185,8 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
             [MBProgressHUD hideHUDForView:svWebViewLoad animated:YES];
             [svWebController.navigationItem setHidesBackButton:NO animated:YES];
             [svWebController enableBackButton];
+            [svWebController enableTitleControl];
+            [svWebController setTitle:[util getTitleForWebView:svWebViewMain]];
             [svWebViewLoad setHidden:YES];
             [svWebViewMain setHidden:NO];
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loggedIntoWordPress"];
@@ -221,14 +233,24 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
 
 - (void)registerSVWebController:(SVWebViewController *)webController {
     svWebController = webController;
+    [svWebController setTitle:@"Contacts"];
+    [svWebController disableTitleControl];
+    if (UIDeviceOrientationIsPortrait(self.interfaceOrientation)) {
+//        svWebViewMain = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
+        svWebViewLoad = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
+//        svWebViewFinal = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
+    } else if (UIDeviceOrientationIsLandscape(self.interfaceOrientation)) {
+//        svWebViewMain = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.height, svWebController.view.frame.size.width)];
+        svWebViewLoad = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.height, svWebController.view.frame.size.width)];
+//        svWebViewFinal = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.height, svWebController.view.frame.size.width)];
+    }
     svWebViewMain = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
-    svWebViewLoad = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
     svWebViewFinal = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
     
     [svWebViewMain setHidden:YES];
-    
     [svWebViewMain setDelegate:svWebController];
     svWebViewMain.scalesPageToFit = YES;
+    svWebViewMain.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
     [webController.view addSubview:svWebViewMain];
     [webController.view addSubview:svWebViewLoad];

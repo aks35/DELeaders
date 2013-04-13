@@ -115,4 +115,12 @@
     }
 }
 
+- (NSString *)getTitleForWebView:(UIWebView *)webView {
+    NSString *title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    NSLog(@"TITLE: %@", title);
+    return title;
+}
+
+
+
 @end

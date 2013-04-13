@@ -55,6 +55,7 @@ bool loggedIntoSakai;
             [MBProgressHUD hideHUDForView:svWebViewLoad animated:YES];
             [svWebController.navigationItem setHidesBackButton:NO animated:YES];
             [svWebController enableBackButton];
+            [svWebController enableTitleControl];
             [svWebViewLoad removeFromSuperview];
             [svWebViewMain removeFromSuperview];
             [svWebViewTemp setHidden:NO];
@@ -64,6 +65,7 @@ bool loggedIntoSakai;
         }
     } else if ([webView isEqual:svWebViewTemp]) {
         sakaiUrl = [helperController fillSakaiSubViewForm:webView];
+        [svWebController enableTitleControl];
         loggedIntoSakai = YES;
     } else if (!loggedIntoSakai) {
         [svWebViewLoad setHidden:NO];
@@ -112,8 +114,21 @@ bool loggedIntoSakai;
 
 - (void)registerSVWebController:(SVWebViewController *)webController {
     svWebController = webController;
+    [svWebController setTitle:@"Sakai"];
+    [svWebController disableTitleControl];
+    if (UIDeviceOrientationIsPortrait(self.interfaceOrientation)) {
+//        svWebViewMain = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
+//        svWebViewTemp = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
+//        svWebViewFinal = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
+        svWebViewLoad = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
+    } else if (UIDeviceOrientationIsLandscape(self.interfaceOrientation)) {
+//        svWebViewMain = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.height, svWebController.view.frame.size.width)];
+//        svWebViewTemp = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.height, svWebController.view.frame.size.width)];
+//        svWebViewFinal = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.height, svWebController.view.frame.size.width)];
+        svWebViewLoad = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.height, svWebController.view.frame.size.width)];
+
+    }
     svWebViewMain = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
-    svWebViewLoad = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
     svWebViewTemp = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
     svWebViewFinal = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
     

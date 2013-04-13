@@ -26,7 +26,7 @@
 @property (nonatomic, strong) SakaiViewController *mySakai;
 @property (nonatomic, strong) SakaiCalendarViewController *mySakaiCal;
 @property (nonatomic, strong) ContactsViewController *myContacts;
-@property (nonatomic) bool backButtonDisabled;
+@property (nonatomic) bool backButtonDisabled, disabledTitleControl;
 
 - (id)initWithAddress:(NSString*)urlString;
 - (id)initWithURL:(NSURL*)URL;
@@ -49,7 +49,7 @@
 
 @synthesize URL, mainWebView;
 @synthesize backBarButtonItem, forwardBarButtonItem, refreshBarButtonItem, stopBarButtonItem, actionBarButtonItem, pageActionSheet;
-@synthesize mySakai, mySakaiCal, myContacts, backButtonDisabled;
+@synthesize mySakai, mySakaiCal, myContacts, backButtonDisabled, disabledTitleControl;
 
 BOOL sakaiNotLoaded, sakaiCalNotLoaded, contactsNotLoaded;
 
@@ -306,8 +306,9 @@ BOOL sakaiNotLoaded, sakaiCalNotLoaded, contactsNotLoaded;
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
 	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-    
-    self.navigationItem.title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    if (!disabledTitleControl) {
+        self.navigationItem.title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    }
     [self updateToolbarItems];
     
     if (mySakai && sakaiNotLoaded) {
@@ -466,11 +467,19 @@ BOOL sakaiNotLoaded, sakaiCalNotLoaded, contactsNotLoaded;
 
 - (void)disableBackButton {
     backButtonDisabled = YES;
-    NSLog(@"DISABLED BUTTON");
 }
 
 - (void)enableBackButton {
     backButtonDisabled = NO;
 }
+
+- (void)disableTitleControl {
+    disabledTitleControl = YES;
+}
+
+- (void)enableTitleControl {
+    disabledTitleControl = NO;
+}
+
 
 @end
