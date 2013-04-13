@@ -123,31 +123,6 @@
             </objects>
             <point key="canvasLocation" x="-489" y="640"/>
         </scene>
-        <!--Social View Controller-->
-        <scene sceneID="fV8-6y-alP">
-            <objects>
-                <viewController id="IJN-1N-oay" customClass="SocialViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gj8-Iv-eIS">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" id="JdC-ro-nnc">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="cSk-3k-3FW"/>
-                    <connections>
-                        <outlet property="myWebView" destination="JdC-ro-nnc" id="vKF-lx-zp9"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E29-aQ-HjO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-116" y="1168"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="QTq-Vo-XLG">
             <objects>
@@ -163,100 +138,61 @@
             </objects>
             <point key="canvasLocation" x="-489" y="-18"/>
         </scene>
-        <!--Courses View Controller - Schedule-->
-        <scene sceneID="UfA-kR-qMm">
-            <objects>
-                <viewController id="K2z-9g-VYx" customClass="CoursesViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Whx-9g-JtX">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" id="xUY-Ha-QT5">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="366"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Schedule" id="Jve-78-bYZ"/>
-                    <connections>
-                        <outlet property="scheduleView" destination="xUY-Ha-QT5" id="jLk-ct-h00"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fRa-SA-1BK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-116" y="-604"/>
-        </scene>
-        <!--Courses View Controller - Details-->
+        <!--Courses View Controller - Courses-->
         <scene sceneID="Bmm-8o-qg4">
             <objects>
                 <viewController id="h6v-Cw-w8o" customClass="CoursesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pf8-L2-vYP">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" id="hjE-ci-KlS">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="366"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="top.png" id="1wt-Wr-CrF">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="del_logo_shaded.png" id="A36-Qc-3v8">
+                                <rect key="frame" x="0.0" y="336" width="320" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vgJ-A4-zAf">
+                                <rect key="frame" x="30" y="139" width="260" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Details">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="detailsPressed:" destination="h6v-Cw-w8o" eventType="touchUpInside" id="WW8-iV-kRH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="caJ-Dj-Gj7">
+                                <rect key="frame" x="30" y="218" width="260" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Schedule">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="schedulePressed:" destination="h6v-Cw-w8o" eventType="touchUpInside" id="Tul-S5-c81"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Details" id="NVF-IK-oWF"/>
-                    <connections>
-                        <outlet property="detailsView" destination="hjE-ci-KlS" id="H8i-wF-O41"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Courses" id="Vue-l5-wOG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rUG-c5-PbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-489" y="-604"/>
-        </scene>
-        <!--Tab Bar Controller - Courses-->
-        <scene sceneID="dRo-X2-Wwe">
-            <objects>
-                <tabBarController definesPresentationContext="YES" id="Aay-pp-g1f" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Courses" id="32q-ak-jXv"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="RXa-uM-XYC">
-                        <rect key="frame" x="129" y="330" width="163" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="h6v-Cw-w8o" kind="relationship" relationship="viewControllers" id="TJG-dN-Chq"/>
-                        <segue destination="K2z-9g-VYx" kind="relationship" relationship="viewControllers" id="nMa-pX-Zzr"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lXb-Hx-20y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-116" y="-18"/>
-        </scene>
-        <!--General Web View Controller-->
-        <scene sceneID="rmE-O3-xI6">
-            <objects>
-                <viewController id="DGt-8N-UK5" customClass="GeneralWebViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kum-ad-eh7">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" id="0SK-FY-jdR">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="fTn-g2-Qoo"/>
-                    <connections>
-                        <outlet property="myWebView" destination="0SK-FY-jdR" id="qBg-ec-F8n"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7P0-Dh-Uqa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="295" y="-18"/>
+            <point key="canvasLocation" x="-81" y="-18"/>
         </scene>
         <!--Social View Controller - Social Apps-->
         <scene sceneID="pM6-a8-Gep">
@@ -278,7 +214,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="IJN-1N-oay" kind="push" identifier="soc-TwitterSegue" id="Erh-mB-kKw"/>
+                                    <action selector="twitterPressed:" destination="dzt-6c-lZ5" eventType="touchUpInside" id="VCU-fP-zvg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cxO-aF-YPj">
@@ -293,7 +229,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="IJN-1N-oay" kind="push" identifier="soc-FacebookSegue" id="bLa-Hf-SDY"/>
+                                    <action selector="facebookPressed:" destination="dzt-6c-lZ5" eventType="touchUpInside" id="TDP-ge-jHc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="et1-aQ-Ehf">
@@ -308,7 +244,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="IJN-1N-oay" kind="push" identifier="soc-LinkedinSegue" id="O6h-mj-ctj"/>
+                                    <action selector="linkedInPressed:" destination="dzt-6c-lZ5" eventType="touchUpInside" id="mVd-eX-MVd"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="top.png" id="id2-nc-IUW">
@@ -340,11 +276,11 @@
             <objects>
                 <viewController id="aPS-nI-A4U" customClass="SakaiViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ccj-wu-B0U">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="RuY-Md-fmM">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -352,7 +288,7 @@
                                 </connections>
                             </webView>
                             <webView contentMode="scaleToFill" id="PXw-hY-GEZ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="420"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -360,7 +296,7 @@
                                 </connections>
                             </webView>
                             <webView contentMode="scaleToFill" id="Jab-cv-nVE">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="420"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -401,7 +337,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="l10-4Y-rkS" kind="push" id="43M-gO-z0P"/>
+                                    <action selector="facultyPressed:" destination="oM4-4B-VFd" eventType="touchUpInside" id="K4k-Vh-v7r"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="v5G-Qk-9KW">
@@ -416,7 +352,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="hGP-5l-NGc" kind="push" id="IUi-vi-5EP"/>
+                                    <action selector="studentsPressed:" destination="oM4-4B-VFd" eventType="touchUpInside" id="JKo-Bb-Hkg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gco-zn-iBc">
@@ -431,7 +367,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="eAV-MW-PHT" kind="push" id="oAZ-NX-6xl"/>
+                                    <action selector="othersPressed:" destination="oM4-4B-VFd" eventType="touchUpInside" id="lIT-TF-Cv4"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="top.png" id="mUQ-H1-hvv">
@@ -458,87 +394,6 @@
             </objects>
             <point key="canvasLocation" x="303" y="1118"/>
         </scene>
-        <!--Students View-->
-        <scene sceneID="wCC-BS-paz">
-            <objects>
-                <viewController id="hGP-5l-NGc" userLabel="Students View" customClass="ContactsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="OVd-7p-2JJ">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" id="XnQ-Ja-JYA">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
-                            <webView contentMode="scaleToFill" id="stL-Qw-tyo">
-                                <rect key="frame" x="0.0" y="-2" width="320" height="420"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Student Contacts" id="Ahu-K1-19Q"/>
-                    <connections>
-                        <outlet property="studentsLoadView" destination="stL-Qw-tyo" id="ir3-au-nW4"/>
-                        <outlet property="studentsView" destination="XnQ-Ja-JYA" id="bZM-Pa-9kc"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EK9-KD-Jtk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="681" y="1118"/>
-        </scene>
-        <!--Others View-->
-        <scene sceneID="wTO-GJ-cL5">
-            <objects>
-                <viewController id="eAV-MW-PHT" userLabel="Others View" customClass="ContactsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6Xv-Lc-957">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" id="F4a-yz-k9p">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Other Contacts" id="GZs-NS-9Qp"/>
-                    <connections>
-                        <outlet property="othersView" destination="F4a-yz-k9p" id="xNm-cP-9i1"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1dQ-QC-XOi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="303" y="1687"/>
-        </scene>
-        <!--Faculty View-->
-        <scene sceneID="cgL-Wg-BV0">
-            <objects>
-                <viewController id="l10-4Y-rkS" userLabel="Faculty View" customClass="ContactsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="XBr-as-1fp">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" id="nQd-Ft-zUF">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Faculty Contacts" id="cfT-8V-o5I"/>
-                    <connections>
-                        <outlet property="facultyView" destination="nQd-Ft-zUF" id="eoy-mG-Tky"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vYz-kU-zLL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="681" y="553"/>
-        </scene>
         <!--Links View Controller - DELinks-->
         <scene sceneID="5">
             <objects>
@@ -559,7 +414,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="DGt-8N-UK5" kind="push" identifier="gen-NSOESegue" id="dJR-qK-fpE"/>
+                                    <action selector="nsoePressed:" destination="2" eventType="touchUpInside" id="UTl-sS-RxH"/>
                                 </connections>
                             </button>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Vc-qZ-sxs">
@@ -574,7 +429,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="bZN-vQ-nMg" kind="push" id="2qK-C9-PZm"/>
+                                    <action selector="calPressed:" destination="2" eventType="touchUpInside" id="PXO-Qb-Geh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AWb-E3-TMT">
@@ -589,7 +444,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="DGt-8N-UK5" kind="push" identifier="gen-WPSegue" id="XqM-Nd-MZc"/>
+                                    <action selector="wpPressed:" destination="2" eventType="touchUpInside" id="Ge6-UO-pQu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2kr-RK-rN3">
@@ -604,7 +459,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="DGt-8N-UK5" kind="push" identifier="gen-DELSegue" id="p0J-2T-nnF"/>
+                                    <action selector="delPressed:" destination="2" eventType="touchUpInside" id="s5A-yV-AlJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TJ5-8S-9SF">
@@ -619,7 +474,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="aPS-nI-A4U" kind="push" id="uJT-wO-Ard"/>
+                                    <action selector="sakaiPressed:" destination="2" eventType="touchUpInside" id="k9p-st-625"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wJN-Es-eiX">
@@ -664,7 +519,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Aay-pp-g1f" kind="push" id="YGp-zF-sE5"/>
+                                    <segue destination="h6v-Cw-w8o" kind="push" id="Q7n-b5-ePS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ajV-hj-W0n">
@@ -694,7 +549,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="DGt-8N-UK5" kind="push" identifier="gen-ACESSegue" id="F3s-Ek-u4K"/>
+                                    <action selector="acesPressed:" destination="2" eventType="touchUpInside" id="pRJ-l6-7Gm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="D7Q-0V-boB">
@@ -709,7 +564,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="DGt-8N-UK5" kind="push" identifier="gen-LibrarySegue" id="c9h-Lx-O01"/>
+                                    <action selector="libraryPressed:" destination="2" eventType="touchUpInside" id="WtG-hr-01f"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="del_logo_shaded.png" id="Bw4-SW-o2n">
@@ -798,7 +653,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="84X-WJ-GkF">
-                                <rect key="frame" x="250" y="106" width="42" height="34"/>
+                                <rect key="frame" x="251" y="106" width="41" height="34"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -848,16 +703,16 @@
             </objects>
             <point key="canvasLocation" x="-116" y="553"/>
         </scene>
-        <!--Sakai Calendar View Controller - Sakai Calendar-->
+        <!--Sakai Calendar View Controller - Calendar-->
         <scene sceneID="iDl-YR-D3y">
             <objects>
                 <viewController id="bZN-vQ-nMg" customClass="SakaiCalendarViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8HH-2e-Kq8">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="DxU-zJ-srr">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -865,7 +720,7 @@
                                 </connections>
                             </webView>
                             <webView contentMode="scaleToFill" id="8R7-0p-tZa">
-                                <rect key="frame" x="0.0" y="-2" width="320" height="420"/>
+                                <rect key="frame" x="0.0" y="-2" width="320" height="464"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -873,7 +728,7 @@
                                 </connections>
                             </webView>
                             <webView contentMode="scaleToFill" id="N3Q-Ir-aEq">
-                                <rect key="frame" x="0.0" y="-2" width="320" height="420"/>
+                                <rect key="frame" x="0.0" y="-2" width="320" height="464"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -883,7 +738,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Sakai Calendar" id="Umz-Rc-QQ6"/>
+                    <navigationItem key="navigationItem" title="Calendar" id="Umz-Rc-QQ6"/>
                     <connections>
                         <outlet property="sakaiCalView" destination="DxU-zJ-srr" id="rJD-mi-q9z"/>
                         <outlet property="sakaiCalViewLoad" destination="N3Q-Ir-aEq" id="xUz-3X-NwH"/>
@@ -892,7 +747,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7pl-hz-amx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="295" y="553"/>
+            <point key="canvasLocation" x="436" y="542"/>
         </scene>
         <!--Image View Controller - Images-->
         <scene sceneID="N7p-h9-8Om">
@@ -1014,6 +869,9 @@
         <class className="ContactsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="facultyPressed:"/>
+                <relationship kind="action" name="othersPressed:"/>
+                <relationship kind="action" name="studentsPressed:"/>
                 <relationship kind="outlet" name="bottomImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="facultyButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="facultyView" candidateClass="UIWebView"/>
@@ -1028,14 +886,8 @@
         <class className="CoursesViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CoursesViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="detailsView" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="scheduleView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="GeneralWebViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GeneralWebViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="myWebView" candidateClass="UIWebView"/>
+                <relationship kind="action" name="detailsPressed:"/>
+                <relationship kind="action" name="schedulePressed:"/>
             </relationships>
         </class>
         <class className="ImageViewController" superclassName="UIViewController">
@@ -1050,6 +902,13 @@
         <class className="LinksViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LinksViewController.h"/>
             <relationships>
+                <relationship kind="action" name="acesPressed:"/>
+                <relationship kind="action" name="calPressed:"/>
+                <relationship kind="action" name="delPressed:"/>
+                <relationship kind="action" name="libraryPressed:"/>
+                <relationship kind="action" name="nsoePressed:"/>
+                <relationship kind="action" name="sakaiPressed:"/>
+                <relationship kind="action" name="wpPressed:"/>
                 <relationship kind="outlet" name="acesButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="acesLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bottomImage" candidateClass="UIImageView"/>
@@ -1081,6 +940,7 @@
         <class className="SakaiCalendarViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SakaiCalendarViewController.h"/>
             <relationships>
+                <relationship kind="action" name="homePressed:"/>
                 <relationship kind="outlet" name="sakaiCalView" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="sakaiCalViewLoad" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="sakaiCalViewTemp" candidateClass="UIWebView"/>
@@ -1113,6 +973,9 @@
         <class className="SocialViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialViewController.h"/>
             <relationships>
+                <relationship kind="action" name="facebookPressed:"/>
+                <relationship kind="action" name="linkedInPressed:"/>
+                <relationship kind="action" name="twitterPressed:"/>
                 <relationship kind="outlet" name="bottomImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="facebookButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="linkedInButton" candidateClass="UIButton"/>
@@ -1152,8 +1015,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Erh-mB-kKw"/>
         <segue reference="mVR-yU-DdB"/>
-        <segue reference="p0J-2T-nnF"/>
     </inferredMetricsTieBreakers>
 </document>

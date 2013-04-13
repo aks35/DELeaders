@@ -66,7 +66,13 @@ NSString *const NO_LINK_TAG = @"THERE WAS NO LINK RETURNED";
     return NO_LINK_TAG;
 }
 
-- (void)fillSakaiSubViewForm:(UIWebView *)webView {
+- (NSString *)getCurrentURL:(UIWebView *)webView {
+    NSString *javascript = @"document.documentURI";
+    NSString *result = [webView stringByEvaluatingJavaScriptFromString:javascript];
+    return result;
+}
+
+- (NSString *)fillSakaiSubViewForm:(UIWebView *)webView {
     NSString* javaScriptString = @"document.getElementById('j_username')==null;";
     NSString *result = [webView stringByEvaluatingJavaScriptFromString: javaScriptString];
     if ([result isEqualToString:@"true"]) {
@@ -81,7 +87,8 @@ NSString *const NO_LINK_TAG = @"THERE WAS NO LINK RETURNED";
         NSLog(@"%@", javaScriptString);
         [webView stringByEvaluatingJavaScriptFromString: javaScriptString];
         NSLog(@"Finished filling out form");
-    }    
+    }
+    return @"";
 }
 
 - (void)printCurrentURL:(UIWebView *)webView {

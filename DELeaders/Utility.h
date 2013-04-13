@@ -7,12 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SVWebViewController.h"
 
 @interface Utility : NSObject
 - (void)loadWebView:(NSString *)fullURL webView:(UIWebView *)webView;
-- (void)logCurrentURL:(UIWebView *)webView;
+- (NSString *)getCurrentURL:(UIWebView *)webView;
 - (BOOL)isFourInchScreen;
 - (BOOL)isPad;
 - (void)registerOrientationHandler:(UIViewController *)controller;
 - (BOOL)userLoggedIn;
+
+- (SVWebViewController *)openWebBrowser:(NSString *)url viewController:(UINavigationController *)nav;
+- (SVWebViewController *)replaceWebBrowser:(NSString *)url viewController:(UINavigationController *)nav;
+- (SVWebViewController *)openWebBrowserSakai:(NSString *)url viewController:(UINavigationController *)nav;
+- (SVWebViewController *)openWebBrowserSakaiCal:(NSString *)url viewController:(UINavigationController *)nav;
+
+- (void)changeCurrentView:(UIViewController *)view url:(NSString *)url;
+- (BOOL)nsStringContains:(NSString *)main sub:(NSString *)sub;
+
 @end

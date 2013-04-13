@@ -10,8 +10,6 @@
 #import "Utility.h"
 
 @implementation CoursesViewController
-@synthesize detailsView;
-@synthesize scheduleView;
 
 Utility *util;
 
@@ -39,17 +37,10 @@ Utility *util;
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     util = [[Utility alloc]init];
-    [util loadWebView:@"https://sites.nicholas.duke.edu/delmeminfo/sample-page/draft-syllabi/" webView:detailsView];
-    [util loadWebView:@"https://sites.nicholas.duke.edu/delmeminfo/sample-page/semester-schedule/" webView:scheduleView];
-    detailsView.scalesPageToFit = YES;
-    scheduleView.scalesPageToFit = YES;
-
 }
 
 - (void)viewDidUnload
 {
-    [self setDetailsView:nil];
-    [self setScheduleView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -61,4 +52,11 @@ Utility *util;
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)detailsPressed:(id)sender {
+    [util openWebBrowser:@"https://sites.nicholas.duke.edu/delmeminfo/sample-page/draft-syllabi/" viewController:self.navigationController];
+}
+
+- (IBAction)schedulePressed:(id)sender {
+    [util openWebBrowser:@"https://sites.nicholas.duke.edu/delmeminfo/sample-page/semester-schedule/" viewController:self.navigationController];
+}
 @end

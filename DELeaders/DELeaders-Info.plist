@@ -10,8 +10,24 @@
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string></string>
+		<string>del-icon.png</string>
+		<string>del-icon@2x.png</string>
+		<string>del-icon-72@2x.png</string>
+		<string>del-icon-72.png</string>
 	</array>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>del-icon.png</string>
+				<string>del-icon@2x.png</string>
+				<string>del-icon-72@2x.png</string>
+				<string>del-icon-72.png</string>
+			</array>
+		</dict>
+	</dict>
 	<key>CFBundleIdentifier</key>
 	<string>com.ark5.DELinks</string>
 	<key>CFBundleInfoDictionaryVersion</key>

@@ -47,6 +47,17 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
 
 #pragma mark - View lifecycle
 
+- (IBAction)facultyPressed:(id)sender {
+    [util openWebBrowser:@"https://sites.nicholas.duke.edu/delmeminfo/contact-information/faculty/" viewController:self.navigationController];
+}
+
+- (IBAction)studentsPressed:(id)sender {
+}
+
+- (IBAction)othersPressed:(id)sender {
+    [util openWebBrowser:@"https://sites.nicholas.duke.edu/delmeminfo/contact-information/other-important-nicholas-school-contacts/" viewController:self.navigationController];
+}
+
 - (void)setSelfAsWebViewsDelegate {
     [facultyView setDelegate:self];
     [studentsView setDelegate:self];

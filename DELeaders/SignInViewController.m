@@ -53,6 +53,7 @@ Utility *util;
     [util registerOrientationHandler:self];
     if (UIDeviceOrientationIsPortrait(self.interfaceOrientation)) {
         [self changeToPortraitLayout];
+        NSLog(@"IN PORTRAIT");
     } else if (UIDeviceOrientationIsLandscape(self.interfaceOrientation)) {
         [self changeToLandscapeLayout];
     }
@@ -147,7 +148,6 @@ Utility *util;
     if (!CGRectContainsPoint(aRect, origin)) {
         CGPoint scrollPoint = CGPointMake(0.0, activeField.frame.origin.y-aRect.size.height);
         [scrollView setContentOffset:scrollPoint animated:YES];
-        NSLog(@"HELLOOO");
     }
 }
 
@@ -178,10 +178,10 @@ Utility *util;
 }
 
 - (void)changeToPortraitLayout {
-    [topImage setFrame:CGRectMake(0, 0, 320, 80)];
     [topImage setImage:[UIImage imageNamed:@"top.png"]];
     [bottomImage setHidden:NO];
     if ([util isFourInchScreen]) {
+        [topImage setFrame:CGRectMake(0, 0, 320, 80)];
         [scrollView setFrame:CGRectMake(0, 80, 320, 344)];
         [promptLabel setFrame:CGRectMake(0, 44, 320, 48)];
         [netIdLabel setFrame:CGRectMake(67, 105, 53, 21)];
@@ -190,7 +190,19 @@ Utility *util;
         [passwordField setFrame:CGRectMake(156, 148, 97, 31)];
         [enterButton setFrame:CGRectMake(73, 207, 75, 37)];
         [skipButton setFrame:CGRectMake(167, 207, 75, 37)];
+    } else if ([util isPad]) {
+        NSLog(@"GEtting that IPAD DOE");
+        [topImage setFrame:CGRectMake(0, 0, 768, 192)];
+        [scrollView setFrame:CGRectMake(0, 192, 768, 576)];
+        [promptLabel setFrame:CGRectMake(261, 116, 245, 48)];
+        [netIdLabel setFrame:CGRectMake(293, 189, 53, 21)];
+        [passwordLabel setFrame:CGRectMake(265, 235, 81, 21)];
+        [netIdField setFrame:CGRectMake(371, 184, 97, 31)];
+        [passwordField setFrame:CGRectMake(371, 230, 97, 31)];
+        [enterButton setFrame:CGRectMake(293, 303, 75, 37)];
+        [skipButton setFrame:CGRectMake(393, 303, 75, 37)];
     } else {
+        [topImage setFrame:CGRectMake(0, 0, 320, 80)];
         [scrollView setFrame:CGRectMake(0, 80, 320, 250)];
         [promptLabel setFrame:CGRectMake(0, 14, 320, 48)];
         [netIdLabel setFrame:CGRectMake(67, 80, 53, 21)];
@@ -204,22 +216,26 @@ Utility *util;
 }
 
 - (void)changeToLandscapeLayout {
-    if ([util isFourInchScreen]) {
-        [topImage setFrame:CGRectMake(0, 0, 568, 30)];
-        [scrollView setFrame:CGRectMake(124, 38, 320, 218)];
+    if ([util isPad]) {
+        
     } else {
-        [topImage setFrame:CGRectMake(0, 0, 480, 30)];
-        [scrollView setFrame:CGRectMake(80, 38, 320, 250)];
+        if ([util isFourInchScreen]) {
+            [topImage setFrame:CGRectMake(0, 0, 568, 30)];
+            [scrollView setFrame:CGRectMake(124, 38, 320, 218)];
+        } else {
+            [topImage setFrame:CGRectMake(0, 0, 480, 30)];
+            [scrollView setFrame:CGRectMake(80, 38, 320, 250)];
+        }
+        [topImage setImage:[UIImage imageNamed:@"top_small.png"]];
+        [bottomImage setHidden:YES];
+        [promptLabel setFrame:CGRectMake(0, 0, 320, 48)];
+        [netIdLabel setFrame:CGRectMake(67, 60, 53, 21)];
+        [passwordLabel setFrame:CGRectMake(67, 103, 81, 21)];
+        [netIdField setFrame:CGRectMake(156, 55, 97, 31)];
+        [passwordField setFrame:CGRectMake(156, 103, 97, 31)];
+        [enterButton setFrame:CGRectMake(73, 162, 75, 37)];
+        [skipButton setFrame:CGRectMake(167, 162, 75, 37)];
     }
-    [topImage setImage:[UIImage imageNamed:@"top_small.png"]];
-    [bottomImage setHidden:YES];
-    [promptLabel setFrame:CGRectMake(0, 0, 320, 48)];
-    [netIdLabel setFrame:CGRectMake(67, 60, 53, 21)];
-    [passwordLabel setFrame:CGRectMake(67, 103, 81, 21)];
-    [netIdField setFrame:CGRectMake(156, 55, 97, 31)];
-    [passwordField setFrame:CGRectMake(156, 103, 97, 31)];
-    [enterButton setFrame:CGRectMake(73, 162, 75, 37)];
-    [skipButton setFrame:CGRectMake(167, 162, 75, 37)];
 }
 
 - (void)orientationChanged:(NSNotification *)note

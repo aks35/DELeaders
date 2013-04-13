@@ -10,17 +10,15 @@
 #import "Utility.h"
 #import "SakaiViewControllerHelper.h"
 #import "MBProgressHUD.h"
-
-MBProgressHUD *hud;
+#import "SVWebViewController.h"
 
 @implementation SakaiViewController
 
-@synthesize sakaiWebView;
-@synthesize sakaiWebViewTemp;
-@synthesize sakaiWebViewLoad;
+@synthesize svWebController, svWebViewMain, svWebViewLoad, svWebViewTemp, svWebViewFinal;
 
 SakaiViewControllerHelper *helperController;
 Utility *util;
+NSString *sakaiUrl;
 bool loggedIntoSakai;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -46,58 +44,63 @@ bool loggedIntoSakai;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self setSelfAsWebViewsDelegate];
-    util = [[Utility alloc]init];
-    [util loadWebView:@"https://sakai.duke.edu/portal/pda/?force.login=yes" webView:sakaiWebView];
-    sakaiWebViewLoad.opaque = NO;
-    sakaiWebViewLoad.backgroundColor = [UIColor clearColor];
-    hud = [[MBProgressHUD alloc]init];
-    [hud hide:YES];
-    [sakaiWebViewTemp setHidden:YES];
-    [sakaiWebViewLoad setHidden:YES];
-    [sakaiWebView setHidden:YES];
-    helperController = [[SakaiViewControllerHelper alloc]init];
-
 }
 
-- (void)autoLoginToSakai:(UIWebView *)webView {
+- (void)renderSite {
+    [util replaceWebBrowser:@"https://sakai.duke.edu/portal/pda/?force.login=yes" viewController:self.navigationController];
+}
+
+- (BOOL)autoLoginToSakai:(UIWebView *)webView {
     if (loggedIntoSakai) {
-        if ([hud.labelText length] != 0) {
-            [sakaiWebViewTemp setHidden:NO];
-            [MBProgressHUD hideHUDForView:sakaiWebViewLoad animated:YES];
+        if ([util nsStringContains:[util getCurrentURL:svWebViewTemp]  sub:@"Redirect"]) {
+            NSLog(@"CHECKPOINT 2");
+            return YES;
+        } else {
+            [MBProgressHUD hideHUDForView:svWebViewLoad animated:YES];
+            [svWebController.navigationItem setHidesBackButton:NO animated:YES];
+            [svWebViewLoad removeFromSuperview];
+            [svWebViewMain removeFromSuperview];
+            [svWebViewTemp setHidden:NO];
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loggedIntoSakai"];
+
+            return NO;
         }
-        [sakaiWebView setHidden:NO];
-    } else if ([webView isEqual:sakaiWebViewTemp]) {
-        [helperController fillSakaiSubViewForm:webView];
+    } else if ([webView isEqual:svWebViewTemp]) {
+        sakaiUrl = [helperController fillSakaiSubViewForm:webView];
         loggedIntoSakai = YES;
     } else if (!loggedIntoSakai) {
-        [sakaiWebViewLoad setHidden:NO];
-        hud = [MBProgressHUD showHUDAddedTo:sakaiWebViewLoad animated:YES];
-        hud.labelText = @"Logging into Sakai";
+        [svWebViewLoad setHidden:NO];
+        _hud = [MBProgressHUD showHUDAddedTo:svWebViewLoad animated:YES];
+        [_hud setLabelText:@"Logging into Sakai"];
+        [svWebController.navigationItem setHidesBackButton:YES animated:YES];
         NSLog(@"Page not visited");
-        if ([webView isEqual:sakaiWebView]) {
-            NSString *href = [helperController clickLoginLink:sakaiWebView tempWebView:sakaiWebViewTemp];
+        NSLog(@"Web view description: %@", webView.description);
+        if ([webView isEqual:svWebViewMain]) {
+            NSString *href = [helperController clickLoginLink:svWebViewMain tempWebView:svWebViewTemp];
             if (![href isEqualToString:helperController.NO_LINK_TAG]) {
-                [util loadWebView:href webView:sakaiWebViewTemp];
-                [self.view bringSubviewToFront:sakaiWebViewTemp];
+                [util loadWebView:href webView:svWebViewTemp];
+                [self.view bringSubviewToFront:svWebViewTemp];
             }
         }
     }
+    return YES;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
+
+}
+
+- (BOOL)sakaiWebViewDidFinishLoad:(UIWebView *)webView {
+    NSLog(@"IN SAKAI WEB VIEW DID FINISH LOAD");
     if ([util userLoggedIn]) {
-        [self autoLoginToSakai:webView];
+        return [self autoLoginToSakai:webView];
     } else {
-        [sakaiWebView setHidden:NO];
+        return NO;
     }
 }
 
 - (void)viewDidUnload
 {
-    [self setSakaiWebView:nil];
-    [self setSakaiWebViewTemp:nil];
-    [self setSakaiWebViewLoad:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -109,9 +112,29 @@ bool loggedIntoSakai;
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void)setSelfAsWebViewsDelegate {
-    [sakaiWebView setDelegate:self];
-    [sakaiWebViewTemp setDelegate:self];
+- (void)registerSVWebController:(SVWebViewController *)webController {
+    svWebController = webController;
+    svWebViewMain = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
+    svWebViewLoad = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
+    svWebViewTemp = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
+    svWebViewFinal = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
+    
+    [svWebViewMain setHidden:YES];
+    [svWebViewLoad setHidden:YES];
+    [svWebViewTemp setHidden:YES];
+    
+    [svWebViewMain setDelegate:svWebController];
+    [svWebViewTemp setDelegate:svWebController];
+
+    [webController.view addSubview:svWebViewMain];
+    [webController.view addSubview:svWebViewTemp];
+    [webController.view addSubview:svWebViewLoad];
+    [webController setMainView:svWebViewTemp];
+    
+    util = [[Utility alloc]init];
+
+    [util loadWebView:@"https://sakai.duke.edu/portal/pda/?force.login=yes" webView:svWebViewMain];
+    helperController = [[SakaiViewControllerHelper alloc]init];
 }
 
 @end

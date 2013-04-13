@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CoursesViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIWebView *detailsView;
-@property (weak, nonatomic) IBOutlet UIWebView *scheduleView;
-
+- (IBAction)detailsPressed:(id)sender;
+- (IBAction)schedulePressed:(id)sender;
 @end
