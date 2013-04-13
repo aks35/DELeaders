@@ -46,10 +46,6 @@ bool loggedIntoSakai;
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)renderSite {
-    [util replaceWebBrowser:@"https://sakai.duke.edu/portal/pda/?force.login=yes" viewController:self.navigationController];
-}
-
 - (BOOL)autoLoginToSakai:(UIWebView *)webView {
     if (loggedIntoSakai) {
         if ([util nsStringContains:[util getCurrentURL:svWebViewTemp]  sub:@"Redirect"]) {

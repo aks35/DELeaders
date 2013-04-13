@@ -29,5 +29,6 @@
 @property (strong, nonatomic) UIWebView *svWebViewFinal;
 @property (strong, nonatomic) MBProgressHUD *hud;
 
+@property (nonatomic) bool needToFillOutForm;
 
 @end

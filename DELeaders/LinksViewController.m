@@ -147,26 +147,6 @@ Utility *util;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-//    NSString *identifier = segue.identifier;
-//    if([identifier hasPrefix:@"gen-"]){
-//        GeneralWebViewController *controller = (GeneralWebViewController *)segue.destinationViewController;
-//        if ([identifier isEqualToString:@"gen-DELSegue"]) {
-//            controller.myURL = @"http://www.nicholas.duke.edu/del/";
-//            controller.myTitle = @"DEL";
-//        } else if ([identifier isEqualToString:@"gen-NSOESegue"]) {
-//            controller.myURL = @"http://www.nicholas.duke.edu/";
-//            controller.myTitle = @"NSOE";
-//        } else if ([identifier isEqualToString:@"gen-WPSegue"]) {
-//            controller.myURL = @"https://sites.nicholas.duke.edu/delmeminfo/";
-//            controller.myTitle = @"Wordpress";
-//        } else if ([identifier isEqualToString:@"gen-LibrarySegue"]) {
-//            controller.myURL = @"https://library.duke.edu/";
-//            controller.myTitle = @"Duke Library";
-//        } else if ([identifier isEqualToString:@"gen-ACESSegue"]) {
-//            controller.myURL = @"https://aces.duke.edu/";
-//            controller.myTitle = @"Duke";
-//        }
-//    }
 }
 
 - (void)updateDateLabels {
@@ -306,9 +286,15 @@ Utility *util;
 
 - (IBAction)calPressed:(id)sender {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loggedIntoSakai"]) {
-        [util openWebBrowser:[[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey] viewController:self.navigationController];
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey]) {
+            [util openWebBrowser:[[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey] viewController:self.navigationController];
+            NSLog(@"Calendar URL: %@", [[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey]);
+        } else {
+            NSLog(@"WORKING IN HERE");
+            [util openWebBrowserSakaiCal:@"https://sakai.duke.edu/portal/pda" viewController:self.navigationController needToFillOutForm:NO];
+        }
     } else {
-        [util openWebBrowserSakaiCal:@"https://sakai.duke.edu/portal/pda" viewController:self.navigationController];
+        [util openWebBrowserSakaiCal:@"https://sakai.duke.edu/portal/pda" viewController:self.navigationController needToFillOutForm:YES];
     }
 }
 

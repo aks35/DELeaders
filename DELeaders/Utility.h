@@ -20,7 +20,9 @@
 - (SVWebViewController *)openWebBrowser:(NSString *)url viewController:(UINavigationController *)nav;
 - (SVWebViewController *)replaceWebBrowser:(NSString *)url viewController:(UINavigationController *)nav;
 - (SVWebViewController *)openWebBrowserSakai:(NSString *)url viewController:(UINavigationController *)nav;
-- (SVWebViewController *)openWebBrowserSakaiCal:(NSString *)url viewController:(UINavigationController *)nav;
+- (SVWebViewController *)openWebBrowserSakaiCal:(NSString *)url viewController:(UINavigationController *)nav needToFillOutForm:(bool)fillBool;
+- (SVWebViewController *)openWebBrowserContacts:(NSString *)url viewController:(UINavigationController *)nav;
+
 
 - (void)changeCurrentView:(UIViewController *)view url:(NSString *)url;
 - (BOOL)nsStringContains:(NSString *)main sub:(NSString *)sub;

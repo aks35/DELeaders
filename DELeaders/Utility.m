@@ -10,6 +10,7 @@
 #import "SVWebViewController.h"
 #import "SakaiViewController.h"
 #import "SakaiCalendarViewController.h"
+#import "ContactsViewController.h"
 
 @implementation Utility
 
@@ -77,15 +78,25 @@
     return webViewController;
 }
 
-- (SVWebViewController *)openWebBrowserSakaiCal:(NSString *)url viewController:(UINavigationController *)nav {
+- (SVWebViewController *)openWebBrowserSakaiCal:(NSString *)url viewController:(UINavigationController *)nav needToFillOutForm:(bool)fillBool {
     SVWebViewController *webViewController = [[SVWebViewController alloc] init];
     SakaiCalendarViewController *sakaiCal = [[SakaiCalendarViewController alloc]init];
+    sakaiCal.needToFillOutForm = fillBool;
     [webViewController registerSakaiCalHandler:sakaiCal];
     NSLog(@"Registered sakai calendar controller");
     [nav pushViewController:webViewController animated:YES];
     return webViewController;
 }
 
+
+- (SVWebViewController *)openWebBrowserContacts:(NSString *)url viewController:(UINavigationController *)nav {
+    SVWebViewController *webViewController = [[SVWebViewController alloc] init];
+    ContactsViewController *contacts = [[ContactsViewController alloc]init];
+    [webViewController registerContactsHandler:contacts];
+    NSLog(@"Registered contacts controller");
+    [nav pushViewController:webViewController animated:YES];
+    return webViewController;
+}
 
 - (void)changeCurrentView:(UIViewController *)view url:(NSString *)url {
     view =[[SVWebViewController alloc] initWithAddress:url];
