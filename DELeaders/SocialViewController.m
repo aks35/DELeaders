@@ -17,7 +17,6 @@
 
 @synthesize myWebView;
 @synthesize myURL;
-@synthesize myTitle;
 
 @synthesize facebookButton;
 @synthesize twitterButton;
@@ -45,7 +44,6 @@ Utility *util;
     [util registerOrientationHandler:self];
     [util loadWebView:myURL webView:myWebView];
     myWebView.scalesPageToFit = YES;
-    self.navigationItem.title = myTitle;
     if (UIDeviceOrientationIsPortrait(self.interfaceOrientation)) {
         [self changeToPortraitLayout];
     } else if (UIDeviceOrientationIsLandscape(self.interfaceOrientation)) {
@@ -70,23 +68,35 @@ Utility *util;
 }
 
 - (void)changeToPortraitLayout {
-    [topImage setFrame:CGRectMake(0, 0, 320, 80)];
     [topImage setImage:[UIImage imageNamed:@"top.png"]];
     [bottomImage setHidden:NO];
-    if ([util isFourInchScreen]) {
-        [facebookButton setFrame:CGRectMake(30, 120, 260, 60)];
-        [twitterButton setFrame:CGRectMake(30, 223, 260, 60)];
-        [linkedInButton setFrame:CGRectMake(30, 326, 260, 60)];
+    if ([util isPad]) {
+        [topImage setFrame:CGRectMake(0, 0, 768, 192)];
+        [facebookButton setFrame:CGRectMake(154, 320, 460, 80)];
+        [twitterButton setFrame:CGRectMake(154, 420, 460, 80)];
+        [linkedInButton setFrame:CGRectMake(154, 520, 460, 80)];
     } else {
-        [facebookButton setFrame:CGRectMake(30, 104, 260, 56)];
-        [twitterButton setFrame:CGRectMake(30, 178, 260, 56)];
-        [linkedInButton setFrame:CGRectMake(30, 252, 260, 56)];
+        [topImage setFrame:CGRectMake(0, 0, 320, 80)];
+        if ([util isFourInchScreen]) {
+            [facebookButton setFrame:CGRectMake(30, 130, 260, 60)];
+            [twitterButton setFrame:CGRectMake(30, 205, 260, 60)];
+            [linkedInButton setFrame:CGRectMake(30, 280, 260, 60)];
+        } else {
+            [facebookButton setFrame:CGRectMake(30, 104, 260, 56)];
+            [twitterButton setFrame:CGRectMake(30, 178, 260, 56)];
+            [linkedInButton setFrame:CGRectMake(30, 252, 260, 56)];
+        }
     }
 
 }
 
 - (void)changeToLandscapeLayout {
-    if ([util isFourInchScreen]) {
+    if ([util isPad]) {
+        [topImage setFrame:CGRectMake(0, 0, 1024, 55)];
+        [facebookButton setFrame:CGRectMake(282, 190, 460, 80)];
+        [twitterButton setFrame:CGRectMake(282, 290, 460, 80)];
+        [linkedInButton setFrame:CGRectMake(282, 390, 460, 80)];
+    } else if ([util isFourInchScreen]) {
         [topImage setFrame:CGRectMake(0, 0, 568, 30)];
         [facebookButton setFrame:CGRectMake(163, 44, 242, 60)];
         [twitterButton setFrame:CGRectMake(163, 115, 242, 60)];
@@ -107,23 +117,49 @@ Utility *util;
 {
     UIDevice * device = note.object;
     [self.view setNeedsDisplay];
-    switch(device.orientation)
-    {
-        case UIDeviceOrientationPortrait:
-            [self changeToPortraitLayout];
-            break;
-            
-        case UIDeviceOrientationLandscapeLeft:
-            [self changeToLandscapeLayout];
-            break;
-            
-        case UIDeviceOrientationLandscapeRight:
-            [self changeToLandscapeLayout];
-            break;
-        default:
-            break;
-    };
+    if ([util isPad]) {
+        switch(device.orientation)
+        {
+            case UIDeviceOrientationPortrait:
+                [self changeToPortraitLayout];
+                break;
+                
+            case UIDeviceOrientationPortraitUpsideDown:
+                [self changeToPortraitLayout];
+                break;
+                
+            case UIDeviceOrientationLandscapeLeft:
+                [self changeToLandscapeLayout];
+                break;
+                
+            case UIDeviceOrientationLandscapeRight:
+                [self changeToLandscapeLayout];
+                break;
+                
+            default:
+                break;
+        };
+    } else {
+        switch(device.orientation)
+        {
+            case UIDeviceOrientationPortrait:
+                [self changeToPortraitLayout];
+                break;
+                
+            case UIDeviceOrientationLandscapeLeft:
+                [self changeToLandscapeLayout];
+                break;
+                
+            case UIDeviceOrientationLandscapeRight:
+                [self changeToLandscapeLayout];
+                break;
+                
+            default:
+                break;
+        };
+    }
 }
+
 
 - (IBAction)facebookPressed:(id)sender {
     [util openWebBrowser:@"https://www.facebook.com/DukeEnvironmentalLeadership" viewController:self.navigationController];

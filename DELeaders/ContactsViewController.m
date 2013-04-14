@@ -24,7 +24,7 @@
 MBProgressHUD *hud;
 Utility *util;
 SakaiViewControllerHelper *helperController;
-bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudentsPage;
+bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudentsPage, disableBackButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -65,6 +65,13 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    util = [[Utility alloc]init];
+    [util registerOrientationHandler:self];
+    if (UIDeviceOrientationIsPortrait(self.interfaceOrientation)) {
+        [self changeToPortraitLayout];
+    } else if (UIDeviceOrientationIsLandscape(self.interfaceOrientation)) {
+        [self changeToLandscapeLayout];
+    }
 }
 
 - (void)viewDidUnload
@@ -82,7 +89,11 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    } else {
+        return YES;
+    }
 }
 
 - (void)goToPageTemplate:(NSString *)index {
@@ -105,34 +116,41 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
     return YES;
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-}
-
 - (void)changeToPortraitLayout {
-    [topImage setFrame:CGRectMake(0, 0, 320, 80)];
     [topImage setImage:[UIImage imageNamed:@"top.png"]];
     [bottomImage setHidden:NO];
-    if ([util isFourInchScreen]) {
-        [facultyButton setFrame:CGRectMake(30, 126, 260, 60)];
-        [studentsButton setFrame:CGRectMake(30, 216, 260, 60)];
-        [othersButton setFrame:CGRectMake(30, 306, 260, 60)];
+    if ([util isPad]) {
+        [topImage setFrame:CGRectMake(0, 0, 768, 192)];
+        [facultyButton setFrame:CGRectMake(154, 325, 460, 80)];
+        [studentsButton setFrame:CGRectMake(154, 425, 460, 80)];
+        [othersButton setFrame:CGRectMake(154, 525, 460, 80)];
     } else {
-        [facultyButton setFrame:CGRectMake(30, 104, 260, 60)];
-        [studentsButton setFrame:CGRectMake(30, 178, 260, 60)];
-        [othersButton setFrame:CGRectMake(30, 252, 260, 60)];
+        [topImage setFrame:CGRectMake(0, 0, 320, 80)];
+        if ([util isFourInchScreen]) {
+            [facultyButton setFrame:CGRectMake(30, 130, 260, 60)];
+            [studentsButton setFrame:CGRectMake(30, 210, 260, 60)];
+            [othersButton setFrame:CGRectMake(30, 290, 260, 60)];
+        } else {
+            [facultyButton setFrame:CGRectMake(30, 104, 260, 60)];
+            [studentsButton setFrame:CGRectMake(30, 178, 260, 60)];
+            [othersButton setFrame:CGRectMake(30, 252, 260, 60)];
+        }
     }
-    
 }
 
 - (void)changeToLandscapeLayout {
     [topImage setImage:[UIImage imageNamed:@"top_small.png"]];
     [bottomImage setHidden:YES];
-    if ([util isFourInchScreen]) {
+    if ([util isPad]) {
+        [topImage setFrame:CGRectMake(0, 0, 1024, 55)];
+        [facultyButton setFrame:CGRectMake(282, 190, 460, 80)];
+        [studentsButton setFrame:CGRectMake(282, 290, 460, 80)];
+        [othersButton setFrame:CGRectMake(282, 390, 460, 80)];
+    } else if ([util isFourInchScreen]) {
         [topImage setFrame:CGRectMake(0, 0, 568, 30)];
         [facultyButton setFrame:CGRectMake(154, 45, 260, 60)];
         [studentsButton setFrame:CGRectMake(154, 115, 260, 60)];
         [othersButton setFrame:CGRectMake(154, 185, 260, 60)];
-
     } else {
         [topImage setFrame:CGRectMake(0, 0, 480, 30)];
         [facultyButton setFrame:CGRectMake(110, 40, 260, 60)];
@@ -145,20 +163,47 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
 {
     UIDevice * device = note.object;
     [self.view setNeedsDisplay];
-    switch(device.orientation)
-    {
-        case UIDeviceOrientationPortrait:
-            [self changeToPortraitLayout];
-            break;
-        case UIDeviceOrientationLandscapeLeft:
-            [self changeToLandscapeLayout];
-            break;
-        case UIDeviceOrientationLandscapeRight:
-            [self changeToLandscapeLayout];
-            break;
-        default:
-            break;
-    };
+    if ([util isPad]) {
+        switch(device.orientation)
+        {
+            case UIDeviceOrientationPortrait:
+                [self changeToPortraitLayout];
+                break;
+                
+            case UIDeviceOrientationPortraitUpsideDown:
+                [self changeToPortraitLayout];
+                break;
+                
+            case UIDeviceOrientationLandscapeLeft:
+                [self changeToLandscapeLayout];
+                break;
+                
+            case UIDeviceOrientationLandscapeRight:
+                [self changeToLandscapeLayout];
+                break;
+                
+            default:
+                break;
+        };
+    } else {
+        switch(device.orientation)
+        {
+            case UIDeviceOrientationPortrait:
+                [self changeToPortraitLayout];
+                break;
+                
+            case UIDeviceOrientationLandscapeLeft:
+                [self changeToLandscapeLayout];
+                break;
+                
+            case UIDeviceOrientationLandscapeRight:
+                [self changeToLandscapeLayout];
+                break;
+                
+            default:
+                break;
+        };
+    }
 }
 
 
@@ -167,14 +212,14 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
         if (visitedStudentsPage) {
             [svWebViewLoad setHidden:YES];
             [svWebViewMain setHidden:NO];
-            NSLog(@"Page already visited");
             return NO;
         }
         else if (atStudentDirectory) {
-            NSLog(@"Hello world");
             [MBProgressHUD hideHUDForView:svWebViewLoad animated:YES];
-            [svWebController.navigationItem setHidesBackButton:NO animated:YES];
+            [svWebController.navigationItem setHidesBackButton:NO animated:NO];
             [svWebController enableBackButton];
+            [svWebController enableTitleControl];
+            [svWebController setTitle:[util getTitleForWebView:svWebViewMain]];
             [svWebViewLoad setHidden:YES];
             [svWebViewMain setHidden:NO];
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loggedIntoWordPress"];
@@ -210,7 +255,6 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
 }
 
 - (BOOL)contactsWebViewDidFinishLoad:(UIWebView *)webView {
-    NSLog(@"IN ContaCts WEB VIEW DID FINISH LOAD");
     if ([util userLoggedIn]) {
         return [self autoLoginToWordpress:webView];
     } else {
@@ -218,17 +262,22 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
     }
 }
 
-
 - (void)registerSVWebController:(SVWebViewController *)webController {
     svWebController = webController;
+    [svWebController setTitle:@"Contacts"];
+    [svWebController disableTitleControl];
+    if (UIDeviceOrientationIsPortrait(self.interfaceOrientation)) {
+        svWebViewLoad = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
+    } else if (UIDeviceOrientationIsLandscape(self.interfaceOrientation)) {
+        svWebViewLoad = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.height, svWebController.view.frame.size.width)];
+    }
     svWebViewMain = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
-    svWebViewLoad = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
     svWebViewFinal = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
     
     [svWebViewMain setHidden:YES];
-    
     [svWebViewMain setDelegate:svWebController];
     svWebViewMain.scalesPageToFit = YES;
+    svWebViewMain.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
     [webController.view addSubview:svWebViewMain];
     [webController.view addSubview:svWebViewLoad];

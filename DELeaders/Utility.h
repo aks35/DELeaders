@@ -26,5 +26,6 @@
 
 - (void)changeCurrentView:(UIViewController *)view url:(NSString *)url;
 - (BOOL)nsStringContains:(NSString *)main sub:(NSString *)sub;
+- (NSString *)getTitleForWebView:(UIWebView *)webView;
 
 @end

@@ -81,7 +81,9 @@ Utility *util;
         [detailsButton setFrame:CGRectMake(30, 179, 260, 60)];
         [scheduleButton setFrame:CGRectMake(30, 266, 260, 60)];
     } else if ([util isPad]) {
-
+        [topImage setFrame:CGRectMake(0, 0, 768, 192)];
+        [detailsButton setFrame:CGRectMake(154, 360, 460, 80)];
+        [scheduleButton setFrame:CGRectMake(154, 480, 460, 80)];
     } else {
         [topImage setFrame:CGRectMake(0, 0, 320, 80)];
         [detailsButton setFrame:CGRectMake(30, 139, 260, 60)];
@@ -94,10 +96,10 @@ Utility *util;
         [topImage setFrame:CGRectMake(0, 0, 568, 30)];
         [detailsButton setFrame:CGRectMake(154, 77, 260, 60)];
         [scheduleButton setFrame:CGRectMake(154, 164, 260, 60)];
-
     } else if ([util isPad]) {
         [topImage setFrame:CGRectMake(0, 0, 1024, 55)];
-
+        [detailsButton setFrame:CGRectMake(282, 234, 460, 80)];
+        [scheduleButton setFrame:CGRectMake(282, 354, 460, 80)];
     } else {
         [topImage setFrame:CGRectMake(0, 0, 480, 30)];
         [detailsButton setFrame:CGRectMake(110, 81, 260, 60)];
@@ -111,23 +113,47 @@ Utility *util;
 {
     UIDevice * device = note.object;
     [self.view setNeedsDisplay];
-    switch(device.orientation)
-    {
-        case UIDeviceOrientationPortrait:
-            [self changeToPortraitLayout];
-            break;
-            
-        case UIDeviceOrientationLandscapeLeft:
-            [self changeToLandscapeLayout];
-            break;
-            
-        case UIDeviceOrientationLandscapeRight:
-            [self changeToLandscapeLayout];
-            break;
-            
-        default:
-            break;
-    };
+    if ([util isPad]) {
+        switch(device.orientation)
+        {
+            case UIDeviceOrientationPortrait:
+                [self changeToPortraitLayout];
+                break;
+                
+            case UIDeviceOrientationPortraitUpsideDown:
+                [self changeToPortraitLayout];
+                break;
+                
+            case UIDeviceOrientationLandscapeLeft:
+                [self changeToLandscapeLayout];
+                break;
+                
+            case UIDeviceOrientationLandscapeRight:
+                [self changeToLandscapeLayout];
+                break;
+                
+            default:
+                break;
+        };
+    } else {
+        switch(device.orientation)
+        {
+            case UIDeviceOrientationPortrait:
+                [self changeToPortraitLayout];
+                break;
+                
+            case UIDeviceOrientationLandscapeLeft:
+                [self changeToLandscapeLayout];
+                break;
+                
+            case UIDeviceOrientationLandscapeRight:
+                [self changeToLandscapeLayout];
+                break;
+                
+            default:
+                break;
+        };
+    }
 }
 
 @end

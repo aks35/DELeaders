@@ -34,8 +34,8 @@
 }
 
 - (BOOL)isPad {
-    CGSize iOSDeviceScreenSize = [[UIScreen mainScreen] bounds].size;
-    return iOSDeviceScreenSize.height == 1024 || iOSDeviceScreenSize.width == 1024 ;
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) return YES; /* Device is iPad */
+    return NO;
 }
 
 - (void)registerOrientationHandler:(UIViewController *)controller {
@@ -58,6 +58,7 @@
 
 - (SVWebViewController *)openWebBrowser:(NSString *)url viewController:(UINavigationController *)nav {
     SVWebViewController *webViewController = [[SVWebViewController alloc] initWithAddress:url];
+    NSLog(@"URL: %@", url);
     [nav pushViewController:webViewController animated:YES];
     return webViewController;
 }
@@ -114,5 +115,13 @@
         return YES;
     }
 }
+
+- (NSString *)getTitleForWebView:(UIWebView *)webView {
+    NSString *title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    NSLog(@"TITLE: %@", title);
+    return title;
+}
+
+
 
 @end
