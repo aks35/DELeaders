@@ -53,7 +53,7 @@ bool loggedIntoSakai;
             return YES;
         } else {
             [MBProgressHUD hideHUDForView:svWebViewLoad animated:YES];
-            [svWebController.navigationItem setHidesBackButton:NO animated:YES];
+            [svWebController.navigationItem setHidesBackButton:NO animated:NO];
             [svWebController enableBackButton];
             [svWebController enableTitleControl];
             [svWebViewLoad removeFromSuperview];

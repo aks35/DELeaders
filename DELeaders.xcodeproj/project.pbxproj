@@ -46,11 +46,11 @@
 		6D0C308C170D4B470059C98A /* FourInchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D0C308B170D4B470059C98A /* FourInchStoryboard.storyboard */; };
 		6D0D03CC171095A700621B04 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0D03CB171095A700621B04 /* SignInViewController.m */; };
 		6D110B74170EA0890098B268 /* del_logo_shaded.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D110B73170EA0890098B268 /* del_logo_shaded.png */; };
-		6D110B76170EA1350098B268 /* calendarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D110B75170EA1350098B268 /* calendarIcon.png */; };
 		6D2157C91719C0F900AE443D /* SVWebViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D2157BC1719C0F900AE443D /* SVWebViewController.strings */; };
 		6D2157CA1719C0F900AE443D /* SVModalWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2157C31719C0F900AE443D /* SVModalWebViewController.m */; };
 		6D2157CB1719C0F900AE443D /* SVWebViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6D2157C41719C0F900AE443D /* SVWebViewController.bundle */; };
 		6D2157CC1719C0F900AE443D /* SVWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2157C61719C0F900AE443D /* SVWebViewController.m */; };
+		6D2157D0171AF31100AE443D /* delNew.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2157CF171AF31100AE443D /* delNew.png */; };
 		6D253363170E1C31006F5398 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D253361170E1C31006F5398 /* MainStoryboard_iPad.storyboard */; };
 		6D316F3D171773BD00FA5D61 /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D316F3C171773BD00FA5D61 /* backButton.png */; };
 		6D316F3F1717740200FA5D61 /* forwardButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D316F3E1717740200FA5D61 /* forwardButton.png */; };
@@ -81,6 +81,7 @@
 		6D92DDEB16FA593B00AE0AD7 /* linkedinButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D92DDEA16FA593B00AE0AD7 /* linkedinButton.png */; };
 		6DA7B47C170F7ED7004BA98B /* top.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D5EF0ED170B5FDA008758FA /* top.png */; };
 		6DCDFE2D16FF991E004008E2 /* GeneralWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCDFE2C16FF991E004008E2 /* GeneralWebViewController.m */; };
+		6DDE2874171B0EAB00F375E1 /* calendarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE2873171B0EAB00F375E1 /* calendarIcon.png */; };
 		6DE6EF611711D9CB0002D4F1 /* top_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DE6EF601711D9CB0002D4F1 /* top_small.png */; };
 		6DE6EF631711F3E40002D4F1 /* del_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DE6EF621711F3E40002D4F1 /* del_small.png */; };
 		6DF21AB816FFBA6D00C7A316 /* SocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF21AB716FFBA6D00C7A316 /* SocialViewController.m */; };
@@ -191,7 +192,6 @@
 		6D0D03CB171095A700621B04 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		6D110B6D170E203C0098B268 /* del_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = del_logo.png; sourceTree = "<group>"; };
 		6D110B73170EA0890098B268 /* del_logo_shaded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = del_logo_shaded.png; sourceTree = "<group>"; };
-		6D110B75170EA1350098B268 /* calendarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendarIcon.png; sourceTree = "<group>"; };
 		6D2157BD1719C0F900AE443D /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/SVWebViewController.strings; sourceTree = "<group>"; };
 		6D2157BE1719C0F900AE443D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SVWebViewController.strings; sourceTree = "<group>"; };
 		6D2157BF1719C0F900AE443D /* es-ES */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-ES"; path = "es-ES.lproj/SVWebViewController.strings"; sourceTree = "<group>"; };
@@ -204,6 +204,7 @@
 		6D2157C61719C0F900AE443D /* SVWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVWebViewController.m; sourceTree = "<group>"; };
 		6D2157C71719C0F900AE443D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SVWebViewController.strings"; sourceTree = "<group>"; };
 		6D2157C81719C0F900AE443D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/SVWebViewController.strings"; sourceTree = "<group>"; };
+		6D2157CF171AF31100AE443D /* delNew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delNew.png; sourceTree = "<group>"; };
 		6D253362170E1C31006F5398 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		6D316F3C171773BD00FA5D61 /* backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton.png; sourceTree = "<group>"; };
 		6D316F3E1717740200FA5D61 /* forwardButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forwardButton.png; sourceTree = "<group>"; };
@@ -239,6 +240,7 @@
 		6D92DDEA16FA593B00AE0AD7 /* linkedinButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedinButton.png; sourceTree = "<group>"; };
 		6DCDFE2B16FF991E004008E2 /* GeneralWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralWebViewController.h; sourceTree = "<group>"; };
 		6DCDFE2C16FF991E004008E2 /* GeneralWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralWebViewController.m; sourceTree = "<group>"; };
+		6DDE2873171B0EAB00F375E1 /* calendarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendarIcon.png; sourceTree = "<group>"; };
 		6DE6EF601711D9CB0002D4F1 /* top_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_small.png; sourceTree = "<group>"; };
 		6DE6EF621711F3E40002D4F1 /* del_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = del_small.png; sourceTree = "<group>"; };
 		6DF21AB616FFBA6D00C7A316 /* SocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialViewController.h; sourceTree = "<group>"; };
@@ -362,7 +364,6 @@
 				6DE6EF621711F3E40002D4F1 /* del_small.png */,
 				6DE6EF601711D9CB0002D4F1 /* top_small.png */,
 				6D110B6D170E203C0098B268 /* del_logo.png */,
-				6D110B75170EA1350098B268 /* calendarIcon.png */,
 				6D5EF0ED170B5FDA008758FA /* top.png */,
 				6D92DDEA16FA593B00AE0AD7 /* linkedinButton.png */,
 				6D92DDE616FA562200AE0AD7 /* twitterButton.png */,
@@ -411,8 +412,10 @@
 			isa = PBXGroup;
 			children = (
 				6D87293E171692AE00DC829E /* iconBackground.png */,
+				6D2157CF171AF31100AE443D /* delNew.png */,
 				6D87294A1716951300DC829E /* wordpressIcon.png */,
 				6D316F3E1717740200FA5D61 /* forwardButton.png */,
+				6DDE2873171B0EAB00F375E1 /* calendarIcon.png */,
 				6D87298417175E7F00DC829E /* del-icon-72.png */,
 				6D87298217175E7B00DC829E /* del-icon-72@2x.png */,
 				6D87298017175D5700DC829E /* del-icon@2x.png */,
@@ -617,7 +620,6 @@
 				6D0C308C170D4B470059C98A /* FourInchStoryboard.storyboard in Resources */,
 				6D253363170E1C31006F5398 /* MainStoryboard_iPad.storyboard in Resources */,
 				6D110B74170EA0890098B268 /* del_logo_shaded.png in Resources */,
-				6D110B76170EA1350098B268 /* calendarIcon.png in Resources */,
 				6DE6EF611711D9CB0002D4F1 /* top_small.png in Resources */,
 				6DE6EF631711F3E40002D4F1 /* del_small.png in Resources */,
 				6D87293F171692AE00DC829E /* iconBackground.png in Resources */,
@@ -639,6 +641,8 @@
 				6D316F3F1717740200FA5D61 /* forwardButton.png in Resources */,
 				6D2157C91719C0F900AE443D /* SVWebViewController.strings in Resources */,
 				6D2157CB1719C0F900AE443D /* SVWebViewController.bundle in Resources */,
+				6D2157D0171AF31100AE443D /* delNew.png in Resources */,
+				6DDE2874171B0EAB00F375E1 /* calendarIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -837,8 +841,8 @@
 		317D105B16C1ECF2007EBF76 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph Tse (B9Z2S99KFX)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joseph Tse (B9Z2S99KFX)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Shim (6PQN59ARVY)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Downloads/aws-ios-sdk-1.4.6\"",
@@ -848,8 +852,9 @@
 				GCC_PREFIX_HEADER = "DELeaders/DELeaders-Prefix.pch";
 				INFOPLIST_FILE = "DELeaders/DELeaders-Info.plist";
 				PRODUCT_NAME = DELinks;
-				PROVISIONING_PROFILE = "98611AF6-70F8-4E03-A578-A9D0C77C1ACA";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "98611AF6-70F8-4E03-A578-A9D0C77C1ACA";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EADD23B6-851C-45D4-9008-0321C9A3BF94";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -857,8 +862,8 @@
 		317D105C16C1ECF2007EBF76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph Tse (B9Z2S99KFX)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joseph Tse (B9Z2S99KFX)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Shim (6PQN59ARVY)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Downloads/aws-ios-sdk-1.4.6\"",
@@ -868,8 +873,9 @@
 				GCC_PREFIX_HEADER = "DELeaders/DELeaders-Prefix.pch";
 				INFOPLIST_FILE = "DELeaders/DELeaders-Info.plist";
 				PRODUCT_NAME = DELinks;
-				PROVISIONING_PROFILE = "98611AF6-70F8-4E03-A578-A9D0C77C1ACA";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "98611AF6-70F8-4E03-A578-A9D0C77C1ACA";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EADD23B6-851C-45D4-9008-0321C9A3BF94";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

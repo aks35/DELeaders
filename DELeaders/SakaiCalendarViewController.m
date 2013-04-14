@@ -92,7 +92,7 @@ bool loggedInApriori = YES;
     }
     else if (calendarRendered && !loggedInApriori) {
         [MBProgressHUD hideHUDForView:svWebViewLoad animated:YES];
-        [svWebController.navigationItem setHidesBackButton:NO animated:YES];
+        [svWebController.navigationItem setHidesBackButton:NO animated:NO];
         [svWebController enableBackButton];
         [svWebViewLoad setHidden:YES];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loggedIntoSakai"];
@@ -201,18 +201,11 @@ bool loggedInApriori = YES;
     [svWebController setTitle:@"Calendar"];
     [svWebController disableTitleControl];
     if (UIDeviceOrientationIsPortrait(self.interfaceOrientation)) {
-//        svWebViewMain = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
         svWebViewLoad = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
-//        svWebViewTemp = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
-//        svWebViewFinal = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
     } else if (UIDeviceOrientationIsLandscape(self.interfaceOrientation)) {
-//        svWebViewMain = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.height, svWebController.view.frame.size.width)];
         svWebViewLoad = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.height, svWebController.view.frame.size.width)];
-//        svWebViewTemp = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.height, svWebController.view.frame.size.width)];
-//        svWebViewFinal = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.height, svWebController.view.frame.size.width)];
     }
     svWebViewMain = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
-//    svWebViewLoad = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
     svWebViewTemp = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
     svWebViewFinal = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
 
@@ -234,9 +227,6 @@ bool loggedInApriori = YES;
     [webController setMainView:svWebViewMain];
     
     util = [[Utility alloc]init];
-    NSLog(@"--------------------");
-    NSLog(@"LOADING SAKAI VIEW");
-    NSLog(@"--------------------");
     [util loadWebView:@"https://sakai.duke.edu/portal/pda" webView:svWebViewMain];
     helperController = [[SakaiViewControllerHelper alloc]init];
 }

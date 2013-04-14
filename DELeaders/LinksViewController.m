@@ -11,6 +11,8 @@
 #import "Utility.h"
 #import "GeneralWebViewController.h"
 #import "SakaiCalendarViewController.h"
+#import "MBProgressHUD.h"
+
 @implementation LinksViewController
 
 @synthesize delButton;
@@ -146,20 +148,15 @@ Utility *util;
     }
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-}
-
 - (void)updateDateLabels {
     NSDate *now = [NSDate date];
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
     [formatter setDateFormat:@"EEEE"];
     NSString *dayString = [formatter stringFromDate:now];
-    NSLog(@"Current DAY: %@", dayString);
     dayLabel.text = dayString;
-    dayLabel.font = [UIFont fontWithName:dayLabel.font.fontName size:dayLabel.frame.size.height-(dayLabel.frame.size.height/7)];
+    dayLabel.font = [UIFont fontWithName:dayLabel.font.fontName size:dayLabel.frame.size.height/1.4];
     [formatter setDateFormat:@"d"];
     NSString *dateString = [formatter stringFromDate:now];
-    NSLog(@"Current DATE: %@", dateString);
     dateNumLabel.text = dateString;
     dateNumLabel.font = [UIFont fontWithName:dateNumLabel.font.fontName size:dateNumLabel.frame.size.height-(dateNumLabel.frame.size.height/7)];
 }
@@ -186,8 +183,7 @@ Utility *util;
             [labelList[i] setCenter:CGPointMake(xStart+((i%4)*74), yStart+((i/4)*96))];
         }
     } else if ([util isPad]) {
-        NSLog(@"THIS IS AN IPAD");
-        [topImage setFrame:CGRectMake(0, 0, 768, 196)];
+        [topImage setFrame:CGRectMake(0, 0, 768, 192)];
         CGFloat xStart = 123;
         CGFloat yStart = 291;
         for (int i = 0; i < [buttonList count]; ++i) {
@@ -235,7 +231,6 @@ Utility *util;
         CGFloat yStart = 184;
         for (int i = 0; i < [buttonList count]; ++i) {
             [buttonList[i] setCenter:CGPointMake(xStart+((i%4)*174), yStart+((i/4)*178))];
-            NSLog(@"%2.2f", [buttonList[i] frame].origin.y);
         }
         [dayLabel setCenter:CGPointMake(773, 144)];
         [dateNumLabel setCenter:CGPointMake(773, 199)];
@@ -265,23 +260,47 @@ Utility *util;
 {
     UIDevice * device = note.object;
     [self.view setNeedsDisplay];
-    switch(device.orientation)
-    {
-        case UIDeviceOrientationPortrait:
-            [self changeToPortraitLayout];
-            break;
-
-        case UIDeviceOrientationLandscapeLeft:
-            [self changeToLandscapeLayout];
-            break;
-            
-        case UIDeviceOrientationLandscapeRight:
-            [self changeToLandscapeLayout];
-            break;
-            
-        default:
-            break;
-    };
+    if ([util isPad]) {
+        switch(device.orientation)
+        {
+            case UIDeviceOrientationPortrait:
+                [self changeToPortraitLayout];
+                break;
+                
+            case UIDeviceOrientationPortraitUpsideDown:
+                [self changeToPortraitLayout];
+                break;
+                
+            case UIDeviceOrientationLandscapeLeft:
+                [self changeToLandscapeLayout];
+                break;
+                
+            case UIDeviceOrientationLandscapeRight:
+                [self changeToLandscapeLayout];
+                break;
+                
+            default:
+                break;
+        };
+    } else {
+        switch(device.orientation)
+        {
+            case UIDeviceOrientationPortrait:
+                [self changeToPortraitLayout];
+                break;
+                
+            case UIDeviceOrientationLandscapeLeft:
+                [self changeToLandscapeLayout];
+                break;
+                
+            case UIDeviceOrientationLandscapeRight:
+                [self changeToLandscapeLayout];
+                break;
+                
+            default:
+                break;
+        };
+    }
 }
 
 - (IBAction)calPressed:(id)sender {
@@ -289,7 +308,6 @@ Utility *util;
         [util openWebBrowser:[[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey] viewController:self.navigationController];
         NSLog(@"Calendar URL: %@", [[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey]);
     } else if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loggedIntoWordPress"]) {
-        NSLog(@"WORKING IN HERE");
         [util openWebBrowserSakaiCal:@"https://sakai.duke.edu/portal/pda" viewController:self.navigationController needToFillOutForm:NO];
     } else {
         [util openWebBrowserSakaiCal:@"https://sakai.duke.edu/portal/pda" viewController:self.navigationController needToFillOutForm:YES];
@@ -310,7 +328,6 @@ Utility *util;
 
 - (IBAction)nsoePressed:(id)sender {
     [util openWebBrowser:@"http://www.nicholas.duke.edu/" viewController:self.navigationController];
-    self.navigationController.title = @"NSOE";
 }
 
 - (IBAction)wpPressed:(id)sender {

@@ -275,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ahw-li-0gf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-451" y="1247"/>
+            <point key="canvasLocation" x="-495" y="1203"/>
         </scene>
         <!--Contacts View Controller - Contacts-->
         <scene sceneID="3I0-NT-ZS7">
@@ -352,7 +352,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XqX-CI-jtq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="303" y="1118"/>
+            <point key="canvasLocation" x="-81" y="1174"/>
         </scene>
         <!--Links View Controller - DELinks-->
         <scene sceneID="5">
@@ -449,7 +449,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Ub0-0X-CGW" kind="push" identifier="" id="r7d-vu-doM"/>
+                                    <segue destination="83r-Zk-Ngm" kind="push" identifier="ImagesSegue" id="CMd-Ot-1RK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4PO-D6-xPF">
@@ -664,106 +664,100 @@
             <point key="canvasLocation" x="-116" y="553"/>
         </scene>
         <!--Image View Controller - Images-->
-        <scene sceneID="N7p-h9-8Om">
+        <scene sceneID="VKf-FK-VwH">
             <objects>
-                <viewController id="Ub0-0X-CGW" customClass="ImageViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WpK-gH-bTJ">
+                <viewController id="83r-Zk-Ngm" customClass="ImageViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jjr-NM-LZH">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="cBb-ft-kaI">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pMB-6k-TKh">
-                                    <size key="itemSize" width="89" height="76"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="eoa-8J-l9P">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UpP-kb-giX">
+                                    <size key="itemSize" width="129" height="130"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <view key="backgroundView" contentMode="scaleToFill" id="gLM-mR-9G3">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                </view>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="simpleCellID" id="L6V-Rj-z4F" customClass="s3ImageCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="89" height="76"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="simpleCellID" id="fZc-Ag-aSH" customClass="s3ImageCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="129" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="89" height="76"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="129" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" id="toJ-HF-MnZ" customClass="UIImageView">
-                                                    <rect key="frame" x="-116" y="-160" width="320" height="396"/>
+                                                <view contentMode="scaleToFill" id="QGZ-Qz-VP6" customClass="UIImageView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="129" height="130"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="3yA-PO-qgt" kind="push" identifier="ShowPhoto" id="HQF-Kg-agT"/>
+                                            <outlet property="imageView" destination="QGZ-Qz-VP6" id="WRw-cl-o9s"/>
+                                            <segue destination="yYC-v8-Kcl" kind="push" identifier="ShowPhoto" id="Mnn-aM-yVd"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="Ub0-0X-CGW" id="eb6-1x-oT7"/>
-                                    <outlet property="delegate" destination="Ub0-0X-CGW" id="Lno-2p-DvP"/>
+                                    <outlet property="dataSource" destination="83r-Zk-Ngm" id="Q8I-AW-o04"/>
+                                    <outlet property="delegate" destination="83r-Zk-Ngm" id="skB-TJ-tUO"/>
                                 </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Images" id="ncm-y3-ug1">
-                        <barButtonItem key="rightBarButtonItem" title="Upload" id="4SV-db-Ieo">
+                    <navigationItem key="navigationItem" title="Images" id="0SY-16-lGp">
+                        <barButtonItem key="rightBarButtonItem" title="Upload" id="zj3-tw-McI">
                             <connections>
-                                <action selector="Upload:" destination="Ub0-0X-CGW" id="9SX-ef-DOj"/>
+                                <action selector="Upload:" destination="83r-Zk-Ngm" id="sG0-dy-6RN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="collectionView" destination="cBb-ft-kaI" id="zqb-C6-KC7"/>
-                        <outlet property="viewForLoadingCircle" destination="WpK-gH-bTJ" id="bYv-VM-f7L"/>
-                        <outlet property="viewForLoadingCircle2" destination="gLM-mR-9G3" id="jRz-0F-A5n"/>
+                        <outlet property="collectionView" destination="eoa-8J-l9P" id="tXT-e6-8k8"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8lU-oy-CjF" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="boB-Rv-ZgB" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-489" y="1771"/>
         </scene>
         <!--Photo Detail View Controller - Images-->
-        <scene sceneID="Mfs-zt-bfk">
+        <scene sceneID="MH0-KJ-H2l">
             <objects>
-                <viewController id="3yA-PO-qgt" customClass="photoDetailViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TYe-Bc-F0M">
+                <viewController id="yYC-v8-Kcl" customClass="photoDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u1Y-by-WmP">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="Teg-a0-5dS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="tSL-GH-bq3">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Images" id="BAU-bl-4QL">
-                        <barButtonItem key="rightBarButtonItem" title="Share" id="3yD-A2-gDt">
+                    <navigationItem key="navigationItem" title="Images" id="Arp-Mf-9Jh">
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="f4a-mb-x0B">
                             <connections>
-                                <action selector="shareImage:" destination="3yA-PO-qgt" id="R6L-Xi-rMh"/>
+                                <action selector="shareImage:" destination="yYC-v8-Kcl" id="Ity-G0-YP4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="imageView" destination="Teg-a0-5dS" id="78A-Ob-49k"/>
-                        <outlet property="titleBar" destination="BAU-bl-4QL" id="J01-5u-qFe"/>
+                        <outlet property="imageView" destination="tSL-GH-bq3" id="5Ny-09-3Cf"/>
+                        <outlet property="titleBar" destination="Arp-Mf-9Jh" id="XnX-v3-eDl"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="m4M-so-4it" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1uh-L3-yMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-117" y="1771"/>
         </scene>
     </scenes>
     <resources>
         <image name="acesIcon.png" width="120" height="120"/>
-        <image name="calendarIcon.png" width="50" height="50"/>
+        <image name="calendarIcon.png" width="120" height="120"/>
         <image name="contactsIcon.png" width="120" height="120"/>
         <image name="coursesIcon.png" width="120" height="120"/>
         <image name="delIcon.png" width="120" height="120"/>

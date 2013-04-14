@@ -209,7 +209,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Vgy-dF-lGP">
-                                <rect key="frame" x="39" y="223" width="242" height="60"/>
+                                <rect key="frame" x="39" y="205" width="242" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="twitterButton.png">
@@ -224,7 +224,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0Js-rZ-bMC">
-                                <rect key="frame" x="39" y="120" width="242" height="60"/>
+                                <rect key="frame" x="39" y="130" width="242" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="facebookButton.png">
@@ -239,7 +239,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VB1-SI-KdI">
-                                <rect key="frame" x="39" y="326" width="242" height="60"/>
+                                <rect key="frame" x="39" y="280" width="242" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="linkedinButton.png">
@@ -275,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sIH-Y7-Aaj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-264" y="1251"/>
+            <point key="canvasLocation" x="-574" y="1094"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5uT-eM-yEo">
@@ -353,7 +353,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sid-4k-iXy">
-                                <rect key="frame" x="30" y="126" width="260" height="60"/>
+                                <rect key="frame" x="30" y="130" width="260" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Faculty">
@@ -368,7 +368,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PF8-UU-JM5">
-                                <rect key="frame" x="30" y="216" width="260" height="60"/>
+                                <rect key="frame" x="30" y="210" width="260" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Students">
@@ -383,7 +383,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dsI-U1-mNi">
-                                <rect key="frame" x="30" y="306" width="260" height="60"/>
+                                <rect key="frame" x="30" y="290" width="260" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Others">
@@ -516,7 +516,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="1LQ-mj-cRi" kind="push" identifier="" id="Qt5-wv-ykI"/>
+                                    <segue destination="1LQ-mj-cRi" kind="push" identifier="ImagesSegue" id="Qt5-wv-ykI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9O9-Y1-UOL">
@@ -824,7 +824,7 @@
     </scenes>
     <resources>
         <image name="acesIcon.png" width="120" height="120"/>
-        <image name="calendarIcon.png" width="50" height="50"/>
+        <image name="calendarIcon.png" width="120" height="120"/>
         <image name="contactsIcon.png" width="120" height="120"/>
         <image name="coursesIcon.png" width="120" height="120"/>
         <image name="delIcon.png" width="120" height="120"/>
@@ -950,6 +950,9 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
         <class className="photoDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/photoDetailViewController.h"/>

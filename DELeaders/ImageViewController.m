@@ -24,8 +24,6 @@ NSData *compressedImageData;
 S3Bucket *myBucket;
 S3Bucket *compressedBucket;
 
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
