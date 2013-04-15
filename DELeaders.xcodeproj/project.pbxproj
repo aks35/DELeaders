@@ -82,6 +82,11 @@
 		6DA7B47C170F7ED7004BA98B /* top.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D5EF0ED170B5FDA008758FA /* top.png */; };
 		6DCDFE2D16FF991E004008E2 /* GeneralWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCDFE2C16FF991E004008E2 /* GeneralWebViewController.m */; };
 		6DDE2874171B0EAB00F375E1 /* calendarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE2873171B0EAB00F375E1 /* calendarIcon.png */; };
+		6DDE2876171B6C8400F375E1 /* mainIcon_57.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE2875171B6C8400F375E1 /* mainIcon_57.png */; };
+		6DDE2878171B6C9100F375E1 /* del-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE2877171B6C9100F375E1 /* del-icon.png */; };
+		6DDE287A171B904200F375E1 /* mainIconMod_114.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE2879171B904200F375E1 /* mainIconMod_114.png */; };
+		6DDE287C171B923B00F375E1 /* del-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE287B171B923B00F375E1 /* del-icon@2x.png */; };
+		6DDE287E171B959A00F375E1 /* delMain_114.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE287D171B959A00F375E1 /* delMain_114.png */; };
 		6DE6EF611711D9CB0002D4F1 /* top_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DE6EF601711D9CB0002D4F1 /* top_small.png */; };
 		6DE6EF631711F3E40002D4F1 /* del_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DE6EF621711F3E40002D4F1 /* del_small.png */; };
 		6DF21AB816FFBA6D00C7A316 /* SocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF21AB716FFBA6D00C7A316 /* SocialViewController.m */; };
@@ -241,6 +246,11 @@
 		6DCDFE2B16FF991E004008E2 /* GeneralWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralWebViewController.h; sourceTree = "<group>"; };
 		6DCDFE2C16FF991E004008E2 /* GeneralWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralWebViewController.m; sourceTree = "<group>"; };
 		6DDE2873171B0EAB00F375E1 /* calendarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendarIcon.png; sourceTree = "<group>"; };
+		6DDE2875171B6C8400F375E1 /* mainIcon_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainIcon_57.png; sourceTree = "<group>"; };
+		6DDE2877171B6C9100F375E1 /* del-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "del-icon.png"; sourceTree = "<group>"; };
+		6DDE2879171B904200F375E1 /* mainIconMod_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainIconMod_114.png; sourceTree = "<group>"; };
+		6DDE287B171B923B00F375E1 /* del-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "del-icon@2x.png"; sourceTree = "<group>"; };
+		6DDE287D171B959A00F375E1 /* delMain_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delMain_114.png; sourceTree = "<group>"; };
 		6DE6EF601711D9CB0002D4F1 /* top_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_small.png; sourceTree = "<group>"; };
 		6DE6EF621711F3E40002D4F1 /* del_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = del_small.png; sourceTree = "<group>"; };
 		6DF21AB616FFBA6D00C7A316 /* SocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialViewController.h; sourceTree = "<group>"; };
@@ -308,6 +318,11 @@
 		317D101916C1ECF2007EBF76 = {
 			isa = PBXGroup;
 			children = (
+				6DDE287D171B959A00F375E1 /* delMain_114.png */,
+				6DDE287B171B923B00F375E1 /* del-icon@2x.png */,
+				6DDE2879171B904200F375E1 /* mainIconMod_114.png */,
+				6DDE2877171B6C9100F375E1 /* del-icon.png */,
+				6DDE2875171B6C8400F375E1 /* mainIcon_57.png */,
 				6D316F441717840A00FA5D61 /* Security.framework */,
 				6D316F421717840400FA5D61 /* MessageUI.framework */,
 				6D6115D316F0326200CAE42E /* Default-568h@2x.png */,
@@ -643,6 +658,11 @@
 				6D2157CB1719C0F900AE443D /* SVWebViewController.bundle in Resources */,
 				6D2157D0171AF31100AE443D /* delNew.png in Resources */,
 				6DDE2874171B0EAB00F375E1 /* calendarIcon.png in Resources */,
+				6DDE2876171B6C8400F375E1 /* mainIcon_57.png in Resources */,
+				6DDE2878171B6C9100F375E1 /* del-icon.png in Resources */,
+				6DDE287A171B904200F375E1 /* mainIconMod_114.png in Resources */,
+				6DDE287C171B923B00F375E1 /* del-icon@2x.png in Resources */,
+				6DDE287E171B959A00F375E1 /* delMain_114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -806,7 +826,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -830,7 +850,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
