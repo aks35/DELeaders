@@ -99,10 +99,8 @@ bool loggedInApriori = YES;
         calendarDone = YES;
         [svWebViewLoad removeFromSuperview];
         [svWebViewTemp removeFromSuperview];
-
         [svWebViewMain setHidden:NO];
         [svWebController enableTitleControl];
-//        [util replaceWebBrowser:[[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey] viewController:self.navigationController];
         return NO;
     }
     else if (loggedIntoSakai) {
@@ -164,17 +162,6 @@ bool loggedInApriori = YES;
     return YES;
 }
 
-- (void)webViewDidStartLoad:(UIWebView *)webView {
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-    if ([util userLoggedIn]) {
-        [self autoLoginToSakai:webView];
-    } else {
-        [svWebViewMain setHidden:NO];
-    }
-}
-
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -192,6 +179,9 @@ bool loggedInApriori = YES;
     if ([util userLoggedIn]) {
         return [self autoLoginToSakai:webView];
     } else {
+        [svWebViewLoad removeFromSuperview];
+        [svWebViewTemp removeFromSuperview];
+        [svWebViewMain setHidden:NO];
         return NO;
     }
 }

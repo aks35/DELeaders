@@ -19,7 +19,7 @@
 @synthesize studentsButton;
 @synthesize othersButton;
 
-@synthesize svWebController, svWebViewMain, svWebViewLoad, svWebViewFinal;
+@synthesize svWebController, svWebViewMain, svWebViewLoad;
 
 MBProgressHUD *hud;
 Utility *util;
@@ -258,6 +258,8 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
     if ([util userLoggedIn]) {
         return [self autoLoginToWordpress:webView];
     } else {
+        [svWebViewLoad removeFromSuperview];
+        [svWebViewMain setHidden:NO];
         return NO;
     }
 }
@@ -272,7 +274,6 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
         svWebViewLoad = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.height, svWebController.view.frame.size.width)];
     }
     svWebViewMain = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
-    svWebViewFinal = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
     
     [svWebViewMain setHidden:YES];
     [svWebViewMain setDelegate:svWebController];
