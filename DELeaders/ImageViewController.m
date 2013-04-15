@@ -17,19 +17,19 @@
 
 @implementation ImageViewController
 AmazonS3Client *s3;
-NSMutableArray *listOfItems;
+NSMutableArray *compressedImageNames;
 NSMutableArray *compressedImages;
 NSData *imageData;
 NSData *compressedImageData;
-S3Bucket *myBucket;
-S3Bucket *compressedBucket;
+S3Bucket *uncompressedImagesBucket;
+S3Bucket *compressedImagesBucket;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    self.collectionView.backgroundColor = [UIColor blackColor]; //set background color to grey
+    self.collectionView.backgroundColor = [UIColor blackColor]; //set background color to black
     [self.collectionView registerClass:[s3ImageCell class] forCellWithReuseIdentifier:@"simpleCellID"];
     s3 = [AmazonClientManager s3];
     NSArray *listOfBuckets = s3.listBuckets;
@@ -38,11 +38,11 @@ S3Bucket *compressedBucket;
     //If the bucket does not exist, then create it.
     for(S3Bucket *bucket in listOfBuckets){
         if([[bucket name]isEqual:ORIGINAL_IMAGE_BUCKET_NAME]){
-            myBucket=bucket;
+            uncompressedImagesBucket=bucket;
         }
     }
     // create the bucket if it does not yet exist
-    if(myBucket==nil){
+    if(uncompressedImagesBucket==nil){
         [s3 createBucket:[[S3CreateBucketRequest alloc] initWithName:ORIGINAL_IMAGE_BUCKET_NAME]];
     }
     
@@ -51,11 +51,11 @@ S3Bucket *compressedBucket;
 
     for(S3Bucket *bucket in listOfBuckets){
         if([[bucket name]isEqual:COMPRESSED_IMAGE_BUCKET_NAME]){
-            compressedBucket=bucket;
+            compressedImagesBucket=bucket;
         }
     }
     // create the bucket if it does not yet exist
-    if(compressedBucket==nil){
+    if(compressedImagesBucket==nil){
         [s3 createBucket:[[S3CreateBucketRequest alloc] initWithName:COMPRESSED_IMAGE_BUCKET_NAME]];
     }
     
@@ -66,18 +66,15 @@ S3Bucket *compressedBucket;
 }
 
 -(void)loadItemsIntoListOfItemsAndImagesIntoCompressedImages{
-    listOfItems = [[NSMutableArray alloc] init];
-    NSArray * objectList = [s3 listObjectsInBucket:compressedBucket.name];
+    compressedImageNames = [[NSMutableArray alloc] init];
+    NSArray * objectList = [s3 listObjectsInBucket:compressedImagesBucket.name];
     for(S3ObjectSummary* object in objectList){
-        [listOfItems addObject:object.description];
+        [compressedImageNames addObject:object.description];
     }
     
     
     compressedImages = [[NSMutableArray alloc] init];
-    for (NSString* imageName in listOfItems) {
-//        NSString* compressedImageName = [imageName stringByAppendingString:@"_compressed"];
-        
-        
+    for (NSString* imageName in compressedImageNames) {
         S3GetObjectRequest* gor = [[S3GetObjectRequest alloc] initWithKey:imageName withBucket:COMPRESSED_IMAGE_BUCKET_NAME];
         S3GetObjectResponse* gore = [s3 getObject:gor];
         gore.contentType=@"image/jpeg";
@@ -148,18 +145,9 @@ S3Bucket *compressedBucket;
         [s3 putObject:porCompressed];
         
         
-        
-        //reload data
-        listOfItems = [[NSMutableArray alloc] init];
-        NSArray * objectList = [s3 listObjectsInBucket:myBucket.name];
-        for(S3ObjectSummary* object in objectList){
-            [listOfItems addObject:object.description];
-        }
+
         //reload compressedImages
         self.loadItemsIntoListOfItemsAndImagesIntoCompressedImages;
-        
-        
-        
         [self.collectionView reloadData];
     }
     //if we are returning from the alertview for selecting Camera upload vs. image picker upload
@@ -192,7 +180,7 @@ S3Bucket *compressedBucket;
     hud.labelText = @"Loading Image";
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        NSString* imageName = [listOfItems objectAtIndex:indexPath.row];
+        NSString* imageName = [compressedImageNames objectAtIndex:indexPath.row];
         
         
         [self performSegueWithIdentifier:@"ShowPhoto"
@@ -206,9 +194,6 @@ S3Bucket *compressedBucket;
     
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- 
-    
-    
     if ([segue.identifier isEqualToString:@"ShowPhoto"]) {
         photoDetailViewController *PhotoViewController = segue.destinationViewController;
         PhotoViewController.imageNameWithCompressedSuffix = sender;
@@ -216,13 +201,11 @@ S3Bucket *compressedBucket;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)collectionView {
-    // _data is a class member variable that contains one array per section.
     return 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView*)collectionView numberOfItemsInSection:(NSInteger)section {
-
-    return [listOfItems count];
+    return [compressedImages count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
@@ -260,7 +243,7 @@ S3Bucket *compressedBucket;
 
 - (IBAction)Upload:(id)sender {
     //show an alertview Window to choose whether to select from the phone's gallery or from camera
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Upload From Where?" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Upload From:" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
     alert.tag=2;
     [alert addButtonWithTitle:@"Camera"];
     [alert addButtonWithTitle:@"Gallery"];

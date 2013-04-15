@@ -33,16 +33,32 @@ UIImage *myImage;
     [super viewDidLoad];
     s3 = [AmazonClientManager s3];    
 
+    NSMutableArray *listOfItemsInUncompressedBucket = [[NSMutableArray alloc] init];
+    for(S3ObjectSummary* object in [s3 listObjectsInBucket:ORIGINAL_IMAGE_BUCKET_NAME]){
+        [listOfItemsInUncompressedBucket addObject:object.description];
+    }
+    
+    
     
     //first look for regular uncompressedImage
     NSString* imageNameWithoutCompressedSuffix = [self.imageNameWithCompressedSuffix substringToIndex:[self.imageNameWithCompressedSuffix length]- COMPRESSED_SUFFIX.length];
-    S3GetObjectRequest* gor = [[S3GetObjectRequest alloc] initWithKey:imageNameWithoutCompressedSuffix withBucket:ORIGINAL_IMAGE_BUCKET_NAME];
-    S3GetObjectResponse* gore = [s3 getObject:gor];
-    gore.contentType=@"image/jpeg";
-    self.titleBar.title=imageNameWithoutCompressedSuffix;
-    myImage= [[UIImage alloc] initWithData:gore.body];
-    self.imageView.image=myImage;
-
+    if([listOfItemsInUncompressedBucket containsObject:(imageNameWithoutCompressedSuffix)]){
+        S3GetObjectRequest* gor = [[S3GetObjectRequest alloc] initWithKey:imageNameWithoutCompressedSuffix withBucket:ORIGINAL_IMAGE_BUCKET_NAME];
+        S3GetObjectResponse* gore = [s3 getObject:gor];
+        gore.contentType=@"image/jpeg";
+        self.titleBar.title=imageNameWithoutCompressedSuffix;
+        myImage= [[UIImage alloc] initWithData:gore.body];
+        self.imageView.image=myImage;
+    }
+    //just use the compressed image
+    else{
+        S3GetObjectRequest* gor = [[S3GetObjectRequest alloc] initWithKey:_imageNameWithCompressedSuffix withBucket:COMPRESSED_IMAGE_BUCKET_NAME];
+        S3GetObjectResponse* gore = [s3 getObject:gor];
+        gore.contentType=@"image/jpeg";
+        self.titleBar.title=imageNameWithoutCompressedSuffix;
+        myImage= [[UIImage alloc] initWithData:gore.body];
+        self.imageView.image=myImage;
+    }
 	// Do any additional setup after loading the view.
 }
 
