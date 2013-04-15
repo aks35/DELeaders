@@ -243,7 +243,7 @@ S3Bucket *compressedImagesBucket;
 
 - (IBAction)Upload:(id)sender {
     //show an alertview Window to choose whether to select from the phone's gallery or from camera
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Upload From Where?" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Upload From:" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
     alert.tag=2;
     [alert addButtonWithTitle:@"Camera"];
     [alert addButtonWithTitle:@"Gallery"];
