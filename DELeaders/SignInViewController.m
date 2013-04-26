@@ -8,6 +8,9 @@
 
 #import "Utility.h"
 #import "SignInViewController.h"
+#import "SVWebViewController.h"
+#import "SakaiValidationViewController.h"
+#import "MBProgressHUD.h"
 
 @interface SignInViewController ()
 
@@ -17,10 +20,9 @@
 
 @synthesize scrollView;
 @synthesize enterButton;
-@synthesize skipButton;
+@synthesize clearButton;
 @synthesize netIdField;
 @synthesize passwordField;
-
 @synthesize activeField;
 @synthesize netId;
 @synthesize password;
@@ -31,6 +33,8 @@
 @synthesize passwordLabel;
 
 Utility *util;
+SakaiValidationViewController *validationController;
+bool credentialsExist;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -50,7 +54,9 @@ Utility *util;
     [self.view addGestureRecognizer:tap];
     [self checkForNetIdAndPassword];
     util = [[Utility alloc]init];
+    validationController = [[SakaiValidationViewController alloc]init];
     [util registerOrientationHandler:self];
+    credentialsExist = NO;
     if (UIDeviceOrientationIsPortrait(self.interfaceOrientation)) {
         [self changeToPortraitLayout];
     } else if (UIDeviceOrientationIsLandscape(self.interfaceOrientation)) {
@@ -66,7 +72,6 @@ Utility *util;
 
 - (void)viewDidUnload {
     [self setEnterButton:nil];
-    [self setSkipButton:nil];
     [self setNetIdField:nil];
     [self setPasswordField:nil];
     [self setScrollView:nil];
@@ -82,6 +87,7 @@ Utility *util;
 {
     [super viewWillAppear:animated];
     [self registerForKeyboardNotifications];
+    [self clearNetIdAndPassword];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -110,13 +116,60 @@ Utility *util;
     [passwordField resignFirstResponder];
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if ([validationController doneValidating]) {
+        return [validationController isValid];
+    }
+    return credentialsExist;
+}
+
 - (IBAction)pressEnterButton:(id)sender {
-    //    [self testAlert:netIdField.text];
-    netId = netIdField.text;
-    password = passwordField.text;
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:netId forKey:@"netId"];
-    [defaults setObject:password forKey:@"password"];
+    if ([[netIdField text] length] == 0) {
+        if ([[passwordField text] length] == 0) {
+            [self alertMessage:@"Invalid" text:@"Please enter netID and password"];
+        } else {
+            [self alertMessage:@"Invalid" text:@"Please enter netID"];
+        }
+    } else if ([[passwordField text] length] == 0) {
+        [self alertMessage:@"Invalid" text:@"Please enter password"];
+    } else {
+        if (![validationController doneValidating] && !credentialsExist) {
+            [validationController validateNetIdAndPassword:[netIdField text] password:[passwordField text]];
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            hud.labelText = @"Validating credentials";
+            dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+                while (![validationController doneValidating]) {}
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                    MBProgressHUD *hudComp = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+                    [self.navigationController.view addSubview:hudComp];
+                    if ([validationController isValid]) {
+                        hudComp.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
+                        hudComp.labelText = @"Validated";
+                        netId = netIdField.text;
+                        password = passwordField.text;
+                        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                        [defaults setObject:netId forKey:@"netId"];
+                        [defaults setObject:password forKey:@"password"];
+                        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loggedIntoSakai"];
+                        [enterButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+                    } else {
+                        hudComp.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Xmark.png"]];
+                        hudComp.labelText = @"Invalid credentials";
+                        [validationController reset];
+                    }
+                    hudComp.mode = MBProgressHUDModeCustomView;
+                    hudComp.delegate = self;
+                    [hudComp show:YES];
+                    [hudComp hide:YES afterDelay:1];
+                });
+            });
+        }
+    }
+}
+
+- (IBAction)pressClearButton:(id)sender {
+    [self clearNetIdAndPassword];
 }
 
 - (void)registerForKeyboardNotifications {
@@ -166,11 +219,21 @@ Utility *util;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     netId = [defaults objectForKey:@"netId"];
     password = [defaults objectForKey:@"password"];
+    NSLog(@"NetId: %@", netId);
+    NSLog(@"Password: %@", password);
     if (netId && password) {
-        [skipButton sendActionsForControlEvents:UIControlEventTouchUpInside];
         [netIdField setText:netId];
         [passwordField setText:password];
+        credentialsExist = YES;
+        [enterButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     }
+}
+
+- (void)clearNetIdAndPassword {
+    [netIdField setText:@""];
+    [passwordField setText:@""];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"netId"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"password"];
 }
 
 - (void)changeToPortraitLayout {
@@ -185,7 +248,7 @@ Utility *util;
         [netIdField setFrame:CGRectMake(156, 100, 97, 31)];
         [passwordField setFrame:CGRectMake(156, 148, 97, 31)];
         [enterButton setFrame:CGRectMake(73, 207, 75, 37)];
-        [skipButton setFrame:CGRectMake(167, 207, 75, 37)];
+        [clearButton setFrame:CGRectMake(167, 207, 75, 37)];
     } else if ([util isPad]) {
         [topImage setFrame:CGRectMake(0, 0, 768, 192)];
         [scrollView setFrame:CGRectMake(0, 192, 768, 576)];
@@ -195,7 +258,7 @@ Utility *util;
         [netIdField setFrame:CGRectMake(371, 184, 97, 31)];
         [passwordField setFrame:CGRectMake(371, 230, 97, 31)];
         [enterButton setFrame:CGRectMake(293, 303, 75, 37)];
-        [skipButton setFrame:CGRectMake(393, 303, 75, 37)];
+        [clearButton setFrame:CGRectMake(393, 303, 75, 37)];
     } else {
         [topImage setFrame:CGRectMake(0, 0, 320, 80)];
         [scrollView setFrame:CGRectMake(0, 80, 320, 250)];
@@ -205,9 +268,8 @@ Utility *util;
         [netIdField setFrame:CGRectMake(156, 70, 97, 31)];
         [passwordField setFrame:CGRectMake(156, 119, 97, 31)];
         [enterButton setFrame:CGRectMake(73, 175, 75, 37)];
-        [skipButton setFrame:CGRectMake(167, 175, 75, 37)];
+        [clearButton setFrame:CGRectMake(167, 175, 75, 37)];
     }
-
 }
 
 - (void)changeToLandscapeLayout {
@@ -220,8 +282,7 @@ Utility *util;
         [netIdField setFrame:CGRectMake(371, 184, 97, 31)];
         [passwordField setFrame:CGRectMake(371, 230, 97, 31)];
         [enterButton setFrame:CGRectMake(293, 303, 75, 37)];
-        [skipButton setFrame:CGRectMake(393, 303, 75, 37)];
-
+        [clearButton setFrame:CGRectMake(393, 303, 75, 37)];
     } else {
         if ([util isFourInchScreen]) {
             [topImage setFrame:CGRectMake(0, 0, 568, 30)];
@@ -236,7 +297,7 @@ Utility *util;
         [netIdField setFrame:CGRectMake(156, 55, 97, 31)];
         [passwordField setFrame:CGRectMake(156, 103, 97, 31)];
         [enterButton setFrame:CGRectMake(73, 162, 75, 37)];
-        [skipButton setFrame:CGRectMake(167, 162, 75, 37)];
+        [clearButton setFrame:CGRectMake(167, 162, 75, 37)];
     }
     [topImage setImage:[UIImage imageNamed:@"top_small.png"]];
     [bottomImage setHidden:YES];

@@ -29,7 +29,6 @@
 		314B576416E280810065B50D /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B576316E280810065B50D /* Utility.m */; };
 		314B576816E316500065B50D /* SakaiCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B576616E3164F0065B50D /* SakaiCalendarViewController.m */; };
 		314B576D16E317B00065B50D /* SakaiViewControllerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B576B16E317B00065B50D /* SakaiViewControllerHelper.m */; };
-		314B576E16E317B00065B50D /* SakaiViewControllerHelper.xib in Resources */ = {isa = PBXBuildFile; fileRef = 314B576C16E317B00065B50D /* SakaiViewControllerHelper.xib */; };
 		317D102916C1ECF2007EBF76 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 317D102816C1ECF2007EBF76 /* UIKit.framework */; };
 		317D102B16C1ECF2007EBF76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 317D102A16C1ECF2007EBF76 /* Foundation.framework */; };
 		317D102D16C1ECF2007EBF76 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 317D102C16C1ECF2007EBF76 /* CoreGraphics.framework */; };
@@ -52,6 +51,7 @@
 		6D2157CC1719C0F900AE443D /* SVWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2157C61719C0F900AE443D /* SVWebViewController.m */; };
 		6D2157D0171AF31100AE443D /* delNew.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2157CF171AF31100AE443D /* delNew.png */; };
 		6D253363170E1C31006F5398 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D253361170E1C31006F5398 /* MainStoryboard_iPad.storyboard */; };
+		6D26AE8E171C2F7B00051AB9 /* del-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D87298017175D5700DC829E /* del-icon@2x.png */; };
 		6D316F3D171773BD00FA5D61 /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D316F3C171773BD00FA5D61 /* backButton.png */; };
 		6D316F3F1717740200FA5D61 /* forwardButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D316F3E1717740200FA5D61 /* forwardButton.png */; };
 		6D316F431717840400FA5D61 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D316F421717840400FA5D61 /* MessageUI.framework */; };
@@ -69,7 +69,6 @@
 		6D87297117169FAC00DC829E /* acesIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D87297017169FAC00DC829E /* acesIcon.png */; };
 		6D87297717173BC700DC829E /* delIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D87297617173BC700DC829E /* delIcon.png */; };
 		6D87297F17175D5100DC829E /* del-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D87297E17175D5100DC829E /* del-icon.png */; };
-		6D87298117175D5700DC829E /* del-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D87298017175D5700DC829E /* del-icon@2x.png */; };
 		6D87298317175E7B00DC829E /* del-icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D87298217175E7B00DC829E /* del-icon-72@2x.png */; };
 		6D87298517175E7F00DC829E /* del-icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D87298417175E7F00DC829E /* del-icon-72.png */; };
 		6D92DDD616FA403B00AE0AD7 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92DDD016FA403B00AE0AD7 /* ImageViewController.m */; };
@@ -89,6 +88,13 @@
 		6DDE287E171B959A00F375E1 /* delMain_114.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE287D171B959A00F375E1 /* delMain_114.png */; };
 		6DE6EF611711D9CB0002D4F1 /* top_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DE6EF601711D9CB0002D4F1 /* top_small.png */; };
 		6DE6EF631711F3E40002D4F1 /* del_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DE6EF621711F3E40002D4F1 /* del_small.png */; };
+		6DF1D7EE1729995700F708FA /* leadership.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DF1D7ED1729995700F708FA /* leadership.png */; };
+		6DF1D7F117299A1E00F708FA /* LeadershipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF1D7F017299A1E00F708FA /* LeadershipViewController.m */; };
+		6DF1D7FA1729D0EA00F708FA /* SakaiValidationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF1D7F91729D0EA00F708FA /* SakaiValidationViewController.m */; };
+		6DF1D800172A290D00F708FA /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DF1D7FF172A290D00F708FA /* 37x-Checkmark.png */; };
+		6DF1D802172A291800F708FA /* 37x-Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DF1D801172A291800F708FA /* 37x-Checkmark@2x.png */; };
+		6DF1D80A172A2FE400F708FA /* 37x-Xmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DF1D809172A2FE400F708FA /* 37x-Xmark.png */; };
+		6DF1D80D172ABE8700F708FA /* LogoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF1D80C172ABE8700F708FA /* LogoutViewController.m */; };
 		6DF21AB816FFBA6D00C7A316 /* SocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF21AB716FFBA6D00C7A316 /* SocialViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -172,7 +178,6 @@
 		314B576616E3164F0065B50D /* SakaiCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SakaiCalendarViewController.m; sourceTree = "<group>"; };
 		314B576A16E317B00065B50D /* SakaiViewControllerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SakaiViewControllerHelper.h; sourceTree = "<group>"; };
 		314B576B16E317B00065B50D /* SakaiViewControllerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SakaiViewControllerHelper.m; sourceTree = "<group>"; };
-		314B576C16E317B00065B50D /* SakaiViewControllerHelper.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SakaiViewControllerHelper.xib; sourceTree = "<group>"; };
 		317D102416C1ECF2007EBF76 /* DELinks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DELinks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		317D102816C1ECF2007EBF76 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		317D102A16C1ECF2007EBF76 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -253,6 +258,16 @@
 		6DDE287D171B959A00F375E1 /* delMain_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delMain_114.png; sourceTree = "<group>"; };
 		6DE6EF601711D9CB0002D4F1 /* top_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_small.png; sourceTree = "<group>"; };
 		6DE6EF621711F3E40002D4F1 /* del_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = del_small.png; sourceTree = "<group>"; };
+		6DF1D7ED1729995700F708FA /* leadership.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leadership.png; sourceTree = "<group>"; };
+		6DF1D7EF17299A1E00F708FA /* LeadershipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeadershipViewController.h; sourceTree = "<group>"; };
+		6DF1D7F017299A1E00F708FA /* LeadershipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeadershipViewController.m; sourceTree = "<group>"; };
+		6DF1D7F81729D0EA00F708FA /* SakaiValidationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SakaiValidationViewController.h; sourceTree = "<group>"; };
+		6DF1D7F91729D0EA00F708FA /* SakaiValidationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SakaiValidationViewController.m; sourceTree = "<group>"; };
+		6DF1D7FF172A290D00F708FA /* 37x-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark.png"; sourceTree = "<group>"; };
+		6DF1D801172A291800F708FA /* 37x-Checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark@2x.png"; sourceTree = "<group>"; };
+		6DF1D809172A2FE400F708FA /* 37x-Xmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Xmark.png"; sourceTree = "<group>"; };
+		6DF1D80B172ABE8700F708FA /* LogoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoutViewController.h; sourceTree = "<group>"; };
+		6DF1D80C172ABE8700F708FA /* LogoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoutViewController.m; sourceTree = "<group>"; };
 		6DF21AB616FFBA6D00C7A316 /* SocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialViewController.h; sourceTree = "<group>"; };
 		6DF21AB716FFBA6D00C7A316 /* SocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -378,8 +393,12 @@
 				6D110B73170EA0890098B268 /* del_logo_shaded.png */,
 				6DE6EF621711F3E40002D4F1 /* del_small.png */,
 				6DE6EF601711D9CB0002D4F1 /* top_small.png */,
+				6DF1D7ED1729995700F708FA /* leadership.png */,
 				6D110B6D170E203C0098B268 /* del_logo.png */,
+				6DF1D809172A2FE400F708FA /* 37x-Xmark.png */,
 				6D5EF0ED170B5FDA008758FA /* top.png */,
+				6DF1D801172A291800F708FA /* 37x-Checkmark@2x.png */,
+				6DF1D7FF172A290D00F708FA /* 37x-Checkmark.png */,
 				6D92DDEA16FA593B00AE0AD7 /* linkedinButton.png */,
 				6D92DDE616FA562200AE0AD7 /* twitterButton.png */,
 				6D92DDE416FA561400AE0AD7 /* facebookButton.png */,
@@ -462,6 +481,8 @@
 		6D9E482F1700CB3C00EE0245 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6DF1D7EF17299A1E00F708FA /* LeadershipViewController.h */,
+				6DF1D7F017299A1E00F708FA /* LeadershipViewController.m */,
 				6D0D03CA171095A700621B04 /* SignInViewController.h */,
 				6D0D03CB171095A700621B04 /* SignInViewController.m */,
 				6DCDFE2B16FF991E004008E2 /* GeneralWebViewController.h */,
@@ -477,6 +498,8 @@
 				314B575816E176230065B50D /* ContactsViewController.h */,
 				314B575916E176230065B50D /* ContactsViewController.m */,
 				6D9E48301700CB7400EE0245 /* sakai */,
+				6DF1D80B172ABE8700F708FA /* LogoutViewController.h */,
+				6DF1D80C172ABE8700F708FA /* LogoutViewController.m */,
 			);
 			name = viewControllers;
 			sourceTree = "<group>";
@@ -488,9 +511,10 @@
 				314B576616E3164F0065B50D /* SakaiCalendarViewController.m */,
 				314B576A16E317B00065B50D /* SakaiViewControllerHelper.h */,
 				314B576B16E317B00065B50D /* SakaiViewControllerHelper.m */,
-				314B576C16E317B00065B50D /* SakaiViewControllerHelper.xib */,
 				314B575D16E27E8E0065B50D /* SakaiViewController.h */,
 				314B575E16E27E8E0065B50D /* SakaiViewController.m */,
+				6DF1D7F81729D0EA00F708FA /* SakaiValidationViewController.h */,
+				6DF1D7F91729D0EA00F708FA /* SakaiValidationViewController.m */,
 			);
 			name = sakai;
 			sourceTree = "<group>";
@@ -627,7 +651,6 @@
 				6DA7B47C170F7ED7004BA98B /* top.png in Resources */,
 				317D103316C1ECF2007EBF76 /* InfoPlist.strings in Resources */,
 				317D103C16C1ECF2007EBF76 /* MainStoryboard_iPhone.storyboard in Resources */,
-				314B576E16E317B00065B50D /* SakaiViewControllerHelper.xib in Resources */,
 				6D6115D416F0326200CAE42E /* Default-568h@2x.png in Resources */,
 				6D92DDE516FA561400AE0AD7 /* facebookButton.png in Resources */,
 				6D92DDE716FA562200AE0AD7 /* twitterButton.png in Resources */,
@@ -649,7 +672,6 @@
 				6D87297117169FAC00DC829E /* acesIcon.png in Resources */,
 				6D87297717173BC700DC829E /* delIcon.png in Resources */,
 				6D87297F17175D5100DC829E /* del-icon.png in Resources */,
-				6D87298117175D5700DC829E /* del-icon@2x.png in Resources */,
 				6D87298317175E7B00DC829E /* del-icon-72@2x.png in Resources */,
 				6D87298517175E7F00DC829E /* del-icon-72.png in Resources */,
 				6D316F3D171773BD00FA5D61 /* backButton.png in Resources */,
@@ -663,6 +685,11 @@
 				6DDE287A171B904200F375E1 /* mainIconMod_114.png in Resources */,
 				6DDE287C171B923B00F375E1 /* del-icon@2x.png in Resources */,
 				6DDE287E171B959A00F375E1 /* delMain_114.png in Resources */,
+				6D26AE8E171C2F7B00051AB9 /* del-icon@2x.png in Resources */,
+				6DF1D7EE1729995700F708FA /* leadership.png in Resources */,
+				6DF1D800172A290D00F708FA /* 37x-Checkmark.png in Resources */,
+				6DF1D802172A291800F708FA /* 37x-Checkmark@2x.png in Resources */,
+				6DF1D80A172A2FE400F708FA /* 37x-Xmark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,6 +757,9 @@
 				6D0D03CC171095A700621B04 /* SignInViewController.m in Sources */,
 				6D2157CA1719C0F900AE443D /* SVModalWebViewController.m in Sources */,
 				6D2157CC1719C0F900AE443D /* SVWebViewController.m in Sources */,
+				6DF1D7F117299A1E00F708FA /* LeadershipViewController.m in Sources */,
+				6DF1D7FA1729D0EA00F708FA /* SakaiValidationViewController.m in Sources */,
+				6DF1D80D172ABE8700F708FA /* LogoutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -861,7 +891,7 @@
 		317D105B16C1ECF2007EBF76 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Shim (6PQN59ARVY)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Shim (6PQN59ARVY)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -872,8 +902,8 @@
 				GCC_PREFIX_HEADER = "DELeaders/DELeaders-Prefix.pch";
 				INFOPLIST_FILE = "DELeaders/DELeaders-Info.plist";
 				PRODUCT_NAME = DELinks;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EADD23B6-851C-45D4-9008-0321C9A3BF94";
+				PROVISIONING_PROFILE = "D12B856D-BABA-44CA-B82A-D854A91B332E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D12B856D-BABA-44CA-B82A-D854A91B332E";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -882,7 +912,7 @@
 		317D105C16C1ECF2007EBF76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Shim (6PQN59ARVY)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Shim (6PQN59ARVY)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -893,8 +923,8 @@
 				GCC_PREFIX_HEADER = "DELeaders/DELeaders-Prefix.pch";
 				INFOPLIST_FILE = "DELeaders/DELeaders-Info.plist";
 				PRODUCT_NAME = DELinks;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EADD23B6-851C-45D4-9008-0321C9A3BF94";
+				PROVISIONING_PROFILE = "D12B856D-BABA-44CA-B82A-D854A91B332E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D12B856D-BABA-44CA-B82A-D854A91B332E";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

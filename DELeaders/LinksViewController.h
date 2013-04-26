@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
 
-@interface LinksViewController : UIViewController <UIScrollViewDelegate>
+@interface LinksViewController : UIViewController <UIScrollViewDelegate, MBProgressHUDDelegate>
 
 // Buttons
 @property (weak, nonatomic) IBOutlet UIButton *delButton;
@@ -45,6 +46,7 @@
 - (IBAction)wpPressed:(id)sender;
 - (IBAction)libraryPressed:(id)sender;
 - (IBAction)acesPressed:(id)sender;
+- (IBAction)logoutPressed:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *dayLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateNumLabel;

@@ -16,15 +16,16 @@ extern NSString* const sakaiTempCalViewTag;
 
 @interface SakaiViewController : UIViewController <UIWebViewDelegate>
 
-- (BOOL)sakaiWebViewDidFinishLoad:(UIWebView *)webView;
-- (void)registerSVWebController:(SVWebViewController *)webController;
-
 @property (strong, nonatomic) SVWebViewController *svWebController;
 @property (strong, nonatomic) UIWebView *svWebViewMain;
 @property (strong, nonatomic) UIWebView *svWebViewLoad;
 @property (strong, nonatomic) UIWebView *svWebViewTemp;
-@property (strong, nonatomic) UIWebView *svWebViewFinal;
 @property (strong, nonatomic) MBProgressHUD *hud;
+
+- (BOOL)sakaiWebViewDidFinishLoad:(UIWebView *)webView;
+- (void)registerSVWebController:(SVWebViewController *)webController;
+- (void)reset;  
+
 
 
 @end

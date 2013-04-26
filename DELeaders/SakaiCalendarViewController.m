@@ -13,14 +13,13 @@
 
 @implementation SakaiCalendarViewController
 
-@synthesize svWebController, svWebViewMain, svWebViewLoad, svWebViewTemp, svWebViewFinal;
+@synthesize svWebController, svWebViewMain, svWebViewLoad, svWebViewTemp;
 @synthesize needToFillOutForm;
 
 //MBProgressHUD *webHud;
 SakaiViewControllerHelper *helperController;
 Utility *util;
-bool calendarDone;
-bool atLogin, inCalendar, calendarRendered, atRedirect, loggedIntoSakai, loginFormSubmitted, inWorkspace;
+bool calendarDone, atLogin, inCalendar, calendarRendered, atRedirect, loggedIntoSakai, loginFormSubmitted, inWorkspace;
 bool loggedInApriori = YES;
 
 
@@ -87,12 +86,20 @@ bool loggedInApriori = YES;
 }
 
 - (BOOL)autoLoginToSakai:(UIWebView *)webView {
-    if (calendarDone) {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loggedIntoSakai"]) {
+        if (!inCalendar) {
+            if ([helperController inWorkspace]) {
+                [self goToCalendarPage];
+            } else {
+                [self goToWorkspacePage];
+            }            
+        }
+    }
+    else if (calendarDone) {
         return NO;
     }
     else if (calendarRendered && !loggedInApriori) {
         [MBProgressHUD hideHUDForView:svWebViewLoad animated:YES];
-        [svWebController.navigationItem setHidesBackButton:NO animated:NO];
         [svWebController enableBackButton];
         [svWebViewLoad setHidden:YES];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loggedIntoSakai"];
@@ -111,7 +118,9 @@ bool loggedInApriori = YES;
         else if (helperController.inWorkspace) {
             [self goToCalendarPage];
             helperController.inWorkspace = NO;
-            [svWebViewMain setHidden:NO];
+            if (needToFillOutForm) {
+                [svWebViewMain setHidden:NO];                
+            }
         } else {
             [self goToWorkspacePage];
             if ([_hud.labelText length] != 0 && !inCalendar) {
@@ -128,7 +137,10 @@ bool loggedInApriori = YES;
     }
     else if (loginFormSubmitted) {
         if (needToFillOutForm) {
-            [helperController fillSakaiSubViewForm:svWebViewMain];
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            NSString *netID = [defaults objectForKey:@"netId"];
+            NSString *password = [defaults objectForKey:@"password"];
+            [helperController fillSakaiSubViewForm:svWebViewMain netID:netID password:password];
         } 
         atRedirect = YES;
     }
@@ -145,7 +157,6 @@ bool loggedInApriori = YES;
         [svWebViewLoad setHidden:NO];
         _hud = [MBProgressHUD showHUDAddedTo:svWebViewLoad animated:YES];
         _hud.labelText = @"Logging into Sakai";
-        [svWebController.navigationItem setHidesBackButton:YES animated:YES];
         [svWebController disableBackButton];
         NSString *linkExists = [svWebViewMain stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('loginLink')[0]==null;"];
         
@@ -197,8 +208,6 @@ bool loggedInApriori = YES;
     }
     svWebViewMain = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
     svWebViewTemp = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
-    svWebViewFinal = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, svWebController.view.frame.size.width, svWebController.view.frame.size.height)];
-
     
     [svWebViewMain setHidden:YES];
     [svWebViewLoad setHidden:YES];
@@ -219,6 +228,24 @@ bool loggedInApriori = YES;
     util = [[Utility alloc]init];
     [util loadWebView:@"https://sakai.duke.edu/portal/pda" webView:svWebViewMain];
     helperController = [[SakaiViewControllerHelper alloc]init];
+}
+
+- (void)reset {
+//    self.needToFillOutForm = YES;
+    self.svWebController = nil;
+    self.svWebViewMain = nil;
+    self.svWebViewTemp = nil;
+    self.svWebViewLoad = nil;
+    
+    calendarDone = NO;
+    atLogin = NO;
+    inCalendar = NO;
+    calendarRendered = NO;
+    atRedirect = NO;
+    loggedIntoSakai = NO;
+    loginFormSubmitted = NO;
+    inWorkspace = NO;
+    loggedInApriori = YES;
 }
 
 @end

@@ -11,8 +11,14 @@
 #import "SakaiViewController.h"
 #import "SakaiCalendarViewController.h"
 #import "ContactsViewController.h"
+#import "LogoutViewController.h"
+#import "MBProgressHUD.h"
 
 @implementation Utility
+
+SakaiViewController *sakai;
+SakaiCalendarViewController *sakaiCal;
+ContactsViewController *contacts;
 
 - (void)loadWebView:(NSString *)fullURL webView:(UIWebView *)webView {
     NSLog(@"Loading web view: %@",fullURL);
@@ -72,7 +78,16 @@
 
 - (SVWebViewController *)openWebBrowserSakai:(NSString *)url viewController:(UINavigationController *)nav {
     SVWebViewController *webViewController = [[SVWebViewController alloc] init];
-    SakaiViewController *sakai = [[SakaiViewController alloc]init];
+    sakai = [[SakaiViewController alloc]init];
+    [webViewController registerSakaiHandler:sakai];
+    NSLog(@"Registered sakai controller");
+    [nav pushViewController:webViewController animated:YES];
+    return webViewController;
+}
+
+- (SVWebViewController *)validateThroughSakai:(NSString *)url viewController:(UINavigationController *)nav {
+    SVWebViewController *webViewController = [[SVWebViewController alloc] init];
+    sakai = [[SakaiViewController alloc]init];
     [webViewController registerSakaiHandler:sakai];
     NSLog(@"Registered sakai controller");
     [nav pushViewController:webViewController animated:YES];
@@ -81,9 +96,9 @@
 
 - (SVWebViewController *)openWebBrowserSakaiCal:(NSString *)url viewController:(UINavigationController *)nav needToFillOutForm:(bool)fillBool {
     SVWebViewController *webViewController = [[SVWebViewController alloc] init];
-    SakaiCalendarViewController *sakaiCal = [[SakaiCalendarViewController alloc]init];
+    sakaiCal = [[SakaiCalendarViewController alloc]init];
     sakaiCal.needToFillOutForm = fillBool;
-    if (fillBool ) {
+    if (fillBool) {
         NSLog(@"NEED TO FILLE OUT FORM");
     } else {
         NSLog(@"DO NOT NEED TO FILL OUT FORM");
@@ -97,7 +112,7 @@
 
 - (SVWebViewController *)openWebBrowserContacts:(NSString *)url viewController:(UINavigationController *)nav {
     SVWebViewController *webViewController = [[SVWebViewController alloc] init];
-    ContactsViewController *contacts = [[ContactsViewController alloc]init];
+    contacts = [[ContactsViewController alloc]init];
     [webViewController registerContactsHandler:contacts];
     NSLog(@"Registered contacts controller");
     [nav pushViewController:webViewController animated:YES];
@@ -122,6 +137,46 @@
     return title;
 }
 
+- (BOOL)webViewContainsHtml:(UIWebView *)webView string:(NSString *)string {
+    NSString *javascript = @"var str='false';var links = document.getElementsByTagName('a');for(var i=0; i<links.length; ++i){if(links[i].innerHTML.indexOf('%@')!==-1){str=true;}}str;";
+    javascript = [NSString stringWithFormat: javascript, string];
+    NSLog(@"Javscfipt: %@", javascript);
+    NSString *result = [webView stringByEvaluatingJavaScriptFromString:javascript];
+    NSLog(@"RESULT FROM JS: %@ ---", result);
+    if ([result isEqualToString:@"true"]) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
 
+- (void)logout:(LinksViewController *)linksController {
+    LogoutViewController *logoutController = [[LogoutViewController alloc]init];
+    [logoutController setUtility:self];
+    [logoutController initLogout];
+    NSLog(@"Logged Out");
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:linksController.view animated:YES];
+    hud.labelText = @"Logging out";
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        while (![logoutController sakaiLoggedOut] || ![logoutController wordpressLoggedOut]) {}
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:linksController.view animated:YES];
+            MBProgressHUD *hudComp = [[MBProgressHUD alloc] initWithView:linksController.navigationController.view];
+            hudComp.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
+            hudComp.labelText = @"Successful logout";
+            hudComp.mode = MBProgressHUDModeCustomView;
+            hudComp.delegate = linksController;
+            [hudComp show:YES];
+            [hudComp hide:YES afterDelay:1];
+            [linksController.navigationController.view addSubview:hudComp];
+            [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"loggedIntoSakai"];
+            [sakai reset];
+            [sakaiCal reset];
+            [contacts reset];
+            [linksController.navigationController popToRootViewControllerAnimated:YES];
+            
+        });
+    });
+}
 
 @end

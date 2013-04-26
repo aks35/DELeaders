@@ -10,13 +10,12 @@
 
 @interface SakaiViewControllerHelper : UIViewController
 
-- (NSString *)fillSakaiSubViewForm:(UIWebView *)webView;
+- (NSString *)fillSakaiSubViewForm:(UIWebView *)webView netID:(NSString *)netID password:(NSString *)password;
 - (NSString *)clickLoginLink:(UIWebView *)webView tempWebView:(UIWebView *)tempWebView;
 - (void)printCurrentURL:(UIWebView *)webView;
 - (BOOL)inWorkspace;
+- (bool)isLoggedIn:(UIWebView *)webView;
 
-@property (weak, nonatomic) NSString *netId;
-@property (weak, nonatomic) NSString *password;
 @property (nonatomic) BOOL inWorkspace;
 @property (strong, nonatomic) NSString *const NO_LINK_TAG;
 

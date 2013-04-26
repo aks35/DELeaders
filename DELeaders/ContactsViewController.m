@@ -24,7 +24,7 @@
 MBProgressHUD *hud;
 Utility *util;
 SakaiViewControllerHelper *helperController;
-bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudentsPage, disableBackButton;
+bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudentsPage;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -106,7 +106,7 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
     [util loadWebView:result webView:svWebViewMain];
 }
 
-- (bool)loggedIntoWordpress {
+- (BOOL)loggedIntoWordpress {
     NSString *javascript = @"document.getElementById('wpadminbar')==null;";
     NSString *result = [svWebViewMain stringByEvaluatingJavaScriptFromString:javascript];
     NSLog(@"===== RESULTS: %@",result);
@@ -216,7 +216,6 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
         }
         else if (atStudentDirectory) {
             [MBProgressHUD hideHUDForView:svWebViewLoad animated:YES];
-            [svWebController.navigationItem setHidesBackButton:NO animated:NO];
             [svWebController enableBackButton];
             [svWebController enableTitleControl];
             [svWebController setTitle:[util getTitleForWebView:svWebViewMain]];
@@ -227,7 +226,10 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
             return NO;
         }
         else if (clickedLoginLink && atLoginPage) {
-            [helperController fillSakaiSubViewForm:svWebViewMain];
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            NSString *netID = [defaults objectForKey:@"netId"];
+            NSString *password = [defaults objectForKey:@"password"];
+            [helperController fillSakaiSubViewForm:svWebViewMain netID:netID password:password];
             if ([self loggedIntoWordpress]){
                 loggedIn = YES;
                 NSLog(@"FINISHED LOGGING IN");
@@ -242,7 +244,6 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
         else if (!clickedLoginLink && !atLoginPage) {
             hud = [MBProgressHUD showHUDAddedTo:svWebViewLoad animated:YES];
             hud.labelText = @"Logging into Wordpress";
-            [svWebController.navigationItem setHidesBackButton:YES animated:YES];
             [svWebController disableBackButton];
             NSLog(@"In STUDENTS VIEW");
             clickedLoginLink = YES;
@@ -290,5 +291,15 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
     helperController = [[SakaiViewControllerHelper alloc]init];
 }
 
+- (void)reset {
+    self.svWebController = nil;
+    self.svWebViewLoad = nil;
+    self.svWebViewMain = nil;
+    atLoginPage = NO;
+    clickedLoginLink = NO;
+    loggedIn = NO;
+    atStudentDirectory = NO;
+    visitedStudentsPage = NO;
+}
 
 @end

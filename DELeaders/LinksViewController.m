@@ -132,6 +132,7 @@ Utility *util;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.navigationItem setHidesBackButton:YES animated:NO];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -305,8 +306,12 @@ Utility *util;
 
 - (IBAction)calPressed:(id)sender {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loggedIntoSakai"]) {
-        [util openWebBrowser:[[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey] viewController:self.navigationController];
-        NSLog(@"Calendar URL: %@", [[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey]);
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey]) {
+            [util openWebBrowser:[[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey] viewController:self.navigationController];
+            NSLog(@"Calendar URL: %@", [[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey]);
+        } else {
+            [util openWebBrowserSakaiCal:@"https://sakai.duke.edu/portal/pda" viewController:self.navigationController needToFillOutForm:NO];            
+        }
     } else if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loggedIntoWordPress"]) {
         [util openWebBrowserSakaiCal:@"https://sakai.duke.edu/portal/pda" viewController:self.navigationController needToFillOutForm:NO];
     } else {
@@ -340,5 +345,9 @@ Utility *util;
 
 - (IBAction)acesPressed:(id)sender {
     [util openWebBrowser:@"https://aces.duke.edu/" viewController:self.navigationController];
+}
+
+- (IBAction)logoutPressed:(id)sender {
+    [util logout:self];
 }
 @end
