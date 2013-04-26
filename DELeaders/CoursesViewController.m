@@ -110,10 +110,10 @@ Utility *util;
 - (void)changeToLandscapeLayout {
     if ([util isFourInchScreen]) {
         [topImage setFrame:CGRectMake(0, 0, 568, 30)];
-        [scheduleButton setFrame:CGRectMake(154, 46, 260, 55)];
-        [mpInfoButton setFrame:CGRectMake(154, 106, 260, 55)];
-        [independentStudyButton setFrame:CGRectMake(154, 166, 260, 55)];
-        [professionalDevelopmentButton setFrame:CGRectMake(154, 226, 260, 55)];
+        [scheduleButton setFrame:CGRectMake(154, 40, 260, 50)];
+        [mpInfoButton setFrame:CGRectMake(154, 95, 260, 50)];
+        [independentStudyButton setFrame:CGRectMake(154, 150, 260, 50)];
+        [professionalDevelopmentButton setFrame:CGRectMake(154, 205, 260, 50)];
     } else if ([util isPad]) {
         [topImage setFrame:CGRectMake(0, 0, 1024, 55)];
         [scheduleButton setFrame:CGRectMake(282, 184, 460, 80)];
@@ -122,10 +122,10 @@ Utility *util;
         [professionalDevelopmentButton setFrame:CGRectMake(282, 484, 460, 80)];
     } else {
         [topImage setFrame:CGRectMake(0, 0, 480, 30)];
-        [scheduleButton setFrame:CGRectMake(110, 50, 260, 50)];
-        [mpInfoButton setFrame:CGRectMake(110, 110, 260, 50)];
-        [independentStudyButton setFrame:CGRectMake(110, 170, 260, 50)];
-        [professionalDevelopmentButton setFrame:CGRectMake(110, 230, 260, 50)];
+        [scheduleButton setFrame:CGRectMake(110, 42, 260, 45)];
+        [mpInfoButton setFrame:CGRectMake(110, 97, 260, 45)];
+        [independentStudyButton setFrame:CGRectMake(110, 152, 260, 45)];
+        [professionalDevelopmentButton setFrame:CGRectMake(110, 207, 260, 45)];
     }
     [topImage setImage:[UIImage imageNamed:@"top_small.png"]];
     [bottomImage setHidden:YES];

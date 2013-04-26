@@ -136,12 +136,14 @@ bool credentialsExist;
         if (![validationController doneValidating] && !credentialsExist) {
             [validationController validateNetIdAndPassword:[netIdField text] password:[passwordField text]];
             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            [hud setRemoveFromSuperViewOnHide:YES];
             hud.labelText = @"Validating credentials";
             dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
                 while (![validationController doneValidating]) {}
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [MBProgressHUD hideHUDForView:self.view animated:YES];
                     MBProgressHUD *hudComp = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+                    [hudComp setRemoveFromSuperViewOnHide:YES];
                     [self.navigationController.view addSubview:hudComp];
                     if ([validationController isValid]) {
                         hudComp.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];

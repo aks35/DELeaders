@@ -156,25 +156,26 @@ ContactsViewController *contacts;
     [logoutController initLogout];
     NSLog(@"Logged Out");
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:linksController.view animated:YES];
+    [hud setRemoveFromSuperViewOnHide:YES];
     hud.labelText = @"Logging out";
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         while (![logoutController sakaiLoggedOut] || ![logoutController wordpressLoggedOut]) {}
         dispatch_async(dispatch_get_main_queue(), ^{
             [MBProgressHUD hideHUDForView:linksController.view animated:YES];
             MBProgressHUD *hudComp = [[MBProgressHUD alloc] initWithView:linksController.navigationController.view];
+            [hudComp setRemoveFromSuperViewOnHide:YES];
+            [linksController.navigationController.view addSubview:hudComp];
             hudComp.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
             hudComp.labelText = @"Successful logout";
             hudComp.mode = MBProgressHUDModeCustomView;
             hudComp.delegate = linksController;
             [hudComp show:YES];
             [hudComp hide:YES afterDelay:1];
-            [linksController.navigationController.view addSubview:hudComp];
             [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"loggedIntoSakai"];
             [sakai reset];
             [sakaiCal reset];
             [contacts reset];
             [linksController.navigationController popToRootViewControllerAnimated:YES];
-            
         });
     });
 }

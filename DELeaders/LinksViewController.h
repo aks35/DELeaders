@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *libraryButton;
 @property (weak, nonatomic) IBOutlet UIButton *contactsButton;
 @property (weak, nonatomic) IBOutlet UIButton *acesButton;
+@property (weak, nonatomic) IBOutlet UIButton *leadershipButton;
 
 // Labels
 @property (weak, nonatomic) IBOutlet UILabel *delLabel;
@@ -36,6 +37,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *libraryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contactsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *acesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *leadershipLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *topImage;
 @property (weak, nonatomic) IBOutlet UIImageView *bottomImage;
 

@@ -26,6 +26,7 @@
 @synthesize libraryButton;
 @synthesize contactsButton;
 @synthesize acesButton;
+@synthesize leadershipButton;
 
 @synthesize delLabel;
 @synthesize nsoeLabel;
@@ -38,6 +39,7 @@
 @synthesize libraryLabel;
 @synthesize contactsLabel;
 @synthesize acesLabel;
+@synthesize leadershipLabel;
 @synthesize topImage;
 @synthesize bottomImage;
 @synthesize dayLabel;
@@ -73,6 +75,7 @@ Utility *util;
     [buttonList addObject:libraryButton];
     [buttonList addObject:contactsButton];
     [buttonList addObject:acesButton];
+    [buttonList addObject:leadershipButton];
     
     labelList = [[NSMutableArray alloc]init];
     [labelList addObject:delLabel];
@@ -86,6 +89,7 @@ Utility *util;
     [labelList addObject:libraryLabel];
     [labelList addObject:contactsLabel];
     [labelList addObject:acesLabel];
+    [labelList addObject:leadershipLabel];
     
     util = [[Utility alloc]init];
     [util registerOrientationHandler:self];
@@ -171,6 +175,7 @@ Utility *util;
     [topImage setImage:[UIImage imageNamed:@"top.png"]];
     [bottomImage setHidden:NO];
     if ([util isFourInchScreen]) {
+        NSLog(@"SETTING FOUR INCH SCREEN");
         [topImage setFrame:CGRectMake(0, 0, 320, 80)];
         CGFloat xStart = 49;
         CGFloat yStart = 145;

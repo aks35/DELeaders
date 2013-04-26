@@ -78,9 +78,9 @@ Utility *util;
     } else {
         [topImage setFrame:CGRectMake(0, 0, 320, 80)];
         if ([util isFourInchScreen]) {
-            [facebookButton setFrame:CGRectMake(30, 130, 260, 60)];
-            [twitterButton setFrame:CGRectMake(30, 205, 260, 60)];
-            [linkedInButton setFrame:CGRectMake(30, 280, 260, 60)];
+            [facebookButton setFrame:CGRectMake(30, 142, 260, 60)];
+            [twitterButton setFrame:CGRectMake(30, 222, 260, 60)];
+            [linkedInButton setFrame:CGRectMake(30, 302, 260, 60)];
         } else {
             [facebookButton setFrame:CGRectMake(30, 104, 260, 56)];
             [twitterButton setFrame:CGRectMake(30, 178, 260, 56)];

@@ -127,9 +127,9 @@ bool atLoginPage, clickedLoginLink, loggedIn, atStudentDirectory, visitedStudent
     } else {
         [topImage setFrame:CGRectMake(0, 0, 320, 80)];
         if ([util isFourInchScreen]) {
-            [facultyButton setFrame:CGRectMake(30, 130, 260, 60)];
-            [studentsButton setFrame:CGRectMake(30, 210, 260, 60)];
-            [othersButton setFrame:CGRectMake(30, 290, 260, 60)];
+            [facultyButton setFrame:CGRectMake(30, 142, 260, 60)];
+            [studentsButton setFrame:CGRectMake(30, 222, 260, 60)];
+            [othersButton setFrame:CGRectMake(30, 302, 260, 60)];
         } else {
             [facultyButton setFrame:CGRectMake(30, 104, 260, 60)];
             [studentsButton setFrame:CGRectMake(30, 178, 260, 60)];

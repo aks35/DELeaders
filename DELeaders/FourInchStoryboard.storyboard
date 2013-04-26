@@ -158,8 +158,8 @@
                                 <rect key="frame" x="30" y="114" width="260" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Semester Schedule">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Semester Schedule" backgroundImage="roundedRect@2x.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -173,8 +173,8 @@
                                 <rect key="frame" x="30" y="258" width="260" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Independent Study">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Independent Study" backgroundImage="roundedRect@2x.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -188,8 +188,8 @@
                                 <rect key="frame" x="30" y="330" width="260" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Professional Development">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Professional Development" backgroundImage="roundedRect@2x.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -203,8 +203,8 @@
                                 <rect key="frame" x="30" y="186" width="260" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="MP Information">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="MP Information" backgroundImage="roundedRect@2x.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -244,11 +244,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="30"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WF8-Hn-nft">
-                                <rect key="frame" x="154" y="46" width="260" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WDV-jD-9gN">
+                                <rect key="frame" x="164" y="53" width="260" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Semester Schedule">
+                                <state key="normal" title="First Year">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -256,14 +256,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="schedulePressed:" destination="z5d-bz-c1z" eventType="touchUpInside" id="db6-Fx-Bq3"/>
+                                    <action selector="openFirstYear:" destination="IYy-aJ-U1N" eventType="touchUpInside" id="1VM-nw-faA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="H40-nb-q0D">
-                                <rect key="frame" x="154" y="166" width="260" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bAF-EU-azH">
+                                <rect key="frame" x="164" y="140" width="260" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Independent Study">
+                                <state key="normal" title="Second Year">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -271,37 +271,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="independentStudyPressed:" destination="z5d-bz-c1z" eventType="touchUpInside" id="iSR-g2-4Bw"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ovp-Qe-2Ef">
-                                <rect key="frame" x="154" y="226" width="260" height="55"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Professional Development">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="professionalDevelopmentPressed:" destination="z5d-bz-c1z" eventType="touchUpInside" id="Gxl-73-tO9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Lao-uW-eF8">
-                                <rect key="frame" x="154" y="106" width="260" height="55"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="MP Information">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="mpInfoPressed:" destination="z5d-bz-c1z" eventType="touchUpInside" id="8p6-UN-l3U"/>
+                                    <action selector="openSecondYear:" destination="IYy-aJ-U1N" eventType="touchUpInside" id="d1N-4q-VAZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -326,8 +296,8 @@
                                 <rect key="frame" x="30" y="179" width="260" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="First Year">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="First Year" backgroundImage="roundedRect@2x.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -341,8 +311,8 @@
                                 <rect key="frame" x="30" y="266" width="260" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Second Year">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Second Year" backgroundImage="roundedRect@2x.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -384,7 +354,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Vgy-dF-lGP">
-                                <rect key="frame" x="39" y="205" width="242" height="60"/>
+                                <rect key="frame" x="39" y="222" width="242" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="twitterButton.png">
@@ -399,7 +369,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0Js-rZ-bMC">
-                                <rect key="frame" x="39" y="130" width="242" height="60"/>
+                                <rect key="frame" x="39" y="142" width="242" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="facebookButton.png">
@@ -414,7 +384,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VB1-SI-KdI">
-                                <rect key="frame" x="39" y="280" width="242" height="60"/>
+                                <rect key="frame" x="39" y="302" width="242" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="linkedinButton.png">
@@ -450,7 +420,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sIH-Y7-Aaj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-574" y="1094"/>
+            <point key="canvasLocation" x="-452" y="1112"/>
         </scene>
         <!--Contacts View Controller - Contacts-->
         <scene sceneID="d9a-kc-Wlv">
@@ -461,11 +431,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sid-4k-iXy">
-                                <rect key="frame" x="30" y="130" width="260" height="60"/>
+                                <rect key="frame" x="30" y="142" width="260" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Faculty">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Faculty" backgroundImage="roundedRect@2x.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -476,11 +446,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PF8-UU-JM5">
-                                <rect key="frame" x="30" y="210" width="260" height="60"/>
+                                <rect key="frame" x="30" y="222" width="260" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Students">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Students" backgroundImage="roundedRect@2x.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -491,11 +461,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dsI-U1-mNi">
-                                <rect key="frame" x="30" y="290" width="260" height="60"/>
+                                <rect key="frame" x="30" y="302" width="260" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Others">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Others" backgroundImage="roundedRect@2x.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -849,6 +819,8 @@
                         <outlet property="delLabel" destination="O91-es-5d4" id="4ia-Wc-Xvv"/>
                         <outlet property="imagesButton" destination="L67-Lw-QoU" id="RMy-OC-hbl"/>
                         <outlet property="imagesLabel" destination="wbG-5l-ydu" id="2DJ-DQ-IvQ"/>
+                        <outlet property="leadershipButton" destination="95x-TP-73J" id="xZB-QG-9SP"/>
+                        <outlet property="leadershipLabel" destination="4RX-Ve-DbU" id="KFn-9H-x3H"/>
                         <outlet property="libraryButton" destination="pXg-JM-Ix1" id="CFW-Y5-1zs"/>
                         <outlet property="libraryLabel" destination="D8i-Z2-mJc" id="5rt-r3-DBf"/>
                         <outlet property="nsoeButton" destination="lVN-Au-SF6" id="edZ-SU-2H8"/>
@@ -972,6 +944,7 @@
         <image name="libraryIcon.png" width="120" height="120"/>
         <image name="linkedinButton.png" width="242" height="56"/>
         <image name="nsoeIcon.png" width="120" height="120"/>
+        <image name="roundedRect@2x.png" width="520" height="120"/>
         <image name="sakaiIcon.png" width="120" height="120"/>
         <image name="socialIcon.png" width="120" height="120"/>
         <image name="top.png" width="640" height="125"/>
@@ -1051,6 +1024,8 @@
                 <relationship kind="outlet" name="delLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="imagesButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="imagesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="leadershipButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="leadershipLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="libraryButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="libraryLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="nsoeButton" candidateClass="UIButton"/>
@@ -1103,6 +1078,9 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
         <class className="photoDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/photoDetailViewController.h"/>

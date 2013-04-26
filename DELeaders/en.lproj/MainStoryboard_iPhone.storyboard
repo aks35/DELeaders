@@ -158,8 +158,8 @@
                                 <rect key="frame" x="30" y="153" width="260" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="MP Information">
-                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="MP Information" backgroundImage="roundedRect.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -172,9 +172,8 @@
                                 <rect key="frame" x="30" y="93" width="260" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Semester Schedule">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Semester Schedule" backgroundImage="roundedRect.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -187,9 +186,8 @@
                                 <rect key="frame" x="30" y="213" width="260" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Independent Study">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Independent Study" backgroundImage="roundedRect.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -202,9 +200,8 @@
                                 <rect key="frame" x="30" y="273" width="260" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Professional Development">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Professional Development" backgroundImage="roundedRect.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -221,7 +218,7 @@
                     <connections>
                         <outlet property="bottomImage" destination="A36-Qc-3v8" id="L6C-Nf-chy"/>
                         <outlet property="independentStudyButton" destination="d39-Y1-XA9" id="ovZ-XO-bTh"/>
-                        <outlet property="mpInfoPressed" destination="vgJ-A4-zAf" id="3b7-72-Ohg"/>
+                        <outlet property="mpInfoButton" destination="vgJ-A4-zAf" id="8I8-DS-Mce"/>
                         <outlet property="professionalDevelopmentButton" destination="Jse-xL-H2n" id="9pc-yj-hwq"/>
                         <outlet property="scheduleButton" destination="caJ-Dj-Gj7" id="Lsv-eQ-Km5"/>
                         <outlet property="topImage" destination="1wt-Wr-CrF" id="fSs-M2-gL0"/>
@@ -243,25 +240,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4gf-D6-gqq">
-                                <rect key="frame" x="110" y="110" width="260" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="e6g-W1-lxe">
+                                <rect key="frame" x="110" y="81" width="260" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="MP Information">
-                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="mpInfoPressed:" destination="h6v-Cw-w8o" eventType="touchUpInside" id="4lv-Bb-taS"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="23k-3i-qKw">
-                                <rect key="frame" x="110" y="50" width="260" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Semester Schedule">
+                                <state key="normal" title="First Year">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -269,14 +252,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="schedulePressed:" destination="h6v-Cw-w8o" eventType="touchUpInside" id="QH5-uK-v1D"/>
+                                    <action selector="openFirstYear:" destination="zbx-wu-lo2" eventType="touchUpInside" id="7jS-UY-jFV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RSK-oA-nfE">
-                                <rect key="frame" x="110" y="170" width="260" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ejd-S2-b10">
+                                <rect key="frame" x="110" y="160" width="260" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Independent Study">
+                                <state key="normal" title="Second Year">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -284,22 +267,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="independentStudyPressed:" destination="h6v-Cw-w8o" eventType="touchUpInside" id="jLg-xP-9nT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ace-0L-ZMt">
-                                <rect key="frame" x="110" y="230" width="260" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Professional Development">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="professionalDevelopmentPressed:" destination="h6v-Cw-w8o" eventType="touchUpInside" id="DDs-UT-OGA"/>
+                                    <action selector="openSecondYear:" destination="zbx-wu-lo2" eventType="touchUpInside" id="jGv-SG-rka"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -401,8 +369,8 @@
                                 <rect key="frame" x="30" y="104" width="260" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Faculty">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Faculty" backgroundImage="roundedRect.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -416,8 +384,8 @@
                                 <rect key="frame" x="30" y="178" width="260" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Students">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Students" backgroundImage="roundedRect.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -431,8 +399,8 @@
                                 <rect key="frame" x="30" y="252" width="260" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Others">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Others" backgroundImage="roundedRect.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -782,6 +750,8 @@
                         <outlet property="delLabel" destination="pcG-pR-0ao" id="H0G-hT-UN5"/>
                         <outlet property="imagesButton" destination="wJN-Es-eiX" id="TFP-0f-ZPK"/>
                         <outlet property="imagesLabel" destination="N3j-hK-dap" id="RxQ-xW-9bt"/>
+                        <outlet property="leadershipButton" destination="cW3-0W-BIB" id="rFp-HU-y6M"/>
+                        <outlet property="leadershipLabel" destination="b8C-4E-G8u" id="DoN-Hu-QQW"/>
                         <outlet property="libraryButton" destination="D7Q-0V-boB" id="VpC-5Y-NwA"/>
                         <outlet property="libraryLabel" destination="bEx-Ld-1a9" id="KkK-Xd-MN3"/>
                         <outlet property="nsoeButton" destination="lO4-fM-Fm1" id="Xoi-LG-Ozc"/>
@@ -811,8 +781,9 @@
                                 <rect key="frame" x="30" y="139" width="260" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="First Year">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="First Year" backgroundImage="roundedRect.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -826,8 +797,8 @@
                                 <rect key="frame" x="30" y="218" width="260" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Second Year">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Second Year" backgroundImage="roundedRect.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -966,6 +937,7 @@
         <image name="libraryIcon.png" width="120" height="120"/>
         <image name="linkedinButton.png" width="242" height="56"/>
         <image name="nsoeIcon.png" width="120" height="120"/>
+        <image name="roundedRect.png" width="260" height="60"/>
         <image name="sakaiIcon.png" width="120" height="120"/>
         <image name="socialIcon.png" width="120" height="120"/>
         <image name="top.png" width="640" height="125"/>
@@ -973,6 +945,153 @@
         <image name="twitterButton.png" width="242" height="56"/>
         <image name="wordpressIcon.png" width="120" height="120"/>
     </resources>
+    <classes>
+        <class className="ContactsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="facultyPressed:"/>
+                <relationship kind="action" name="othersPressed:"/>
+                <relationship kind="action" name="studentsPressed:"/>
+                <relationship kind="outlet" name="bottomImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="facultyButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="othersButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="studentsButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="topImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="CoursesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoursesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="independentStudyPressed:"/>
+                <relationship kind="action" name="mpInfoPressed:"/>
+                <relationship kind="action" name="professionalDevelopmentPressed:"/>
+                <relationship kind="action" name="schedulePressed:"/>
+                <relationship kind="outlet" name="bottomImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="independentStudyButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mpInfoButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="professionalDevelopmentButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scheduleButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="topImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="ImageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Upload:"/>
+                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
+            </relationships>
+        </class>
+        <class className="LeadershipViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LeadershipViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="openFirstYear:"/>
+                <relationship kind="action" name="openSecondYear:"/>
+                <relationship kind="outlet" name="bottomImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="firstButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="secondButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="topImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="LinksViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LinksViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="acesPressed:"/>
+                <relationship kind="action" name="calPressed:"/>
+                <relationship kind="action" name="delPressed:"/>
+                <relationship kind="action" name="libraryPressed:"/>
+                <relationship kind="action" name="logoutPressed:"/>
+                <relationship kind="action" name="nsoePressed:"/>
+                <relationship kind="action" name="sakaiPressed:"/>
+                <relationship kind="action" name="wpPressed:"/>
+                <relationship kind="outlet" name="acesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="acesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bottomImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="calButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="calLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="contactsButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="contactsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="coursesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="coursesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dateNumLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dayLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="delButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="delLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imagesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imagesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="leadershipButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="leadershipLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="libraryButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="libraryLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nsoeButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="nsoeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sakaiButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sakaiLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="socialButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="socialLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="topImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wpButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="wpLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SignInViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignInViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="pressClearButton:"/>
+                <relationship kind="action" name="pressEnterButton:"/>
+                <relationship kind="outlet" name="bottomImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="clearButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="enterButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="netIdField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="netIdLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passwordLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="promptLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="topImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="SocialViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="facebookPressed:"/>
+                <relationship kind="action" name="linkedInPressed:"/>
+                <relationship kind="action" name="twitterPressed:"/>
+                <relationship kind="outlet" name="bottomImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="facebookButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="linkedInButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="myWebView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="topImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="twitterButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
+        </class>
+        <class className="photoDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/photoDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="shareImage:"/>
+                <relationship kind="outlet" name="imageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titleBar" candidateClass="UINavigationItem"/>
+            </relationships>
+        </class>
+        <class className="s3ImageCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/s3ImageCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
