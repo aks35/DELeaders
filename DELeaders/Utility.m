@@ -109,6 +109,15 @@ WordpressLoginViewController *wordpress;
     return NO;
 }
 
+- (BOOL)clickedLogout { // ONLY CALL IN SIGNIN VIEW CONTROLLER
+    bool clicked = [[NSUserDefaults standardUserDefaults] boolForKey:@"clickedLogout"];
+    if (clicked) {
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"clickedLogout"];
+        return YES;
+    }
+    return NO;
+}
+
 - (BOOL)nsStringContains:(NSString *)main sub:(NSString *)sub {
     if ([main rangeOfString:sub].location == NSNotFound) {
         return NO;

@@ -352,6 +352,7 @@ Utility *util;
 }
 
 - (IBAction)logoutPressed:(id)sender {
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"clickedLogout"];
     [util logout:self];
 }
 @end

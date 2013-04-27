@@ -22,6 +22,7 @@
 - (BOOL)loggedIntoWordpress;
 - (BOOL)loggedIntoSakai;
 - (BOOL)netIdAndPasswordExist;
+- (BOOL)clickedLogout;
 - (BOOL)nsStringContains:(NSString *)main sub:(NSString *)sub;
 - (BOOL)webViewContainsHtml:(UIWebView *)webView string:(NSString *)string;
 - (NSString *)getTitleForWebView:(UIWebView *)webView;

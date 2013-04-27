@@ -680,7 +680,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="DELinks" id="YwU-Zl-Aa0">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="iJb-eN-dj9"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="iJb-eN-dj9">
+                            <connections>
+                                <action selector="logoutPressed:" destination="2" id="ySH-0a-IBr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="acesButton" destination="ZIq-8U-H3c" id="AxC-05-X7y"/>

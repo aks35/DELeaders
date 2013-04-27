@@ -51,9 +51,9 @@ SakaiValidationViewController *validationController;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     tap.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tap];
-    [self checkForNetIdAndPassword];
     util = [[Utility alloc]init];
     validationController = [[SakaiValidationViewController alloc]init];
+    [self checkForNetIdAndPassword];
     [util registerOrientationHandler:self];
     if (UIDeviceOrientationIsPortrait(self.interfaceOrientation)) {
         [self changeToPortraitLayout];
@@ -85,7 +85,9 @@ SakaiValidationViewController *validationController;
 {
     [super viewWillAppear:animated];
     [self registerForKeyboardNotifications];
-    [self clearNetIdAndPassword];
+    if ([util clickedLogout]) {
+        [self clearNetIdAndPassword];        
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -122,55 +124,75 @@ SakaiValidationViewController *validationController;
 }
 
 - (IBAction)pressEnterButton:(id)sender {
-    if ([[netIdField text] length] == 0) {
-        if ([[passwordField text] length] == 0) {
-            [self alertMessage:@"Invalid" text:@"Please enter netID and password"];
+    if (![util netIdAndPasswordExist]) {
+        if ([[netIdField text] length] == 0) {
+            if ([[passwordField text] length] == 0) {
+                [self alertMessage:@"Invalid" text:@"Please enter netID and password"];
+            } else {
+                [self alertMessage:@"Invalid" text:@"Please enter netID"];
+            }
+        } else if ([[passwordField text] length] == 0) {
+            [self alertMessage:@"Invalid" text:@"Please enter password"];
         } else {
-            [self alertMessage:@"Invalid" text:@"Please enter netID"];
-        }
-    } else if ([[passwordField text] length] == 0) {
-        [self alertMessage:@"Invalid" text:@"Please enter password"];
-    } else {
-        if (![validationController doneValidating] && ![util netIdAndPasswordExist]) {
-            [validationController validateNetIdAndPassword:[netIdField text] password:[passwordField text]];
-            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            [hud setRemoveFromSuperViewOnHide:YES];
-            hud.labelText = @"Validating credentials";
-            dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-                while (![validationController doneValidating]) {}
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [MBProgressHUD hideHUDForView:self.view animated:YES];
-                    MBProgressHUD *hudComp = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-                    [hudComp setRemoveFromSuperViewOnHide:YES];
-                    [self.navigationController.view addSubview:hudComp];
-                    if ([validationController isValid]) {
-                        hudComp.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
-                        hudComp.labelText = @"Validated";
-                        netId = netIdField.text;
-                        password = passwordField.text;
-                        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-                        [defaults setObject:netId forKey:@"netId"];
-                        [defaults setObject:password forKey:@"password"];
-                        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loggedIntoSakai"];
-                        [enterButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-                    } else {
-                        hudComp.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Xmark.png"]];
-                        hudComp.labelText = @"Invalid credentials";
-                        [validationController reset];
-                    }
-                    hudComp.mode = MBProgressHUDModeCustomView;
-                    hudComp.delegate = self;
-                    [hudComp show:YES];
-                    [hudComp hide:YES afterDelay:1];
+            if (![validationController doneValidating]) {
+                [validationController validateNetIdAndPassword:[netIdField text] password:[passwordField text]];
+                MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                [hud setRemoveFromSuperViewOnHide:YES];
+                hud.labelText = @"Validating credentials";
+                dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+                    while (![validationController doneValidating]) {}
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [MBProgressHUD hideHUDForView:self.view animated:YES];
+                        MBProgressHUD *hudComp = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+                        [hudComp setRemoveFromSuperViewOnHide:YES];
+                        [self.navigationController.view addSubview:hudComp];
+                        if ([validationController isValid]) {
+                            hudComp.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
+                            hudComp.labelText = @"Validated";
+                            netId = netIdField.text;
+                            password = passwordField.text;
+                            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                            [defaults setObject:netId forKey:@"netId"];
+                            [defaults setObject:password forKey:@"password"];
+                            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loggedIntoSakai"];
+                            [enterButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+                        } else {
+                            hudComp.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Xmark.png"]];
+                            hudComp.labelText = @"Invalid credentials";
+                            [validationController reset];
+                        }
+                        hudComp.mode = MBProgressHUDModeCustomView;
+                        hudComp.delegate = self;
+                        [hudComp show:YES];
+                        [hudComp hide:YES afterDelay:1];
+                    });
                 });
-            });
-        }
+            }
+        }        
     }
+}
+
+- (void)checkForNetIdAndPassword {
+    if ([util netIdAndPasswordExist]) {
+        [netIdField setText:netId];
+        [passwordField setText:password];
+        [enterButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    }
+}
+
+- (void)clearNetIdAndPassword {
+    NSLog(@"Clearing netId and password");
+    [netIdField setText:@""];
+    [passwordField setText:@""];
+    [validationController reset];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"netId"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"password"];
 }
 
 - (IBAction)pressClearButton:(id)sender {
     [self clearNetIdAndPassword];
 }
+
 
 - (void)registerForKeyboardNotifications {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardWillShowNotification object:nil];
@@ -213,27 +235,6 @@ SakaiValidationViewController *validationController;
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     activeField = nil;
-}
-
-- (void)checkForNetIdAndPassword {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    netId = [defaults objectForKey:@"netId"];
-    password = [defaults objectForKey:@"password"];
-    NSLog(@"NetId: %@", netId);
-    NSLog(@"Password: %@", password);
-    if (netId && password) {
-        [netIdField setText:netId];
-        [passwordField setText:password];
-        [enterButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-    }
-}
-
-- (void)clearNetIdAndPassword {
-    [netIdField setText:@""];
-    [passwordField setText:@""];
-    [validationController reset];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"netId"];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"password"];
 }
 
 - (void)changeToPortraitLayout {
