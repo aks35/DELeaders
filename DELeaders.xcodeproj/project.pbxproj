@@ -42,6 +42,7 @@
 		317D104C16C1ECF2007EBF76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 317D102A16C1ECF2007EBF76 /* Foundation.framework */; };
 		317D105416C1ECF2007EBF76 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 317D105216C1ECF2007EBF76 /* InfoPlist.strings */; };
 		317D105716C1ECF2007EBF76 /* DELeadersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 317D105616C1ECF2007EBF76 /* DELeadersTests.m */; };
+		6D04285B172B7C11002AEB94 /* WordpressLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D04285A172B7C11002AEB94 /* WordpressLoginViewController.m */; };
 		6D0C308C170D4B470059C98A /* FourInchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D0C308B170D4B470059C98A /* FourInchStoryboard.storyboard */; };
 		6D0D03CC171095A700621B04 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0D03CB171095A700621B04 /* SignInViewController.m */; };
 		6D110B74170EA0890098B268 /* del_logo_shaded.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D110B73170EA0890098B268 /* del_logo_shaded.png */; };
@@ -200,6 +201,8 @@
 		317D105316C1ECF2007EBF76 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		317D105516C1ECF2007EBF76 /* DELeadersTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DELeadersTests.h; sourceTree = "<group>"; };
 		317D105616C1ECF2007EBF76 /* DELeadersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DELeadersTests.m; sourceTree = "<group>"; };
+		6D042859172B7C11002AEB94 /* WordpressLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordpressLoginViewController.h; sourceTree = "<group>"; };
+		6D04285A172B7C11002AEB94 /* WordpressLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordpressLoginViewController.m; sourceTree = "<group>"; };
 		6D0C308B170D4B470059C98A /* FourInchStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FourInchStoryboard.storyboard; sourceTree = "<group>"; };
 		6D0D03CA171095A700621B04 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		6D0D03CB171095A700621B04 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
@@ -490,6 +493,8 @@
 		6D9E482F1700CB3C00EE0245 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6DF1D80B172ABE8700F708FA /* LogoutViewController.h */,
+				6DF1D80C172ABE8700F708FA /* LogoutViewController.m */,
 				6DF1D7EF17299A1E00F708FA /* LeadershipViewController.h */,
 				6DF1D7F017299A1E00F708FA /* LeadershipViewController.m */,
 				6D0D03CA171095A700621B04 /* SignInViewController.h */,
@@ -507,8 +512,8 @@
 				314B575816E176230065B50D /* ContactsViewController.h */,
 				314B575916E176230065B50D /* ContactsViewController.m */,
 				6D9E48301700CB7400EE0245 /* sakai */,
-				6DF1D80B172ABE8700F708FA /* LogoutViewController.h */,
-				6DF1D80C172ABE8700F708FA /* LogoutViewController.m */,
+				6D042859172B7C11002AEB94 /* WordpressLoginViewController.h */,
+				6D04285A172B7C11002AEB94 /* WordpressLoginViewController.m */,
 			);
 			name = viewControllers;
 			sourceTree = "<group>";
@@ -772,6 +777,7 @@
 				6DF1D7F117299A1E00F708FA /* LeadershipViewController.m in Sources */,
 				6DF1D7FA1729D0EA00F708FA /* SakaiValidationViewController.m in Sources */,
 				6DF1D80D172ABE8700F708FA /* LogoutViewController.m in Sources */,
+				6D04285B172B7C11002AEB94 /* WordpressLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

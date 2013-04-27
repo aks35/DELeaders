@@ -318,7 +318,7 @@ Utility *util;
     } else if (mySakaiCal && sakaiCalNotLoaded) {
         sakaiCalNotLoaded = [mySakaiCal sakaiWebViewDidFinishLoad:webView];
     } else if (myContacts && contactsNotLoaded) {
-        contactsNotLoaded = [myContacts contactsWebViewDidFinishLoad:webView];
+//        contactsNotLoaded = [myContacts contactsWebViewDidFinishLoad:webView];
     }
     
 }
@@ -456,7 +456,7 @@ Utility *util;
 - (void)registerContactsHandler:(ContactsViewController *)contacts {
     myContacts = contacts;
     contactsNotLoaded = YES;
-    [myContacts registerSVWebController:self];
+//    [myContacts registerSVWebController:self];
 }
 
 - (void)addSakaiSubView:(UIWebView *)webView {

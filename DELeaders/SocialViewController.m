@@ -162,15 +162,15 @@ Utility *util;
 
 
 - (IBAction)facebookPressed:(id)sender {
-    [util openWebBrowser:@"https://www.facebook.com/DukeEnvironmentalLeadership" viewController:self.navigationController];
+    [util openWebBrowser:@"https://www.facebook.com/DukeEnvironmentalLeadership" navController:self.navigationController];
 }
 
 - (IBAction)twitterPressed:(id)sender {
-    [util openWebBrowser:@"https://twitter.com/DEL_Duke" viewController:self.navigationController];
+    [util openWebBrowser:@"https://twitter.com/DEL_Duke" navController:self.navigationController];
 }
 
 - (IBAction)linkedInPressed:(id)sender {
-    [util openWebBrowser:@"http://www.linkedin.com/groups/Duke-Environmental-Leadership-Master-Environmental-1124597?home=&gid=1124597&trk=anet_ug_hm" viewController:self.navigationController];
+    [util openWebBrowser:@"http://www.linkedin.com/groups/Duke-Environmental-Leadership-Master-Environmental-1124597?home=&gid=1124597&trk=anet_ug_hm" navController:self.navigationController];
 }
 
 @end

@@ -34,7 +34,6 @@
 
 Utility *util;
 SakaiValidationViewController *validationController;
-bool credentialsExist;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -56,7 +55,6 @@ bool credentialsExist;
     util = [[Utility alloc]init];
     validationController = [[SakaiValidationViewController alloc]init];
     [util registerOrientationHandler:self];
-    credentialsExist = NO;
     if (UIDeviceOrientationIsPortrait(self.interfaceOrientation)) {
         [self changeToPortraitLayout];
     } else if (UIDeviceOrientationIsLandscape(self.interfaceOrientation)) {
@@ -120,7 +118,7 @@ bool credentialsExist;
     if ([validationController doneValidating]) {
         return [validationController isValid];
     }
-    return credentialsExist;
+    return [util netIdAndPasswordExist];
 }
 
 - (IBAction)pressEnterButton:(id)sender {
@@ -133,7 +131,7 @@ bool credentialsExist;
     } else if ([[passwordField text] length] == 0) {
         [self alertMessage:@"Invalid" text:@"Please enter password"];
     } else {
-        if (![validationController doneValidating] && !credentialsExist) {
+        if (![validationController doneValidating] && ![util netIdAndPasswordExist]) {
             [validationController validateNetIdAndPassword:[netIdField text] password:[passwordField text]];
             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             [hud setRemoveFromSuperViewOnHide:YES];
@@ -226,7 +224,6 @@ bool credentialsExist;
     if (netId && password) {
         [netIdField setText:netId];
         [passwordField setText:password];
-        credentialsExist = YES;
         [enterButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     }
 }
@@ -234,6 +231,7 @@ bool credentialsExist;
 - (void)clearNetIdAndPassword {
     [netIdField setText:@""];
     [passwordField setText:@""];
+    [validationController reset];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"netId"];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"password"];
 }

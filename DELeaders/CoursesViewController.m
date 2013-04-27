@@ -68,19 +68,19 @@ Utility *util;
 }
 
 - (IBAction)schedulePressed:(id)sender {
-    [util openWebBrowser:@"https://sites.nicholas.duke.edu/delmeminfo/sample-page/semester-schedule/" viewController:self.navigationController];
+    [util openWebBrowser:@"https://sites.nicholas.duke.edu/delmeminfo/sample-page/semester-schedule/" navController:self.navigationController];
 }
 
 - (IBAction)mpInfoPressed:(id)sender {
-    [util openWebBrowser:@"http://sites.nicholas.duke.edu/delmeminfo/masters-project/" viewController:self.navigationController];
+    [util openWebBrowser:@"http://sites.nicholas.duke.edu/delmeminfo/masters-project/" navController:self.navigationController];
 }
 
 - (IBAction)independentStudyPressed:(id)sender {
-    [util openWebBrowser:@"http://sites.nicholas.duke.edu/delmeminfo/sample-page/independent-study/" viewController:self.navigationController];
+    [util openWebBrowser:@"http://sites.nicholas.duke.edu/delmeminfo/sample-page/independent-study/" navController:self.navigationController];
 }
 
 - (IBAction)professionalDevelopmentPressed:(id)sender {
-    [util openWebBrowser:@"http://sites.nicholas.duke.edu/delmeminfo/student-resources/professional-development-fund/" viewController:self.navigationController];
+    [util openWebBrowser:@"http://sites.nicholas.duke.edu/delmeminfo/student-resources/professional-development-fund/" navController:self.navigationController];
 }
 
 - (void)changeToPortraitLayout {

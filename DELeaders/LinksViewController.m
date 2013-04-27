@@ -175,7 +175,6 @@ Utility *util;
     [topImage setImage:[UIImage imageNamed:@"top.png"]];
     [bottomImage setHidden:NO];
     if ([util isFourInchScreen]) {
-        NSLog(@"SETTING FOUR INCH SCREEN");
         [topImage setFrame:CGRectMake(0, 0, 320, 80)];
         CGFloat xStart = 49;
         CGFloat yStart = 145;
@@ -312,44 +311,44 @@ Utility *util;
 - (IBAction)calPressed:(id)sender {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loggedIntoSakai"]) {
         if ([[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey]) {
-            [util openWebBrowser:[[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey] viewController:self.navigationController];
+            [util openWebBrowser:[[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey] navController:self.navigationController];
             NSLog(@"Calendar URL: %@", [[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey]);
         } else {
-            [util openWebBrowserSakaiCal:@"https://sakai.duke.edu/portal/pda" viewController:self.navigationController needToFillOutForm:NO];            
+            [util openWebBrowserSakaiCal:self.navigationController needToFillOutForm:NO];            
         }
     } else if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loggedIntoWordPress"]) {
-        [util openWebBrowserSakaiCal:@"https://sakai.duke.edu/portal/pda" viewController:self.navigationController needToFillOutForm:NO];
+        [util openWebBrowserSakaiCal:self.navigationController needToFillOutForm:NO];
     } else {
-        [util openWebBrowserSakaiCal:@"https://sakai.duke.edu/portal/pda" viewController:self.navigationController needToFillOutForm:YES];
+        [util openWebBrowserSakaiCal:self.navigationController needToFillOutForm:YES];
     }
 }
 
 - (IBAction)sakaiPressed:(id)sender {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loggedIntoSakai"]) {
-        [util openWebBrowser:@"https://sakai.duke.edu/portal/pda/?force.login=yes" viewController:self.navigationController];
+        [util openWebBrowser:@"https://sakai.duke.edu/portal/pda/?force.login=yes" navController:self.navigationController];
     } else {
-        [util openWebBrowserSakai:@"https://sakai.duke.edu/portal/pda/?force.login=yes" viewController:self.navigationController];
+        [util openWebBrowserSakai:self.navigationController];
     }
 }
 
 - (IBAction)delPressed:(id)sender {
-    [util openWebBrowser:@"http://www.nicholas.duke.edu/del/" viewController:self.navigationController];
+    [util openWebBrowser:@"http://www.nicholas.duke.edu/del/" navController:self.navigationController];
 }
 
 - (IBAction)nsoePressed:(id)sender {
-    [util openWebBrowser:@"http://www.nicholas.duke.edu/" viewController:self.navigationController];
+    [util openWebBrowser:@"http://www.nicholas.duke.edu/" navController:self.navigationController];
 }
 
 - (IBAction)wpPressed:(id)sender {
-    [util openWebBrowser:@"https://sites.nicholas.duke.edu/delmeminfo/" viewController:self.navigationController];
+    [util openWebBrowser:@"https://sites.nicholas.duke.edu/delmeminfo/" navController:self.navigationController];
 }
 
 - (IBAction)libraryPressed:(id)sender {
-    [util openWebBrowser:@"https://library.duke.edu/" viewController:self.navigationController];
+    [util openWebBrowser:@"https://library.duke.edu/" navController:self.navigationController];
 }
 
 - (IBAction)acesPressed:(id)sender {
-    [util openWebBrowser:@"https://aces.duke.edu/" viewController:self.navigationController];
+    [util openWebBrowser:@"https://aces.duke.edu/" navController:self.navigationController];
 }
 
 - (IBAction)logoutPressed:(id)sender {

@@ -55,11 +55,21 @@ Utility *util;
 }
 
 - (IBAction)openFirstYear:(id)sender {
-    [util openWebBrowser:@"http://sites.nicholas.duke.edu/delmeminfo/leadership/1st-year-leadership-readings-and-schedule/" viewController:self.navigationController];
+    NSString *url = @"http://sites.nicholas.duke.edu/delmeminfo/leadership/1st-year-leadership-readings-and-schedule/";
+    if ([util loggedIntoWordpress]) {
+        [util openWebBrowser:url navController:self.navigationController];
+    } else {
+        [util loginToWordpress:self url:url];
+    }
 }
 
 - (IBAction)openSecondYear:(id)sender {
-    [util openWebBrowser:@"http://sites.nicholas.duke.edu/delmeminfo/leadership/2nd-year-readings/" viewController:self.navigationController];
+    NSString *url = @"http://sites.nicholas.duke.edu/delmeminfo/leadership/2nd-year-readings/";
+    if ([util loggedIntoWordpress]) {
+        [util openWebBrowser:url navController:self.navigationController];
+    } else {
+        [util loginToWordpress:self url:url];
+    }
 }
 
 - (void)changeToPortraitLayout {

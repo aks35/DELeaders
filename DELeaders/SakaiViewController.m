@@ -103,6 +103,7 @@ bool loggedIntoSakai;
     self.svWebViewMain = nil;
     self.svWebViewTemp = nil;
     loggedIntoSakai = NO;
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"loggedIntoSakai"];
 }
 
 - (void)viewDidUnload
