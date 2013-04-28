@@ -59,7 +59,6 @@ UIImage *myImage;
         myImage= [[UIImage alloc] initWithData:gore.body];
         self.imageView.image=myImage;
     }
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,7 +69,7 @@ UIImage *myImage;
 -(void)done:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:^{}];
 }
-
+//called when the "share" button is clicked.  This will utilize Apple's UIActivityViewController interface to automatically determine what apps are installed that can benefit from sharing a photo
 - (IBAction)shareImage:(id)sender {
     NSArray *activityItems;
     

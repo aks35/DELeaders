@@ -284,6 +284,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23218A0B172B76E8002DE8B8 /* AmazonAWSCode */ = {
+			isa = PBXGroup;
+			children = (
+				237EA6A31704A8A100EB1D09 /* RegisterDeviceRequest.m */,
+				237EA6A41704A8A100EB1D09 /* RegisterDeviceRequest.h */,
+				237EA6B11704A8A100EB1D09 /* AmazonTVMClient.m */,
+				237EA6B31704A8A100EB1D09 /* AmazonKeyChainWrapper.m */,
+				237EA6B41704A8A100EB1D09 /* AmazonKeyChainWrapper.h */,
+				237EA6B21704A8A100EB1D09 /* AmazonTVMClient.h */,
+				237EA6A51704A8A100EB1D09 /* JSONUtilities.m */,
+				237EA6A61704A8A100EB1D09 /* JSONUtilities.h */,
+				237EA6A71704A8A100EB1D09 /* GetTokenResponseHandler.m */,
+				237EA6A81704A8A100EB1D09 /* GetTokenResponseHandler.h */,
+				237EA6A91704A8A100EB1D09 /* GetTokenResponse.m */,
+				237EA6AA1704A8A100EB1D09 /* GetTokenResponse.h */,
+				237EA6AB1704A8A100EB1D09 /* GetTokenRequest.m */,
+				237EA6AC1704A8A100EB1D09 /* GetTokenRequest.h */,
+				237EA6AD1704A8A100EB1D09 /* Crypto.m */,
+				237EA6AE1704A8A100EB1D09 /* Crypto.h */,
+				235B505F170255C6002A8B65 /* AmazonClientManager.h */,
+				235B5060170255C6002A8B65 /* AmazonClientManager.m */,
+				237EA69B1704A8A100EB1D09 /* ResponseHandler.m */,
+				237EA69C1704A8A100EB1D09 /* ResponseHandler.h */,
+				237EA69D1704A8A100EB1D09 /* Response.m */,
+				237EA69E1704A8A100EB1D09 /* Response.h */,
+				237EA69F1704A8A100EB1D09 /* RequestDelegate.m */,
+				237EA6A01704A8A100EB1D09 /* RequestDelegate.h */,
+				237EA6A11704A8A100EB1D09 /* Request.m */,
+				237EA6A21704A8A100EB1D09 /* Request.h */,
+			);
+			name = AmazonAWSCode;
+			sourceTree = "<group>";
+		};
 		235B5065170255E4002A8B65 /* TVMClient */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,36 +531,11 @@
 		6D9E48311700CC2200EE0245 /* imageApp */ = {
 			isa = PBXGroup;
 			children = (
-				235B505F170255C6002A8B65 /* AmazonClientManager.h */,
-				235B5060170255C6002A8B65 /* AmazonClientManager.m */,
+				23218A0B172B76E8002DE8B8 /* AmazonAWSCode */,
 				235B5061170255C6002A8B65 /* Constants.h */,
 				235B5062170255C6002A8B65 /* Constants.m */,
-				237EA69B1704A8A100EB1D09 /* ResponseHandler.m */,
-				237EA69C1704A8A100EB1D09 /* ResponseHandler.h */,
-				237EA69D1704A8A100EB1D09 /* Response.m */,
-				237EA69E1704A8A100EB1D09 /* Response.h */,
-				237EA69F1704A8A100EB1D09 /* RequestDelegate.m */,
-				237EA6A01704A8A100EB1D09 /* RequestDelegate.h */,
-				237EA6A11704A8A100EB1D09 /* Request.m */,
-				237EA6A21704A8A100EB1D09 /* Request.h */,
-				237EA6A31704A8A100EB1D09 /* RegisterDeviceRequest.m */,
-				237EA6A41704A8A100EB1D09 /* RegisterDeviceRequest.h */,
-				237EA6A51704A8A100EB1D09 /* JSONUtilities.m */,
-				237EA6A61704A8A100EB1D09 /* JSONUtilities.h */,
-				237EA6A71704A8A100EB1D09 /* GetTokenResponseHandler.m */,
-				237EA6A81704A8A100EB1D09 /* GetTokenResponseHandler.h */,
-				237EA6A91704A8A100EB1D09 /* GetTokenResponse.m */,
-				237EA6AA1704A8A100EB1D09 /* GetTokenResponse.h */,
-				237EA6AB1704A8A100EB1D09 /* GetTokenRequest.m */,
-				237EA6AC1704A8A100EB1D09 /* GetTokenRequest.h */,
-				237EA6AD1704A8A100EB1D09 /* Crypto.m */,
-				237EA6AE1704A8A100EB1D09 /* Crypto.h */,
 				237EA6AF1704A8A100EB1D09 /* Constants.m */,
 				237EA6B01704A8A100EB1D09 /* Constants.h */,
-				237EA6B11704A8A100EB1D09 /* AmazonTVMClient.m */,
-				237EA6B21704A8A100EB1D09 /* AmazonTVMClient.h */,
-				237EA6B31704A8A100EB1D09 /* AmazonKeyChainWrapper.m */,
-				237EA6B41704A8A100EB1D09 /* AmazonKeyChainWrapper.h */,
 				6D92DDCF16FA403B00AE0AD7 /* ImageViewController.h */,
 				6D92DDD016FA403B00AE0AD7 /* ImageViewController.m */,
 				6D92DDD116FA403B00AE0AD7 /* photoDetailViewController.h */,
