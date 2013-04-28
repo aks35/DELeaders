@@ -11,8 +11,12 @@
 @interface CoursesViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *topImage;
 @property (weak, nonatomic) IBOutlet UIImageView *bottomImage;
-@property (weak, nonatomic) IBOutlet UIButton *detailsButton;
 @property (weak, nonatomic) IBOutlet UIButton *scheduleButton;
-- (IBAction)detailsPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *mpInfoButton;
+@property (weak, nonatomic) IBOutlet UIButton *independentStudyButton;
+@property (weak, nonatomic) IBOutlet UIButton *professionalDevelopmentButton;
 - (IBAction)schedulePressed:(id)sender;
+- (IBAction)mpInfoPressed:(id)sender;
+- (IBAction)independentStudyPressed:(id)sender;
+- (IBAction)professionalDevelopmentPressed:(id)sender;
 @end

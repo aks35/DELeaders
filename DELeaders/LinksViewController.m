@@ -26,6 +26,7 @@
 @synthesize libraryButton;
 @synthesize contactsButton;
 @synthesize acesButton;
+@synthesize leadershipButton;
 
 @synthesize delLabel;
 @synthesize nsoeLabel;
@@ -38,6 +39,7 @@
 @synthesize libraryLabel;
 @synthesize contactsLabel;
 @synthesize acesLabel;
+@synthesize leadershipLabel;
 @synthesize topImage;
 @synthesize bottomImage;
 @synthesize dayLabel;
@@ -73,6 +75,7 @@ Utility *util;
     [buttonList addObject:libraryButton];
     [buttonList addObject:contactsButton];
     [buttonList addObject:acesButton];
+    [buttonList addObject:leadershipButton];
     
     labelList = [[NSMutableArray alloc]init];
     [labelList addObject:delLabel];
@@ -86,6 +89,7 @@ Utility *util;
     [labelList addObject:libraryLabel];
     [labelList addObject:contactsLabel];
     [labelList addObject:acesLabel];
+    [labelList addObject:leadershipLabel];
     
     util = [[Utility alloc]init];
     [util registerOrientationHandler:self];
@@ -132,6 +136,7 @@ Utility *util;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.navigationItem setHidesBackButton:YES animated:NO];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -305,40 +310,49 @@ Utility *util;
 
 - (IBAction)calPressed:(id)sender {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loggedIntoSakai"]) {
-        [util openWebBrowser:[[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey] viewController:self.navigationController];
-        NSLog(@"Calendar URL: %@", [[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey]);
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey]) {
+            [util openWebBrowser:[[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey] navController:self.navigationController];
+            NSLog(@"Calendar URL: %@", [[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey]);
+        } else {
+            [util openWebBrowserSakaiCal:self.navigationController needToFillOutForm:NO];            
+        }
     } else if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loggedIntoWordPress"]) {
-        [util openWebBrowserSakaiCal:@"https://sakai.duke.edu/portal/pda" viewController:self.navigationController needToFillOutForm:NO];
+        [util openWebBrowserSakaiCal:self.navigationController needToFillOutForm:NO];
     } else {
-        [util openWebBrowserSakaiCal:@"https://sakai.duke.edu/portal/pda" viewController:self.navigationController needToFillOutForm:YES];
+        [util openWebBrowserSakaiCal:self.navigationController needToFillOutForm:YES];
     }
 }
 
 - (IBAction)sakaiPressed:(id)sender {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loggedIntoSakai"]) {
-        [util openWebBrowser:@"https://sakai.duke.edu/portal/pda/?force.login=yes" viewController:self.navigationController];
+        [util openWebBrowser:@"https://sakai.duke.edu/portal/pda/?force.login=yes" navController:self.navigationController];
     } else {
-        [util openWebBrowserSakai:@"https://sakai.duke.edu/portal/pda/?force.login=yes" viewController:self.navigationController];
+        [util openWebBrowserSakai:self.navigationController];
     }
 }
 
 - (IBAction)delPressed:(id)sender {
-    [util openWebBrowser:@"http://www.nicholas.duke.edu/del/" viewController:self.navigationController];
+    [util openWebBrowser:@"http://www.nicholas.duke.edu/del/" navController:self.navigationController];
 }
 
 - (IBAction)nsoePressed:(id)sender {
-    [util openWebBrowser:@"http://www.nicholas.duke.edu/" viewController:self.navigationController];
+    [util openWebBrowser:@"http://www.nicholas.duke.edu/" navController:self.navigationController];
 }
 
 - (IBAction)wpPressed:(id)sender {
-    [util openWebBrowser:@"https://sites.nicholas.duke.edu/delmeminfo/" viewController:self.navigationController];
+    [util openWebBrowser:@"https://sites.nicholas.duke.edu/delmeminfo/" navController:self.navigationController];
 }
 
 - (IBAction)libraryPressed:(id)sender {
-    [util openWebBrowser:@"https://library.duke.edu/" viewController:self.navigationController];
+    [util openWebBrowser:@"https://library.duke.edu/" navController:self.navigationController];
 }
 
 - (IBAction)acesPressed:(id)sender {
-    [util openWebBrowser:@"https://aces.duke.edu/" viewController:self.navigationController];
+    [util openWebBrowser:@"https://aces.duke.edu/" navController:self.navigationController];
+}
+
+- (IBAction)logoutPressed:(id)sender {
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"clickedLogout"];
+    [util logout:self];
 }
 @end

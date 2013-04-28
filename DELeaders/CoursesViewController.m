@@ -12,7 +12,7 @@
 @implementation CoursesViewController
 
 @synthesize topImage, bottomImage;
-@synthesize detailsButton, scheduleButton;
+@synthesize scheduleButton, mpInfoButton, independentStudyButton, professionalDevelopmentButton;
 
 Utility *util;
 
@@ -52,8 +52,10 @@ Utility *util;
 {
     [self setTopImage:nil];
     [self setBottomImage:nil];
-    [self setDetailsButton:nil];
     [self setScheduleButton:nil];
+    [self setMpInfoButton:nil];
+    [self setIndependentStudyButton:nil];
+    [self setProfessionalDevelopmentButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -65,12 +67,20 @@ Utility *util;
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)detailsPressed:(id)sender {
-    [util openWebBrowser:@"https://sites.nicholas.duke.edu/delmeminfo/sample-page/draft-syllabi/" viewController:self.navigationController];
+- (IBAction)schedulePressed:(id)sender {
+    [util openWebBrowser:@"https://sites.nicholas.duke.edu/delmeminfo/sample-page/semester-schedule/" navController:self.navigationController];
 }
 
-- (IBAction)schedulePressed:(id)sender {
-    [util openWebBrowser:@"https://sites.nicholas.duke.edu/delmeminfo/sample-page/semester-schedule/" viewController:self.navigationController];
+- (IBAction)mpInfoPressed:(id)sender {
+    [util openWebBrowser:@"http://sites.nicholas.duke.edu/delmeminfo/masters-project/" navController:self.navigationController];
+}
+
+- (IBAction)independentStudyPressed:(id)sender {
+    [util openWebBrowser:@"http://sites.nicholas.duke.edu/delmeminfo/sample-page/independent-study/" navController:self.navigationController];
+}
+
+- (IBAction)professionalDevelopmentPressed:(id)sender {
+    [util openWebBrowser:@"http://sites.nicholas.duke.edu/delmeminfo/student-resources/professional-development-fund/" navController:self.navigationController];
 }
 
 - (void)changeToPortraitLayout {
@@ -78,32 +88,44 @@ Utility *util;
     [bottomImage setHidden:NO];
     if ([util isFourInchScreen]) {
         [topImage setFrame:CGRectMake(0, 0, 320, 80)];
-        [detailsButton setFrame:CGRectMake(30, 179, 260, 60)];
-        [scheduleButton setFrame:CGRectMake(30, 266, 260, 60)];
+        [scheduleButton setFrame:CGRectMake(30, 114, 260, 60)];
+        [mpInfoButton setFrame:CGRectMake(30, 186, 260, 60)];
+        [independentStudyButton setFrame:CGRectMake(30, 258, 260, 60)];
+        [professionalDevelopmentButton setFrame:CGRectMake(30, 330, 260, 60)];
     } else if ([util isPad]) {
         [topImage setFrame:CGRectMake(0, 0, 768, 192)];
-        [detailsButton setFrame:CGRectMake(154, 360, 460, 80)];
-        [scheduleButton setFrame:CGRectMake(154, 480, 460, 80)];
+        [scheduleButton setFrame:CGRectMake(154, 290, 460, 80)];
+        [mpInfoButton setFrame:CGRectMake(154, 390, 460, 80)];
+        [independentStudyButton setFrame:CGRectMake(154, 490, 460, 80)];
+        [professionalDevelopmentButton setFrame:CGRectMake(154, 590, 460, 80)];
     } else {
         [topImage setFrame:CGRectMake(0, 0, 320, 80)];
-        [detailsButton setFrame:CGRectMake(30, 139, 260, 60)];
-        [scheduleButton setFrame:CGRectMake(30, 218, 260, 60)];
+        [scheduleButton setFrame:CGRectMake(30, 93, 260, 50)];
+        [mpInfoButton setFrame:CGRectMake(30, 153, 260, 50)];
+        [independentStudyButton setFrame:CGRectMake(30, 213, 260, 50)];
+        [professionalDevelopmentButton setFrame:CGRectMake(30, 273, 260, 50)];
     }
 }
 
 - (void)changeToLandscapeLayout {
     if ([util isFourInchScreen]) {
         [topImage setFrame:CGRectMake(0, 0, 568, 30)];
-        [detailsButton setFrame:CGRectMake(154, 77, 260, 60)];
-        [scheduleButton setFrame:CGRectMake(154, 164, 260, 60)];
+        [scheduleButton setFrame:CGRectMake(154, 40, 260, 50)];
+        [mpInfoButton setFrame:CGRectMake(154, 95, 260, 50)];
+        [independentStudyButton setFrame:CGRectMake(154, 150, 260, 50)];
+        [professionalDevelopmentButton setFrame:CGRectMake(154, 205, 260, 50)];
     } else if ([util isPad]) {
         [topImage setFrame:CGRectMake(0, 0, 1024, 55)];
-        [detailsButton setFrame:CGRectMake(282, 234, 460, 80)];
-        [scheduleButton setFrame:CGRectMake(282, 354, 460, 80)];
+        [scheduleButton setFrame:CGRectMake(282, 184, 460, 80)];
+        [mpInfoButton setFrame:CGRectMake(282, 284, 460, 80)];
+        [independentStudyButton setFrame:CGRectMake(282, 384, 460, 80)];
+        [professionalDevelopmentButton setFrame:CGRectMake(282, 484, 460, 80)];
     } else {
         [topImage setFrame:CGRectMake(0, 0, 480, 30)];
-        [detailsButton setFrame:CGRectMake(110, 81, 260, 60)];
-        [scheduleButton setFrame:CGRectMake(110, 160, 260, 60)];
+        [scheduleButton setFrame:CGRectMake(110, 42, 260, 45)];
+        [mpInfoButton setFrame:CGRectMake(110, 97, 260, 45)];
+        [independentStudyButton setFrame:CGRectMake(110, 152, 260, 45)];
+        [professionalDevelopmentButton setFrame:CGRectMake(110, 207, 260, 45)];
     }
     [topImage setImage:[UIImage imageNamed:@"top_small.png"]];
     [bottomImage setHidden:YES];
@@ -155,5 +177,6 @@ Utility *util;
         };
     }
 }
+
 
 @end

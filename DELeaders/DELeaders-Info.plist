@@ -11,9 +11,9 @@
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>del-icon.png</string>
-		<string>del-icon@2x.png</string>
 		<string>del-icon-72@2x.png</string>
 		<string>del-icon-72.png</string>
+		<string>del-icon@2x.png</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
@@ -22,9 +22,9 @@
 			<key>CFBundleIconFiles</key>
 			<array>
 				<string>del-icon.png</string>
-				<string>del-icon@2x.png</string>
 				<string>del-icon-72@2x.png</string>
 				<string>del-icon-72.png</string>
+				<string>del-icon@2x.png</string>
 			</array>
 		</dict>
 	</dict>

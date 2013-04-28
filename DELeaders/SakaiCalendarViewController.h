@@ -15,20 +15,18 @@
 
 @interface SakaiCalendarViewController : UIViewController <UIWebViewDelegate>
 
-- (void)goToWorkspacePage;
-- (void)goToCalendarPage;
-- (void)goToPageTemplate:(NSString *)index;
-
-- (BOOL)sakaiWebViewDidFinishLoad:(UIWebView *)webView;
-- (void)registerSVWebController:(SVWebViewController *)webController;
-
 @property (strong, nonatomic) SVWebViewController *svWebController;
 @property (strong, nonatomic) UIWebView *svWebViewMain;
 @property (strong, nonatomic) UIWebView *svWebViewLoad;
 @property (strong, nonatomic) UIWebView *svWebViewTemp;
-@property (strong, nonatomic) UIWebView *svWebViewFinal;
 @property (strong, nonatomic) MBProgressHUD *hud;
-
 @property (nonatomic) bool needToFillOutForm;
+
+- (void)goToWorkspacePage;
+- (void)goToCalendarPage;
+- (void)goToPageTemplate:(NSString *)index;
+- (void)registerSVWebController:(SVWebViewController *)webController;
+- (void)reset;
+- (BOOL)sakaiWebViewDidFinishLoad:(UIWebView *)webView;
 
 @end

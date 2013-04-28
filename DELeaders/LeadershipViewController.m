@@ -1,30 +1,27 @@
 //
-//  SocialViewController.m
+//  LeadershipViewController.m
 //  DELeaders
 //
-//  Created by anshim on 3/24/13.
+//  Created by anshim on 4/25/13.
 //
 //
 
-#import "SocialViewController.h"
+#import "LeadershipViewController.h"
 #import "Utility.h"
 
-@interface SocialViewController ()
+@interface LeadershipViewController ()
 
 @end
 
-@implementation SocialViewController
+@implementation LeadershipViewController
 
-@synthesize myWebView;
-@synthesize myURL;
-
-@synthesize facebookButton;
-@synthesize twitterButton;
-@synthesize linkedInButton;
 @synthesize topImage;
 @synthesize bottomImage;
+@synthesize firstButton;
+@synthesize secondButton;
 
 Utility *util;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,16 +36,16 @@ Utility *util;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [myWebView setDelegate:self];
     util = [[Utility alloc]init];
     [util registerOrientationHandler:self];
-    [util loadWebView:myURL webView:myWebView];
-    myWebView.scalesPageToFit = YES;
     if (UIDeviceOrientationIsPortrait(self.interfaceOrientation)) {
         [self changeToPortraitLayout];
     } else if (UIDeviceOrientationIsLandscape(self.interfaceOrientation)) {
         [self changeToLandscapeLayout];
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,14 +54,22 @@ Utility *util;
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidUnload {
-    [self setMyWebView:nil];
-    [self setFacebookButton:nil];
-    [self setTwitterButton:nil];
-    [self setLinkedInButton:nil];
-    [self setTopImage:nil];
-    [self setBottomImage:nil];
-    [super viewDidUnload];
+- (IBAction)openFirstYear:(id)sender {
+    NSString *url = @"http://sites.nicholas.duke.edu/delmeminfo/leadership/1st-year-leadership-readings-and-schedule/";
+    if ([util loggedIntoWordpress]) {
+        [util openWebBrowser:url navController:self.navigationController];
+    } else {
+        [util loginToWordpress:self url:url];
+    }
+}
+
+- (IBAction)openSecondYear:(id)sender {
+    NSString *url = @"http://sites.nicholas.duke.edu/delmeminfo/leadership/2nd-year-readings/";
+    if ([util loggedIntoWordpress]) {
+        [util openWebBrowser:url navController:self.navigationController];
+    } else {
+        [util loginToWordpress:self url:url];
+    }
 }
 
 - (void)changeToPortraitLayout {
@@ -72,45 +77,36 @@ Utility *util;
     [bottomImage setHidden:NO];
     if ([util isPad]) {
         [topImage setFrame:CGRectMake(0, 0, 768, 192)];
-        [facebookButton setFrame:CGRectMake(154, 320, 460, 80)];
-        [twitterButton setFrame:CGRectMake(154, 420, 460, 80)];
-        [linkedInButton setFrame:CGRectMake(154, 520, 460, 80)];
+        [firstButton setFrame:CGRectMake(154, 360, 460, 80)];
+        [secondButton setFrame:CGRectMake(154, 480, 460, 80)];
     } else {
         [topImage setFrame:CGRectMake(0, 0, 320, 80)];
         if ([util isFourInchScreen]) {
-            [facebookButton setFrame:CGRectMake(30, 142, 260, 60)];
-            [twitterButton setFrame:CGRectMake(30, 222, 260, 60)];
-            [linkedInButton setFrame:CGRectMake(30, 302, 260, 60)];
+            [firstButton setFrame:CGRectMake(30, 179, 260, 60)];
+            [secondButton setFrame:CGRectMake(30, 266, 260, 60)];
         } else {
-            [facebookButton setFrame:CGRectMake(30, 104, 260, 56)];
-            [twitterButton setFrame:CGRectMake(30, 178, 260, 56)];
-            [linkedInButton setFrame:CGRectMake(30, 252, 260, 56)];
+            [firstButton setFrame:CGRectMake(30, 139, 260, 60)];
+            [secondButton setFrame:CGRectMake(30, 218, 260, 60)];
         }
     }
-
 }
 
 - (void)changeToLandscapeLayout {
-    if ([util isPad]) {
-        [topImage setFrame:CGRectMake(0, 0, 1024, 55)];
-        [facebookButton setFrame:CGRectMake(282, 190, 460, 80)];
-        [twitterButton setFrame:CGRectMake(282, 290, 460, 80)];
-        [linkedInButton setFrame:CGRectMake(282, 390, 460, 80)];
-    } else if ([util isFourInchScreen]) {
-        [topImage setFrame:CGRectMake(0, 0, 568, 30)];
-        [facebookButton setFrame:CGRectMake(163, 44, 242, 60)];
-        [twitterButton setFrame:CGRectMake(163, 115, 242, 60)];
-        [linkedInButton setFrame:CGRectMake(163, 186, 242, 60)];
-    } else {
-        [topImage setFrame:CGRectMake(0, 0, 480, 30)];
-        [facebookButton setFrame:CGRectMake(119, 46, 242, 56)];
-        [twitterButton setFrame:CGRectMake(119, 120, 242, 56)];
-        [linkedInButton setFrame:CGRectMake(119, 192, 242, 56)];
-    }
     [topImage setImage:[UIImage imageNamed:@"top_small.png"]];
     [bottomImage setHidden:YES];
-    
-
+    if ([util isPad]) {
+        [topImage setFrame:CGRectMake(0, 0, 1024, 55)];
+        [firstButton setFrame:CGRectMake(282, 274, 460, 80)];
+        [secondButton setFrame:CGRectMake(282, 394, 460, 80)];
+    } else if ([util isFourInchScreen]) {
+        [topImage setFrame:CGRectMake(0, 0, 568, 30)];
+        [firstButton setFrame:CGRectMake(154, 77, 260, 60)];
+        [secondButton setFrame:CGRectMake(154, 164, 260, 60)];
+    } else {
+        [topImage setFrame:CGRectMake(0, 0, 480, 30)];
+        [firstButton setFrame:CGRectMake(110, 81, 260, 60)];
+        [secondButton setFrame:CGRectMake(110, 160, 260, 60)];
+    }
 }
 
 - (void)orientationChanged:(NSNotification *)note
@@ -161,16 +157,5 @@ Utility *util;
 }
 
 
-- (IBAction)facebookPressed:(id)sender {
-    [util openWebBrowser:@"https://www.facebook.com/DukeEnvironmentalLeadership" navController:self.navigationController];
-}
-
-- (IBAction)twitterPressed:(id)sender {
-    [util openWebBrowser:@"https://twitter.com/DEL_Duke" navController:self.navigationController];
-}
-
-- (IBAction)linkedInPressed:(id)sender {
-    [util openWebBrowser:@"http://www.linkedin.com/groups/Duke-Environmental-Leadership-Master-Environmental-1124597?home=&gid=1124597&trk=anet_ug_hm" navController:self.navigationController];
-}
 
 @end

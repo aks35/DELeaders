@@ -69,6 +69,7 @@
      */
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"loggedIntoSakai"];
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"loggedIntoWordPress"];
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"clickedLogout"];
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:calendarUrlKey];
 }
 

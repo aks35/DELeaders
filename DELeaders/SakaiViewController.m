@@ -53,25 +53,25 @@ bool loggedIntoSakai;
             return YES;
         } else {
             [MBProgressHUD hideHUDForView:svWebViewLoad animated:YES];
-            [svWebController.navigationItem setHidesBackButton:NO animated:NO];
             [svWebController enableBackButton];
             [svWebController enableTitleControl];
             [svWebViewLoad removeFromSuperview];
             [svWebViewMain removeFromSuperview];
             [svWebViewTemp setHidden:NO];
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loggedIntoSakai"];
-
             return NO;
         }
     } else if ([webView isEqual:svWebViewTemp]) {
-        sakaiUrl = [helperController fillSakaiSubViewForm:webView];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *netID = [defaults objectForKey:@"netId"];
+        NSString *password = [defaults objectForKey:@"password"];
+        sakaiUrl = [helperController fillSakaiSubViewForm:webView netID:netID password:password];
         [svWebController enableTitleControl];
         loggedIntoSakai = YES;
     } else if (!loggedIntoSakai) {
         [svWebViewLoad setHidden:NO];
         _hud = [MBProgressHUD showHUDAddedTo:svWebViewLoad animated:YES];
         [_hud setLabelText:@"Logging into Sakai"];
-        [svWebController.navigationItem setHidesBackButton:YES animated:YES];
         [svWebController disableBackButton];
         NSLog(@"Page not visited");
         NSLog(@"Web view description: %@", webView.description);
@@ -87,7 +87,6 @@ bool loggedIntoSakai;
 }
 
 - (BOOL)sakaiWebViewDidFinishLoad:(UIWebView *)webView {
-    NSLog(@"IN SAKAI WEB VIEW DID FINISH LOAD");
     if ([util userLoggedIn]) {
         return [self autoLoginToSakai:webView];
     } else {
@@ -96,6 +95,15 @@ bool loggedIntoSakai;
         [svWebViewMain setHidden:NO];
         return NO;
     }
+}
+
+- (void)reset {
+    self.svWebController = nil;
+    self.svWebViewLoad = nil;
+    self.svWebViewMain = nil;
+    self.svWebViewTemp = nil;
+    loggedIntoSakai = NO;
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"loggedIntoSakai"];
 }
 
 - (void)viewDidUnload

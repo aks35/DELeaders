@@ -10,6 +10,7 @@
 #import "SakaiCalendarViewController.h"
 #import "SakaiViewController.h"
 #import "ContactsViewController.h"
+#import "Utility.h"
 
 @interface SVWebViewController () <UIWebViewDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate>
 
@@ -52,6 +53,7 @@
 @synthesize mySakai, mySakaiCal, myContacts, backButtonDisabled, disabledTitleControl;
 
 BOOL sakaiNotLoaded, sakaiCalNotLoaded, contactsNotLoaded;
+Utility *util;
 
 #pragma mark - setters and getters
 
@@ -162,6 +164,7 @@ BOOL sakaiNotLoaded, sakaiCalNotLoaded, contactsNotLoaded;
 - (void)viewDidLoad {
 	[super viewDidLoad];
     [self updateToolbarItems];
+    util = [[Utility alloc]init];
 }
 
 - (void)viewDidUnload {
@@ -310,13 +313,12 @@ BOOL sakaiNotLoaded, sakaiCalNotLoaded, contactsNotLoaded;
         self.navigationItem.title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
     }
     [self updateToolbarItems];
-    
     if (mySakai && sakaiNotLoaded) {
         sakaiNotLoaded = [mySakai sakaiWebViewDidFinishLoad:webView];
     } else if (mySakaiCal && sakaiCalNotLoaded) {
         sakaiCalNotLoaded = [mySakaiCal sakaiWebViewDidFinishLoad:webView];
     } else if (myContacts && contactsNotLoaded) {
-        contactsNotLoaded = [myContacts contactsWebViewDidFinishLoad:webView];
+//        contactsNotLoaded = [myContacts contactsWebViewDidFinishLoad:webView];
     }
     
 }
@@ -454,7 +456,7 @@ BOOL sakaiNotLoaded, sakaiCalNotLoaded, contactsNotLoaded;
 - (void)registerContactsHandler:(ContactsViewController *)contacts {
     myContacts = contacts;
     contactsNotLoaded = YES;
-    [myContacts registerSVWebController:self];
+//    [myContacts registerSVWebController:self];
 }
 
 - (void)addSakaiSubView:(UIWebView *)webView {
