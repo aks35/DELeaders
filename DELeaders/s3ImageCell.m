@@ -26,11 +26,10 @@
     self = [super initWithFrame:frame];
     if (self) {
 
-        
+        //initiate and create the imageView
         self.imageView = [[UIImageView alloc] initWithFrame:self.contentView.bounds];
         self.imageView.contentMode = UIViewContentModeScaleAspectFill;
         self.imageView.clipsToBounds = YES;
-        
         [self.contentView addSubview:self.imageView];
     }
     

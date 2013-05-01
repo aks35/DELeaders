@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		235B5063170255C6002A8B65 /* AmazonClientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B5060170255C6002A8B65 /* AmazonClientManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		235B5064170255C6002A8B65 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B5062170255C6002A8B65 /* Constants.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		235B507E170255FE002A8B65 /* AmazonTVMClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B5067170255FE002A8B65 /* AmazonTVMClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		235B507F170255FE002A8B65 /* AmazonKeyChainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B5069170255FE002A8B65 /* AmazonKeyChainWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		235B5080170255FE002A8B65 /* Crypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B506B170255FE002A8B65 /* Crypto.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -115,8 +114,6 @@
 /* Begin PBXFileReference section */
 		235B505F170255C6002A8B65 /* AmazonClientManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmazonClientManager.h; sourceTree = "<group>"; };
 		235B5060170255C6002A8B65 /* AmazonClientManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmazonClientManager.m; sourceTree = "<group>"; };
-		235B5061170255C6002A8B65 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		235B5062170255C6002A8B65 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		235B5066170255FE002A8B65 /* AmazonTVMClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmazonTVMClient.h; sourceTree = "<group>"; };
 		235B5067170255FE002A8B65 /* AmazonTVMClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmazonTVMClient.m; sourceTree = "<group>"; };
 		235B5068170255FE002A8B65 /* AmazonKeyChainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmazonKeyChainWrapper.h; sourceTree = "<group>"; };
@@ -570,8 +567,6 @@
 			isa = PBXGroup;
 			children = (
 				23218A0B172B76E8002DE8B8 /* AmazonAWSCode */,
-				235B5061170255C6002A8B65 /* Constants.h */,
-				235B5062170255C6002A8B65 /* Constants.m */,
 				237EA6AF1704A8A100EB1D09 /* Constants.m */,
 				237EA6B01704A8A100EB1D09 /* Constants.h */,
 				6D92DDCF16FA403B00AE0AD7 /* ImageViewController.h */,
@@ -767,7 +762,6 @@
 				6DCDFE2D16FF991E004008E2 /* GeneralWebViewController.m in Sources */,
 				6DF21AB816FFBA6D00C7A316 /* SocialViewController.m in Sources */,
 				235B5063170255C6002A8B65 /* AmazonClientManager.m in Sources */,
-				235B5064170255C6002A8B65 /* Constants.m in Sources */,
 				235B507F170255FE002A8B65 /* AmazonKeyChainWrapper.m in Sources */,
 				235B5080170255FE002A8B65 /* Crypto.m in Sources */,
 				235B5081170255FE002A8B65 /* GetTokenRequest.m in Sources */,

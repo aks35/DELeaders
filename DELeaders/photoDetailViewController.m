@@ -30,6 +30,8 @@ UIImage *myImage;
     return self;
 }
 
+
+//Called upon the page loading
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -72,9 +74,9 @@ UIImage *myImage;
 //called when the "share" button is clicked.  This will utilize Apple's UIActivityViewController interface to automatically determine what apps are installed that can benefit from sharing a photo
 - (IBAction)shareImage:(id)sender {
     NSArray *activityItems;
-    
     activityItems = @[myImage];
     
+    //invoke apple's UIActivityViewController which figures out what type of item it is being given, and automatically generates other iOS applications to share with, in this case, sharing images with mail, camera roll, messenger, etc.
     UIActivityViewController *activityController =
     [[UIActivityViewController alloc]
      initWithActivityItems:activityItems
