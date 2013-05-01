@@ -68,9 +68,7 @@ UIImage *myImage;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)done:(id)sender {
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:^{}];
-}
+
 //called when the "share" button is clicked.  This will utilize Apple's UIActivityViewController interface to automatically determine what apps are installed that can benefit from sharing a photo
 - (IBAction)shareImage:(id)sender {
     NSArray *activityItems;
