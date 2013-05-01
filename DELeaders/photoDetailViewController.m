@@ -1,10 +1,12 @@
-//
-//  photoDetailViewController.m
-//  S3Uploader
-//
-//  Created by Matthew on 3/16/13.
-//  Copyright (c) 2013 dukecs. All rights reserved.
-//
+
+
+/**
+ 
+ PhotoDetailViewController - This controller controls the photo detail view within the Image mini-application.  One gets to this view by clicking into the image app, then clicking on one of the photos within the main gallery view.
+ 
+ Created by Matthew on 3/16/13.
+ Copyright (c) 2013 dukecs. All rights reserved.
+ */
 
 #import "photoDetailViewController.h"
 #import <AWSiOSSDK/S3/AmazonS3Client.h>

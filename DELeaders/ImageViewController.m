@@ -1,3 +1,8 @@
+/*
+ Main page for the ImageApp.  It gets loaded up upon clicking on the Images icon from the main links page.  All the code necessary to run the main gallery view, all the links to other parts of the app, and the interfacing code between the S3 server and the app are located here.
+ */
+
+
 //
 //  _LR4NFPD9GViewController.m
 //  S3Uploader
