@@ -115,6 +115,7 @@ Utility *util;
 
 - (void)orientationChanged:(NSNotification *)note
 {
+    // Orientation event handler
     UIDevice * device = note.object;
     [self.view setNeedsDisplay];
     if ([util isPad]) {
@@ -160,7 +161,7 @@ Utility *util;
     }
 }
 
-
+// Button actions
 - (IBAction)facebookPressed:(id)sender {
     [util openWebBrowser:@"https://www.facebook.com/DukeEnvironmentalLeadership" navController:self.navigationController];
 }

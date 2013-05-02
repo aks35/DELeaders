@@ -56,6 +56,7 @@ bool atLoginPage, clickedLoginLink, atRedirect, loggedIn;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
+    // Handle site navigation for auto-login
     if (loggedIn) {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loggedIntoWordPress"];
         isNotLoggedIn = NO;

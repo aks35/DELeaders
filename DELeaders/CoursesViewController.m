@@ -67,6 +67,8 @@ Utility *util;
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+
+// Button actions
 - (IBAction)schedulePressed:(id)sender {
     [util openWebBrowser:@"https://sites.nicholas.duke.edu/delmeminfo/sample-page/semester-schedule/" navController:self.navigationController];
 }
@@ -133,6 +135,7 @@ Utility *util;
 
 - (void)orientationChanged:(NSNotification *)note
 {
+    // Orientation event handler
     UIDevice * device = note.object;
     [self.view setNeedsDisplay];
     if ([util isPad]) {

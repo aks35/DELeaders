@@ -41,6 +41,7 @@ bool loggingOutSakai, inWordpress, loggingOutWordpress;
 }
 
 - (NSString *)getWordpressLogoutLink:(UIWebView *)webView {
+    // Find logout link for Wordpress through Javascript
     NSString *javascript = @"var l = document.getElementById('wp-admin-bar-logout');var a = l.getElementsByTagName('a')[0];var link = a.href;link;";
     NSString *result = [webView stringByEvaluatingJavaScriptFromString:javascript];
     NSLog(@"Current URI: %@", result);
@@ -48,6 +49,7 @@ bool loggingOutSakai, inWordpress, loggingOutWordpress;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
+    // Handle web navigation for logging out
     NSLog(@"Web view did finish load");
     if (loggingOutWordpress) {
         NSLog(@"Logging out wordpress");

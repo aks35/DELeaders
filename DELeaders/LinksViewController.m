@@ -63,6 +63,7 @@ Utility *util;
 	// Do any additional setup after loading the view, typically from a nib.    
     [self updateDateLabels];
     
+    // Add buttons and labels to lists for easier access
     buttonList = [[NSMutableArray alloc]init];
     [buttonList addObject:delButton];
     [buttonList addObject:nsoeButton];
@@ -154,6 +155,7 @@ Utility *util;
 }
 
 - (void)updateDateLabels {
+    // Time label updates for calendar
     NSDate *now = [NSDate date];
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
     [formatter setDateFormat:@"EEEE"];
@@ -263,6 +265,7 @@ Utility *util;
 
 - (void)orientationChanged:(NSNotification *)note
 {
+    // Orientation even handler
     UIDevice * device = note.object;
     [self.view setNeedsDisplay];
     if ([util isPad]) {
@@ -308,6 +311,7 @@ Utility *util;
     }
 }
 
+// Button actions
 - (IBAction)calPressed:(id)sender {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loggedIntoSakai"]) {
         if ([[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey]) {

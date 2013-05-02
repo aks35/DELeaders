@@ -45,7 +45,9 @@ Utility *util;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    // Initialize Utility
     util = [[Utility alloc]init];
+    // Register for orientation handler
     [util registerOrientationHandler:self];
     if (UIDeviceOrientationIsPortrait(self.interfaceOrientation)) {
         [self changeToPortraitLayout];
@@ -121,6 +123,7 @@ Utility *util;
 
 - (void)orientationChanged:(NSNotification *)note
 {
+    // Orientation handler method
     UIDevice * device = note.object;
     [self.view setNeedsDisplay];
     if ([util isPad]) {

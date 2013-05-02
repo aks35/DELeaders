@@ -120,6 +120,7 @@ bool loggedIntoSakai;
 }
 
 - (void)registerSVWebController:(SVWebViewController *)webController {
+    // Register SV web controller, needs to communicate across UIWebViews
     svWebController = webController;
     [svWebController setTitle:@"Sakai"];
     [svWebController disableTitleControl];

@@ -136,9 +136,11 @@ SakaiValidationViewController *validationController;
         } else {
             if (![validationController doneValidating]) {
                 [validationController validateNetIdAndPassword:[netIdField text] password:[passwordField text]];
+                // Create loading view modal
                 MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                 [hud setRemoveFromSuperViewOnHide:YES];
                 hud.labelText = @"Validating credentials";
+                // Launch another thread for main thread to run in background
                 dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
                     while (![validationController doneValidating]) {}
                     dispatch_async(dispatch_get_main_queue(), ^{

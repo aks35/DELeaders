@@ -44,6 +44,7 @@ NSString *sakaiUrl, *currentNetID, *currentPassword;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
+    // Navigate Sakai to validate whether or not login was successful
     if ([self formFilledOut]) {
         if ([util nsStringContains:[util getCurrentURL:tempWebView]  sub:@"Redirect"]) {
             NSLog(@"CHECKPOINT 2");
@@ -73,7 +74,6 @@ NSString *sakaiUrl, *currentNetID, *currentPassword;
     helperController = [[SakaiViewControllerHelper alloc]init];
     mainWebView = [self allocWebViewAndSetDelegate];
     tempWebView = [self allocWebViewAndSetDelegate];
-//    [self.view bringSubviewToFront:mainWebView];
     [util loadWebView:@"https://sakai.duke.edu/portal/pda/?force.login=yes" webView:mainWebView];
 }
 
@@ -85,6 +85,7 @@ NSString *sakaiUrl, *currentNetID, *currentPassword;
 }
 
 - (void)reset {
+    // Reset state
     self.doneValidating = NO;
     self.isValid = NO;
     self.formFilledOut = NO;

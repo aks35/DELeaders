@@ -55,6 +55,7 @@ NSString *const NO_LINK_TAG = @"THERE WAS NO LINK RETURNED";
 }
 
 - (NSString *)clickLoginLink:(UIWebView *)webView tempWebView:(UIWebView *)tempWebView {
+    // Click the login link else return that the link is not there
     NSString *linkExists = [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.getElementById('loginLink1')==null"]]; 
     if ([linkExists isEqualToString:@"false"]) {
         NSString *href = [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.getElementById('loginLink1').href;"]];

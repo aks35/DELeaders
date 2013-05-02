@@ -52,6 +52,7 @@ bool loggedInApriori = YES;
 }
 
 - (void)goToPageTemplate:(NSString *)index {
+    // Template method to click links
     NSString *javascript = @"var str;var links = document.getElementsByTagName('a');for(var i=0; i<links.length; ++i){if(links[i].innerHTML.indexOf('%@')!==-1){str=links[i].href;break;}}str;";
     javascript = [NSString stringWithFormat:javascript, index];
     NSString *result = [svWebViewMain stringByEvaluatingJavaScriptFromString:javascript];
@@ -187,6 +188,7 @@ bool loggedInApriori = YES;
 }
 
 - (BOOL)sakaiWebViewDidFinishLoad:(UIWebView *)webView {
+    // Auto login logic
     if ([util userLoggedIn]) {
         return [self autoLoginToSakai:webView];
     } else {
@@ -198,6 +200,7 @@ bool loggedInApriori = YES;
 }
 
 - (void)registerSVWebController:(SVWebViewController *)webController {
+    // Register SV controller for necessary communication
     svWebController = webController;
     [svWebController setTitle:@"Calendar"];
     [svWebController disableTitleControl];

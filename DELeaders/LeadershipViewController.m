@@ -54,6 +54,7 @@ Utility *util;
     // Dispose of any resources that can be recreated.
 }
 
+// Button actions
 - (IBAction)openFirstYear:(id)sender {
     NSString *url = @"http://sites.nicholas.duke.edu/delmeminfo/leadership/1st-year-leadership-readings-and-schedule/";
     if ([util loggedIntoWordpress]) {
@@ -111,6 +112,7 @@ Utility *util;
 
 - (void)orientationChanged:(NSNotification *)note
 {
+    // Orientation event handler
     UIDevice * device = note.object;
     [self.view setNeedsDisplay];
     if ([util isPad]) {
