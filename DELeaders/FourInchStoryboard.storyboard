@@ -232,6 +232,35 @@
             </objects>
             <point key="canvasLocation" x="-70" y="-212"/>
         </scene>
+        <!--View Controller - About-->
+        <scene sceneID="u7M-Pv-m5k">
+            <objects>
+                <viewController id="db6-8I-Dcc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vmk-jB-Bex">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="top.png" id="k6X-kF-lrH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="del_logo_shaded.png" id="tBm-7i-wD3">
+                                <rect key="frame" x="0.0" y="424" width="320" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="about.png" id="kb7-ep-BZs">
+                                <rect key="frame" x="0.0" y="88" width="320" height="328"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="About" id="RGA-IN-uRt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pI6-UM-6gS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="263" y="87"/>
+        </scene>
         <!--Leadership View Controller - Leadership-->
         <scene sceneID="RdV-UQ-xuF">
             <objects>
@@ -750,6 +779,11 @@
                                 <action selector="logoutPressed:" destination="Wue-Dx-6EF" id="4Eo-O9-LIQ"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="About" id="RlE-ib-sV5">
+                            <connections>
+                                <segue destination="db6-8I-Dcc" kind="push" id="Lgb-j1-5zh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="acesButton" destination="igJ-vh-sUN" id="WN1-5s-OhS"/>
@@ -880,6 +914,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="about.png" width="640" height="472"/>
         <image name="acesIcon.png" width="120" height="120"/>
         <image name="calendarIcon.png" width="120" height="120"/>
         <image name="contactsIcon.png" width="120" height="120"/>
@@ -899,150 +934,6 @@
         <image name="twitterButton.png" width="242" height="56"/>
         <image name="wordpressIcon.png" width="120" height="120"/>
     </resources>
-    <classes>
-        <class className="ContactsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="facultyPressed:"/>
-                <relationship kind="action" name="othersPressed:"/>
-                <relationship kind="action" name="studentsPressed:"/>
-                <relationship kind="outlet" name="bottomImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="facultyButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="othersButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="studentsButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="topImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="CoursesViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoursesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="independentStudyPressed:"/>
-                <relationship kind="action" name="mpInfoPressed:"/>
-                <relationship kind="action" name="professionalDevelopmentPressed:"/>
-                <relationship kind="action" name="schedulePressed:"/>
-                <relationship kind="outlet" name="bottomImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="independentStudyButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="mpInfoButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="professionalDevelopmentButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="scheduleButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="topImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="ImageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="Upload:"/>
-                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
-            </relationships>
-        </class>
-        <class className="LeadershipViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LeadershipViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="openFirstYear:"/>
-                <relationship kind="action" name="openSecondYear:"/>
-                <relationship kind="outlet" name="bottomImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="firstButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="secondButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="topImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="LinksViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LinksViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="acesPressed:"/>
-                <relationship kind="action" name="calPressed:"/>
-                <relationship kind="action" name="delPressed:"/>
-                <relationship kind="action" name="libraryPressed:"/>
-                <relationship kind="action" name="logoutPressed:"/>
-                <relationship kind="action" name="nsoePressed:"/>
-                <relationship kind="action" name="sakaiPressed:"/>
-                <relationship kind="action" name="wpPressed:"/>
-                <relationship kind="outlet" name="acesButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="acesLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="bottomImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="calButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="calLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="contactsButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="contactsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="coursesButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="coursesLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="dateNumLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="dayLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="delButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="delLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="imagesButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="imagesLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="leadershipButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="leadershipLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="libraryButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="libraryLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nsoeButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="nsoeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sakaiButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sakaiLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="socialButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="socialLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="topImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="wpButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="wpLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SignInViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignInViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="pressClearButton:"/>
-                <relationship kind="action" name="pressEnterButton:"/>
-                <relationship kind="outlet" name="bottomImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="clearButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="enterButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="netIdField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="netIdLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passwordLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="promptLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="topImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="SocialViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="facebookPressed:"/>
-                <relationship kind="action" name="linkedInPressed:"/>
-                <relationship kind="action" name="twitterPressed:"/>
-                <relationship kind="outlet" name="bottomImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="facebookButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="linkedInButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="myWebView" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="topImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="twitterButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="photoDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/photoDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="shareImage:"/>
-                <relationship kind="outlet" name="imageLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="titleBar" candidateClass="UINavigationItem"/>
-            </relationships>
-        </class>
-        <class className="s3ImageCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/s3ImageCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

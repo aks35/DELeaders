@@ -57,6 +57,7 @@
 		6D316F3F1717740200FA5D61 /* forwardButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D316F3E1717740200FA5D61 /* forwardButton.png */; };
 		6D316F431717840400FA5D61 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D316F421717840400FA5D61 /* MessageUI.framework */; };
 		6D316F451717840A00FA5D61 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D316F441717840A00FA5D61 /* Security.framework */; };
+		6D5C1AD71731FD76005D4B04 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D5C1AD61731FD76005D4B04 /* about.png */; };
 		6D6115D416F0326200CAE42E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6115D316F0326200CAE42E /* Default-568h@2x.png */; };
 		6D66536D172B1BA5001B1FB2 /* roundedRect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D66536C172B1BA5001B1FB2 /* roundedRect@2x.png */; };
 		6D66536F172B1CD4001B1FB2 /* roundedRect.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D66536E172B1CD4001B1FB2 /* roundedRect.png */; };
@@ -226,6 +227,7 @@
 		6D316F3E1717740200FA5D61 /* forwardButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forwardButton.png; sourceTree = "<group>"; };
 		6D316F421717840400FA5D61 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		6D316F441717840A00FA5D61 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		6D5C1AD61731FD76005D4B04 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
 		6D5EF0ED170B5FDA008758FA /* top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top.png; sourceTree = "<group>"; };
 		6D6115D316F0326200CAE42E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6D66536C172B1BA5001B1FB2 /* roundedRect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "roundedRect@2x.png"; sourceTree = "<group>"; };
@@ -404,6 +406,7 @@
 				6DE6EF621711F3E40002D4F1 /* del_small.png */,
 				6DE6EF601711D9CB0002D4F1 /* top_small.png */,
 				6D66536E172B1CD4001B1FB2 /* roundedRect.png */,
+				6D5C1AD61731FD76005D4B04 /* about.png */,
 				6DF1D7ED1729995700F708FA /* leadership.png */,
 				6D110B6D170E203C0098B268 /* del_logo.png */,
 				6D66536C172B1BA5001B1FB2 /* roundedRect@2x.png */,
@@ -493,27 +496,27 @@
 		6D9E482F1700CB3C00EE0245 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				6DF1D80B172ABE8700F708FA /* LogoutViewController.h */,
-				6DF1D80C172ABE8700F708FA /* LogoutViewController.m */,
-				6DF1D7EF17299A1E00F708FA /* LeadershipViewController.h */,
-				6DF1D7F017299A1E00F708FA /* LeadershipViewController.m */,
-				6D0D03CA171095A700621B04 /* SignInViewController.h */,
-				6D0D03CB171095A700621B04 /* SignInViewController.m */,
-				6DCDFE2B16FF991E004008E2 /* GeneralWebViewController.h */,
-				6DCDFE2C16FF991E004008E2 /* GeneralWebViewController.m */,
-				6DF21AB616FFBA6D00C7A316 /* SocialViewController.h */,
-				6DF21AB716FFBA6D00C7A316 /* SocialViewController.m */,
+				314B575816E176230065B50D /* ContactsViewController.h */,
+				314B575916E176230065B50D /* ContactsViewController.m */,
 				310E538716E66734001395E5 /* CoursesViewController.h */,
 				310E538816E66734001395E5 /* CoursesViewController.m */,
+				6DCDFE2B16FF991E004008E2 /* GeneralWebViewController.h */,
+				6DCDFE2C16FF991E004008E2 /* GeneralWebViewController.m */,
+				6DF1D7EF17299A1E00F708FA /* LeadershipViewController.h */,
+				6DF1D7F017299A1E00F708FA /* LeadershipViewController.m */,
 				317D104016C1ECF2007EBF76 /* LinksViewController.h */,
 				317D104116C1ECF2007EBF76 /* LinksViewController.m */,
 				314B574916DFC7E20065B50D /* LoadingAnimViewController.h */,
 				314B574A16DFC7E20065B50D /* LoadingAnimViewController.m */,
-				314B575816E176230065B50D /* ContactsViewController.h */,
-				314B575916E176230065B50D /* ContactsViewController.m */,
-				6D9E48301700CB7400EE0245 /* sakai */,
+				6DF1D80B172ABE8700F708FA /* LogoutViewController.h */,
+				6DF1D80C172ABE8700F708FA /* LogoutViewController.m */,
+				6D0D03CA171095A700621B04 /* SignInViewController.h */,
+				6D0D03CB171095A700621B04 /* SignInViewController.m */,
+				6DF21AB616FFBA6D00C7A316 /* SocialViewController.h */,
+				6DF21AB716FFBA6D00C7A316 /* SocialViewController.m */,
 				6D042859172B7C11002AEB94 /* WordpressLoginViewController.h */,
 				6D04285A172B7C11002AEB94 /* WordpressLoginViewController.m */,
+				6D9E48301700CB7400EE0245 /* sakai */,
 			);
 			name = viewControllers;
 			sourceTree = "<group>";
@@ -707,6 +710,7 @@
 				6D66536D172B1BA5001B1FB2 /* roundedRect@2x.png in Resources */,
 				6D66536F172B1CD4001B1FB2 /* roundedRect.png in Resources */,
 				6D665371172B1D3C001B1FB2 /* roundedRect-ipad.png in Resources */,
+				6D5C1AD71731FD76005D4B04 /* about.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -909,7 +913,7 @@
 		317D105B16C1ECF2007EBF76 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Shim (6PQN59ARVY)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Andrew Shim (TUYN8E2Y7H)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Shim (6PQN59ARVY)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -920,7 +924,7 @@
 				GCC_PREFIX_HEADER = "DELeaders/DELeaders-Prefix.pch";
 				INFOPLIST_FILE = "DELeaders/DELeaders-Info.plist";
 				PRODUCT_NAME = DELinks;
-				PROVISIONING_PROFILE = "D12B856D-BABA-44CA-B82A-D854A91B332E";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D12B856D-BABA-44CA-B82A-D854A91B332E";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -930,7 +934,7 @@
 		317D105C16C1ECF2007EBF76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Shim (6PQN59ARVY)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Andrew Shim (TUYN8E2Y7H)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Shim (6PQN59ARVY)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -941,7 +945,7 @@
 				GCC_PREFIX_HEADER = "DELeaders/DELeaders-Prefix.pch";
 				INFOPLIST_FILE = "DELeaders/DELeaders-Info.plist";
 				PRODUCT_NAME = DELinks;
-				PROVISIONING_PROFILE = "D12B856D-BABA-44CA-B82A-D854A91B332E";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D12B856D-BABA-44CA-B82A-D854A91B332E";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;

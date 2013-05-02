@@ -611,6 +611,11 @@
                                 <action selector="logoutPressed:" destination="2" id="xoC-od-Uj3"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="About" id="Nfu-Zg-HUf">
+                            <connections>
+                                <segue destination="9Yx-gJ-AuL" kind="push" id="TIb-NG-qPb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="acesButton" destination="9St-Tf-3Tv" id="uPz-Xz-alu"/>
@@ -646,6 +651,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-201" y="-763"/>
+        </scene>
+        <!--View Controller - About-->
+        <scene sceneID="5wx-s0-WoL">
+            <objects>
+                <viewController id="9Yx-gJ-AuL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jNZ-Kg-rp5">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="top.png" id="k9F-kl-gQy">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="196"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="del_logo_shaded.png" id="8RU-UD-9LX">
+                                <rect key="frame" x="0.0" y="764" width="768" height="196"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="about.png" id="XlW-xe-rYx">
+                                <rect key="frame" x="0.0" y="204" width="768" height="552"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="About" id="Qng-Io-rYZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ve7-Ml-hf5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="639" y="-2248"/>
         </scene>
         <!--Leadership View Controller - Leadership-->
         <scene sceneID="3F4-D2-hxn">
@@ -877,6 +911,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="about.png" width="640" height="472"/>
         <image name="acesIcon.png" width="120" height="120"/>
         <image name="calendarIcon.png" width="120" height="120"/>
         <image name="contactsIcon.png" width="120" height="120"/>

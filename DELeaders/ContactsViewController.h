@@ -17,20 +17,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *facultyButton;
 @property (weak, nonatomic) IBOutlet UIButton *studentsButton;
 @property (weak, nonatomic) IBOutlet UIButton *othersButton;
-//@property (strong, nonatomic) SVWebViewController *svWebController;
-//@property (strong, nonatomic) UIWebView *svWebViewMain;
-//@property (strong, nonatomic) UIWebView *svWebViewLoad;
-//@property (strong, nonatomic) MBProgressHUD *hud;
 
 - (IBAction)facultyPressed:(id)sender;
 - (IBAction)studentsPressed:(id)sender;
 - (IBAction)othersPressed:(id)sender;
-//- (void)goToPageTemplate:(NSString *)index;
-//- (void)registerSVWebController:(SVWebViewController *)webController;
-//- (void)reset;
-//- (BOOL)loggedIntoWordpress;
-//- (BOOL)contactsWebViewDidFinishLoad:(UIWebView *)webView;
-
-
 
 @end
