@@ -1,6 +1,8 @@
 /**
  Constants class, look below at the #define lines for descriptions and available constants to be modified
  
+ Matthew Tse
+ 
  */
 
 

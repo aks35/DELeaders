@@ -1,3 +1,10 @@
+/**
+ Constants class, look below at the #define lines for descriptions and available constants to be modified
+ 
+ Matthew Tse
+ 
+ */
+
 /*
  * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
