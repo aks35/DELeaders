@@ -1,3 +1,11 @@
+/**
+ Constants class, look below at the #define lines for descriptions and available constants to be modified
+ 
+ Matthew Tse
+ 
+ */
+
+
 /*
  * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
@@ -30,12 +38,19 @@
 
 
 #define CREDENTIALS_ALERT_MESSAGE    @"Please update the Constants.h file with your credentials or Token Vending Machine URL."
+//Access_key_id should not be used since we are using a TVM vending machine
 #define ACCESS_KEY_ID                @"USED-ONLY-FOR-TESTING"  // Leave this value as is.
+//secret_key should not be used since we are using a TVM vending machine
 #define SECRET_KEY                   @"USED-ONLY-FOR-TESTING"  // Leave this value as is.
+//suffix appended to the end of each compressed image to differentiate it from the original sized image
 #define COMPRESSED_SUFFIX            @"_compressed"
+//S3 bucket name for the original uncompressed uploaded images
 #define ORIGINAL_IMAGE_BUCKET_NAME   @"delpictures"
+//S3 bucket name for the compressed uploaded images
 #define COMPRESSED_IMAGE_BUCKET_NAME @"delpicturescompressed"
+//standard width for compressed image
 #define COMPRESSED_IMAGE_WIDTH       300
+//standard height for compressed image
 #define COMPRESSED_IMAGE_DISPLAY_WIDTH 150
 
 

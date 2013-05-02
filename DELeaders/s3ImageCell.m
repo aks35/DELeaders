@@ -1,3 +1,9 @@
+/**
+ s3ImageCell, a subclass of UICollectionViewCell, this class provides some simple modifications to the base UICollecvtionViewCell to allow for a photo to take up the space of the cell, to be displayed in the Image App's gallery view.
+ 
+ */
+
+
 //
 //  s3ImageCell.m
 //  S3Uploader
@@ -20,19 +26,10 @@
     self = [super initWithFrame:frame];
     if (self) {
 
-//        self.backgroundColor = [UIColor colorWithWhite:0.85f alpha:1.0f];
-////
-//        self.layer.borderColor = [UIColor whiteColor].CGColor;
-//        self.layer.borderWidth = 3.0f;
-//        self.layer.shadowColor = [UIColor blackColor].CGColor;
-//        self.layer.shadowRadius = 3.0f;
-//        self.layer.shadowOffset = CGSizeMake(0.0f, 2.0f);
-//        self.layer.shadowOpacity = 0.5f;
-        
+        //initiate and create the imageView
         self.imageView = [[UIImageView alloc] initWithFrame:self.contentView.bounds];
         self.imageView.contentMode = UIViewContentModeScaleAspectFill;
         self.imageView.clipsToBounds = YES;
-        
         [self.contentView addSubview:self.imageView];
     }
     

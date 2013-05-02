@@ -1,10 +1,12 @@
-//
-//  photoDetailViewController.m
-//  S3Uploader
-//
-//  Created by Matthew on 3/16/13.
-//  Copyright (c) 2013 dukecs. All rights reserved.
-//
+
+
+/**
+ 
+ PhotoDetailViewController - This controller controls the photo detail view within the Image mini-application.  One gets to this view by clicking into the image app, then clicking on one of the photos within the main gallery view.
+ 
+ Created by Matthew on 3/16/13.
+ Copyright (c) 2013 dukecs. All rights reserved.
+ */
 
 #import "photoDetailViewController.h"
 #import <AWSiOSSDK/S3/AmazonS3Client.h>
@@ -28,6 +30,8 @@ UIImage *myImage;
     return self;
 }
 
+
+//Called upon the page loading
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -59,7 +63,6 @@ UIImage *myImage;
         myImage= [[UIImage alloc] initWithData:gore.body];
         self.imageView.image=myImage;
     }
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,15 +70,13 @@ UIImage *myImage;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)done:(id)sender {
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:^{}];
-}
 
+//called when the "share" button is clicked.  This will utilize Apple's UIActivityViewController interface to automatically determine what apps are installed that can benefit from sharing a photo
 - (IBAction)shareImage:(id)sender {
     NSArray *activityItems;
-    
     activityItems = @[myImage];
     
+    //invoke apple's UIActivityViewController which figures out what type of item it is being given, and automatically generates other iOS applications to share with, in this case, sharing images with mail, camera roll, messenger, etc.
     UIActivityViewController *activityController =
     [[UIActivityViewController alloc]
      initWithActivityItems:activityItems

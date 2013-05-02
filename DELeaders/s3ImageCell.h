@@ -1,3 +1,10 @@
+/**
+ s3ImageCell, a subclass of UICollectionViewCell, this class provides some simple modifications to the base UICollecvtionViewCell to allow for a photo to take up the space of the cell, to be displayed in the Image App's gallery view.
+ 
+ */
+
+
+
 //
 //  s3ImageCell.h
 //  S3Uploader

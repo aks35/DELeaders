@@ -1,0 +1,25 @@
+Version 1.0
+=====================================
+
+The DELinks 1.0 works for iOS devices with iOS 6.0 or greater.  It has the following features:
+- Website links to:
+	DEL website
+	NSOE website
+	DEL wordpress
+	Sakai Calendar
+	Sakai Courses
+	Sakai itself
+	Twitter DEL page
+	Facebook DEL page
+	Linkedin DEL page
+	Duke Library
+	DEL Contacts
+	Duke ACES
+	DEL Leadership
+- Private image server application for DEL students and administrators
+	Gallery view of all current photos on the server
+	Ability to upload photo directly from camera or from iPhone gallery
+	Detail view of Photo upon click, allows for closer inspection of photo and sharing via mail, messaging, photo gallery, etc.
+	Fast synchronization with Amazon's S3 server
+- Sakai user authentication and automatic login when visiting sakai websites
+	Sign in and Logout Feature
