@@ -10,6 +10,7 @@
 #import "SVWebViewController.h"
 #import "LinksViewController.h"
 #import "WordpressLoginViewController.h"
+#import "SakaiLoginViewController.h"
 
 @interface Utility : NSObject
 - (void)changeCurrentView:(UIViewController *)view url:(NSString *)url;
@@ -33,4 +34,5 @@
 - (SVWebViewController *)validateThroughSakai:(UINavigationController *)nav;
 - (SVWebViewController *)openWebBrowserSakaiCal:(UINavigationController *)nav needToFillOutForm:(bool)fillBool;
 - (WordpressLoginViewController *)loginToWordpress:(UIViewController *)viewController url:(NSString *)url;
+- (SakaiLoginViewController *)loginToSakai:(UIViewController *)viewController goToCal:(bool)goToCal;
 @end

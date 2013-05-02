@@ -76,7 +76,7 @@ bool loggedIntoSakai;
         NSLog(@"Page not visited");
         NSLog(@"Web view description: %@", webView.description);
         if ([webView isEqual:svWebViewMain]) {
-            NSString *href = [helperController clickLoginLink:svWebViewMain tempWebView:svWebViewTemp];
+            NSString *href = [helperController clickLoginLink:svWebViewMain];
             if (![href isEqualToString:helperController.NO_LINK_TAG]) {
                 [util loadWebView:href webView:svWebViewTemp];
                 [self.view bringSubviewToFront:svWebViewTemp];

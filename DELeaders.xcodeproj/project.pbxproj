@@ -61,6 +61,7 @@
 		6D66536D172B1BA5001B1FB2 /* roundedRect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D66536C172B1BA5001B1FB2 /* roundedRect@2x.png */; };
 		6D66536F172B1CD4001B1FB2 /* roundedRect.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D66536E172B1CD4001B1FB2 /* roundedRect.png */; };
 		6D665371172B1D3C001B1FB2 /* roundedRect-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D665370172B1D3C001B1FB2 /* roundedRect-ipad.png */; };
+		6D75AC8C1732B5760031D26E /* SakaiLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D75AC8B1732B5760031D26E /* SakaiLoginViewController.m */; };
 		6D87293F171692AE00DC829E /* iconBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D87293E171692AE00DC829E /* iconBackground.png */; };
 		6D87294B1716951300DC829E /* wordpressIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D87294A1716951300DC829E /* wordpressIcon.png */; };
 		6D87294F171695BF00DC829E /* coursesIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D87294E171695BF00DC829E /* coursesIcon.png */; };
@@ -230,6 +231,8 @@
 		6D66536C172B1BA5001B1FB2 /* roundedRect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "roundedRect@2x.png"; sourceTree = "<group>"; };
 		6D66536E172B1CD4001B1FB2 /* roundedRect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roundedRect.png; sourceTree = "<group>"; };
 		6D665370172B1D3C001B1FB2 /* roundedRect-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "roundedRect-ipad.png"; sourceTree = "<group>"; };
+		6D75AC8A1732B5760031D26E /* SakaiLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SakaiLoginViewController.h; sourceTree = "<group>"; };
+		6D75AC8B1732B5760031D26E /* SakaiLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SakaiLoginViewController.m; sourceTree = "<group>"; };
 		6D87293E171692AE00DC829E /* iconBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconBackground.png; sourceTree = "<group>"; };
 		6D87294A1716951300DC829E /* wordpressIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wordpressIcon.png; sourceTree = "<group>"; };
 		6D87294E171695BF00DC829E /* coursesIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coursesIcon.png; sourceTree = "<group>"; };
@@ -562,6 +565,8 @@
 				314B575E16E27E8E0065B50D /* SakaiViewController.m */,
 				6DF1D7F81729D0EA00F708FA /* SakaiValidationViewController.h */,
 				6DF1D7F91729D0EA00F708FA /* SakaiValidationViewController.m */,
+				6D75AC8A1732B5760031D26E /* SakaiLoginViewController.h */,
+				6D75AC8B1732B5760031D26E /* SakaiLoginViewController.m */,
 			);
 			name = sakai;
 			sourceTree = "<group>";
@@ -784,6 +789,7 @@
 				6DF1D7FA1729D0EA00F708FA /* SakaiValidationViewController.m in Sources */,
 				6DF1D80D172ABE8700F708FA /* LogoutViewController.m in Sources */,
 				6D04285B172B7C11002AEB94 /* WordpressLoginViewController.m in Sources */,
+				6D75AC8C1732B5760031D26E /* SakaiLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -915,7 +921,7 @@
 		317D105B16C1ECF2007EBF76 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Andrew Shim (TUYN8E2Y7H)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Shim (6PQN59ARVY)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -936,7 +942,7 @@
 		317D105C16C1ECF2007EBF76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Andrew Shim (TUYN8E2Y7H)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Shim (6PQN59ARVY)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

@@ -321,9 +321,10 @@ Utility *util;
             [util openWebBrowserSakaiCal:self.navigationController needToFillOutForm:NO];            
         }
     } else if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loggedIntoWordPress"]) {
-        [util openWebBrowserSakaiCal:self.navigationController needToFillOutForm:NO];
+//        [util openWebBrowserSakaiCal:self.navigationController needToFillOutForm:NO];
+        [util loginToSakai:self goToCal:YES];
     } else {
-        [util openWebBrowserSakaiCal:self.navigationController needToFillOutForm:YES];
+        [util loginToSakai:self goToCal:YES];
     }
 }
 
@@ -331,7 +332,7 @@ Utility *util;
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loggedIntoSakai"]) {
         [util openWebBrowser:@"https://sakai.duke.edu/portal/pda/?force.login=yes" navController:self.navigationController];
     } else {
-        [util openWebBrowserSakai:self.navigationController];
+        [util loginToSakai:self goToCal:NO];
     }
 }
 

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "SakaiCalendarViewController.h"
+#import "SakaiLoginViewController.h"
 
 @implementation AppDelegate
 

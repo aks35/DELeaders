@@ -11,7 +11,7 @@
 @interface SakaiViewControllerHelper : UIViewController
 
 - (NSString *)fillSakaiSubViewForm:(UIWebView *)webView netID:(NSString *)netID password:(NSString *)password;
-- (NSString *)clickLoginLink:(UIWebView *)webView tempWebView:(UIWebView *)tempWebView;
+- (NSString *)clickLoginLink:(UIWebView *)webView;
 - (void)printCurrentURL:(UIWebView *)webView;
 - (BOOL)inWorkspace;
 - (bool)isLoggedIn:(UIWebView *)webView;

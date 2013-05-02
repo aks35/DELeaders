@@ -15,12 +15,14 @@
 
 @synthesize svWebController, svWebViewMain, svWebViewLoad, svWebViewTemp;
 @synthesize needToFillOutForm;
+@synthesize atCalendar;
 
 //MBProgressHUD *webHud;
 SakaiViewControllerHelper *helperController;
 Utility *util;
 bool calendarDone, atLogin, inCalendar, calendarRendered, atRedirect, loggedIntoSakai, loginFormSubmitted, inWorkspace;
 bool loggedInApriori = YES;
+bool inWordspace, inCalendar;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -86,6 +88,19 @@ bool loggedInApriori = YES;
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    if (inCalendar) {
+        NSLog(@"IN CALENDAR");
+        atCalendar = YES;
+    } else if (inWorkspace && !inCalendar) {
+        [self goToCalendarPage];
+        inCalendar = YES;
+    } else if (!inWorkspace) {
+        [self goToWorkspacePage];
+        inWorkspace = YES;
+    }
+}
+
 - (BOOL)autoLoginToSakai:(UIWebView *)webView {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loggedIntoSakai"]) {
         if (!inCalendar) {
@@ -146,7 +161,7 @@ bool loggedInApriori = YES;
         atRedirect = YES;
     }
     else if (atLogin) {
-        NSString *href = [helperController clickLoginLink:svWebViewMain tempWebView:svWebViewMain];
+        NSString *href = [helperController clickLoginLink:svWebViewMain];
         NSLog(@"HREF %@",href);
         if (![href isEqualToString:helperController.NO_LINK_TAG]) {
             [util loadWebView:href webView:svWebViewMain];
@@ -233,6 +248,10 @@ bool loggedInApriori = YES;
     helperController = [[SakaiViewControllerHelper alloc]init];
 }
 
+- (void)setUtility:(Utility *)utility {
+    util = utility;
+}
+
 - (void)reset {
 //    self.needToFillOutForm = YES;
     self.svWebController = nil;
@@ -249,6 +268,14 @@ bool loggedInApriori = YES;
     loginFormSubmitted = NO;
     inWorkspace = NO;
     loggedInApriori = YES;
+}
+
+- (void)navigateToSakaiCalendar {
+    helperController = [[SakaiViewControllerHelper alloc]init];
+    UIWebView *webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    [webView setDelegate:self];
+    [self.view addSubview:webView];
+    [util loadWebView:@"https://sakai.duke.edu/portal/pda/" webView:webView];
 }
 
 @end

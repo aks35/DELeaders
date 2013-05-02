@@ -59,7 +59,7 @@ NSString *sakaiUrl, *currentNetID, *currentPassword;
         NSLog(@"Page not visited");
         NSLog(@"Web view description: %@", webView.description);
         if ([webView isEqual:mainWebView]) {
-            NSString *href = [helperController clickLoginLink:mainWebView tempWebView:tempWebView];
+            NSString *href = [helperController clickLoginLink:mainWebView];
             if (![href isEqualToString:helperController.NO_LINK_TAG]) {
                 [util loadWebView:href webView:tempWebView];
             }

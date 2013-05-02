@@ -120,6 +120,7 @@ SakaiValidationViewController *validationController;
     if ([validationController doneValidating]) {
         return [validationController isValid];
     }
+//    return YES;
     return [util netIdAndPasswordExist];
 }
 
@@ -134,43 +135,49 @@ SakaiValidationViewController *validationController;
         } else if ([[passwordField text] length] == 0) {
             [self alertMessage:@"Invalid" text:@"Please enter password"];
         } else {
-            if (![validationController doneValidating]) {
-                [validationController validateNetIdAndPassword:[netIdField text] password:[passwordField text]];
-                // Create loading view modal
-                MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-                [hud setRemoveFromSuperViewOnHide:YES];
-                hud.labelText = @"Validating credentials";
-                // Launch another thread for main thread to run in background
-                dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-                    while (![validationController doneValidating]) {}
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [MBProgressHUD hideHUDForView:self.view animated:YES];
-                        MBProgressHUD *hudComp = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-                        [hudComp setRemoveFromSuperViewOnHide:YES];
-                        [self.navigationController.view addSubview:hudComp];
-                        if ([validationController isValid]) {
-                            hudComp.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
-                            hudComp.labelText = @"Validated";
-                            netId = netIdField.text;
-                            password = passwordField.text;
-                            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-                            [defaults setObject:netId forKey:@"netId"];
-                            [defaults setObject:password forKey:@"password"];
-                            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loggedIntoSakai"];
-                            [enterButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-                        } else {
-                            hudComp.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Xmark.png"]];
-                            hudComp.labelText = @"Invalid credentials";
-                            [validationController reset];
-                        }
-                        hudComp.mode = MBProgressHUDModeCustomView;
-                        hudComp.delegate = self;
-                        [hudComp show:YES];
-                        [hudComp hide:YES afterDelay:1];
-                    });
-                });
-            }
-        }        
+            netId = netIdField.text;
+            password = passwordField.text;
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:netId forKey:@"netId"];
+            [defaults setObject:password forKey:@"password"];
+
+//            if (![validationController doneValidating]) {
+//                [validationController validateNetIdAndPassword:[netIdField text] password:[passwordField text]];
+//                // Create loading view modal
+//                MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//                [hud setRemoveFromSuperViewOnHide:YES];
+//                hud.labelText = @"Validating credentials";
+//                // Launch another thread for main thread to run in background
+//                dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+//                    while (![validationController doneValidating]) {}
+//                    dispatch_async(dispatch_get_main_queue(), ^{
+//                        [MBProgressHUD hideHUDForView:self.view animated:YES];
+//                        MBProgressHUD *hudComp = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+//                        [hudComp setRemoveFromSuperViewOnHide:YES];
+//                        [self.navigationController.view addSubview:hudComp];
+//                        if ([validationController isValid]) {
+//                            hudComp.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
+//                            hudComp.labelText = @"Validated";
+//                            netId = netIdField.text;
+//                            password = passwordField.text;
+//                            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//                            [defaults setObject:netId forKey:@"netId"];
+//                            [defaults setObject:password forKey:@"password"];
+//                            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loggedIntoSakai"];
+//                            [enterButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+//                        } else {
+//                            hudComp.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Xmark.png"]];
+//                            hudComp.labelText = @"Invalid credentials";
+//                            [validationController reset];
+//                        }
+//                        hudComp.mode = MBProgressHUDModeCustomView;
+//                        hudComp.delegate = self;
+//                        [hudComp show:YES];
+//                        [hudComp hide:YES afterDelay:1];
+//                    });
+//                });
+//            }
+        }
     }
 }
 

@@ -203,7 +203,6 @@ WordpressLoginViewController *wordpress;
     wordpress = [[WordpressLoginViewController alloc]init];
     [wordpress setUtility:self];
     [wordpress initLogin];
-//    [viewController.navigationController pushViewController:wordpress animated:YES];
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:viewController.view animated:YES];
     [hud setRemoveFromSuperViewOnHide:YES];
     hud.labelText = @"Logging into Wordpress";
@@ -231,6 +230,41 @@ WordpressLoginViewController *wordpress;
         });
     });
     return wordpress;
+}
+
+- (SakaiLoginViewController *)loginToSakai:(UIViewController *)viewController goToCal:(bool)goToCal {
+    SakaiLoginViewController *sakaiLogin = [[SakaiLoginViewController alloc]init];
+    [sakaiLogin setUtility:self];
+    [sakaiLogin initLogin:goToCal];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:viewController.view animated:YES];
+    [hud setRemoveFromSuperViewOnHide:YES];
+//    [viewController.navigationController pushViewController:sakaiLogin animated:YES];
+    hud.labelText = @"Logging into Sakai";
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        while ([sakaiLogin isNotLoggedIn]) {}
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:viewController.view animated:YES];
+            MBProgressHUD *hudComp = [[MBProgressHUD alloc] initWithView:viewController.navigationController.view];
+            [hudComp setRemoveFromSuperViewOnHide:YES];
+            [viewController.navigationController.view addSubview:hudComp];
+            hudComp.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
+            hudComp.labelText = @"Successful login";
+            hudComp.mode = MBProgressHUDModeCustomView;
+            hudComp.delegate = viewController;
+            [hudComp show:YES];
+            [hudComp hide:YES afterDelay:1];
+            SVWebViewController *webController = [[SVWebViewController alloc]init];
+            UIWebView *webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, webController.view.frame.size.width, webController.view.frame.size.height)];
+            [webView setDelegate:webController];
+            webView.scalesPageToFit = YES;
+            webView.autoresizesSubviews = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+            [webController.view addSubview:webView];
+            [self loadWebView:[sakaiLogin currentUrl] webView:webView];
+            [viewController.navigationController pushViewController:webController animated:YES];
+            
+        });
+    });
+    return sakaiLogin;
 }
 
 @end

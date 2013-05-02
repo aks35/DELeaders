@@ -24,8 +24,6 @@ extern NSString* const sakaiTempCalViewTag;
 
 - (BOOL)sakaiWebViewDidFinishLoad:(UIWebView *)webView;
 - (void)registerSVWebController:(SVWebViewController *)webController;
-- (void)reset;  
-
-
+- (void)reset;
 
 @end

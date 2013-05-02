@@ -10,8 +10,8 @@
 #import "SakaiViewControllerHelper.h"
 @class SVWebViewController;
 @class MBProgressHUD;
+@class Utility;
 
-#define calendarUrlKey @"sakaiCalendarUrl"
 
 @interface SakaiCalendarViewController : UIViewController <UIWebViewDelegate>
 
@@ -21,11 +21,15 @@
 @property (strong, nonatomic) UIWebView *svWebViewTemp;
 @property (strong, nonatomic) MBProgressHUD *hud;
 @property (nonatomic) bool needToFillOutForm;
+@property (nonatomic) bool atCalendar;
+
 
 - (void)goToWorkspacePage;
 - (void)goToCalendarPage;
 - (void)goToPageTemplate:(NSString *)index;
 - (void)registerSVWebController:(SVWebViewController *)webController;
+- (void)setUtility:(Utility *)utility;
+- (void)navigateToSakaiCalendar;
 - (void)reset;
 - (BOOL)sakaiWebViewDidFinishLoad:(UIWebView *)webView;
 

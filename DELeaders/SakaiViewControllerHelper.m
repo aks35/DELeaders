@@ -54,7 +54,7 @@ NSString *const NO_LINK_TAG = @"THERE WAS NO LINK RETURNED";
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (NSString *)clickLoginLink:(UIWebView *)webView tempWebView:(UIWebView *)tempWebView {
+- (NSString *)clickLoginLink:(UIWebView *)webView {
     // Click the login link else return that the link is not there
     NSString *linkExists = [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.getElementById('loginLink1')==null"]]; 
     if ([linkExists isEqualToString:@"false"]) {
