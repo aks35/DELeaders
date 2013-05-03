@@ -18,8 +18,9 @@
 
 Utility *util;
 SakaiViewControllerHelper *helperController;
-UIWebView *mainWebView, *tempWebView;
+UIWebView *mainWebView;
 NSString *sakaiUrl, *currentNetID, *currentPassword;
+bool loginLinkClicked;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -46,22 +47,25 @@ NSString *sakaiUrl, *currentNetID, *currentPassword;
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     // Navigate Sakai to validate whether or not login was successful
     if ([self formFilledOut]) {
-        if ([util nsStringContains:[util getCurrentURL:tempWebView]  sub:@"Redirect"]) {
+        if ([util nsStringContains:[util getCurrentURL:webView]  sub:@"Redirect"]) {
             NSLog(@"CHECKPOINT 2");
         } else {
             self.isValid = [helperController isLoggedIn:webView];
             self.doneValidating = YES;
         }
-    } else if ([webView isEqual:tempWebView]) {
+    } else if (loginLinkClicked && ![self formFilledOut]) {
         sakaiUrl = [helperController fillSakaiSubViewForm:webView netID:currentNetID password:currentPassword];
-        self.formFilledOut = YES;
-    } else if (![self formFilledOut]) {
+        if ([sakaiUrl length] > 0) {
+            self.formFilledOut = YES;            
+        }
+    } else if (!loginLinkClicked) {
         NSLog(@"Page not visited");
         NSLog(@"Web view description: %@", webView.description);
         if ([webView isEqual:mainWebView]) {
             NSString *href = [helperController clickLoginLink:mainWebView];
             if (![href isEqualToString:helperController.NO_LINK_TAG]) {
-                [util loadWebView:href webView:tempWebView];
+                loginLinkClicked = YES;
+                [util loadWebView:href webView:webView];
             }
         }
     }
@@ -69,11 +73,11 @@ NSString *sakaiUrl, *currentNetID, *currentPassword;
 
 - (void)validateNetIdAndPassword:(NSString *)netID password:(NSString *)password {
     util = [[Utility alloc]init];
+    NSLog(@"VALIDATING %@ - %@", netID, password);
     currentNetID = netID;
     currentPassword = password;
     helperController = [[SakaiViewControllerHelper alloc]init];
     mainWebView = [self allocWebViewAndSetDelegate];
-    tempWebView = [self allocWebViewAndSetDelegate];
     [util loadWebView:@"https://sakai.duke.edu/portal/pda/?force.login=yes" webView:mainWebView];
 }
 
@@ -89,6 +93,7 @@ NSString *sakaiUrl, *currentNetID, *currentPassword;
     self.doneValidating = NO;
     self.isValid = NO;
     self.formFilledOut = NO;
+    loginLinkClicked = NO;
 }
 
 @end

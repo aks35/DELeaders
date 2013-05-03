@@ -82,6 +82,7 @@ NSString *const NO_LINK_TAG = @"THERE WAS NO LINK RETURNED";
         NSLog(@"%@", javaScriptString);
         [webView stringByEvaluatingJavaScriptFromString: javaScriptString];
         NSLog(@"Finished filling out form");
+        return @"SUCCESS";
     }
     return @"";
 }

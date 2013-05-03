@@ -17,7 +17,7 @@
 
 @synthesize sakaiLoggedOut;
 Utility *util;
-bool loggingOutSakai, inWordpress, loggingOutWordpress;
+bool loggingOutSakai, inWordpress, pressedLogoutButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,24 +48,33 @@ bool loggingOutSakai, inWordpress, loggingOutWordpress;
     return result;
 }
 
+- (void)clickLogoutButtonSakai:(UIWebView *)webView {
+    NSString* javaScriptString = @"document.getElementsByTagName('form')[0].submit();";
+    NSLog(@"%@", javaScriptString);
+    [webView stringByEvaluatingJavaScriptFromString: javaScriptString];
+}
+
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     // Handle web navigation for logging out
     NSLog(@"Web view did finish load");
-    if (loggingOutWordpress) {
+    if (inWordpress) {
         NSLog(@"Logging out wordpress");
         self.wordpressLoggedOut = YES;
     }
-    else if (inWordpress) {
+    else if (loggingOutSakai && !inWordpress) {
         NSLog(@"In wordpress");
         NSString *logoutLink = [self getWordpressLogoutLink:webView];
-        loggingOutWordpress = YES;
+        inWordpress = YES;
         [util loadWebView:logoutLink webView:webView];
     }
-    else if (loggingOutSakai) {
-        NSLog(@"Logging out sakai");
+    else if (pressedLogoutButton && !loggingOutSakai) {
         self.sakaiLoggedOut = YES;
-        inWordpress = YES;
+        loggingOutSakai = YES;
         [util loadWebView:@"http://sites.nicholas.duke.edu/delmeminfo/" webView:webView];
+    } else if (!pressedLogoutButton) {
+        NSLog(@"Logging out sakai");
+        [self clickLogoutButtonSakai:webView];
+        pressedLogoutButton = YES;
     }
 }
 
@@ -74,14 +83,13 @@ bool loggingOutSakai, inWordpress, loggingOutWordpress;
     self.sakaiLoggedOut = NO;
     loggingOutSakai = NO;
     inWordpress = NO;
-    loggingOutWordpress = NO;
+    pressedLogoutButton = NO;
 }
 
 - (void)initLogout {
     UIWebView *webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [webView setDelegate:self];
     [self.view addSubview:webView];
-    loggingOutSakai = YES;
     [util loadWebView:@"https://sakai.duke.edu/portal/pda/?force.logout=yes" webView:webView];
 }
 
