@@ -21,10 +21,8 @@
 @synthesize isNotLoggedIn;
 @synthesize currentUrl;
 
-
 SakaiViewControllerHelper *helperController;
 Utility *util;
-NSString *sakaiUrl;
 bool loggedIntoSakai, loginLinkClicked, signinFormFilled, needToGoCalendar;
 bool atWorkspace, atCalendar;
 
@@ -120,7 +118,7 @@ bool atWorkspace, atCalendar;
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSString *netID = [defaults objectForKey:@"netId"];
         NSString *password = [defaults objectForKey:@"password"];
-        sakaiUrl = [helperController fillSakaiSubViewForm:webView netID:netID password:password];
+        [helperController fillSakaiSubViewForm:webView netID:netID password:password];
         signinFormFilled = YES;
     } else if (!loginLinkClicked) {
         NSLog(@"HERE I AM");
@@ -134,11 +132,12 @@ bool atWorkspace, atCalendar;
 }
 
 - (void)reset {
-    self.svWebController = nil;
-    self.svWebViewLoad = nil;
-    self.svWebViewMain = nil;
-    self.svWebViewTemp = nil;
     loggedIntoSakai = NO;
+    loginLinkClicked = NO;
+    signinFormFilled = NO;
+    needToGoCalendar = NO;
+    atWorkspace = NO;
+    atCalendar = NO;
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"loggedIntoSakai"];
 }
 

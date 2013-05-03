@@ -7,8 +7,6 @@
 //  https://github.com/samvermette/SVWebViewController
 
 #import "SVWebViewController.h"
-#import "SakaiCalendarViewController.h"
-#import "SakaiViewController.h"
 #import "ContactsViewController.h"
 #import "Utility.h"
 
@@ -313,13 +311,7 @@ Utility *util;
         self.navigationItem.title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
     }
     [self updateToolbarItems];
-    if (mySakai && sakaiNotLoaded) {
-        sakaiNotLoaded = [mySakai sakaiWebViewDidFinishLoad:webView];
-    } else if (mySakaiCal && sakaiCalNotLoaded) {
-        sakaiCalNotLoaded = [mySakaiCal sakaiWebViewDidFinishLoad:webView];
-    } else if (myContacts && contactsNotLoaded) {
-//        contactsNotLoaded = [myContacts contactsWebViewDidFinishLoad:webView];
-    }
+
     
 }
 
@@ -441,23 +433,6 @@ Utility *util;
 #endif
 }
 
-- (void)registerSakaiHandler:(SakaiViewController *)sakai {
-    mySakai = sakai;
-    sakaiNotLoaded = YES;
-    [mySakai registerSVWebController:self];
-}
-
-- (void)registerSakaiCalHandler:(SakaiCalendarViewController *)sakai {
-    mySakaiCal = sakai;
-    sakaiCalNotLoaded = YES;
-    [mySakaiCal registerSVWebController:self];
-}
-
-- (void)registerContactsHandler:(ContactsViewController *)contacts {
-    myContacts = contacts;
-    contactsNotLoaded = YES;
-//    [myContacts registerSVWebController:self];
-}
 
 - (void)addSakaiSubView:(UIWebView *)webView {
     [self.view addSubview:webView];

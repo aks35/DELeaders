@@ -318,11 +318,8 @@ Utility *util;
             [util openWebBrowser:[[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey] navController:self.navigationController];
             NSLog(@"Calendar URL: %@", [[NSUserDefaults standardUserDefaults] objectForKey:calendarUrlKey]);
         } else {
-            [util openWebBrowserSakaiCal:self.navigationController needToFillOutForm:NO];            
+            [util loginToSakai:self goToCal:YES];
         }
-    } else if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loggedIntoWordPress"]) {
-//        [util openWebBrowserSakaiCal:self.navigationController needToFillOutForm:NO];
-        [util loginToSakai:self goToCal:YES];
     } else {
         [util loginToSakai:self goToCal:YES];
     }

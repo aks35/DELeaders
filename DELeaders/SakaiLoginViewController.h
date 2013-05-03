@@ -15,11 +15,6 @@
 
 @interface SakaiLoginViewController : UIViewController <UIWebViewDelegate>
 
-@property (strong, nonatomic) SVWebViewController *svWebController;
-@property (strong, nonatomic) UIWebView *svWebViewMain;
-@property (strong, nonatomic) UIWebView *svWebViewLoad;
-@property (strong, nonatomic) UIWebView *svWebViewTemp;
-@property (strong, nonatomic) MBProgressHUD *hud;
 @property (nonatomic) BOOL isNotLoggedIn;
 @property (nonatomic) NSString *currentUrl;
 

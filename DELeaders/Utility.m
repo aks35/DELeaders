@@ -8,17 +8,15 @@
 
 #import "Utility.h"
 #import "SVWebViewController.h"
-#import "SakaiViewController.h"
-#import "SakaiCalendarViewController.h"
 #import "WordpressLoginViewController.h"
+#import "SakaiLoginViewController.h"
 #import "LogoutViewController.h"
 #import "MBProgressHUD.h"
 #import "LinksViewController.h"
 
 @implementation Utility
 
-SakaiViewController *sakai;
-SakaiCalendarViewController *sakaiCal;
+SakaiLoginViewController *sakaiLogin;
 WordpressLoginViewController *wordpress;
 
 - (void)changeCurrentView:(UIViewController *)view url:(NSString *)url {
@@ -46,9 +44,9 @@ WordpressLoginViewController *wordpress;
             hudComp.delegate = linksController;
             [hudComp show:YES];
             [hudComp hide:YES afterDelay:1];
-            [sakai reset];
-            [sakaiCal reset];
+            [sakaiLogin reset];
             [wordpress reset];
+            [[NSUserDefaults standardUserDefaults]removeObjectForKey:calendarUrlKey];
             [linksController.navigationController popToRootViewControllerAnimated:YES];
         });
     });
@@ -166,38 +164,6 @@ WordpressLoginViewController *wordpress;
     return webViewController;
 }
 
-- (SVWebViewController *)openWebBrowserSakai:(UINavigationController *)nav {
-    SVWebViewController *webViewController = [[SVWebViewController alloc] init];
-    sakai = [[SakaiViewController alloc]init];
-    [webViewController registerSakaiHandler:sakai];
-    NSLog(@"Registered sakai controller");
-    [nav pushViewController:webViewController animated:YES];
-    return webViewController;
-}
-
-- (SVWebViewController *)validateThroughSakai:(UINavigationController *)nav {
-    SVWebViewController *webViewController = [[SVWebViewController alloc] init];
-    sakai = [[SakaiViewController alloc]init];
-    [webViewController registerSakaiHandler:sakai];
-    NSLog(@"Registered sakai controller");
-    [nav pushViewController:webViewController animated:YES];
-    return webViewController;
-}
-
-- (SVWebViewController *)openWebBrowserSakaiCal:(UINavigationController *)nav needToFillOutForm:(bool)fillBool {
-    SVWebViewController *webViewController = [[SVWebViewController alloc] init];
-    sakaiCal = [[SakaiCalendarViewController alloc]init];
-    sakaiCal.needToFillOutForm = fillBool;
-    if (fillBool) {
-        NSLog(@"NEED TO FILL OUT FORM");
-    } else {
-        NSLog(@"DO NOT NEED TO FILL OUT FORM");
-    }
-    [webViewController registerSakaiCalHandler:sakaiCal];
-    NSLog(@"Registered sakai calendar controller");
-    [nav pushViewController:webViewController animated:YES];
-    return webViewController;
-}
 
 - (WordpressLoginViewController *)loginToWordpress:(UIViewController *)viewController url:(NSString *)url {
     wordpress = [[WordpressLoginViewController alloc]init];
@@ -233,7 +199,7 @@ WordpressLoginViewController *wordpress;
 }
 
 - (SakaiLoginViewController *)loginToSakai:(UIViewController *)viewController goToCal:(bool)goToCal {
-    SakaiLoginViewController *sakaiLogin = [[SakaiLoginViewController alloc]init];
+    sakaiLogin = [[SakaiLoginViewController alloc]init];
     [sakaiLogin setUtility:self];
     [sakaiLogin initLogin:goToCal];
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:viewController.view animated:YES];

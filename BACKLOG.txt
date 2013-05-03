@@ -6,3 +6,6 @@ Here is a list of backlogged features that we would like to implement in the fut
 -make app extensible for adding new icons/links
 -integration of Sakai web elements with iOS native calendar
 -better use of screen real estate in main links page
+-encrypt stored Duke netId and password
+-move hard-coded URLs and other such strings into XML
+-refactor Sakai login functionality 

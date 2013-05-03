@@ -17,9 +17,6 @@
 
 - (id)initWithAddress:(NSString*)urlString;
 - (id)initWithURL:(NSURL*)URL;
-- (void)registerSakaiHandler:(SakaiViewController *)sakai;
-- (void)registerSakaiCalHandler:(SakaiCalendarViewController *)sakaiCal;
-- (void)registerContactsHandler:(ContactsViewController *)contacts;
 
 - (void)addSakaiSubView:(UIWebView *)webView;
 - (void)setMainView:(UIWebView *)mainView;

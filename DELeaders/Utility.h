@@ -30,9 +30,6 @@
 - (NSString *)getCurrentURL:(UIWebView *)webView;
 - (SVWebViewController *)openWebBrowser:(NSString *)url navController:(UINavigationController *)nav;
 - (SVWebViewController *)replaceWebBrowser:(NSString *)url navController:(UINavigationController *)nav;
-- (SVWebViewController *)openWebBrowserSakai:(UINavigationController *)nav;
-- (SVWebViewController *)validateThroughSakai:(UINavigationController *)nav;
-- (SVWebViewController *)openWebBrowserSakaiCal:(UINavigationController *)nav needToFillOutForm:(bool)fillBool;
 - (WordpressLoginViewController *)loginToWordpress:(UIViewController *)viewController url:(NSString *)url;
 - (SakaiLoginViewController *)loginToSakai:(UIViewController *)viewController goToCal:(bool)goToCal;
 @end

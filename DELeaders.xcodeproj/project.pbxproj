@@ -24,7 +24,6 @@
 		310E538A16E66734001395E5 /* CoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 310E538816E66734001395E5 /* CoursesViewController.m */; };
 		314B574C16DFC7E20065B50D /* LoadingAnimViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B574A16DFC7E20065B50D /* LoadingAnimViewController.m */; };
 		314B575B16E176230065B50D /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B575916E176230065B50D /* ContactsViewController.m */; };
-		314B576016E27E8E0065B50D /* SakaiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B575E16E27E8E0065B50D /* SakaiViewController.m */; };
 		314B576416E280810065B50D /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B576316E280810065B50D /* Utility.m */; };
 		314B576816E316500065B50D /* SakaiCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B576616E3164F0065B50D /* SakaiCalendarViewController.m */; };
 		314B576D16E317B00065B50D /* SakaiViewControllerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B576B16E317B00065B50D /* SakaiViewControllerHelper.m */; };
@@ -173,8 +172,6 @@
 		314B574A16DFC7E20065B50D /* LoadingAnimViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingAnimViewController.m; sourceTree = "<group>"; };
 		314B575816E176230065B50D /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
 		314B575916E176230065B50D /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
-		314B575D16E27E8E0065B50D /* SakaiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SakaiViewController.h; sourceTree = "<group>"; };
-		314B575E16E27E8E0065B50D /* SakaiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SakaiViewController.m; sourceTree = "<group>"; };
 		314B576216E280810065B50D /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		314B576316E280810065B50D /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		314B576516E3164F0065B50D /* SakaiCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SakaiCalendarViewController.h; sourceTree = "<group>"; };
@@ -561,8 +558,6 @@
 				314B576616E3164F0065B50D /* SakaiCalendarViewController.m */,
 				314B576A16E317B00065B50D /* SakaiViewControllerHelper.h */,
 				314B576B16E317B00065B50D /* SakaiViewControllerHelper.m */,
-				314B575D16E27E8E0065B50D /* SakaiViewController.h */,
-				314B575E16E27E8E0065B50D /* SakaiViewController.m */,
 				6DF1D7F81729D0EA00F708FA /* SakaiValidationViewController.h */,
 				6DF1D7F91729D0EA00F708FA /* SakaiValidationViewController.m */,
 				6D75AC8A1732B5760031D26E /* SakaiLoginViewController.h */,
@@ -759,7 +754,6 @@
 				317D104216C1ECF2007EBF76 /* LinksViewController.m in Sources */,
 				314B574C16DFC7E20065B50D /* LoadingAnimViewController.m in Sources */,
 				314B575B16E176230065B50D /* ContactsViewController.m in Sources */,
-				314B576016E27E8E0065B50D /* SakaiViewController.m in Sources */,
 				314B576416E280810065B50D /* Utility.m in Sources */,
 				314B576816E316500065B50D /* SakaiCalendarViewController.m in Sources */,
 				314B576D16E317B00065B50D /* SakaiViewControllerHelper.m in Sources */,
